@@ -1,0 +1,73 @@
+local:
+  vhost: "http://vhost.local"
+  wordpress_path: "/srv/www/maxkompetens.se/current/web" # use an absolute path here
+
+  database:
+    name: "maxkompetens_se_development"
+    user: "root"
+    password: ")BLw62;2M@%JU/S6"
+    host: "127.0.0.1"
+
+  paths: # you can customize wordpress internal paths
+    wp_content: "app"
+    uploads: "app/uploads"
+    plugins: "app/plugins"
+    themes: "app/themes"
+    languages: "app/languages"
+    themes: "app/themes"
+
+staging:
+  vhost: "localhost"
+  wordpress_path: "/srv/www/maxkompetens.se/current/web" # use an absolute path here
+
+  database:
+    name: "maxkompetens_se_staging"
+    user: "root"
+    password: ")BLw62;2M@%JU/S6"
+    host: "127.0.01"
+    # port: "3308" # Use just in case you have exotic server config
+    # mysqldump_options: "--max_allowed_packet=1G" # Only available if using SSH
+
+  exclude:
+    - ".git/"
+    - ".gitignore"
+    - ".sass-cache/"
+    - "node_modules/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "wp-config.php"
+    - "wp-content/*.sql"
+
+  paths: # you can customize wordpress internal paths
+      wp_content: "app"
+      uploads: "app/uploads"
+      plugins: "app/plugins"
+      themes: "app/themes"
+      languages: "app/languages"
+
+  ssh:
+      host: "138.68.142.253"
+      user: "root"
+
+  # ssh:
+  #   host: "host"
+  #   user: "user"
+  #   password: "password" # password is optional, will use public keys if available.
+  #   port: 22 # Port is optional
+  #   rsync_options: "--verbose" # Additional rsync options, optional
+  #   gateway: # Gateway is optional
+  #     host: "host"
+  #     user: "user"
+  #     password: "password" # password is optional, will use public keys if available.
+
+  # ftp:
+  #   user: "user"
+  #   password: "password"
+  #   host: "host"
+  #   passive: true
+  #   scheme: "ftps" # default "ftp"
+
+# staging: # multiple environments can be specified
+#   [...]

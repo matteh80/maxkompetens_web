@@ -1,0 +1,49 @@
+// NAVIGATION
+.overlay {
+  background-color: rgba(0,0,0,0.7);
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 100%;
+  height:100%;
+  //transition: opacity 250ms;
+  display: none;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+.nav-primary {
+  position: fixed;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  right: 0;
+  z-index: 999;
+  background-color: $gray;
+  transition: width 250ms ease-out;
+
+  &.open {
+    width:50%;
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    height:30px;
+    right:($navbar-width-lg - $barwidth) / 2;
+  }
+}
+
+.banner {
+  position: absolute;
+  top:50px;
+  left:50px;
+
+  .brand {
+    overflow: hidden;
+
+    img {
+      height:80px;
+    }
+  }
+}

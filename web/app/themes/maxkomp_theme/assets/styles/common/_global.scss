@@ -1,1 +1,81 @@
+@font-face {
+  font-family: 'Flama-Basic';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../dist/fonts/Flama-Basic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Futura LT';
+  src: url('../../dist/fonts/FuturaLT-Heavy.ttf');
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura LT';
+  src: url('../../dist/fonts/FuturaLT-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura LT';
+  src: url('../../dist/fonts/FuturaLT.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura LT';
+  src: url('../../dist/fonts/FuturaLT-Light.ttf');
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura LT Condensed';
+  src: url('../../dist/fonts/FuturaLT-Condensed.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Futura LT Condensed';
+  src: url('../../dist/fonts/FuturaLT-Condensed-Light.ttf');
+  font-weight: 100;
+  font-style: normal;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Flama-Basic";
+}
+
+.container {
+  @include media-breakpoint-down(sm) {
+    max-width: 100%;
+  }
+}
+
+.text-xs-center, .text-sm-center, .text-md-center, .text-lg-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//Logoslider
+#slideouter {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: #eee;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+#slideshow {
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  transition: transform 0.35s ease-out;
+
+  > img {
+    position: relative;
+    padding:0 1rem;
+    display: block;
+    float: left;
+  }
+}

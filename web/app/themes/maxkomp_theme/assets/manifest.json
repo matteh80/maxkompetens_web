@@ -19,9 +19,12 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "logoslider.js": {
+      "files": ["scripts/logoslider.js"]
     }
   },
   "config": {
-    "devUrl": "http://dev.maxkompetens.se"
+    "devUrl": "http://maxkompetens.dev"
   }
 }
