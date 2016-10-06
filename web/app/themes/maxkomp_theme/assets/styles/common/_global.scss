@@ -45,7 +45,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Flama-Basic";
 }
 
+.text-orange {
+  color: $brand-primary;
+}
+
+.text-white {
+  color: #fff;
+}
+
 .container {
+  &.flex-container {
+    display: flex;
+  }
   @include media-breakpoint-down(sm) {
     max-width: 100%;
   }
@@ -56,14 +67,41 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
+blockquote {
+  font-family: "Flama-Basic";
+  font-size: 3.2rem;
+  letter-spacing: -2px;
+  line-height: 3rem;
+  &:before {
+    content: "“";
+    position: absolute;
+    font-family: "Flama-Basic";
+    top: -4px;
+    left: -13px;
+    font-size: 13rem;
+    text-align: left;
+  }
+}
+
+.animated {
+  visibility: visible !important;
+}
+
+.will-animate {
+  visibility: hidden;
+}
+
+.wrap {
+  padding-right: $navbar-width-lg;
+}
+
 //Logoslider
 #slideouter {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 40px;
   background: #eee;
   overflow: hidden;
-  margin-top: 2rem;
 }
 
 #slideshow {
@@ -77,5 +115,23 @@ h1, h2, h3, h4, h5, h6 {
     padding:0 1rem;
     display: block;
     float: left;
+    width:150px;
+  }
+}
+
+//Buttons
+.btn {
+  font-family: "Flama-Basic";
+  font-size: 1rem;
+  padding:1.8rem;
+  width:100%;
+  box-shadow: none;
+  border-radius: 0;
+
+  &.btn-border {
+    box-shadow: inset 0 0 0 5px $brand-primary;
+    color: $brand-primary;
+    //border:5px solid ;
+    background: transparent;
   }
 }

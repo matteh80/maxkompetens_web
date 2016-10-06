@@ -19,6 +19,33 @@
         'common': {
             init: function () {
                 // JavaScript to be fired on all pages
+
+                $('window').on("scroll", function() {
+
+
+                })
+
+                $.fn.extend({
+                    animateCss: function (animationName, delay) {
+                        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                        var el = this;
+                        setTimeout(function(){
+                            $(el).addClass('animated ' + animationName).one(animationEnd, function() {
+                                // $(this).removeClass('animated ' + animationName);
+                                $(this).removeClass(animationName);
+                                $(this).removeClass("will-animate");
+                            });
+                        },delay);
+                    }
+                });
+
+                $('.will-animate').one('inview', function(event, isInView) {
+                    if (isInView) {
+                        var animation = $(this).attr("data-class");
+                        var delay = $(this).attr("data-delay");
+                        $(this).animateCss(animation, delay);
+                    }
+                });
             },
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired
@@ -27,13 +54,29 @@
                     $('.nav-primary').addClass("open");
                     // $('.overlay').css("opacity", "1");
                     $('.overlay').fadeIn('fast');
+                    $('body').css("overflow", "hidden");
+                    $('.navbar-toggle').hide();
+
+                    // $('.menu-item').each(function(index) {
+                    //     $(this).animateCss('flipInY', 2000);
+                    // });
+
+                    $.each($(".menu-item"), function(i, el){
+                        setTimeout(function(){
+                            $(el).animateCss('flipInX');
+                        },200 + ( i * 100 ));
+                    });
+
                 }
 
                 function hideMenu() {
+                    $('.menu-item').removeClass("animated");
                     $('.navbar-toggle').addClass('collapsed');
                     $('.nav-primary').removeClass("open");
                     // $('.overlay').css("opacity", "0");
                     $('.overlay').fadeOut('fast');
+                    $('body').css("overflow", "auto");
+                    $('.navbar-toggle').show();
                 }
 
                 $('.navbar-toggle').on('click', function () {
