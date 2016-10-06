@@ -9,6 +9,6 @@
   "dependencies": {
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.4",
     "animate.css": "^3.5.2",
-    "protonet/jquery.inview": "jquery.inview#^1.1.2"
+    "jquery.inview": "jquery.inview#^1.1.2"
   }
 }
