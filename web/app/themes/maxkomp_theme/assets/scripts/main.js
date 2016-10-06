@@ -23,7 +23,7 @@
                 $('window').on("scroll", function() {
 
 
-                })
+                });
 
                 $.fn.extend({
                     animateCss: function (animationName, delay) {
