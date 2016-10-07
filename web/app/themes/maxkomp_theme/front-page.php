@@ -10,7 +10,7 @@
 			</div>
 			<div class="row buttons flex-items-xs-center" data-class="zoomIn" data-delay="450">
 				<div class="col-sm-3 will-animate" data-class="flipInX" data-delay="500">
-					<a href="template-soker-du-personal.php"><button class="btn btn-primary text-uppercase">Söker du jobb?</button></a>
+					<a href="soker-du-jobb"><button class="btn btn-primary text-uppercase">Söker du jobb?</button></a>
 				</div>
 				<div class="col-sm-3 will-animate" data-class="flipInX" data-delay="500">
 					<a href="soker-du-personal"><button class="btn btn-primary text-uppercase">Söker du personal?</button></a>
