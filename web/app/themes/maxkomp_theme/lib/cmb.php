@@ -171,6 +171,19 @@ function maxkomp_register_page_metabox() {
 		'id'   => $prefix . 'text',
 		'type' => 'textarea',
 	) );
+
+	$cmb_page->add_field( array(
+		'name'    => esc_html__( 'Test Color Picker', 'cmb2' ),
+		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
+		'id'      => $prefix . 'colorpicker',
+		'type'    => 'colorpicker',
+		'default' => '#424242',
+		// 'attributes' => array(
+		// 	'data-colorpicker' => json_encode( array(
+		// 		'palettes' => array( '#3dd0cc', '#ff834c', '#4fa2c0', '#0bc991', ),
+		// 	) ),
+		// ),
+	) );
 }
 
 add_action( 'cmb2_admin_init', 'maxkomp_register_repeatable_group_field_metabox' );

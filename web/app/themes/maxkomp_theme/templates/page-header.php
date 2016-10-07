@@ -8,10 +8,10 @@
     <div class="jumbotron jumbotron-fluid ">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle">
-                <div class="col-xs-12">
+                <div class="col-xs-12" style="color:<?= get_post_meta($post->ID, 'maxkomp_page_colorpicker', true); ?>">
                     <?php $title = \Roots\Sage\Extras\modifyTitleWithOrangeWord(get_post_meta($post->ID, 'maxkomp_page_title', true), get_post_meta($post->ID, 'maxkomp_page_textorange', true));?>
                     <h1 class="display-1 text-uppercase will-animate" data-class="zoomIn"><?= $title; ?></h1>
-                    <p class="lead will-animate" data-class="zoomIn" data-delay="250"><?= get_post_meta($post->ID, 'maxkomp_page_text', true); ?></p>
+                    <span class="lead will-animate" data-class="zoomIn" data-delay="250"><?= get_post_meta($post->ID, 'maxkomp_page_text', true); ?></span>
                 </div>
             </div>
             <div class="row buttons flex-items-xs-center">

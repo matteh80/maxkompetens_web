@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Söker du personal
+ * Template Name: Söker du jobb
  */
 ?>
 
@@ -10,10 +10,6 @@
 <?php endwhile; ?>
 
 <section style='background: url("<?= \Roots\Sage\Assets\asset_path('images/temp_kamera.jpg'); ?>"); background-size: cover; min-height: 550px;'>
-
-</section>
-
-<section style='background: url("<?= \Roots\Sage\Assets\asset_path('images/temp_kompetens.jpg'); ?>"); background-size: cover; min-height: 450px;'>
 
 </section>
 
