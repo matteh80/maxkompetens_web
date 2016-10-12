@@ -22,6 +22,9 @@
     },
     "logoslider.js": {
       "files": ["scripts/logoslider.js"]
+    },
+    "cmb2_scripts.js": {
+      "files": ["scripts/cmb2_scripts.js"]
     }
   },
   "config": {

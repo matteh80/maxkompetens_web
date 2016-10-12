@@ -32,10 +32,18 @@ function excerpt_more() {
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
-function modifyTitleWithOrangeWord($title, $word) {
-    if (strpos($title, $word) !== false) {
-        return str_replace($word, '<span class="text-orange">'.$word.'</span>', $title);
+function modifyTitleWithOrangeWord($title, $pos) {
+    if($title == "") {
+        global $post;
+        return $post->post_title;
     }else{
-        return $title;
+        $array = explode(" ", $title);
+        $word = $array[$pos];
+        if (strpos($title, $word) !== false) {
+            return str_replace($word, '<span class="text-orange">'.$word.'</span>', $title);
+        }else{
+            return $title;
+        }
     }
+
 }

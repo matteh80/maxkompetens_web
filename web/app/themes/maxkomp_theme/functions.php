@@ -16,7 +16,11 @@ $sage_includes = [
     'lib/titles.php',    // Page titles
     'lib/wrapper.php',   // Theme wrapper class
     'lib/customizer.php', // Theme customizer
-    'lib/cmb.php' // Custom MetaBoxes
+    'lib/cmb.php', // Custom MetaBoxes
+    'lib/cmb-extras.php', // Extra functions for CMB
+    'lib/cmb-plugins/adress-field-type.php',
+    'lib/cpt/cpt-customers.php', // Custom Post Type Customers
+    'lib/theme-options-cmb.php',
 ];
 
 foreach ($sage_includes as $file) {

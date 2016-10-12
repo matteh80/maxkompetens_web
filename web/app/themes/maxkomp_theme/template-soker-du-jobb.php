@@ -9,8 +9,13 @@
   <?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
-<section style='background: url("<?= \Roots\Sage\Assets\asset_path('images/temp_kamera.jpg'); ?>"); background-size: cover; min-height: 550px;'>
-
+<section class="video">
+  <div class="container">
+    <div class="row flex-items-xs-center flex-items-xs-middle">
+      <h1 class="display-3 will-animate" data-class="zoomIn">Så här funkar det</h1>
+      <img src="<?= \Roots\Sage\Assets\asset_path('images/camera.png'); ?>" class="will-animate" data-class="flipInX" data-delay="250""/>
+    </div>
+  </div>
 </section>
 
 <section class="companies">

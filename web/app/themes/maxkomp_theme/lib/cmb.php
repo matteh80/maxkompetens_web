@@ -102,9 +102,19 @@ function maxkomp_before_row_if_2( $field_args, $field ) {
 	}
 }
 
+//add_action( 'cmb2_admin_init', 'maxkomp_register_customers_metabox');
+/**
+ * Hook in and add a customers metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+ */
+//function maxkomp_register_customers_metabox() {
+//
+//}
+
+
+
 add_action( 'cmb2_admin_init', 'maxkomp_register_page_metabox' );
 /**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+ * Hook in and add a page metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
 function maxkomp_register_page_metabox() {
 	$prefix = 'maxkomp_page_';
@@ -127,8 +137,8 @@ function maxkomp_register_page_metabox() {
 	) );
 
 	$cmb_page->add_field( array(
-		'name'       => esc_html__( 'Test Text', 'cmb2' ),
-		'desc'       => esc_html__( 'field description (optional)', 'cmb2' ),
+		'name'       => esc_html__( 'Title Text', 'cmb2' ),
+		'desc'       => esc_html__( 'The text shown in header', 'cmb2' ),
 		'id'         => $prefix . 'title',
 		'type'       => 'text',
 //		'show_on_cb' => 'maxkomp_hide_if_no_cats', // function should return a bool value
@@ -140,41 +150,30 @@ function maxkomp_register_page_metabox() {
 	) );
 
 	$cmb_page->add_field( array(
-		'name' => esc_html__( 'Orange word', 'cmb2' ),
-		'desc' => esc_html__( 'Enter the word that will be orange in title (optional)', 'cmb2' ),
-		'id'   => $prefix . 'textorange',
-		'type' => 'text_small',
-		// 'repeatable' => true,
-		// 'column' => array(
-		// 	'name'     => esc_html__( 'Column Title', 'cmb2' ), // Set the admin column title
-		// 	'position' => 2, // Set as the second column.
-		// );
-		// 'display_cb' => 'yourprefix_display_text_small_column', // Output the display of the column values through a callback.
+		'name'       => __( 'Orange word', 'cmb2' ),
+		'desc'       => __( 'The word in the title that will be orange', 'cmb2' ),
+		'id'         => $prefix . 'textorange_select',
+		'type'       => 'select',
+		'options'    => \Roots\Sage\CMBExtras\cmb2_get_post_title_array(),
 	) );
 
 //	$cmb_page->add_field( array(
-//		'name'    => esc_html__( 'Test Color Picker', 'cmb2' ),
-//		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
-//		'id'      => $prefix . 'colorpicker',
-//		'type'    => 'colorpicker',
-//		'default' => '#ffffff',
-//		// 'attributes' => array(
-//		// 	'data-colorpicker' => json_encode( array(
-//		// 		'palettes' => array( '#3dd0cc', '#ff834c', '#4fa2c0', '#0bc991', ),
-//		// 	) ),
-//		// ),
+//			'name' => 'Address',
+//			'desc' => 'Custom Address Field',
+//			'id'   => '_cmb2_person_address',
+//			'type' => 'address',
 //	) );
 
 	$cmb_page->add_field( array(
-		'name' => esc_html__( 'Test Text Area', 'cmb2' ),
-		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+		'name' => esc_html__( 'Header text', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
 		'id'   => $prefix . 'text',
 		'type' => 'textarea',
 	) );
 
 	$cmb_page->add_field( array(
-		'name'    => esc_html__( 'Test Color Picker', 'cmb2' ),
-		'desc'    => esc_html__( 'field description (optional)', 'cmb2' ),
+		'name'    => esc_html__( 'Text Color', 'cmb2' ),
+		'desc'    => esc_html__( 'Choose color for the header text (default #424242)', 'cmb2' ),
 		'id'      => $prefix . 'colorpicker',
 		'type'    => 'colorpicker',
 		'default' => '#424242',
@@ -206,7 +205,7 @@ function maxkomp_register_repeatable_group_field_metabox() {
 	$group_field_id = $cmb_page_group->add_field( array(
 		'id'          => $prefix . 'buttons',
 		'type'        => 'group',
-		'description' => esc_html__( 'Generates reusable form entries', 'cmb2' ),
+//		'description' => esc_html__( 'Generates reusable form entries', 'cmb2' ),
 		'options'     => array(
 			'group_title'   => esc_html__( 'Button {#}', 'cmb2' ), // {#} gets replaced by row number
 			'add_button'    => esc_html__( 'Add Another Button', 'cmb2' ),
@@ -230,23 +229,12 @@ function maxkomp_register_repeatable_group_field_metabox() {
 	) );
 
 	$cmb_page_group->add_group_field( $group_field_id, array(
-		'name'        => esc_html__( 'Link', 'cmb2' ),
-		'description' => esc_html__( 'Write a short description for this entry', 'cmb2' ),
-		'id'          => 'url',
-		'type'        => 'text',
-	) );
-
-	$cmb_page_group->add_group_field( $group_field_id, array(
-		'name'             => esc_html__( 'Test Select', 'cmb2' ),
-		'desc'             => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'               => $prefix . 'select',
+		'name'             => esc_html__( 'Link', 'cmb2' ),
+		'desc'             => esc_html__( 'Select the page to link to', 'cmb2' ),
+		'id'               => 'button_link',
 		'type'             => 'select',
 		'show_option_none' => true,
-		'options'          => array(
-			'standard' => esc_html__( 'Option One', 'cmb2' ),
-			'custom'   => esc_html__( 'Option Two', 'cmb2' ),
-			'none'     => esc_html__( 'Option Three', 'cmb2' ),
-		),
+		'options'          => \Roots\Sage\CMBExtras\cmb2_get_post_options(array('post_type' => 'page', 'numberposts' => -1, 'order_by' => 'title')),
 	) );
 
 }

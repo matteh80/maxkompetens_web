@@ -30,6 +30,9 @@
   z-index: 998;
   background-color: $gray;
   transition: margin-right 250ms ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
   .nav_background {
     background: url("../../dist/images/nav_background.jpg");
@@ -54,7 +57,7 @@
   #menu-container {
     position: relative;
     z-index: 2;
-    margin: 10rem $navbar-width-lg 10rem;
+    margin: 10rem $navbar-width-lg;
 
     ul {
       padding:0;
@@ -78,6 +81,39 @@
 
       &.submenu {
 
+      }
+    }
+  }
+  
+  #menu-footer {
+    padding:1rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    margin: 0rem $navbar-width-lg 5rem;
+
+    a {
+      text-align: center;
+      margin:0 0.2rem;
+      .fa {
+        width:40px;
+        height:40px;
+        line-height: 40px;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,.6);
+        color: #fff;
+        transition: all 300ms ease-in-out ;
+
+        &.fa-facebook {background-color: $facebook_color;}
+        &.fa-instagram {background-color: $instagram_color;}
+        &.fa-linkedin {background-color: $linkedin_color;}
+        &.fa-twitter {background-color: $twitter_color;}
+      }
+      &:hover {
+        .fa {
+          border-radius: 3px;
+        }
       }
     }
   }

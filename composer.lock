@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "08e78f3127acb66def6333817e57309b",
-    "content-hash": "954f76dc29f3e11987b9030406831971",
+    "hash": "ef563ef0459582c1abd57e043d0b267e",
+    "content-hash": "828e52dcc1335163716157db83b9ac86",
     "packages": [
         {
             "name": "composer/installers",
@@ -440,6 +440,26 @@
                 "standards"
             ],
             "time": "2016-09-01 23:53:02"
+        },
+        {
+            "name": "wpackagist-plugin/regenerate-thumbnails",
+            "version": "2.2.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/regenerate-thumbnails/",
+                "reference": "tags/2.2.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
         },
         {
             "name": "wpackagist-plugin/wp-example-content",

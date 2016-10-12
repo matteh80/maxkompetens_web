@@ -19,8 +19,12 @@
   ?>
 
 
-	<div class="container">
-
+	<div class="container" id="menu-footer">
+		<div class="row flex-items-xs-center">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+		</div>
 	</div>
 </nav>
 
