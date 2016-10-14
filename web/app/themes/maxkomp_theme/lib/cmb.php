@@ -136,6 +136,17 @@ function maxkomp_register_page_metabox() {
 		// 'classes_cb' => 'maxkomp_add_some_classes', // Add classes through a callback.
 	) );
 
+    $cmb_page->add_field( array(
+        'name'             => esc_html__( 'Logo Selection', 'cmb2' ),
+        'id'               => $prefix . 'logo_selection',
+        'type'             => 'radio_inline',
+        'default'          => 'primary',
+        'options'          => array(
+            'primary' => esc_html__( 'Primary', 'cmb2' ),
+            'secondary'   => esc_html__( 'Secondary', 'cmb2' ),
+        ),
+    ) );
+
 	$cmb_page->add_field( array(
 		'name'       => esc_html__( 'Title Text', 'cmb2' ),
 		'desc'       => esc_html__( 'The text shown in header', 'cmb2' ),
@@ -245,7 +256,7 @@ add_action( 'cmb2_admin_init', 'maxkomp_register_theme_options_metabox' );
  */
 function maxkomp_register_theme_options_metabox() {
 
-	$option_key = 'maxkomp_theme_options';
+	$option_key = 'maxkomp_options';
 
 	/**
 	 * Metabox for an options page. Will not be added automatically, but needs to be called with

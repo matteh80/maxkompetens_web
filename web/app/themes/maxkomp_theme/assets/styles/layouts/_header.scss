@@ -2,6 +2,7 @@
 .overlay {
   background-color: rgba(0,0,0,0.7);
   position: absolute;
+  z-index: 997;
   left: 0;
   top:0;
   width: 100%;
@@ -14,25 +15,51 @@
   }
 }
 
-.navbar-toggle {
+#toggle {
   position: fixed;
   z-index: 999;
   height:30px;
-  right:($navbar-width-lg - $barwidth) / 2;
+  right:($visible-navbar-width-md-up - $barwidth) / 2;
 }
+
+#toggle-close {
+  display: block;
+  @include media-breakpoint-up(sm) {
+    display: none;
+  }
+}
+
 .nav-primary {
   position: fixed;
   top: 0;
-  width: 450px;
-  margin-right:-(450-$navbar-width-lg);
+  width:$navbar-width-xs;
+  margin-right:-($navbar-width-xs);
   height: 100%;
   right: 0;
   z-index: 998;
-  background-color: $gray;
+  background-color: $gray-dark;
   transition: margin-right 250ms ease-out;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include media-breakpoint-up(sm) {
+    width:$navbar-width-sm;
+    margin-right:-($navbar-width-sm);
+  }
+
+  @include media-breakpoint-up(md) {
+    width:$navbar-width-md-up;
+    margin-right:-($navbar-width-md-up - $visible-navbar-width-md-up);
+  }
+
+  .navbar-toggle {
+    position: absolute;
+    z-index: 999;
+    height:30px;
+    right:($visible-navbar-width-md-up - $barwidth) / 2;
+  }
+
   
   .nav_background {
     background: url("../../dist/images/nav_background.jpg");
@@ -57,7 +84,7 @@
   #menu-container {
     position: relative;
     z-index: 2;
-    margin: 10rem $navbar-width-lg;
+    margin: 10rem $visible-navbar-width-md-up;
 
     ul {
       padding:0;
@@ -90,7 +117,7 @@
     background: #fff;
     position: relative;
     z-index: 1;
-    margin: 0rem $navbar-width-lg 5rem;
+    margin: 0rem $visible-navbar-width-md-up 5rem;
 
     a {
       text-align: center;
@@ -121,16 +148,27 @@
 
 .banner {
   position: absolute;
-  z-index: 999;
+  z-index: 996;
   top:15px;
   left:20px;
 
   .brand {
     overflow: hidden;
+    height:$banner-height-xs;
+
+    @include media-breakpoint-up(sm) {
+      height:$banner-height-sm;
+    }
+    @include media-breakpoint-up(md) {
+      height:$banner-height-md-up;
+    }
+
 
     img {
-      height:60px;
-      width: auto;
+      //height:60px;
+      //width: auto;
+      max-height: 100%;
+      max-width: 100%;
     }
   }
 }

@@ -55,7 +55,7 @@
                     // $('.overlay').css("opacity", "1");
                     $('.overlay').fadeIn('fast');
                     $('body').css("overflow", "hidden");
-                    $('.navbar-toggle').hide();
+                    $('#toggle').hide();
 
                     // $('.menu-item').each(function(index) {
                     //     $(this).animateCss('flipInY', 2000);
@@ -90,6 +90,11 @@
                 $('.nav-primary').mouseleave(function() {
                     hideMenu();
                 });
+
+                $('.overlay').click(function() {
+                    hideMenu();
+                });
+
 
                 $(document).ready(function() {
                     var settings = {

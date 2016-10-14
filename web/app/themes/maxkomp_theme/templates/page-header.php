@@ -31,7 +31,7 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
                                         $link = get_permalink($button['button_link']);
                                     }
                                     ?>
-                                    <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
                                         <a href="<?= $link ?>" class="btn btn-primary text-uppercase will-animate" data-class="flipInX" data-delay="<?= $delay;?>"><?= $button['title']; ?></a>
                                     </div>
                                     <?php
@@ -49,7 +49,6 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
                 </div>
 
             </div>
-
         </div>
     </div>
 </section>

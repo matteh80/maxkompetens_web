@@ -9,10 +9,11 @@ namespace Roots\Sage\CMBExtras;
 function cmb2_get_post_title_array( ) {
     if(isset($_GET['post'])) {
         $postid = $_GET['post'];
+        $title = get_post_meta($postid, 'maxkomp_page_title', true);
     }else{
         $postid = -1;
+        $title = maxkomp_get_option( 'front_title' );
     }
-    $title = get_post_meta($postid, 'maxkomp_page_title', true);
     $array = explode(" ", $title);
     return $array;
 }

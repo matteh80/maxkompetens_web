@@ -8,12 +8,12 @@ class Maxkomp_Admin {
      * Option key, and option page slug
      * @var string
      */
-    private $key = 'Maxkomp_options';
+    private $key = 'maxkomp_options';
     /**
      * Options page metabox id
      * @var string
      */
-    private $metabox_id = 'Maxkomp_option_metabox';
+    private $metabox_id = 'maxkomp_option_metabox';
     /**
      * Options Page title
      * @var string
@@ -36,7 +36,7 @@ class Maxkomp_Admin {
      */
     private function __construct() {
         // Set our title
-        $this->title = __( 'Site Options', 'Maxkomp' );
+        $this->title = __( 'Site Options', 'maxkomp' );
     }
     /**
      * Returns the running object
@@ -87,84 +87,6 @@ class Maxkomp_Admin {
         </div>
         <?php
     }
-
-    /**
-     * Returns social media
-     * @param  mixed $value Selected/saved social media
-     * @return string       html string containing all social media options
-     */
-    function cmb2_get_state_options( $value = false ) {
-        $state_list = array( 'FB'=>'Facebook','IG'=>'Instagram');
-
-        $state_options = '';
-        foreach ( $state_list as $abrev => $state ) {
-            $state_options .= '<option value="'. $abrev .'" '. selected( $value, $abrev, false ) .'>'. $state .'</option>';
-        }
-
-        return $state_options;
-    }
-
-    function cmb2_render_social_media($field, $value, $object_id, $object_type, $field_type) {
-        // make sure we specify each part of the value we need.
-        $value = wp_parse_args( $value, array(
-            'address-1' => '',
-            'address-2' => '',
-            'city'      => '',
-            'state'     => '',
-            'zip'       => '',
-        ) );?>
-
-        <div><p><label for="<?php echo $field_type->_id( '_address_1' ); ?>">Address 1</label></p>
-        <?php echo $field_type->input( array(
-            'name'  => $field_type->_name( '[address-1]' ),
-            'id'    => $field_type->_id( '_address_1' ),
-            'value' => $value['address-1'],
-            'desc'  => '',
-        ) ); ?>
-        </div>
-        <div><p><label for="<?php echo $field_type->_id( '_address_2' ); ?>'">Address 2</label></p>
-            <?php echo $field_type->input( array(
-                'name'  => $field_type->_name( '[address-2]' ),
-                'id'    => $field_type->_id( '_address_2' ),
-                'value' => $value['address-2'],
-                'desc'  => '',
-            ) ); ?>
-        </div>
-        <div class="alignleft"><p><label for="<?php echo $field_type->_id( '_city' ); ?>'">City</label></p>
-            <?php echo $field_type->input( array(
-                'class' => 'cmb_text_small',
-                'name'  => $field_type->_name( '[city]' ),
-                'id'    => $field_type->_id( '_city' ),
-                'value' => $value['city'],
-                'desc'  => '',
-            ) ); ?>
-        </div>
-        <div class="alignleft"><p><label for="<?php echo $field_type->_id( '_state' ); ?>'">State</label></p>
-            <?php echo $field_type->select( array(
-                'name'    => $field_type->_name( '[state]' ),
-                'id'      => $field_type->_id( '_state' ),
-                'options' => cmb2_get_state_options( $value['state'] ),
-                'desc'    => '',
-            ) ); ?>
-        </div>
-        <div class="alignleft"><p><label for="<?php echo $field_type->_id( '_zip' ); ?>'">Zip</label></p>
-            <?php echo $field_type->input( array(
-                'class' => 'cmb_text_small',
-                'name'  => $field_type->_name( '[zip]' ),
-                'id'    => $field_type->_id( '_zip' ),
-                'value' => $value['zip'],
-                'type'  => 'number',
-                'desc'  => '',
-            ) ); ?>
-        </div>
-        <br class="clear">
-        <?php
-    echo $field_type->_desc( true );
-
-    }
-
-
-
     /**
      * Add the options metabox to the array of metaboxes
      * @since  0.1.0
@@ -184,15 +106,54 @@ class Maxkomp_Admin {
         ) );
         // Set our CMB2 fields
         $cmb->add_field( array(
-            'name' => __( 'Test Text', 'Maxkomp' ),
-            'desc' => __( 'field description (optional)', 'Maxkomp' ),
-            'id'   => 'test_text',
-            'type' => 'text',
-            'default' => 'Default Text',
+            'name' => esc_html__( 'Logo', 'cmb2' ),
+            'id'   => 'title_logo',
+            'type' => 'title',
         ) );
         $cmb->add_field( array(
-            'name'    => __( 'Test Color Picker', 'Maxkomp' ),
-            'desc'    => __( 'field description (optional)', 'Maxkomp' ),
+            'name' => esc_html__( 'Logo Primary', 'cmb2' ),
+            'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+            'id'   => 'logo_primary',
+            'type' => 'file',
+        ) );
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Logo Secondary', 'cmb2' ),
+            'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+            'id'   => 'logo_secondary',
+            'type' => 'file',
+        ) );
+
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Social Media', 'cmb2' ),
+            'id'   => 'title_social',
+            'type' => 'title',
+        ) );
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Facebook URL', 'cmb2' ),
+            'id'   => 'facebookurl',
+            'type' => 'text_url',
+        ) );
+
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Twitter URL', 'cmb2' ),
+            'id'   => 'twitterurl',
+            'type' => 'text_url',
+        ) );
+
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Google+ URL', 'cmb2' ),
+            'id'   => 'googleplusurl',
+            'type' => 'text_url',
+        ) );
+
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Linkedin URL', 'cmb2' ),
+            'id'   => 'linkedinurl',
+            'type' => 'text_url',
+        ) );
+        $cmb->add_field( array(
+            'name'    => __( 'Test Color Picker', 'maxkomp' ),
+            'desc'    => __( 'field description (optional)', 'maxkomp' ),
             'id'      => 'test_colorpicker',
             'type'    => 'colorpicker',
             'default' => '#bada55',
@@ -210,7 +171,7 @@ class Maxkomp_Admin {
         if ( $object_id !== $this->key || empty( $updated ) ) {
             return;
         }
-        add_settings_error( $this->key . '-notices', '', __( 'Settings updated.', 'Maxkomp' ), 'updated' );
+        add_settings_error( $this->key . '-notices', '', __( 'Settings updated.', 'maxkomp' ), 'updated' );
         settings_errors( $this->key . '-notices' );
     }
     /**
@@ -232,7 +193,7 @@ class Maxkomp_Admin {
  * @since  0.1.0
  * @return Maxkomp_Admin object
  */
-function Maxkomp_admin() {
+function maxkomp_admin() {
     return Maxkomp_Admin::get_instance();
 }
 /**
@@ -241,8 +202,8 @@ function Maxkomp_admin() {
  * @param  string  $key Options array key
  * @return mixed        Option value
  */
-function Maxkomp_get_option( $key = '' ) {
-    return cmb2_get_option( Maxkomp_admin()->key, $key );
+function maxkomp_get_option( $key = '' ) {
+    return cmb2_get_option( maxkomp_admin()->key, $key );
 }
 // Get it started
-Maxkomp_admin();
+maxkomp_admin();

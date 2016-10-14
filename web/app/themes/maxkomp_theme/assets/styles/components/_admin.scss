@@ -4,3 +4,10 @@
   }
 }
 
+.cmb2-metabox-title {
+  &:after {
+    content: '';
+    border-bottom: 1px solid $gray-light;
+  }
+}
+
