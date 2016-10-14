@@ -129,6 +129,7 @@ blockquote {
 }
 
 .wrap {
+  overflow-x: hidden;
   @include media-breakpoint-up(md) {
     padding-right: $visible-navbar-width-md-up;
   }

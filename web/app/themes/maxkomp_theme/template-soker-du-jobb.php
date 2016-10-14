@@ -10,6 +10,7 @@
 <?php endwhile; ?>
 
 <section class="video">
+  <div class="bg"></div>
   <div class="container">
     <div class="row flex-items-xs-center flex-items-xs-middle">
       <h1 class="display-3 will-animate" data-class="zoomIn">Så här funkar det</h1>

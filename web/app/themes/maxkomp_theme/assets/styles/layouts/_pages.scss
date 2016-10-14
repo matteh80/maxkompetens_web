@@ -44,8 +44,30 @@ section {
 
 section {
   &.video {
-    background-color: #253f52;
     color: #fff;
+    position: relative;
+    background: #253f52;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top:-40px;
+      left:-20px;
+      width:120%;
+      height:100px;
+      transform: rotate(3deg);
+      background: #253f52;
+    }
+
+    .bg {
+      //background-color: #253f52;
+      //position: absolute;
+      //top:-40px;
+      //left:-20px;
+      //width:120%;
+      //height:120%;
+      //transform: rotate(3deg);
+    }
 
     .row {
       flex-direction: column;
