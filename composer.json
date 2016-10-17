@@ -24,7 +24,8 @@
     "forum": "https://discourse.roots.io/category/bedrock"
   },
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "vendor-dir": "lib"
   },
   "repositories": [
     {
@@ -39,18 +40,23 @@
     "johnpbloch/wordpress": "4.6.1",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/tinymce-advanced":"^4.4.1"
+    "wpackagist-plugin/tinymce-advanced":"^4.4.1",
+    "webdevstudios/cmb2": "^2.2.2.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
     "wpackagist-plugin/wp-example-content":"~1.3",
     "wpackagist-plugin/regenerate-thumbnails": "^2.2.6"
   },
+  "autoload": {
+    "files": ["vendor/cmb2/init.php"]
+  },
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/tinymce-advanced"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/themes/{$name}/": ["type:wordpress-theme"],
+      "vendor/{$name}/": ["webdevstudios/cmb2"]
     },
     "wordpress-install-dir": "web/wp"
   },
