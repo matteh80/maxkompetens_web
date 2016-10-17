@@ -10,7 +10,7 @@ $text = get_post_meta($post->ID, 'maxkomp_page_text', true);
 $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
 ?>
 
-<section class="jumbo" style="background: url('<?= the_post_thumbnail_url(); ?>'); background-attachment: fixed">
+<section class="jumbo" style="background: url('<?= the_post_thumbnail_url(); ?>'); background-size: cover;">
     <div class="jumbotron jumbotron-fluid ">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">
@@ -43,7 +43,20 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
                             endforeach;
                         endif;
                         ?>
-
+                        <?php
+                        if(is_page('bemanning')) {
+                            ?>
+                            <div class="col-xs-12 col-sm-10 col-md-8">
+                                <h2 class="display-4 will-animate" data-class="fadeIn" data-delay="620">Vilken kompetens söker du?</h2>
+                                <div class="row flex-items-xs-center">
+                                    <div class="col-md-10 will-animate" data-class="flipInY" data-delay="650">
+                                        <input class="search-candidates" id="kompetenser" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
 
                     </div>
                 </div>

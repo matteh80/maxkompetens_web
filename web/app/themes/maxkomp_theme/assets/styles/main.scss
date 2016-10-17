@@ -13,6 +13,7 @@
 @import "components/grid";
 @import "components/wp-classes";
 @import "components/menubutton";
+
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
@@ -20,6 +21,7 @@
 @import "layouts/posts";
 @import "layouts/tinymce";
 @import "layouts/frontpage";
-@import "layouts/_bemanning.scss";
+
+@import "templates/bemanning";
 
 @import "components/admin";

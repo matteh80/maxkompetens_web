@@ -9,7 +9,7 @@ $title = \Roots\Sage\Extras\modifyTitleWithOrangeWord(get_post_meta($post->ID, '
 $text = get_post_meta($post->ID, 'maxkomp_page_text', true);
 $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
 ?>
-<section class="jumbo" style="background: url('<?= the_post_thumbnail_url(); ?>'); background-attachment: fixed">
+<section class="jumbo" style="background: url('<?= the_post_thumbnail_url(); ?>');">
     <div class="jumbotron jumbotron-fluid ">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">

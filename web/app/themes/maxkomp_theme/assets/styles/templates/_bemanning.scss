@@ -26,7 +26,7 @@ ul.ui-autocomplete {
 
   .ui-autocomplete-category {
     text-transform: uppercase;
-    background-color: $gray-light;
+    background-color: lighten($gray-light,20%);
   }
 
   .ui-state-focus
@@ -45,12 +45,26 @@ ul.ui-autocomplete {
   &:before {
     content: '';
     position: absolute;
-    top:-40px;
+    top:-55px;
     left:-20px;
     width:120%;
-    height:100px;
+    height:120px;
     transform: rotate(3deg);
     background: $dark-blue;
+  }
+}
+
+.kompetens-sakrade {
+  background: url("../../dist/images/kompetens_bg.jpg") #fff;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  img {
+    display: inline-block;
+  }
+  .fa-plus {
+    font-size: 3rem;
+    margin:0 1rem;
   }
 }
 
