@@ -42,10 +42,12 @@
                 $logoselection = get_post_meta($post->ID, 'maxkomp_page_logo_selection', true);
                 echo $logoselection;
                 if($logoselection == "") : ?>
+                    <?= "none";?>
                     <img src="<?= maxkomp_get_option('logo_primary'); ?>" class="img-fluid logo"/>
                 <?php
                 else:
                 ?>
+                    <?= "found";?>
                 <img src="<?= maxkomp_get_option('logo_'.$logoselection); ?>" class="img-fluid logo"/>
                 <?php endif; ?>
             </a>
