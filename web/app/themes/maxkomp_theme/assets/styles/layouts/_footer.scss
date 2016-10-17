@@ -2,6 +2,9 @@
   min-height: 200px;
   background-color: $gray-dark;
   color: #fff;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 
   .top-footer {
     min-height: 150px;
