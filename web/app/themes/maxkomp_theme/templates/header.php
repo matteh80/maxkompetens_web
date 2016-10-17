@@ -39,14 +39,15 @@
         <div class="row">
             <a class="brand pull-lg-left" href="<?= esc_url(home_url('/')); ?>">
                 <?php
-//                $logoselection = get_post_meta($post->ID, 'maxkomp_page_logo_selection', true);
-//                if(!$logoselection) : ?>
-<!--                    <img src="--><?//= maxkomp_get_option('logo_primary'); ?><!--" class="img-fluid logo"/>-->
-<!--                --><?php
-//                else:
-//                ?>
-<!--                <img src="--><?//= maxkomp_get_option('logo_'.$logoselection); ?><!--" class="img-fluid logo"/>-->
-<!--                --><?php //endif; ?>
+                $logoselection = get_post_meta($post->ID, 'maxkomp_page_logo_selection', true);
+                echo $logoselection;
+                if($logoselection == "") : ?>
+                    <img src="<?= maxkomp_get_option('logo_primary'); ?>" class="img-fluid logo"/>
+                <?php
+                else:
+                ?>
+                <img src="<?= maxkomp_get_option('logo_'.$logoselection); ?>" class="img-fluid logo"/>
+                <?php endif; ?>
             </a>
 
         </div>
