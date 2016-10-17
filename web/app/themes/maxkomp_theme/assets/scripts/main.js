@@ -105,13 +105,55 @@
                 });
             }
         },
-        // Home page
-        'home': {
+        // Bemanning
+        'bemanning': {
             init: function () {
-                // JavaScript to be fired on the home page
+
             },
             finalize: function () {
-                // JavaScript to be fired on the home page, after the init JS
+                $( function() {
+                    $.widget( "custom.catcomplete", $.ui.autocomplete, {
+                        _create: function() {
+                            this._super();
+                            this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+                        },
+                        _renderMenu: function( ul, items ) {
+                            var that = this,
+                                currentCategory = "";
+                            $.each( items, function( index, item ) {
+                                var li;
+                                if ( item.category !== currentCategory ) {
+                                    ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+                                    currentCategory = item.category;
+                                }
+                                li = that._renderItemData( ul, item );
+                                if ( item.category ) {
+                                    li.attr( "aria-label", item.category + " : " + item.label );
+                                }
+
+                            });
+                        }
+                    });
+                    var data = [
+                        { label: "Administratör", category: "Administration" },
+                        { label: "Arkivering", category: "Administration" },
+                        { label: "Assistent", category: "Administration" },
+                        { label: "Dataregistrering", category: "Administration" },
+                        { label: "Fastighetsförvaltning", category: "Administration" },
+                        { label: "IT-konsult", category: "Data/IT" },
+                        { label: "IT-säkerhet", category: "Data/IT" },
+                        { label: "Systemanalys", category: "Data/IT" },
+                        { label: "Systemarkitektur", category: "Data/IT" },
+                        { label: "Systemutveckling", category: "Data/IT" },
+                        { label: "Fastighetskötsel/HVAC", category: "Drift/Underhåll" }
+
+                    ];
+
+                    $( "#kompetenser" ).catcomplete({
+                        delay: 0,
+                        source: data,
+                    });
+                } );
             }
         },
         // About us page, note the change from about-us to about_us.

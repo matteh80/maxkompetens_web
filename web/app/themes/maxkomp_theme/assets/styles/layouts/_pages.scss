@@ -1,6 +1,7 @@
 section {
   padding-top:6rem;
   padding-bottom: 6rem;
+  position: relative;
 }
 
 .jumbo {
@@ -46,7 +47,7 @@ section {
   &.video {
     color: #fff;
     position: relative;
-    background: #253f52;
+    background: $dark-blue;
 
     &:before {
       content: '';
@@ -56,7 +57,7 @@ section {
       width:120%;
       height:100px;
       transform: rotate(3deg);
-      background: #253f52;
+      background: $dark-blue;
     }
 
     .bg {
@@ -74,3 +75,4 @@ section {
     }
   }
 }
+

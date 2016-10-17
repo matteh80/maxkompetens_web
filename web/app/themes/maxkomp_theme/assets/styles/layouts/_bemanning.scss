@@ -1,0 +1,56 @@
+$komp_bg: $gray-lighter;
+
+#kompetenser {
+  padding: 1rem;
+  width: 100%;
+  background-color: $komp_bg;
+  border:none;
+  font-family: "Flama-Basic";
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  border-radius: 3px;
+}
+
+ul.ui-autocomplete {
+  background-color: $komp_bg;
+  font-family: "Flama-Basic";
+  padding: 1rem;
+
+  li {
+    padding:.2rem;
+  }
+
+  .ui-menu-item-wrapper {
+    padding:0;
+  }
+
+  .ui-autocomplete-category {
+    text-transform: uppercase;
+    background-color: $gray-light;
+  }
+
+  .ui-state-focus
+  {
+    color:White;
+    background:#96B202;
+    outline:none;
+  }
+}
+
+.process {
+  min-height: 200px;
+  background-color: $dark-blue;
+  color: #fff;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top:-40px;
+    left:-20px;
+    width:120%;
+    height:100px;
+    transform: rotate(3deg);
+    background: $dark-blue;
+  }
+}
+

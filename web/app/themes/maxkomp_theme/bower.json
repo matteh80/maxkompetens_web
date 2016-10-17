@@ -10,13 +10,20 @@
     "bootstrap": "git://github.com/twbs/bootstrap.git#v4.0.0-alpha.4",
     "animate.css": "^3.5.2",
     "jquery.inview": "jquery.inview#^1.1.2",
-    "font-awesome": "fontawesome#^4.6.3"
+    "font-awesome": "fontawesome#^4.6.3",
+    "jquery-ui": "^1.12.1"
   },
   "overrides": {
     "font-awesome": {
       "main": [
         "./scss/font-awesome.scss",
         "./fonts/*"
+      ]
+    },
+    "jquery-ui": {
+      "main": [
+        "themes/base/jquery-ui.css",
+        "jquery-ui.js"
       ]
     }
   }
