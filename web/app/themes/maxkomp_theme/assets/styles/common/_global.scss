@@ -43,6 +43,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Flama-Basic";
+  word-wrap: break-word;
 }
 
 // Type display classes
@@ -61,12 +62,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 .display-4 {
   font-size: $display4-size;
+  @include media-breakpoint-down(sm) { font-size: 5.9vw; }
 }
 
 .lead {
   font-size: 1.1rem;
   line-height: 1rem;
-  @include media-breakpoint-up(md) { font-size: 1.25rem; }
+  @include media-breakpoint-up(md) {
+    font-size: 1.25rem;
+    line-height: 1.3rem;
+  }
 }
 
 
@@ -79,9 +84,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  &.flex-container {
-    display: flex;
-  }
   @include media-breakpoint-down(sm) {
     max-width: 100%;
   }

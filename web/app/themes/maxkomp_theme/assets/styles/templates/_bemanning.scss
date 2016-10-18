@@ -52,6 +52,97 @@ ul.ui-autocomplete {
     transform: rotate(3deg);
     background: $dark-blue;
   }
+
+  .timeline {
+    @include media-breakpoint-up(sm) {
+      flex-flow: initial;
+    }
+  }
+
+  .round-border {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    &:after {
+      content: 'Möte';
+      position: absolute;
+      margin-left: 100px;
+      @include media-breakpoint-up(sm) {
+        margin-left: 0px;
+        margin-top: 56px;
+      }
+      @include media-breakpoint-up(md) {
+        margin-top: 66px;
+      }
+      @include media-breakpoint-up(lg) {
+        margin-top: 96px;
+      }
+    }
+
+    &:nth-of-type(3):after {
+      content: 'Krav';
+    }
+    &:nth-of-type(5):after {
+      content: 'Annons';
+    }
+    &:nth-of-type(7):after {
+      content: 'Sök';
+    }
+
+    .fa {
+      font-size: 4rem;
+      width: 130px;
+      height: 130px;
+      line-height: 110px;
+      border: 6px solid white;
+      border-radius: 50%;
+      @include media-breakpoint-up(sm) {
+        font-size: 2.3rem;
+        width: 80px;
+        height: 80px;
+        line-height: 70px;
+        border: 4px solid #fff;
+      }
+      @include media-breakpoint-up(md) {
+        font-size: 3rem;
+        width: 100px;
+        height: 100px;
+        line-height: 90px;
+      }
+      @include media-breakpoint-up(lg) {
+        font-size: 4.8rem;
+        width: 160px;
+        height: 160px;
+        line-height: 130px;
+        border: 7px solid #fff;
+      }
+    }
+  }
+
+  .line {
+    height:60px;
+
+    &:after {
+      content: '';
+      background-color: white;
+      margin:0 auto;
+      width:4px;
+      height:100%;
+      display: block;
+    }
+
+    @include media-breakpoint-up(sm) {
+      height:4px;
+      width:100%;
+      background-color: white;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+  }
 }
 
 .kompetens-sakrade {
@@ -59,12 +150,30 @@ ul.ui-autocomplete {
   background-size: contain;
   background-repeat: no-repeat;
 
-  img {
-    display: inline-block;
+  .col-xs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  img {
+    max-width: 30%;
+  }
+
   .fa-plus {
-    font-size: 3rem;
-    margin:0 1rem;
+    font-size: 1rem;
+    @include media-breakpoint-up(xs) {
+      font-size: 1.5rem;
+    }
+    @include media-breakpoint-up(sm) {
+      font-size: 2rem;
+    }
+    @include media-breakpoint-up(md) {
+      font-size: 2.5rem;
+    }
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
   }
 }
 
