@@ -17,7 +17,7 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
                 <div style="color:<?=  $textcolor; ?>">
                     <h1 class="display-1 text-uppercase will-animate" data-class="zoomIn"><?= $title; ?></h1>
                     <span class="lead will-animate" data-class="zoomIn" data-delay="250"><?= $text; ?></span>
-                    <div class="row buttons flex-items-xs-center">
+                    <div class="row buttons flex-items-xs-center m-b-3">
                         <?php
                         $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                         if($buttons_meta != "") :
@@ -46,7 +46,7 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
                         <?php
                         if(is_page('bemanning')) {
                             ?>
-                            <div class="col-xs-12 col-sm-10 col-md-8">
+                            <div class="col-xs-12 col-sm-10 col-md-8 m-t-3">
                                 <h2 class="display-4 will-animate" data-class="fadeIn" data-delay="620">Vilken kompetens söker du?</h2>
                                 <div class="row flex-items-xs-center">
                                     <div class="col-md-10 will-animate" data-class="flipInY" data-delay="650">
