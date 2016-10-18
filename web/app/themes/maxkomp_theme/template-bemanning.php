@@ -9,11 +9,63 @@
     <?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
+<section class="search-results">
+    <div class="container">
+        <div class="row flex-items-xs-center flex-items-xs-middle">
+            <h3 class="display-4">Just nu har vi <span class="text-orange">43 </span><span id="category"></span></h3>
+        </div>
+        <div class="row cards flex-items-xs-center flex-items-xs-middle m-t-3">
+            <div class="col-md-4">
+                <div class="candidate-card">
+                    <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
+                        <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
+                    </div>
+                    <div class="row text-xs-center name">
+                        <h4 class="text-orange m-b-0">Anna</h4>
+                        <span>Digital Designer</span>
+                    </div>
+                    <div class="row button">
+                        <button class="btn btn-primary m-t-3">Skicka intresseförfrågan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="candidate-card">
+                    <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
+                        <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
+                    </div>
+                    <div class="row text-xs-center name">
+                        <h4 class="text-orange m-b-0">Anna</h4>
+                        <span>Digital Designer</span>
+                    </div>
+                    <div class="row button">
+                        <button class="btn btn-primary m-t-3">Skicka intresseförfrågan</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="candidate-card">
+                    <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
+                        <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
+                    </div>
+                    <div class="row text-xs-center name">
+                        <h4 class="text-orange m-b-0">Anna</h4>
+                        <span>Digital Designer</span>
+                    </div>
+                    <div class="row button">
+                        <button class="btn btn-primary m-t-3">Skicka intresseförfrågan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="process">
     <div class="container">
         <div class="row flex-items-xs-center flex-items-xs-middle">
             <h2 class="display-4">Vår process</h2>
-            <p class="lead m-t-3">
+            <p class="lead m-t-3 text-xs-center">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
@@ -43,20 +95,6 @@
                         <i class="fa fa-search"></i>
                     </div>
                 </div>
-<!--                <div class="row labels text-xs-center">-->
-<!--                    <div class="col-xs-12 col-sm-3">-->
-<!--                        Möte-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-12 col-sm-3">-->
-<!--                        Krav-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-12 col-sm-3">-->
-<!--                        Annons-->
-<!--                    </div>-->
-<!--                    <div class="col-xs-12 col-sm-3">-->
-<!--                        Sök-->
-<!--                    </div>-->
-<!--                </div>-->
             </div>
         </div>
     </div>
@@ -80,7 +118,7 @@
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">
             <h2 class="display-4">Kompetenssäkrade kandidater</h2>
-            <span class="lead m-t-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            <span class="lead m-t-3 text-xs-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
         </div>

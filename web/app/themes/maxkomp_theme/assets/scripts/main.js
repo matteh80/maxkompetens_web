@@ -135,23 +135,31 @@
                         }
                     });
                     var data = [
-                        { label: "Administratör", category: "Administration" },
-                        { label: "Arkivering", category: "Administration" },
-                        { label: "Assistent", category: "Administration" },
-                        { label: "Dataregistrering", category: "Administration" },
-                        { label: "Fastighetsförvaltning", category: "Administration" },
-                        { label: "IT-konsult", category: "Data/IT" },
-                        { label: "IT-säkerhet", category: "Data/IT" },
-                        { label: "Systemanalys", category: "Data/IT" },
-                        { label: "Systemarkitektur", category: "Data/IT" },
-                        { label: "Systemutveckling", category: "Data/IT" },
-                        { label: "Fastighetskötsel/HVAC", category: "Drift/Underhåll" }
+                        { label: "Administratör", category: "Administration", plural: "administratörer" },
+                        { label: "Arkivering", category: "Administration", plural: "arkivarier" },
+                        { label: "Assistent", category: "Administration", plural: "assistenter" },
+                        { label: "Dataregistrering", category: "Administration", plural: "dataregistrerare" },
+                        { label: "Fastighetsförvaltning", category: "Administration", plural: "fastighetsförvaltare" },
+                        { label: "IT-konsult", category: "Data/IT", plural: "IT-konsulter" },
+                        { label: "IT-säkerhet", category: "Data/IT", plural: "IT-säkerhetskonsulter" },
+                        { label: "Systemanalys", category: "Data/IT", plural: "systemanalytiker" },
+                        { label: "Systemarkitektur", category: "Data/IT", plural: "systemarkitekter" },
+                        { label: "Systemutveckling", category: "Data/IT", plural: "systemutvecklare" },
+                        { label: "Fastighetskötsel/HVAC", category: "Drift/Underhåll", plural: "fastighetsskötare" }
 
                     ];
 
                     $( "#kompetenser" ).catcomplete({
                         delay: 0,
                         source: data,
+                        select: function( event, ui ) {
+                            console.log( "Selected: " + ui.item.value + " aka " + ui.item.category );
+                            $('.search-results').css({
+                                "max-height": "1000px",
+                                "padding": "6rem"
+                            });
+                            $('#category').text(ui.item.plural);
+                        }
                     });
                 } );
             }

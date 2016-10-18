@@ -37,6 +37,30 @@ ul.ui-autocomplete {
   }
 }
 
+.search-results {
+  background-color: white;
+  overflow: hidden;
+  padding:0;
+  max-height: 0;
+  transition: max-height 0.8s, padding 0.8s;
+
+  .candidate-card {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    padding:2rem;
+
+    .row {
+      &.name {
+        flex-direction: column;
+      }
+      &.button {
+        .btn {
+          padding: .5rem;
+        }
+      }
+    }
+  }
+}
+
 .process {
   min-height: 200px;
   background-color: $dark-blue;

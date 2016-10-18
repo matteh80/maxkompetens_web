@@ -63,16 +63,16 @@ section {
     position: relative;
     background: $dark-blue;
 
-    &:before {
-      content: '';
-      position: absolute;
-      top:-55px;
-      left:-20px;
-      width:120%;
-      height:120px;
-      transform: rotate(3deg);
-      background: $dark-blue;
-    }
+    //&:before {
+    //  content: '';
+    //  position: absolute;
+    //  top:-55px;
+    //  left:-20px;
+    //  width:120%;
+    //  height:120px;
+    //  transform: rotate(3deg);
+    //  background: $dark-blue;
+    //}
 
     .bg {
       //background-color: #253f52;
