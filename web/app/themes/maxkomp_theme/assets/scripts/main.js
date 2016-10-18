@@ -154,11 +154,15 @@
                         source: data,
                         select: function( event, ui ) {
                             console.log( "Selected: " + ui.item.value + " aka " + ui.item.category );
-                            $('.search-results').css({
-                                "max-height": "1000px",
-                                "padding": "6rem"
+                            $('html, body').animate({
+                                scrollTop: $(".search-results").offset().top
+                            }, 500, function() {
+                                $('.search-results').css({
+                                    "max-height": "1000px",
+                                    "padding": "6rem"
+                                });
+                                $('#category').text(ui.item.plural);
                             });
-                            $('#category').text(ui.item.plural);
                         }
                     });
                 } );
