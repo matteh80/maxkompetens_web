@@ -15,7 +15,7 @@
             <h3 class="display-4 will-animate" data-class="fadeIn" data-delay="500">Just nu har vi <span class="text-orange">43 </span><span id="category"></span></h3>
         </div>
         <div class="row cards flex-items-xs-center flex-items-xs-middle m-t-3">
-            <div class="col-md-4>
+            <div class="col-md-4">
                 <div class="candidate-card">
                     <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
                         <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
