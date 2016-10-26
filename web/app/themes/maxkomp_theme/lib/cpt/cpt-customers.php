@@ -3,7 +3,7 @@
 // let's create the function for the custom type
 function custom_post_customers() {
     // creating (registering) the custom type
-    register_post_type( 'faq', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
+    register_post_type( 'customer', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
         // let's now add all the options for this post type
         array( 'labels' => array(
             'name' => __( 'Customers', 'sage' ), /* This is the Title of the Group */
@@ -33,7 +33,7 @@ function custom_post_customers() {
             'capability_type' => 'post',
             'hierarchical' => false,
             /* the next one is important, it tells what's enabled in the post editor */
-            'supports' => array( 'title', 'editor', 'revisions', 'sticky', 'thumbnail')
+            'supports' => array( 'title')
         ) /* end of options */
     ); /* end of register post type */
 

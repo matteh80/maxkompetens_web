@@ -158,7 +158,40 @@ class Maxkomp_Admin {
             'type'    => 'colorpicker',
             'default' => '#bada55',
         ) );
+
+        // STATISTICS
+        $cmb->add_field( array(
+            'name' => esc_html__( 'Statistics', 'cmb2' ),
+            'id'   => 'title_statistics',
+            'type' => 'title',
+        ) );
+        $group_field_id = $cmb->add_field( array(
+            'id'          => 'stats',
+            'type'        => 'group',
+            'options'     => array(
+                'group_title'   => esc_html__( 'Statistic {#}', 'cmb2' ), // {#} gets replaced by row number
+                'add_button'    => esc_html__( 'Add Another Entry', 'cmb2' ),
+                'remove_button' => esc_html__( 'Remove Entry', 'cmb2' ),
+                'sortable'      => true, // beta
+                // 'closed'     => true, // true to have the groups closed by default
+            ),
+        ) );
+        $cmb->add_group_field( $group_field_id, array(
+            'name'       => esc_html__( 'Entry Title', 'cmb2' ),
+            'id'         => 'title',
+            'type'       => 'textarea_small',
+            // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+        ) );
+        $cmb->add_group_field( $group_field_id, array(
+            'name'       => esc_html__( 'Entry Value', 'cmb2' ),
+            'id'         => 'stat',
+            'type'       => 'text_small',
+            // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+        ) );
     }
+
+
+
     /**
      * Register settings notices for display
      *

@@ -1,15 +1,21 @@
-<div class="navbar-toggle collapsed" id="toggle" aria-label="Toggle navigation">
-    <span class="bar1"></span>
-    <span class="bar2"></span>
-    <span class="bar3"></span>
-</div>
+<!--<div class="navbar-toggle collapsed" id="toggle" aria-label="Toggle navigation">-->
+<!--    <span class="bar1"></span>-->
+<!--    <span class="bar2"></span>-->
+<!--    <span class="bar3"></span>-->
+<!--</div>-->
+
 <nav class="nav-primary">
 
-<!--    <div class="navbar-toggle"  id="toggle-close" aria-label="Toggle navigation">-->
-<!--        <span class="bar1"></span>-->
-<!--        <span class="bar2"></span>-->
-<!--        <span class="bar3"></span>-->
-<!--    </div>-->
+
+
+    <div class="visible-area">
+        <div class="navbar-toggle"  id="toggle-close" aria-label="Toggle navigation">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </div>
+    </div>
+
 
     <div class="nav_background"></div>
 

@@ -46,6 +46,32 @@
                         $(this).animateCss(animation, delay);
                     }
                 });
+
+                //COUNT UP
+
+                jQuery.fn.countUp = function(){
+                    var that = this, target = parseInt(jQuery(that).attr("data-value"));
+                    jQuery({countNum: jQuery(this).text()}).animate({countNum: target}, {
+                        duration: 1000,
+                        easing:'linear',
+                        step: function() {
+                            jQuery(that).text(Math.ceil(this.countNum));
+                        },
+                        complete:function() {
+                            jQuery(that).text(Math.ceil(this.countNum));
+                        }
+                    });
+                };
+
+                if ( $('.count-up').length ) {
+                    $('.count-up').text("0");
+
+                    $('.count-up').one('inview', function(event, isInView) {
+                        if (isInView) {
+                            $(this).countUp();
+                        }
+                    });
+                }
             },
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired

@@ -33,24 +33,42 @@
   position: fixed;
   top: 0;
   width:$navbar-width-xs;
-  margin-right:-($navbar-width-xs);
+
   height: 100%;
   right: 0;
   z-index: 998;
-  background-color: $gray-dark;
-  transition: margin-right 250ms ease-out;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 800ms ease-in;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  perspective: 100px;
 
   @include media-breakpoint-up(sm) {
     width:$navbar-width-sm;
-    margin-right:-($navbar-width-sm);
+    right:-($navbar-width-sm);
   }
 
   @include media-breakpoint-up(md) {
     width:$navbar-width-md-up;
-    margin-right:-($navbar-width-md-up - $visible-navbar-width-md-up);
+    transform: translate(10px, 0);
+  }
+
+  .visible-area {
+    background-color: $navbar-color;
+    width:$visible-navbar-width-md-up;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    //box-shadow: 0 0 8px rgba(0,0,0,0.75);
+    transform: matrix(1,0,0,1,0,0);
+    transform-origin: right center;
+    backface-visibility: hidden;
+    transform-origin: right center;
+    transition: transform 500ms;
   }
 
   .navbar-toggle {
@@ -62,21 +80,25 @@
 
   
   .nav_background {
-    background: url("../../dist/images/nav_background.jpg");
+    background: url("../../dist/images/nav_background.jpg") #fff;
     width:100%;
     height:100%;
-    opacity:0;
+    //opacity:0;
     position: absolute;
     z-index: 1;
-    transition: opacity 500ms ease-out;
-    transition-delay: 200ms;
+    margin-left: 60px;
+    background-color: #fff;
   }
 
   &.open {
     //width:30%;
-    margin-right:0;
+    transform: translate(-($navbar-width-md-up - $visible-navbar-width-md-up), 0);
     .nav_background {
-      opacity: 0.5;
+      //opacity: 0.5;
+    }
+    .visible-area {
+      transform: matrix3d(0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1);
+      transition: transform 1000ms;
     }
   }
 
@@ -84,7 +106,8 @@
   #menu-container {
     position: relative;
     z-index: 2;
-    margin: 10rem $visible-navbar-width-md-up;
+    margin: 10rem $visible-navbar-width-md-up 10rem ($visible-navbar-width-md-up*2);
+
 
     ul {
       padding:0;
@@ -117,7 +140,7 @@
     background: #fff;
     position: relative;
     z-index: 1;
-    margin: 0rem $visible-navbar-width-md-up 5rem;
+    margin: 0rem $visible-navbar-width-md-up 5rem ($visible-navbar-width-md-up*2);
 
     a {
       text-align: center;
