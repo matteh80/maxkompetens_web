@@ -40,7 +40,7 @@ function modifyTitleWithOrangeWord($title, $pos) {
         $array = explode(" ", $title);
         $word = $array[$pos];
         if (strpos($title, $word) !== false) {
-            return str_replace($word, '<span class="text-orange">'.$word.'</span>', $title);
+            return str_replace($word, '<span class="text-orange spantext">'.$word.'</span>', $title);
         }else{
             return $title;
         }

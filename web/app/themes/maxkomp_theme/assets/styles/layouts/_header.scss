@@ -63,12 +63,16 @@
     position: absolute;
     left:0;
     top:0;
-    //box-shadow: 0 0 8px rgba(0,0,0,0.75);
+    box-shadow: 0 0 8px rgba(0,0,0,0.75);
     transform: matrix(1,0,0,1,0,0);
     transform-origin: right center;
     backface-visibility: hidden;
     transform-origin: right center;
-    transition: transform 500ms;
+    transition: transform 500ms, box-shadow 250ms;
+
+    &:hover {
+      box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    }
   }
 
   .navbar-toggle {
@@ -98,7 +102,8 @@
     }
     .visible-area {
       transform: matrix3d(0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1);
-      transition: transform 1000ms;
+      transition: transform 1000ms, box-shadow 1000ms;
+      box-shadow: 0 0 2px rgba(0,0,0,0.1);
     }
   }
 

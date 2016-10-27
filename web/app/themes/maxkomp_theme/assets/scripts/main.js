@@ -34,6 +34,7 @@
                                 // $(this).removeClass('animated ' + animationName);
                                 $(this).removeClass(animationName);
                                 $(this).removeClass("will-animate");
+                                $(this).find('.spantext').addClass('animated rubberBand');
                             });
                         },delay);
                     }

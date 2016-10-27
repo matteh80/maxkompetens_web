@@ -1,0 +1,21 @@
+<section class="stats bg-orange">
+    <div class="container">
+        <div class="row  flex-items-xs-center">
+            <?php
+            $stats_meta = maxkomp_get_option('stats');
+            $size =count($stats_meta);
+            $offset = (6-$size);
+            echo '<div class="col-sm-'.$offset.'"></div>';
+            foreach ($stats_meta as $stat):
+                ?>
+                <div class="col-xs-12 col-sm text-xs-center text-white">
+                    <h3 class="display-2 value count-up" data-value="<?= $stat['stat'];?>"></h3>
+                    <span><?= $stat['title'];?></span>
+                </div>
+                <?php
+            endforeach;
+            echo '<div class="col-sm-'.$offset.'"></div>';
+            ?>
+        </div>
+    </div>
+</section>
