@@ -20,8 +20,32 @@
             init: function () {
                 // JavaScript to be fired on all pages
 
-                $('window').on("scroll", function() {
+                // $(window).on("scroll resize", function() {
+                //     $('section').each(function(index, element) {
+                //         if($(element).offset().top <= 0 && !$(element).hasClass("fixed")) {
+                //             $(element).addClass("fixed");
+                //             console.log($(this).offset());
+                //             console.log(index);
+                //         }
+                //     });
+                // });
 
+                $(window).on('scroll resize', function() {
+                    var scrolled = $(this).scrollTop();
+
+                    // $('section').filter(function() {
+                    //     return scrolled >= $(this).offset().top;
+                    // }).addClass('fixed').next().css({
+                    //     "margin-top" : $(this).outerHeight()
+                    // });
+
+                    // $('section').each(function(index, element) {
+                    //     if(scrolled >= $(element).offset().top && !$(element).hasClass("fixed")) {
+                    //         $(element).next().css("top", $(element).height());
+                    //         $(element).addClass("fixed").css("top", 0);
+                    //
+                    //     }
+                    // });
 
                 });
 

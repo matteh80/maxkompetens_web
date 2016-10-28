@@ -61,6 +61,7 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
                         ?>
 
                     </div>
+<!--                    <i class="fa fa-angle-down scrolldown"></i>-->
                 </div>
 
             </div>
