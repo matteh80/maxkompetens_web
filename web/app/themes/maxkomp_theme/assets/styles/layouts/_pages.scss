@@ -114,5 +114,69 @@ section {
       line-height: 0.8rem;
     }
   }
+
+  &#slider {
+    color: #fff;
+    background-color: $gray;
+    padding: 0;
+
+    .carousel {
+
+      .carousel-indicators {
+        bottom:0;
+        padding-bottom: 0;
+        padding-right: $visible-navbar-width-md-up;
+      }
+
+      .carousel-inner {
+      }
+
+      .carousel-item {
+        height:400px;
+        background-size: cover;
+
+        .container {
+          height:100%;
+
+          .row {
+            flex-direction: column;
+
+            img.icon {
+              height:120px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+$prof-icon-size: 30px;
+$prof-circle-size: 80px;
+.profile-menu {
+  .option {
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+
+    .fa {
+      position: absolute;
+      left:0;
+      top:0;
+      color: $gray-light;
+      font-size: $prof-icon-size;
+      line-height: $prof-circle-size;
+      height:$prof-circle-size;
+      width:$prof-circle-size;
+      //position: relative;
+      z-index: 3;
+    }
+
+    &.active {
+      .fa {
+        color: $brand-primary;
+      }
+    }
+  }
 }
 

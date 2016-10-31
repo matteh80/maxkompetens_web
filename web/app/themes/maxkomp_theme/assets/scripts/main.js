@@ -47,6 +47,16 @@
                     //     }
                     // });
 
+                    elHeight = $('.jumbo').outerHeight();
+                    offset = $('.jumbo').offsetTop;
+
+                    jumboPos = (scrolled / elHeight);
+
+                    $('.jumbo').css({
+                        "background-attachment": "fixed",
+                        "background-position-y": jumboPos*100 + "%",
+                    });
+
                 });
 
                 $.fn.extend({
@@ -108,15 +118,12 @@
                     $('body').css("overflow", "hidden");
                     $('#toggle').hide();
 
-                    // $('.menu-item').each(function(index) {
-                    //     $(this).animateCss('flipInY', 2000);
-                    // });
 
-                    $.each($(".menu-item"), function(i, el){
-                        setTimeout(function(){
-                            $(el).animateCss('flipInX');
-                        },200 + ( i * 100 ));
-                    });
+                    // $.each($(".menu-item"), function(i, el){
+                    //     setTimeout(function(){
+                    //         $(el).animateCss('fadeInUp');
+                    //     },200 + ( i * 100 ));
+                    // });
 
                 }
 
@@ -220,9 +227,28 @@
             }
         },
         // About us page, note the change from about-us to about_us.
-        'about_us': {
+        'profil': {
             init: function () {
-                // JavaScript to be fired on the about us page
+                jQuery.fn.progressCount = function(){
+                    var that = this, target = parseInt(jQuery(that).attr("data-value"));
+                    var prevClass = "p0";
+                    jQuery({countNum: 0}).animate({countNum: target}, {
+                        duration: 1000,
+                        easing:'linear',
+                        step: function() {
+                            jQuery(that).addClass("p"+Math.ceil(this.countNum));
+                        },
+                        complete:function() {
+                            jQuery(that).addClass("p"+Math.ceil(this.countNum));
+                            for(i = 0; i < 25; i++) {
+                                jQuery(that).removeClass("p"+i);
+                            }
+                        }
+                    });
+                };
+                $('.option').each(function(index, element) {
+                   $(this).children('.c100').progressCount();
+                });
             }
         }
     };

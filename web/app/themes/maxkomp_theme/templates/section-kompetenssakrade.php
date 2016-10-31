@@ -2,15 +2,15 @@
     <div class="container">
         <div class="row flex-items-sm-center flex-items-sm-middle m-b-3">
             <div class="col-xs">
-                <img src="<?= \Roots\Sage\Assets\asset_path('images/kompetens_cv.png'); ?>" class="img-fluid will-animate" data-class="flipInX"/>
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/kompetens_cv.png'); ?>" class="img-fluid will-animate" data-class="fadeInUp"/>
 
-                <i class="fa fa-plus"></i>
+                <i class="fa fa-plus will-animate" data-class="fadeInUp""></i>
 
-                <img src="<?= \Roots\Sage\Assets\asset_path('images/kompetens_film.png'); ?>" class="img-fluid will-animate" data-class="flipInX"/>
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/kompetens_film.png'); ?>" class="img-fluid will-animate" data-class="fadeInUp"/>
 
-                <i class="fa fa-plus"></i>
+                <i class="fa fa-plus will-animate" data-class="fadeInUp""></i>
 
-                <img src="<?= \Roots\Sage\Assets\asset_path('images/kompetens_intervju.png'); ?>" class="img-fluid will-animate" data-class="flipInX"/>
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/kompetens_intervju.png'); ?>" class="img-fluid will-animate" data-class="fadeInUp"/>
             </div>
 
         </div>

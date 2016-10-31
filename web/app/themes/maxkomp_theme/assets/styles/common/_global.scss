@@ -1,49 +1,16 @@
-@font-face {
-  font-family: 'Flama-Basic';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../../dist/fonts/Flama-Basic.woff') format('woff');
-}
-@font-face {
-  font-family: 'Futura LT';
-  src: url('../../dist/fonts/FuturaLT-Heavy.ttf');
-  font-weight: bolder;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Futura LT';
-  src: url('../../dist/fonts/FuturaLT-Bold.ttf');
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Futura LT';
-  src: url('../../dist/fonts/FuturaLT.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Futura LT';
-  src: url('../../dist/fonts/FuturaLT-Light.ttf');
-  font-weight: lighter;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Futura LT Condensed';
-  src: url('../../dist/fonts/FuturaLT-Condensed.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Futura LT Condensed';
-  src: url('../../dist/fonts/FuturaLT-Condensed-Light.ttf');
-  font-weight: 100;
-  font-style: normal;
+//@import url('http://fonts.googleapis.com/css?family=Cabin');
+//@import url('http://fonts.googleapis.com/css?family=Abel');
+//@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+//@import url('http://fonts.googleapis.com/css?family=Coiny');
+
+html, body {
+  font-family: "Open Sans", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Flama-Basic";
+  font-family: 'Abel', sans-serif;
   word-wrap: break-word;
+  text-shadow: rgba(0,0,0,0.2) 0 0 4px;
 }
 
 // Type display classes
@@ -112,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 blockquote {
-  font-family: "Flama-Basic";
+  font-family: "Abel";
   font-size: 3.2rem;
   letter-spacing: -2px;
   line-height: 3rem;
@@ -122,7 +89,7 @@ blockquote {
   &:before {
     content: "“";
     position: absolute;
-    font-family: "Flama-Basic";
+    font-family: "Abel";
     top: -10px;
     left: -13px;
     font-size: 13rem;
@@ -180,7 +147,7 @@ blockquote {
 
 //Buttons
 .btn {
-  font-family: "Flama-Basic";
+  font-family: "Abel", sans-serif;
   font-size: .8rem;
   padding:1rem;
   width:100%;

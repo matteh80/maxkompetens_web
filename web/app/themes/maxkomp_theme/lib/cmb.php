@@ -21,6 +21,16 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/CMB2/init.php';
 }
 
+
+function maxkomp_hide_if_profil( $cmb ) {
+	if($cmb->object_id !== 113) {
+		return true;
+	}else{
+		return false;
+	}
+
+}
+
 /**
  * Conditionally displays a metabox when used as a callback in the 'show_on_cb' cmb2_box parameter
  *
@@ -126,7 +136,7 @@ function maxkomp_register_page_metabox() {
 		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( 'Test Metabox', 'cmb2' ),
 		'object_types'  => array( 'page', ), // Post type
-		// 'show_on_cb' => 'maxkomp_show_if_front_page', // function should return a bool value
+		 'show_on_cb' => 'maxkomp_hide_if_profil', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
 		// 'show_names' => true, // Show field names on the left
@@ -257,7 +267,8 @@ function maxkomp_register_repeatable_group_field_metabox() {
 	$cmb_page_group = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
 		'title'        => esc_html__( 'Buttons', 'cmb2' ),
-		'object_types' => array( 'page', ),
+		'object_types' => array( 'page' ),
+		'show_on'	=> array( 'key' => 'hideslug', 'value' => "profil"),
 	) );
 
 	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
@@ -295,6 +306,75 @@ function maxkomp_register_repeatable_group_field_metabox() {
 		'show_option_none' => true,
 		'options'          => \Roots\Sage\CMBExtras\cmb2_get_post_options(array('post_type' => 'page', 'numberposts' => -1, 'order_by' => 'title')),
 	) );
+
+	$prefix = 'maxkomp_profile_group_';
+	/**
+	 * Repeatable Field Groups for Profile
+	 */
+	$cmb_page_profile_group = new_cmb2_box( array(
+		'id'           => $prefix . 'profile_metabox',
+		'title'        => esc_html__( 'Sliders', 'cmb2' ),
+		'object_types' => array( 'page' ),
+//		'show_on'	=> array( 'key' => 'page-template', 'value' => "template-profil.php")
+		'show_on'	=> array( 'key' => 'slug', 'value' => "profil"),
+	) );
+
+	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
+	$profil_group_field_id = $cmb_page_profile_group->add_field( array(
+		'id'          => $prefix . 'sliders',
+		'type'        => 'group',
+//		'description' => esc_html__( 'Generates reusable form entries', 'cmb2' ),
+		'options'     => array(
+			'group_title'   => esc_html__( 'Button {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => esc_html__( 'Add Another Button', 'cmb2' ),
+			'remove_button' => esc_html__( 'Remove Button', 'cmb2' ),
+			'sortable'      => true, // beta
+			// 'closed'     => true, // true to have the groups closed by default
+		),
+	) );
+
+	/**
+	 * Group fields works the same, except ids only need
+	 * to be unique to the group. Prefix is not needed.
+	 *
+	 * The parent field's id needs to be passed as the first argument.
+	 */
+	$cmb_page_profile_group->add_group_field( $profil_group_field_id, array(
+		'name'       => esc_html__( 'Slider Title', 'cmb2' ),
+		'id'         => 'slider_title',
+		'type'       => 'text',
+		// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	) );
+
+	$cmb_page_profile_group->add_group_field( $profil_group_field_id, array(
+		'name'       => esc_html__( 'Slider Text', 'cmb2' ),
+		'id'         => 'slider_text',
+		'type'       => 'textarea_small',
+		// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+	) );
+
+	$cmb_page_profile_group->add_group_field( $profil_group_field_id, array(
+		'name' => esc_html__( 'Background', 'cmb2' ),
+		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+		'id'   => 'bg',
+		'type' => 'file',
+	));
+
+	$cmb_page_profile_group->add_group_field( $profil_group_field_id, array(
+			'name' => esc_html__( 'Icon', 'cmb2' ),
+			'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+			'id'   => 'icon',
+			'type' => 'file',
+	));
+
+	$cmb_page_profile_group->add_group_field( $profil_group_field_id, array(
+		'name'    => __( 'Color Picker', 'maxkomp' ),
+		'id'      => 'colorpicker',
+		'type'    => 'colorpicker',
+		'default' => '#ff4100',
+	));
+
+
 
 }
 

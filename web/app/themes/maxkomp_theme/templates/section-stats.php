@@ -8,7 +8,7 @@
             echo '<div class="col-sm-'.$offset.'"></div>';
             foreach ($stats_meta as $stat):
                 ?>
-                <div class="col-xs-12 col-sm text-xs-center text-white">
+                <div class="col-xs-12 col-sm text-xs-center text-white will-animate" data-class="fadeInUp">
                     <h3 class="display-2 value count-up" data-value="<?= $stat['stat'];?>"></h3>
                     <span><?= $stat['title'];?></span>
                 </div>

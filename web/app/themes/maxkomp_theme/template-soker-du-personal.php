@@ -13,8 +13,8 @@
   <div class="bg"></div>
   <div class="container">
     <div class="row flex-items-xs-center flex-items-xs-middle">
-      <h1 class="display-3 will-animate" data-class="zoomIn">Så här funkar det</h1>
-      <img src="<?= \Roots\Sage\Assets\asset_path('images/camera.png'); ?>" class="will-animate" data-class="flipInX" data-delay="250""/>
+      <h1 class="display-3 will-animate" data-class="fadeInUp">Så här funkar det</h1>
+      <img src="<?= \Roots\Sage\Assets\asset_path('images/camera.png'); ?>" class="will-animate" data-class="fadeInUp" data-delay="250""/>
     </div>
   </div>
 </section>
