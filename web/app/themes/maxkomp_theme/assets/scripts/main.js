@@ -279,14 +279,14 @@
                 $('#progress').one('inview', function(event, isInView) {
                     if (isInView) {
                         bar1.animate(1);
-                        bar2.animate(.6);
+                        bar2.animate(0.6);
                         bar3.animate(0.8);
-                        bar4.animate(.4);
+                        bar4.animate(0.4);
 
                         bar11.animate(1);
-                        bar12.animate(.6);
+                        bar12.animate(0.6);
                         bar13.animate(0.8);
-                        bar14.animate(.4);
+                        bar14.animate(0.4);
                     }
                 });
             }
