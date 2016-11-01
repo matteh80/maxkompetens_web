@@ -1,0 +1,217 @@
+#profile-content {
+  padding-right: $visible-navbar-width-md-up+15;
+  background-color: whitesmoke;
+  padding-top: 2rem;
+
+  .profile-menu {
+    padding-right: 15px;
+  }
+  .wrapper {
+    box-shadow: 0 0 1px rgba(0,0,0,0.25);
+    background-color: white;
+    border-radius: 5px;
+  }
+}
+
+#resume-wrapper {
+  font-size: 0.8rem;
+  section {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    &:first-of-type {
+      padding-top: 4rem;
+    }
+    &:last-of-type{
+      padding-bottom: 4rem;
+    }
+    .section-icon {
+      font-size: 2rem;
+      line-height: 4rem;
+      width:4rem;
+      height:4rem;
+      background-color: white;
+      border-radius: 50%;
+      margin:0 auto;
+    }
+  }
+
+  >.row {
+    height: 100%;
+  }
+
+  .section-hl {
+    position: relative;
+    width:100%;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      height:2px;
+      width:100%;
+      display: block;
+      top: 12px;
+      background-color: #0a0a0a;
+    }
+
+    h4 {
+      position: relative;
+      z-index: 2;
+      background-color: $light-blue;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      display: inline-block;
+    }
+  }
+  .left-column {
+    background-color: $light-blue;
+    height:100%;
+
+    .profile-pic {
+      width:200px;
+      height:200px;
+      background-color: white;
+      border-radius: 50%;
+
+      .picture {
+        background-image: url("https://s-media-cache-ak0.pinimg.com/736x/7d/a9/71/7da97143cd84b9e69a167f5e702f29a5.jpg");
+        background-position: top center;
+        background-size: cover;
+        width:100%;
+        height:100%;
+        border-radius: 50%;
+      }
+      .fa {
+        font-size: 120px;
+        line-height: 200px;
+      }
+    }
+
+    #kompetens {
+      .stats {
+
+        .progress {
+          height:50px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #links {
+
+      .links-list {
+        > div {
+          margin-bottom: 0.3rem;
+        }
+        .fa {
+          background-color: $gray-dark;
+          font-size: 1.2rem;
+          line-height: 2rem;
+          width:2rem;
+          height:2rem;
+          border-radius: 50%;
+          text-align: center;
+          color: #fff;
+        }
+        .url {
+          font-size: 0.8rem;
+        }
+      }
+
+    }
+  }
+  
+  .right-column {
+    .section-hl {
+      h4 {
+        background-color: white;
+      }
+    }
+    .section-icon {
+      background-color: $gray-dark;
+      color: #fff;
+    }
+
+    #work, #education {
+
+      .asd {
+        .year {
+          position: relative;
+
+          h5 {
+            position: relative;
+            line-height:2rem;
+            color: #fff;
+            background-color: $gray-dark;
+            padding-left: 1rem;
+            width: 85%;
+
+            &:after {
+              content: '';
+              position: absolute;
+              right: -1rem;
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 1rem 0 1rem 1rem;
+              border-color: transparent transparent transparent $gray-dark;
+            }
+          }
+        }
+
+        $bullet-size: 1.1rem;
+        .bullet-wrapper {
+          position: relative;
+          z-index: 1;
+          &:after {
+            position: absolute;
+            left:50%;
+            content: '';
+            background-color: $gray-light;
+            width:1px;
+            height:100%;
+          }
+        }
+        .bullet {
+          position: relative;
+          z-index: 2;
+          width:$bullet-size;
+          height:$bullet-size;
+          background-color: $gray-dark;
+          border-radius: 50%;
+          top:1rem;
+          margin-top: -($bullet-size/2);
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .position {
+          font-size: 1.3rem;
+        }
+        .company {
+
+        }
+        &:last-of-type {
+          .bullet-wrapper:after {
+            height:80%;
+          }
+        }
+      }
+    }
+
+    #personal {
+      .personal-stats {
+        > div {
+          padding:0 1.5rem;
+          position: relative;
+
+          .text {
+            position: relative;
+            font-size: 0.7rem;
+            top:-70px;
+          }
+        }
+
+      }
+    }
+  }
+}

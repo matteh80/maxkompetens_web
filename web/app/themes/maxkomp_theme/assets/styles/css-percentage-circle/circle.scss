@@ -1,3 +1,56 @@
+$prof-icon-size: 30px;
+$prof-circle-border-size: 5px;
+$prof-circle-size: 80px;
+$prof-inner-circle-size: $prof-circle-size - ($prof-circle-border-size*2);
+//$circle-color: lighten($dark-blue,15%);
+$circle-color: $brand-primary;
+$circle-done-color: #12d6ad;
+$circle-bg-color: white;
+$circle-icon-color: #ccc;
+$circle-active-bg-color: white;
+$circle-active-icon-color: $brand-primary;
+.profile-menu {
+  .option {
+    border-radius: 50%;
+    position: relative;
+    //box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
+
+    .bg {
+      position: absolute;
+      top:$prof-circle-border-size;
+      left:$prof-circle-border-size;
+      width:$prof-inner-circle-size;
+      height:$prof-inner-circle-size;
+      border-radius: 50%;
+      background-color: $circle-bg-color;
+      z-index: 1;
+    }
+
+    .fa {
+      position: absolute;
+      left:0;
+      top:0;
+      color: $circle-icon-color;
+      font-size: $prof-icon-size;
+      line-height: $prof-circle-size;
+      height:$prof-circle-size;
+      width:$prof-circle-size;
+      //position: relative;
+      //color: #fff;
+      z-index: 3;
+    }
+
+    &.active {
+      .fa {
+        color: $circle-active-icon-color;
+      }
+      .bg {
+        background-color: $circle-active-bg-color;
+      }
+    }
+  }
+}
+
 .rect-auto,
 .c100.p51 .slice,
 .c100.p52 .slice,
@@ -104,9 +157,9 @@
 .c100.p99 .fill,
 .c100.p100 .fill {
   position: absolute;
-  border: 0.08em solid #307bbb;
-  width: 0.84em;
-  height: 0.84em;
+  border: $prof-circle-border-size solid $circle-color;
+  width: $prof-inner-circle-size;
+  height: $prof-inner-circle-size;
   clip: rect(0em, 0.5em, 1em, 0em);
   border-radius: 50%;
   -webkit-transform: rotate(0deg);
@@ -225,8 +278,8 @@
 .c100 {
   position: relative;
   font-size: $prof-circle-size;
-  width: 1em;
-  height: 1em;
+  width: $prof-circle-size;
+  height: $prof-circle-size;
   border-radius: 50%;
   float: left;
   //margin: 0 0.1em 0.1em 0;
@@ -300,9 +353,10 @@
 }
 .c100 .slice {
   position: absolute;
-  width: 1em;
-  height: 1em;
-  clip: rect(0em, 1em, 1em, 0.5em);
+  z-index: 2;
+  width: $prof-circle-size;
+  height: $prof-circle-size;
+  clip: rect(0, $prof-circle-size, $prof-circle-size, $prof-circle-size/2);
 }
 .c100.p1 .bar {
   -webkit-transform: rotate(3.6deg);
@@ -1011,7 +1065,7 @@
   width: 3.33em;
   line-height: 3.33em;
   font-size: 0.3em;
-  color: #307bbb;
+  color: $circle-color;
 }
 .c100:hover:after {
   top: 0.04em;
@@ -1062,4 +1116,9 @@
 }
 .c100.orange.dark:hover > span {
   color: #e08833;
+}
+
+.c100.p100 .fill, .c100.p100 .bar {
+  border-color: $circle-done-color;
+  transition: border 1000ms;
 }

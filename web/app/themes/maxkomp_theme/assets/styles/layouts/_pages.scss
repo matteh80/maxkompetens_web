@@ -151,32 +151,3 @@ section {
   }
 }
 
-$prof-icon-size: 30px;
-$prof-circle-size: 80px;
-.profile-menu {
-  .option {
-    border-radius: 50%;
-    position: relative;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.6);
-
-    .fa {
-      position: absolute;
-      left:0;
-      top:0;
-      color: $gray-light;
-      font-size: $prof-icon-size;
-      line-height: $prof-circle-size;
-      height:$prof-circle-size;
-      width:$prof-circle-size;
-      //position: relative;
-      z-index: 3;
-    }
-
-    &.active {
-      .fa {
-        color: $brand-primary;
-      }
-    }
-  }
-}
-

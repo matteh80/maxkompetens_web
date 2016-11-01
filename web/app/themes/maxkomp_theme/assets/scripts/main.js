@@ -229,6 +229,12 @@
         // About us page, note the change from about-us to about_us.
         'profil': {
             init: function () {
+
+                $(window).on('scroll resize', function() {
+
+                    $('#resume-wrapper').css("height", ($('#resume-wrapper').width() * 1.4142));
+                });
+
                 jQuery.fn.progressCount = function(){
                     var that = this, target = parseInt(jQuery(that).attr("data-value"));
                     var prevClass = "p0";
@@ -243,11 +249,45 @@
                             for(i = 0; i < 25; i++) {
                                 jQuery(that).removeClass("p"+i);
                             }
+                            jQuery(that).addClass("done");
                         }
                     });
                 };
                 $('.option').each(function(index, element) {
                    $(this).children('.c100').progressCount();
+                });
+
+                var options = {
+                    strokeWidth: 10,
+                    easing: 'bounce',
+                    duration: 1400,
+                    color: '#333333',
+                    trailColor: '#000000',
+                    trailWidth: 1,
+                    svgStyle: null
+                };
+                var bar1 = new ProgressBar.SemiCircle('#progress', options);
+                var bar2 = new ProgressBar.SemiCircle('#progress2', options);
+                var bar3 = new ProgressBar.SemiCircle('#progress3', options);
+                var bar4 = new ProgressBar.SemiCircle('#progress4', options);
+
+                var bar11 = new ProgressBar.Circle('#progress11', options);
+                var bar12 = new ProgressBar.Circle('#progress12', options);
+                var bar13 = new ProgressBar.Circle('#progress13', options);
+                var bar14 = new ProgressBar.Circle('#progress14', options);
+
+                $('#progress').one('inview', function(event, isInView) {
+                    if (isInView) {
+                        bar1.animate(1);
+                        bar2.animate(.6);
+                        bar3.animate(0.8);
+                        bar4.animate(.4);
+
+                        bar11.animate(1);
+                        bar12.animate(.6);
+                        bar13.animate(0.8);
+                        bar14.animate(.4);
+                    }
                 });
             }
         }

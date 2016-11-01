@@ -10,7 +10,7 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Abel', sans-serif;
   word-wrap: break-word;
-  text-shadow: rgba(0,0,0,0.2) 0 0 4px;
+  //text-shadow: rgba(0,0,0,0.2) 0 0 4px;
 }
 
 // Type display classes
@@ -67,6 +67,10 @@ h1, h2, h3, h4, h5, h6 {
   @include media-breakpoint-up(md) {
     padding-right: $visible-navbar-width-md-up+15;
   }
+}
+
+.row.column {
+  flex-direction: column;
 }
 
 .full-height {
