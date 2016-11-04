@@ -1,38 +1,88 @@
 #profile-content {
-  padding-right: $visible-navbar-width-md-up+15;
-  background-color: whitesmoke;
+  background-color: lightgrey;
   padding-top: 2rem;
 
-  .profile-menu {
+  #profile-menu {
     padding-right: 15px;
+
+    a {
+      float: left;
+      color: #ccc;
+      
+      &.current_page_item {
+        color: $brand-primary;
+      }
+      &:hover {
+        text-decoration: none;
+
+      }
+
+      .progress-wrapper {
+        @include progress-bar(80px, 10px, $brand-primary, #fff, $gray-light);
+
+        .p_overlay {
+          line-height: 75px;
+        }
+      }
+
+      .fa {
+        font-size: 1.7rem;
+      }
+    }
   }
   .wrapper {
-    box-shadow: 0 0 1px rgba(0,0,0,0.25);
+    //box-shadow: 0 0 1px rgba(0,0,0,0.25);
     background-color: white;
     border-radius: 5px;
+    position: relative;
+
+    $arrow_size: 1rem;
+    .arrow {
+      position: absolute;
+      top:-$arrow_size;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0rem $arrow_size $arrow_size $arrow_size;
+      border-color: transparent transparent white transparent;
+    }
   }
 }
 
 #resume-wrapper {
   font-size: 0.8rem;
+  line-height: 0.95rem;
+  font-weight: 100;
   section {
     padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding-top: 3rem;
+    position: relative;
 
     &:first-of-type {
-      padding-top: 4rem;
+      padding-top: 2rem;
     }
     &:last-of-type{
-      padding-bottom: 4rem;
+      padding-bottom: 2rem;
     }
     .section-icon {
+      position: relative;
       font-size: 2rem;
       line-height: 4rem;
       width:4rem;
       height:4rem;
-      background-color: white;
-      border-radius: 50%;
+      background-color: $light-blue;
+      padding: 1rem;
+      color: #fff;
       margin:0 auto;
+    }
+
+    &.editable:hover:after {
+      content: '\f14b';
+      font-family: FontAwesome;
+      font-size: 1.5rem;
+      position: absolute;
+      right:0;
+      top:4.5rem;
     }
   }
 
@@ -47,31 +97,46 @@
       content: '';
       position: absolute;
       z-index: 1;
-      height:2px;
+      height:1px;
+
       width:100%;
       display: block;
       top: 12px;
-      background-color: #0a0a0a;
+      background-color: $gray-dark;
     }
 
     h4 {
       position: relative;
       z-index: 2;
-      background-color: $light-blue;
+      background-color: $gray-lighter;
       padding-left: 1rem;
       padding-right: 1rem;
       display: inline-block;
     }
   }
   .left-column {
-    background-color: $light-blue;
+    background-color: $gray-dark;
+    color: #fff;
     height:100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    .section-hl {
+      h4 {
+        background-color: $gray-dark;
+      }
+      &:before {
+        background-color: #fff;
+      }
+    }
 
     .profile-pic {
-      width:200px;
-      height:200px;
+      width:160px;
+      height:160px;
       background-color: white;
       border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid white;
 
       .picture {
         background-image: url("https://s-media-cache-ak0.pinimg.com/736x/7d/a9/71/7da97143cd84b9e69a167f5e702f29a5.jpg");
@@ -79,12 +144,15 @@
         background-size: cover;
         width:100%;
         height:100%;
-        border-radius: 50%;
       }
       .fa {
         font-size: 120px;
         line-height: 200px;
       }
+    }
+
+    #personal {
+      padding-top: 0;
     }
 
     #kompetens {
@@ -97,27 +165,26 @@
       }
     }
 
-    #links {
+    #links, #contact {
 
-      .links-list {
+      .links-list, .contact-list {
         > div {
           margin-bottom: 0.3rem;
         }
         .fa {
-          background-color: $gray-dark;
+          //background-color: $gray-dark;
           font-size: 1.2rem;
           line-height: 2rem;
           width:2rem;
           height:2rem;
           border-radius: 50%;
           text-align: center;
-          color: #fff;
+          color: white;
         }
         .url {
           font-size: 0.8rem;
         }
       }
-
     }
   }
   
@@ -129,7 +196,40 @@
     }
     .section-icon {
       background-color: $gray-dark;
-      color: #fff;
+      //color: #fff;
+    }
+
+    #profile-header {
+      background-image: url("http://il9.picdn.net/shutterstock/videos/9250487/thumb/1.jpg");
+      background-size: cover;
+      color: $gray-dark;
+      position: relative;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding:3rem 2rem;
+
+      margin-bottom: 3rem;
+
+      > .row {
+        flex-direction: column;
+      }
+
+      .profile-header-overlay {
+        position: absolute;
+        z-index: 1;
+        top:0;
+        left: 0;
+        width:100%;
+        height:100%;
+        background-color: rgba(255,255,255,0.8);
+      }
+
+      .name, .work {
+        position: relative;
+        z-index: 2;
+        padding: 0;
+        margin:0;
+      }
     }
 
     #work, #education {
@@ -211,6 +311,24 @@
           }
         }
 
+      }
+    }
+  }
+}
+
+
+// ------------------ CV ------------------
+
+#cv-nav {
+  .nav-tabs {
+    .nav-link {
+      text-transform: uppercase;
+      color: $gray-light;
+      margin: 2em 0;
+      &.active {
+        border-radius: 0;
+        border-color: transparent transparent;
+        border-bottom: 2px solid $brand-primary;
       }
     }
   }

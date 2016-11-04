@@ -1,5 +1,5 @@
 $prof-icon-size: 30px;
-$prof-circle-border-size: 5px;
+$prof-circle-border-size: 3px;
 $prof-circle-size: 80px;
 $prof-inner-circle-size: $prof-circle-size - ($prof-circle-border-size*2);
 //$circle-color: lighten($dark-blue,15%);
@@ -9,6 +9,7 @@ $circle-bg-color: white;
 $circle-icon-color: #ccc;
 $circle-active-bg-color: white;
 $circle-active-icon-color: $brand-primary;
+$circle-progress-bg-color: white;
 .profile-menu {
   .option {
     border-radius: 50%;
@@ -40,12 +41,24 @@ $circle-active-icon-color: $brand-primary;
       z-index: 3;
     }
 
-    &.active {
+    &.active-profile-page {
+      position: relative;
       .fa {
         color: $circle-active-icon-color;
       }
       .bg {
         background-color: $circle-active-bg-color;
+      }
+      &:after {
+        //content: '';
+        //position: absolute;
+        //left:50%;
+        //right:1rem;
+        //width: 0;
+        //height: 0;
+        //border-style: solid;
+        //border-width: 0 1rem 1rem 1rem;
+        //border-color: transparent transparent $gray-dark transparent;
       }
     }
   }
@@ -283,7 +296,7 @@ $circle-active-icon-color: $brand-primary;
   border-radius: 50%;
   float: left;
   //margin: 0 0.1em 0.1em 0;
-  background-color: #cccccc;
+  background-color: $circle-progress-bg-color;
 }
 .c100 *,
 .c100 *:before,

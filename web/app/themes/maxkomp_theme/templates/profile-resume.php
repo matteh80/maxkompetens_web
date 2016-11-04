@@ -5,44 +5,107 @@
                 <div class="picture"></div>
             </div>
         </div>
-        <div class="row column text-xs-center m-y-2">
-            <h3 class="text-xs-center m-b-0">Anna Andersson</h3>
-            <h5 class="text-uppercase text-xs-center">Grafiker</h5>
-        </div>
+<!--        <div class="row column text-xs-center m-y-2">-->
+<!--            <h3 class="text-xs-center m-b-0">Anna Andersson</h3>-->
+<!--            <h5 class="text-uppercase text-xs-center">Grafiker</h5>-->
+<!--        </div>-->
     </section>
 
-    <section id="kompetens">
+    <section id="personal">
         <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <i class="section-icon fa fa-folder m-b-1"></i>
+            <!--            <i class="section-icon fa fa-user m-b-1"></i>-->
+<!--            <div class="section-hl">-->
+<!--                <h4 class="text-uppercase text-xs-center">Personligt</h4>-->
+<!--            </div>-->
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat dolor at ex tincidunt, vitae lobortis sem gravida. In mattis nulla eu luctus vulputate.
+                Integer id malesuada velit. Vestibulum tempus est orci. In quis egestas libero. Donec mollis malesuada tellus, a pulvinar nisl lobortis eget. Curabitur eu consequat metus.
+                Maecenas vitae mauris convallis, pellentesque arcu ac, ullamcorper augue. Vestibulum mollis bibendum finibus. </p>
+                <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus quis commodo lectus. Cras at pulvinar felis.
+                Praesent consectetur at lorem eget viverra.</p>
+            </div>
+        </div>
+<!--        <div class="row personal-stats m-t-1 text-xs-center">-->
+<!--            <div class="col-xs-6">-->
+<!--                <div id="progress11"></div>-->
+<!--                <span class="text text-uppercase">Design</span>-->
+<!--            </div>-->
+<!--            <div class="col-xs-6">-->
+<!--                <div id="progress12"></div>-->
+<!--                <span class="text text-uppercase">Koncept</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row personal-stats m-t-1 text-xs-center">-->
+<!--            <div class="col-xs-6">-->
+<!--                <div id="progress13"></div>-->
+<!--                <span class="text text-uppercase">Teamwork</span>-->
+<!--            </div>-->
+<!--            <div class="col-xs-6">-->
+<!--                <div id="progress14"></div>-->
+<!--                <span class="text text-uppercase">Management</span>-->
+<!--            </div>-->
+<!--        </div>-->
+    </section>
+
+    <section id="contact" class="editable">
+        <div class="row flex-items-xs-center text-xs-center m-b-1">
+            <!--            <i class="section-icon fa fa-magnet m-b-1"></i>-->
             <div class="section-hl">
-                <h4 class="text-uppercase text-xs-center">Kompetensområden</h4>
+                <h4 class="text-uppercase text-xs-center">Kontakt</h4>
             </div>
         </div>
-        <div class="stats row text-xs-center">
-            <div class="col-xs-5 offset-xs-1">
-                <div class="progress" id="progress"></div>
-                <span>Photoshop</span>
+        <div class="row contact-list">
+            <div class="col-xs-12">
+                <i class="fa fa-envelope"></i>
+                <span>anna@andersson.se</span>
             </div>
-            <div class="col-xs-5">
-                <div class="progress" id="progress2"></div>
-                <span>Illustrator</span>
+            <div class="col-xs-12">
+                <i class="fa fa-phone"></i>
+                <span>+46 (0)70-123 45 67</span>
             </div>
-        </div>
-        <div class="stats row text-xs-center m-t-1">
-            <div class="col-xs-5 offset-xs-1">
-                <div class="progress" id="progress3"></div>
-                <span>InDesign</span>
+            <div class="col-xs-12">
+                <i class="fa fa-globe"></i>
+                <span>www.annaandersson.se</span>
             </div>
-            <div class="col-xs-5">
-                <div class="progress" id="progress4"></div>
-                <span>HTML/CSS</span>
+            <div class="col-xs-12">
+                <i class="fa fa-map-marker"></i>
+                <span>Fina gatan 12</span><br>
+                <span style="padding-left: 36px">123 45 FINSTAD</span>
             </div>
         </div>
     </section>
 
-    <section id="links">
+    <section id="personality" class="editable">
         <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <i class="section-icon fa fa-link m-b-1"></i>
+            <div class="section-hl">
+                <h4 class="text-uppercase text-xs-center">Personlighet</h4>
+            </div>
+        </div>
+        <div class="row personality-stats">
+            <div class="col-xs-12">
+                <div id="person-bar1"></div>
+                <p>Social</p>
+            </div>
+            <div class="col-xs-12">
+                <div id="person-bar2"></div>
+                <p>Kreativ</p>
+            </div>
+            <div class="col-xs-12">
+                <div id="person-bar3"></div>
+                <p>Teamplayer</p>
+            </div>
+            <div class="col-xs-12">
+                <div id="person-bar4"></div>
+                <p>Idéspruta</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="links" class="editable">
+        <div class="row flex-items-xs-center text-xs-center m-b-1">
+<!--            <i class="section-icon fa fa-link m-b-1"></i>-->
             <div class="section-hl">
                 <h4 class="text-uppercase text-xs-center">Länkar</h4>
             </div>
@@ -67,51 +130,20 @@
         </div>
     </section>
 
-    <section id="contact">
-        <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <i class="section-icon fa fa-magnet m-b-1"></i>
-            <div class="section-hl">
-                <h4 class="text-uppercase text-xs-center">Kontakt</h4>
-            </div>
-        </div>
-    </section>
-
 </div>
 
 <div class="col-md-8 right-column">
-    <section id="personal">
-        <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <i class="section-icon fa fa-user m-b-1"></i>
-            <div class="section-hl">
-                <h4 class="text-uppercase text-xs-center">Personligt</h4>
-            </div>
-        </div>
-        <div class="row">
-            Cras egestas suscipit eros, ut consequat odio iaculis nec. Fusce maximus eu ex in suscipit. Fusce dui magna, cursus in nibh ac, pulvinar aliquet ipsum. Phasellus nec est felis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis mattis et urna sed tincidunt. Nunc euismod lobortis aliquet. Proin eu rhoncus justo. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras non magna libero. Ut non diam ultricies orci consectetur ullamcorper.
-        </div>
-        <div class="row personal-stats m-t-1 text-xs-center">
-            <div class="col-xs-3">
-                <div id="progress11"></div>
-                <span class="text text-uppercase">Design</span>
-            </div>
-            <div class="col-xs-3">
-                <div id="progress12"></div>
-                <span class="text text-uppercase">Koncept</span>
-            </div>
-            <div class="col-xs-3">
-                <div id="progress13"></div>
-                <span class="text text-uppercase">Teamwork</span>
-            </div>
-            <div class="col-xs-3">
-                <div id="progress14"></div>
-                <span class="text text-uppercase">Management</span>
-            </div>
+    <section id="profile-header">
+        <div class="row text-xs-center">
+            <div class="profile-header-overlay"></div>
+            <h3 class="display-2 text-xs-left m-b-0 name">Anna Andersson</h3>
+            <h3 class="text-uppercase text-xs-left work">Grafiker</h3>
         </div>
     </section>
 
     <section id="work">
-        <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <i class="section-icon fa fa-briefcase m-b-1"></i>
+        <div class="row flex-items-xs-center m-b-1">
+<!--            <i class="section-icon fa fa-briefcase m-b-1"></i>-->
             <div class="section-hl">
                 <h4 class="text-uppercase text-xs-center">Arbete</h4>
             </div>
@@ -157,8 +189,8 @@
     </section>
 
     <section id="education">
-        <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <i class="section-icon fa fa-graduation-cap m-b-1"></i>
+        <div class="row flex-items-xs-center m-b-1">
+<!--            <i class="section-icon fa fa-graduation-cap m-b-1"></i>-->
             <div class="section-hl">
                 <h4 class="text-uppercase text-xs-center">Utbildning</h4>
             </div>
@@ -195,6 +227,34 @@
                 <span class="text-uppercase company">Mälardalens Högskola</span>
                 <p>Sed rhoncus, velit nec ultrices malesuada, lacus magna scelerisque dui, eu pulvinar magna ipsum id mauris.
                    </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kompetens">
+        <div class="row flex-items-xs-center m-b-1">
+
+            <div class="section-hl">
+<!--                <i class="fa fa-folder m-b-1"></i>-->
+                <h4 class="text-uppercase">Kompetensområden</h4>
+            </div>
+        </div>
+        <div class="stats row text-xs-center">
+            <div class="col-xs-3">
+                <div class="progress" id="progress"></div>
+                <span>Photoshop</span>
+            </div>
+            <div class="col-xs-3">
+                <div class="progress" id="progress2"></div>
+                <span>Illustrator</span>
+            </div>
+            <div class="col-xs-3">
+                <div class="progress" id="progress3"></div>
+                <span>InDesign</span>
+            </div>
+            <div class="col-xs-3">
+                <div class="progress" id="progress4"></div>
+                <span>HTML/CSS</span>
             </div>
         </div>
     </section>

@@ -20,6 +20,12 @@
             init: function () {
                 // JavaScript to be fired on all pages
 
+                if($('#resume-wrapper').length) {
+                    var test = $('.current_page_item').offset().left - $('#resume-wrapper').offset().left + ($('.current_page_item').outerWidth() / 2) -16;
+                    $('.arrow').css("left", test);
+                }
+
+
                 // $(window).on("scroll resize", function() {
                 //     $('section').each(function(index, element) {
                 //         if($(element).offset().top <= 0 && !$(element).hasClass("fixed")) {
@@ -231,7 +237,6 @@
             init: function () {
 
                 $(window).on('scroll resize', function() {
-
                     $('#resume-wrapper').css("height", ($('#resume-wrapper').width() * 1.4142));
                 });
 
@@ -261,20 +266,34 @@
                     strokeWidth: 10,
                     easing: 'bounce',
                     duration: 1400,
-                    color: '#333333',
-                    trailColor: '#000000',
+                    color: '#13d6ab',
+                    trailColor: '#fff',
                     trailWidth: 1,
                     svgStyle: null
+                };
+                var options_personality = {
+                    strokeWidth: 4,
+                    easing: 'easeInOut',
+                    duration: 1400,
+                    color: '#ff4100',
+                    trailColor: '#373a3c',
+                    trailWidth: 1,
+                    svgStyle: {width: '100%', height: '100%'}
                 };
                 var bar1 = new ProgressBar.SemiCircle('#progress', options);
                 var bar2 = new ProgressBar.SemiCircle('#progress2', options);
                 var bar3 = new ProgressBar.SemiCircle('#progress3', options);
                 var bar4 = new ProgressBar.SemiCircle('#progress4', options);
 
-                var bar11 = new ProgressBar.Circle('#progress11', options);
-                var bar12 = new ProgressBar.Circle('#progress12', options);
-                var bar13 = new ProgressBar.Circle('#progress13', options);
-                var bar14 = new ProgressBar.Circle('#progress14', options);
+                // var bar11 = new ProgressBar.Circle('#progress11', options);
+                // var bar12 = new ProgressBar.Circle('#progress12', options);
+                // var bar13 = new ProgressBar.Circle('#progress13', options);
+                // var bar14 = new ProgressBar.Circle('#progress14', options);
+
+                var bar11 = new ProgressBar.Line('#person-bar1', options_personality);
+                var bar12 = new ProgressBar.Line('#person-bar2', options_personality);
+                var bar13 = new ProgressBar.Line('#person-bar3', options_personality);
+                var bar14 = new ProgressBar.Line('#person-bar4', options_personality);
 
                 $('#progress').one('inview', function(event, isInView) {
                     if (isInView) {

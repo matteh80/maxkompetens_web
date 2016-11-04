@@ -65,7 +65,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
   @include media-breakpoint-up(md) {
-    padding-right: $visible-navbar-width-md-up+15;
+    &.menu-padding {
+      padding-right: $visible-navbar-width-md-up+15;
+    }
   }
 }
 
@@ -123,6 +125,9 @@ blockquote {
   margin-bottom: 350px;
   position: relative;
   z-index: 2;
+  @include media-breakpoint-up(md) {
+    padding-right: $visible-navbar-width-md-up;
+  }
 }
 
 //Logoslider
@@ -178,3 +183,46 @@ blockquote {
 .fa {
   font-family: "FontAwesome";
 }
+
+@mixin progress-bar($radius, $barwidth, $barColor, $overlayColor, $backColor) {
+  .progress-radial {
+    float: left;
+    position: relative;
+    width: $radius;
+    height: $radius;
+    border-radius: 50%;
+    background-color: $barColor; // default 100%
+  }
+
+  .p_overlay {
+    position: absolute;
+    width: $radius - $barwidth;
+    height: $radius - $barwidth;
+    background-color: $overlayColor;
+    border-radius: 50%;
+    margin-left: $barwidth / 2;
+    margin-top: $barwidth / 2;
+    text-align: center;
+    line-height: $radius - $barwidth;
+    font-size: 16px;
+  }
+
+  $step: 5; // step of % for created classes
+
+  $loops: round(100 / $step);
+  $increment: 360 / $loops;
+  $half: round($loops / 2);
+  @for $i from 0 through $loops {
+    .progress-#{$i*$step}{
+      @if $i < $half {
+        $nextdeg: 90deg + ( $increment * $i );
+        background-image: linear-gradient(90deg, $backColor 50%, transparent 50%, transparent), linear-gradient($nextdeg, $barColor 50%, $backColor 50%, $backColor);
+      }
+      @else {
+        $nextdeg: -90deg + ( $increment * ( $i - $half ) );
+        background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
+      }
+    }
+  }
+}
+

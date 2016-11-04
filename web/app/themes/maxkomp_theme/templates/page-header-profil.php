@@ -5,7 +5,8 @@
 <!--</div>-->
 
 <?php
-$meta = get_post_meta($post->ID, 'maxkomp_profile_group_sliders', true);
+$post_id = get_page_by_path('Profil')->ID;
+$meta = get_post_meta($post_id, 'maxkomp_profile_group_sliders', true);
 ?>
 <section id="slider">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
