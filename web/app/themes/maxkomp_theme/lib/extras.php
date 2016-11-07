@@ -47,3 +47,9 @@ function modifyTitleWithOrangeWord($title, $pos) {
     }
 
 }
+
+function getRelativeUploadPath($string) {
+    $findme   = '/app';
+    $pos = strpos($string, $findme);
+    return substr($string, $pos);
+}
