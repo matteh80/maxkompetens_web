@@ -21,7 +21,10 @@ $sage_includes = [
     'lib/cmb-plugins/adress-field-type.php',
     'lib/cpt/cpt-customers.php', // Custom Post Type Customers
     'lib/theme-options-cmb.php',
-    'lib/profile_menu_walker.php'
+    'lib/profile_menu_walker.php',
+    'lib/API/api.php',
+    'lib/API/remote-api.php',
+    'lib/Models/candidate.php'
 ];
 
 foreach ($sage_includes as $file) {

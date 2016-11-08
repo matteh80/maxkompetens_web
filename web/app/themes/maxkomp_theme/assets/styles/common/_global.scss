@@ -168,7 +168,7 @@ blockquote {
 
   @include media-breakpoint-up(sm) {
     font-size: 1rem;
-    padding:1.8rem;
+    padding:1rem;
   }
 
   &.btn-border {
@@ -223,6 +223,52 @@ blockquote {
         background-image: linear-gradient($nextdeg, $barColor 50%, transparent 50%, transparent), linear-gradient(270deg, $barColor 50%, $backColor 50%, $backColor);
       }
     }
+  }
+}
+
+// Forms
+
+form {
+  .form-group {
+    .input-group {
+      .input-group-addon {
+        width: 3rem;
+        border-radius: 0;
+      }
+      input {
+
+      }
+    }
+  }
+}
+
+// Page bullets
+.subpage-indicators {
+  padding-left: 0;
+  text-align: center;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    width: $carousel-indicator-size;
+    height: $carousel-indicator-size;
+    margin: 1px;
+    text-indent: -999px;
+    // IE9 hack for event handling
+    //
+    // Internet Explorer 9 does not properly handle clicks on elements with a `background-color` of `transparent`,
+    // so we use `rgba(0,0,0,0)` instead since it's a non-buggy equivalent.
+    // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
+    background-color: rgba(0,0,0,0); // IE9
+    border: 1px solid $gray-dark;
+    border-radius: $carousel-indicator-size;
+  }
+
+  .active {
+    width: $carousel-indicator-active-size;
+    height: $carousel-indicator-active-size;
+    margin: 0;
+    background-color: $gray-dark;
   }
 }
 

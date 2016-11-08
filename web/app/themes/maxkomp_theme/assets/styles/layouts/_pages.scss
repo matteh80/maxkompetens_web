@@ -59,6 +59,45 @@ section {
         }
       }
     }
+
+    &.jumbo-small {
+      height:350px;
+      min-height: 1px;
+
+      > .container {
+        min-height: 100%;
+        height:100%;
+
+        > .row {
+          min-height: 100%;
+          height:100%;
+        }
+      }
+    }
+  }
+
+  .btn {
+    font-family: "Abel", sans-serif;
+    font-size: .8rem;
+    padding:1rem;
+    width:100%;
+    box-shadow: none;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 0px $brand-primary;
+    transition: box-shadow 250ms ease-out;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1rem;
+      padding:1.8rem;
+    }
+
+    &.btn-border {
+      box-shadow: inset 0 0 0 5px $brand-primary;
+      color: $brand-primary;
+      //border:5px solid ;
+      background: transparent;
+    }
   }
 }
 
@@ -150,4 +189,20 @@ section {
     }
   }
 }
+section#registering {
+  background-color: white;
 
+  .social {
+    font-size: 3rem;
+    
+    .fa-facebook-official {
+      color: $facebook_color;
+    }
+    .fa-linkedin-square {
+      color: $linkedin_color;
+    }
+    .fa-google-plus-official {
+      color: $google_plus_color;
+    }
+  }
+}
