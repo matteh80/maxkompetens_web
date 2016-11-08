@@ -13,7 +13,7 @@ var RemoteApi = (function($) {
         client.me.read().done(function(data, textStatus, xhrObject){
             alert('I have data: ' + data);
         });
-    }
+    };
 
     return {
         register_user: register_user,
