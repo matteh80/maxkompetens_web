@@ -8,7 +8,9 @@ html, body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Abel', sans-serif;
+  font-family: $header-font;
+  font-style: normal;
+  font-weight: 700 !important;
   word-wrap: break-word;
   //text-shadow: rgba(0,0,0,0.2) 0 0 4px;
 }
@@ -16,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 // Type display classes
 .display-1 {
   font-size: 2rem;
+  font-weight: 700;
   @include media-breakpoint-up(sm) { font-size: 2.5rem; }
   @include media-breakpoint-up(md) { font-size: 3rem; }
   @include media-breakpoint-up(lg) { font-size: 4rem; }
@@ -85,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 blockquote {
-  font-family: "Abel";
+  font-family: $header-font;
   font-size: 3.2rem;
   letter-spacing: -2px;
   line-height: 3rem;
@@ -95,7 +98,7 @@ blockquote {
   &:before {
     content: "“";
     position: absolute;
-    font-family: "Abel";
+    font-family: $header-font;
     top: -10px;
     left: -13px;
     font-size: 13rem;
@@ -156,7 +159,7 @@ blockquote {
 
 //Buttons
 .btn {
-  font-family: "Abel", sans-serif;
+  font-family: $header-font;
   font-size: .8rem;
   padding:1rem;
   width:100%;

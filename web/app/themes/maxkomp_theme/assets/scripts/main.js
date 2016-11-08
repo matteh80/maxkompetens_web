@@ -36,7 +36,7 @@
                 //     });
                 // });
 
-                $(window).on('scroll resize', function() {
+                $(window).on('scroll resize load', function() {
                     var scrolled = $(this).scrollTop();
 
                     // $('section').filter(function() {
@@ -309,7 +309,16 @@
                     }
                 });
             }
+        },
+        'registering': {
+            init: function () {
+                $('#register_btn').on('click', function(){
+                    RemoteApi.register_user("test1@test.net", "testtest");
+                    return false;
+                });
+            }
         }
+
     };
 
     // The routing fires all common scripts, followed by the page specific scripts.

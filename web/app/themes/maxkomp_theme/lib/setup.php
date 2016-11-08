@@ -109,6 +109,7 @@ function assets() {
     if(!is_admin()) {
         wp_enqueue_script( 'sage/js', Assets\asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
         wp_enqueue_script( 'logoslider.js', Assets\asset_path( 'scripts/logoslider.js' ), [ 'jquery' ], null, true );
+        wp_enqueue_script( 'remoteapi.js', Assets\asset_path( 'scripts/remoteapi.js' ), [ 'jquery' ], null, true );
     }
 }
 

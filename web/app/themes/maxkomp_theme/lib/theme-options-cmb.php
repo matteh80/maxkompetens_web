@@ -124,6 +124,13 @@ class Maxkomp_Admin {
         ) );
 
         $cmb->add_field( array(
+            'name' => esc_html__( 'WAP logo', 'cmb2' ),
+            'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
+            'id'   => 'logo_wap',
+            'type' => 'file',
+        ) );
+
+        $cmb->add_field( array(
             'name' => esc_html__( 'Social Media', 'cmb2' ),
             'id'   => 'title_social',
             'type' => 'title',

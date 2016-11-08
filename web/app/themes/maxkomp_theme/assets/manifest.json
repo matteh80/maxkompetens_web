@@ -25,6 +25,9 @@
     },
     "cmb2_scripts.js": {
       "files": ["scripts/cmb2_scripts.js"]
+    },
+    "remoteapi.js": {
+      "files": ["scripts/remoteapi.js"]
     }
   },
   "config": {

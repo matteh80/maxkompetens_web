@@ -8,8 +8,8 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 // Colors
-$brand-primary:         #ff4100;
-$brand-secondary: #13d6ab;
+$brand-primary:         #32d67f;
+$brand-secondary: #ff4100;
 $gray-warm:             #4c3d3b;
 $text-color: #373a3c;
 $dark-blue: #365466;
@@ -23,6 +23,12 @@ $display1-size: 5rem !default;
 $display2-size: 4.5rem !default;
 $display3-size: 3.5rem !default;
 $display4-size: 2.5rem !default;
+
+//$header-font: 'Raleway', sans-serif;
+//$header-font: 'Playfair Display SC', serif;
+//$header-font: 'Bangers', cursive;
+//$header-font: 'Fredoka One', cursive;
+$header-font: futura-pt, sans-serif;
 
 // Social Colors
 // ====================================================================

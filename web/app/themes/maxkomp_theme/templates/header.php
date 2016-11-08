@@ -46,7 +46,6 @@
                 $logoselection = get_post_meta($post->ID, 'maxkomp_page_logo_selection', true);
                 if($logoselection == "") : ?>
                     <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_primary')); ?>" class="img-fluid logo"/>
-                    <img src="<?php word ?>"
                 <?php
                 else:
                 ?>

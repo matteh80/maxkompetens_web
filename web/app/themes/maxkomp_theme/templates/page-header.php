@@ -12,14 +12,18 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
 ?>
 
 <section class="jumbo" style="background: url('<?= the_post_thumbnail_url(); ?>'); background-size: auto 110%;">
-    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0])) {echo 'jumbo-small';} ?>">
+    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">
                 <div style="color:<?=  $textcolor; ?>">
-                    <h1 class="display-1 text-uppercase"><?= $title; ?></h1>
+                    <?php if(is_front_page()) : ?>
+                        <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" class="img-fluid logo"/>
+                    <?php else: ?>
+                    <h1 class="display-1"><?= $title; ?></h1>
                     <div class="col-lg-10 offset-lg-1 m-b-3">
                         <span class="lead will-animate" data-class="zoomIn" data-delay="250"><?= $text; ?></span>
                     </div>
+                    <?php endif; ?>
                     <div class="row buttons flex-items-xs-center">
                         <?php
                         if($buttons_meta != "") :

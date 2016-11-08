@@ -35,7 +35,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary col-xs-4">Submit</button>
+                <button type="submit" id="register_btn" class="btn btn-primary col-xs-4">Submit</button>
             </form>
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">
