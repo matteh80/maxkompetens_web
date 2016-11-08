@@ -15,7 +15,7 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
     <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">
-                <div style="color:<?=  $textcolor; ?>">
+                <div style="color:<?=  $textcolor; ?>; width: 100%;">
                     <?php if(is_front_page()) : ?>
                         <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" class="img-fluid logo"/>
                     <?php else: ?>
