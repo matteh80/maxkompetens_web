@@ -17,7 +17,7 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%;">
                     <?php if(is_front_page()) : ?>
-                        <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" class="img-fluid logo"/>
+                        <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto;" class="img-fluid"/>
                     <?php else: ?>
                     <h1 class="display-1"><?= $title; ?></h1>
                     <div class="col-lg-10 offset-lg-1 m-b-3">
