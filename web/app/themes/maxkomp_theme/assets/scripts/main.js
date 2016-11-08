@@ -312,8 +312,22 @@
         },
         'registering': {
             init: function () {
+                $('li').tooltip();
+
+
+                $('a.nav-link:not(".done")').on('click', function() {
+                   return false;
+                });
+
+                $('#next_btn').on('click', function() {
+                    $('.active').addClass('done');
+                    var next_tab = $('.active').next().attr("id");
+                    // console.log(next_tab+" Active: "+active_tab);
+                    $('.nav-item a[href="#'+next_tab+'"]').tab('show');
+                });
                 $('#register_btn').on('click', function(){
-                    RemoteApi.register_user("test1@test.net", "testtest");
+                    // RemoteApi.register_user("test1@test.net", "testtest");
+                    RemoteApi.get_profile();
                     return false;
                 });
             }
