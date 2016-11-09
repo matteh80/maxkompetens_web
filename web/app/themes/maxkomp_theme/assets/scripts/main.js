@@ -324,8 +324,12 @@
                     step: 1,
                     slide: function( event, ui ) {
                         $( "#amount" ).val( "$" + ui.value );
-                        $(this).siblings('left').css("font-size", "20px");
+                        var left_size = 100-(ui.value*10);
+                        var right_size = 100-left_size;
+                        $(this).siblings('.left').css("font-size", left_size+30+"%");
+                        $(this).siblings('.right').css("font-size", right_size+30+"%");
                         console.log(ui.value);
+                        $('.active').addClass('started');
                     }
                 });
                 $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
@@ -375,6 +379,7 @@
                     console.log('change');
                    $('.active').addClass('started');
                 });
+
 
                 $('a.nav-link').on('click', function() {
                     if($(this).hasClass('done') || $(this).hasClass('started')) {

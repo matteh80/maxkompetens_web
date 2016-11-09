@@ -213,6 +213,10 @@ section#registrering {
     }
   }
 
+  .left, .right {
+    transition: font-size 250ms ease;
+  }
+
   .slider {
     width:100%;
 

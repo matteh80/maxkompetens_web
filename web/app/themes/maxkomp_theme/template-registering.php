@@ -218,8 +218,8 @@
                     <div class="tab-pane fade" id="page4" role="tabpanel">
                         <h4 class="will-animate" data-class="fadeInUp">Personlighet</h4>
                         <div class="form-group will-animate slider-values" data-class="fadeInUp">
-                            <small class="col-xs">Social</small>
-                            <small class="col-xs">Ensamvarg</small>
+                            <small class="col-xs left">Social</small>
+                            <small class="col-xs right">Ensamvarg</small>
                             <div class="col-xs-12 slider" id="slider1"></div>
                         </div>
 
