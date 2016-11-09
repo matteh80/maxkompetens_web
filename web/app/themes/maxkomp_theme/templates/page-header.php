@@ -11,7 +11,7 @@ $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
 $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
 ?>
 
-<section class="jumbo" style="background: url('<?= the_post_thumbnail_url(); ?>'); background-size: auto 110%;">
+<section class="jumbo" style="background-image: url('<?= the_post_thumbnail_url(); ?>');">
     <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">

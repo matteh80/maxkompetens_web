@@ -3,7 +3,7 @@ var RemoteApi = (function($) {
 
     var register_user = function(email, password) {
         client.add('register');
-        client.register.create({username:'testar@test.net', password:'testtest'}).done(function(data, textStatus, xhrObject){
+        client.register.create({username:email, password:password}).done(function(data, textStatus, xhrObject){
             alert('I have data: ' + data);
         });
     };
@@ -15,8 +15,17 @@ var RemoteApi = (function($) {
         });
     };
 
+    var get_languages = function() {
+        client.add('language');
+        client.language.read().done(function(data, textStatus, xhrObject){
+            alert('I have data: ' + data);
+        });
+
+    };
+
     return {
         register_user: register_user,
-        get_profile: get_profile
+        get_profile: get_profile,
+        get_languages: get_languages
     };
 })(jQuery);

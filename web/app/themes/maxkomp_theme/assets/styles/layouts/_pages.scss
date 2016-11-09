@@ -189,7 +189,14 @@ section {
     }
   }
 }
-section#registering {
+
+#registrering .social {
+  display: none;
+}
+.page0 #registrering .social {
+  display: flex ;
+}
+section#registrering {
   background-color: white;
 
   .social {
@@ -203,6 +210,20 @@ section#registering {
     }
     .fa-google-plus-official {
       color: $google_plus_color;
+    }
+  }
+
+  .slider {
+    width:100%;
+
+    .ui-slider-handle {
+      background: dodgerblue;
+    }
+  }
+  
+  .slider-values small{
+    &:last-of-type {
+      float: right;
     }
   }
 }

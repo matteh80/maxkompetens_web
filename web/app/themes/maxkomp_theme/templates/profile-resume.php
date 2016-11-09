@@ -19,7 +19,7 @@
 <!--            </div>-->
         </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 hidden-xs-up">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque feugiat dolor at ex tincidunt, vitae lobortis sem gravida. In mattis nulla eu luctus vulputate.
                 Integer id malesuada velit. Vestibulum tempus est orci. In quis egestas libero. Donec mollis malesuada tellus, a pulvinar nisl lobortis eget. Curabitur eu consequat metus.
                 Maecenas vitae mauris convallis, pellentesque arcu ac, ullamcorper augue. Vestibulum mollis bibendum finibus. </p>
@@ -100,10 +100,14 @@
                 <div id="person-bar4"></div>
                 <p>Idéspruta</p>
             </div>
+            <div class="col-xs-12">
+                <div id="person-bar5"></div>
+                <p>Kaffedrickare</p>
+            </div>
         </div>
     </section>
 
-    <section id="links" class="editable">
+    <section id="links" class="editable hidden-xs-up">
         <div class="row flex-items-xs-center text-xs-center m-b-1">
 <!--            <i class="section-icon fa fa-link m-b-1"></i>-->
             <div class="section-hl">
@@ -128,6 +132,18 @@
                 <span class="url">facebook.com/user_name</span>
             </div>
         </div>
+    </section>
+
+    <section id="dreamjob" class="editable">
+        <div class="row flex-items-xs-center text-xs-center m-b-1">
+        <!--            <i class="section-icon fa fa-link m-b-1"></i>-->
+        <div class="section-hl">
+            <h4 class="text-uppercase text-xs-center">Drömjobb</h4>
+        </div>
+            <div class="row">
+                <h4>Lastbilschaufför</h4>
+            </div>
+</div>
     </section>
 
 </div>
@@ -174,7 +190,7 @@
                     semper fringilla sapien.</p>
             </div>
         </div>
-        <div class="row asd">
+        <div class="row asd hidden-xs-up">
             <div class="col-xs-2 year"><h5>2013</h5></div>
             <div class="col-xs-1 bullet-wrapper">
                 <div class="bullet"></div>
@@ -217,7 +233,7 @@
                 <p>Sed dictum ultrices nisl, eget mollis nisl tristique vitae. </p>
             </div>
         </div>
-        <div class="row asd">
+        <div class="row asd hidden-xs-up">
             <div class="col-xs-2 year"><h5>2013</h5></div>
             <div class="col-xs-1 bullet-wrapper">
                 <div class="bullet"></div>
@@ -240,19 +256,19 @@
             </div>
         </div>
         <div class="stats row text-xs-center">
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <div class="progress" id="progress"></div>
                 <span>Photoshop</span>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <div class="progress" id="progress2"></div>
                 <span>Illustrator</span>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <div class="progress" id="progress3"></div>
                 <span>InDesign</span>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-3 hidden-xs-up">
                 <div class="progress" id="progress4"></div>
                 <span>HTML/CSS</span>
             </div>

@@ -60,7 +60,7 @@
 
                     $('.jumbo').css({
                         "background-attachment": "fixed",
-                        "background-position-y": jumboPos*100 + "%",
+                        "background-position-y": jumboPos*100 + "%"
                     });
 
                 });
@@ -273,7 +273,7 @@
                 };
                 var options_personality = {
                     strokeWidth: 4,
-                    easing: 'easeInOut',
+                    easing: 'bounce',
                     duration: 1400,
                     color: '#ff4100',
                     trailColor: '#373a3c',
@@ -294,6 +294,7 @@
                 var bar12 = new ProgressBar.Line('#person-bar2', options_personality);
                 var bar13 = new ProgressBar.Line('#person-bar3', options_personality);
                 var bar14 = new ProgressBar.Line('#person-bar4', options_personality);
+                var bar15 = new ProgressBar.Line('#person-bar5', options_personality);
 
                 $('#progress').one('inview', function(event, isInView) {
                     if (isInView) {
@@ -306,30 +307,94 @@
                         bar12.animate(0.6);
                         bar13.animate(0.8);
                         bar14.animate(0.4);
+                        bar15.animate(1);
                     }
                 });
             }
         },
         'registering': {
             init: function () {
-                $('li').tooltip();
+                var active_page = $('.active').attr("id");
+                $('body').addClass(active_page);
 
-
-                $('a.nav-link:not(".done")').on('click', function() {
-                   return false;
+                $( ".slider" ).slider({
+                    value:5,
+                    min: 0,
+                    max: 10,
+                    step: 1,
+                    slide: function( event, ui ) {
+                        $( "#amount" ).val( "$" + ui.value );
+                        $(this).siblings('left').css("font-size", "20px");
+                        console.log(ui.value);
+                    }
                 });
+                $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
 
-                $('#next_btn').on('click', function() {
+                var gotoNextTab = function() {
                     $('.active').addClass('done');
                     var next_tab = $('.active').next().attr("id");
                     // console.log(next_tab+" Active: "+active_tab);
                     $('.nav-item a[href="#'+next_tab+'"]').tab('show');
+                    $('body').removeClass(active_page).addClass(next_tab);
+                };
+
+                var formValidation = function() {
+                    console.log('Active page: '+active_page);
+                    switch(active_page) {
+                        case "page0":
+                            $('#register_form').validate({
+                                errorPlacement: function(error, element) {
+                                    error.appendTo( element.parent() );
+                                },
+                                rules: {
+                                    cpassword: {
+                                        equalTo: "#password"
+                                    }
+                                },
+                                // Specify validation error messages
+                                messages: {
+                                    password: {
+                                        required: "Ange ditt lösenord"
+                                    },
+                                    cpassword: {
+                                        equalTo: "Lösenordet matchar inte"
+                                    },
+                                    email: "Please enter a valid email address"
+                                },
+                                // Make sure the form is submitted to the destination defined
+                                // in the "action" attribute of the form when valid
+                                submitHandler: function(form) {
+                                    gotoNextTab();
+                                }
+                            });
+                            break;
+                    }
+                };
+
+                $('input').on('focus change', function() {
+                    console.log('change');
+                   $('.active').addClass('started');
+                });
+
+                $('a.nav-link').on('click', function() {
+                    if($(this).hasClass('done') || $(this).hasClass('started')) {
+                        return true;
+                    }else{
+                        return false;
+                    }
+                });
+
+                $('#next_btn').on('click', function() {
+                    // formValidation();
+                    gotoNextTab();
                 });
                 $('#register_btn').on('click', function(){
                     // RemoteApi.register_user("test1@test.net", "testtest");
                     RemoteApi.get_profile();
                     return false;
                 });
+
+                $('li').tooltip();
             }
         }
 

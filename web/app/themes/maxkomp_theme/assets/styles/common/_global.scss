@@ -239,18 +239,26 @@ form {
         border-radius: 0;
       }
       input {
-
+        border-radius: 0;
       }
     }
   }
 }
 
 // Page bullets
+.page0 .subpage-indicators {
+  display: none;
+}
+
 .subpage-indicators {
   padding-left: 0;
   text-align: center;
   list-style: none;
   border-bottom: none;
+
+  li:first-of-type {
+    display: none;
+  }
 
   li a{
     display: inline-block !important;
@@ -270,6 +278,12 @@ form {
     border-radius: $carousel-indicator-size !important;
   }
 
+  .started {
+    cursor: pointer !important;
+    border: 1px solid $brand-secondary !important;
+    background-color: $brand-secondary !important;
+  }
+
   .done {
     cursor: pointer !important;
     border: 1px solid $brand-primary !important;
@@ -278,6 +292,8 @@ form {
       box-shadow: 0 0 0 2px $brand-primary !important;
     }
   }
+
+
 
   .active {
     cursor: pointer !important;
