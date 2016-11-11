@@ -376,8 +376,9 @@
                                     };
 
                                     RemoteApi.register_user(data).done(function(data, textStatus, xhrObject){
-                                        if(textStatus === 'success')
+                                        if(textStatus === 'success') {
                                             gotoNextTab();
+                                        }
                                     });
                             }
                             });
