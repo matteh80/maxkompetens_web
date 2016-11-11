@@ -16,19 +16,14 @@
             <a href="#"><i class="fa fa-google-plus-official"></i></a>
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">
-            <form class="col-xs-12 col-sm-10 col-md-6" id="register_form">
-
-                <div class="tab-content">
+            <div class="tab-content col-xs-12 col-sm-10 col-md-6">
                     <div class="tab-pane fade in active" id="page0" role="tabpanel">
-<!--                        <form id="register_form">-->
+                        <form class="" id="register_form_page_0">
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-post" required>
                                 </div>
-<!--                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with-->
-<!--                                    anyone else.-->
-<!--                                </small>-->
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
@@ -42,42 +37,44 @@
                                     <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Bekräfta lösenord" minlength="8" pattern=".{8,}" required>
                                 </div>
                             </div>
-
-<!--                        </form>-->
+                            <button type="submit" id="next_btn" class="btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                        </form>
                     </div>
 
 
 <!--                    PERSONUPPGIFTER-->
 
                     <div class="tab-pane fade" id="page1" role="tabpanel">
-                        <h4 class="will-animate" data-class="fadeInUp">Personuppgifter</h4>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" class="form-control" id="firstname" placeholder="Förnamn">
+                        <form id="register_form_page_1">
+                            <h4 class="will-animate" data-class="fadeInUp">Personuppgifter</h4>
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Förnamn" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" class="form-control" id="lastname"
-                                       placeholder="Efternamn">
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    <input type="text" class="form-control" id="lastname" name="lastname"
+                                           placeholder="Efternamn" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                <input type="tel" class="form-control" id="exampleInputPassword1"
-                                       placeholder="Telefon">
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                           placeholder="Telefon" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-globe"></i></div>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Plats">
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-globe"></i></div>
+                                    <input type="text" class="form-control" id="location" name="location" placeholder="Plats" required>
+                                </div>
                             </div>
-                        </div>
-
+                            <button type="submit" id="next_btn" class="btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                        </form>
                     </div>
 
 
@@ -267,7 +264,6 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" id="next_btn" class="btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
             </form>
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">

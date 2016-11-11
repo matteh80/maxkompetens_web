@@ -338,17 +338,36 @@
                 var gotoNextTab = function() {
                     $('.active').addClass('done');
                     var next_tab = $('.active').next().attr("id");
+                    active_page = next_tab;
                     // console.log(next_tab+" Active: "+active_tab);
                     $('.nav-item a[href="#'+next_tab+'"]').tab('show');
                     $('body').removeClass(active_page).addClass(next_tab);
-                    console.log(JSON.parse(sessionStorage.getItem('user')));
+                    console.log(active_page);
+
+                    switch(active_page) {
+                        case "page1":
+                            var fbuser = JSON.parse(sessionStorage.getItem('fbuser'));
+                            tokendata = {
+                                "username": JSON.parse(sessionStorage.getItem('fbuser')).email,
+                                "password": "testtest",
+                            };
+                            RemoteApi.get_token(tokendata).done(function(data, textStatus, xhrObject){
+                                if(textStatus === 'success') {
+                                    sessionStorage.setItem('token', JSON.stringify(data));
+                                }
+                            });
+                            $('#firstname').val(fbuser.first_name);
+                            $('#lastname').val(fbuser.last_name);
+                            $('#location').val(fbuser.hometown.name);
+                            break;
+                    }
                 };
 
                 var formValidation = function() {
                     console.log('Active page: '+active_page);
                     switch(active_page) {
                         case "page0":
-                            $('#register_form').validate({
+                            $('#register_form_page_0').validate({
                                 errorPlacement: function(error, element) {
                                     error.appendTo( element.parent() );
                                 },
@@ -370,17 +389,45 @@
                                 // Make sure the form is submitted to the destination defined
                                 // in the "action" attribute of the form when valid
                                 submitHandler: function(form) {
-                                    data = {
+                                    registerdata = {
                                         "email": $('#email').val(),
                                         "password": $('#password').val(),
                                     };
 
-                                    RemoteApi.register_user(data).done(function(data, textStatus, xhrObject){
+                                    RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
                                         if(textStatus === 'success') {
+                                            sessionStorage.setItem('user', registerdata);
                                             gotoNextTab();
                                         }
                                     });
                             }
+                            });
+                            break;
+
+                        case "page1":
+                            $('#register_form_page_1').validate({
+                                errorPlacement: function(error, element) {
+                                    error.appendTo( element.parent() );
+                                },
+                                // Specify validation error messages
+                                messages: {
+
+                                },
+                                // Make sure the form is submitted to the destination defined
+                                // in the "action" attribute of the form when valid
+                                submitHandler: function(form) {
+                                    data = {
+                                        "first_name": $('#firstname').val(),
+                                        "last_name": $('#lastname').val(),
+                                    };
+
+                                    RemoteApi.update_profile(data, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+                                        console.log('update_profile');
+                                        if(textStatus === 'success') {
+                                            gotoNextTab();
+                                        }
+                                    });
+                                }
                             });
                             break;
                     }
@@ -417,13 +464,22 @@
                 // code below.
 
                 function testAPI() {
-                    var fields = {fields: 'email, first_name, last_name, user_birthday'};
+                    var fields = {fields: 'email, name, first_name, last_name, birthday, education, gender, hometown, languages, location, website, work'};
                     console.log('Welcome!  Fetching your information.... ');
                     FB.api('/me', fields, function(response) {
                         console.log(response);
                         console.log('Successful login for: ' + response.name);
 
-                        sessionStorage.setItem('user', JSON.stringify(response));
+                        sessionStorage.setItem('fbuser', JSON.stringify(response));
+                        data = {
+                            "email": response.email,
+                            "password": 'testtest'
+                        }
+                        RemoteApi.register_user(data).done(function(data, textStatus, xhrObject){
+                            if(textStatus === 'success') {
+                                gotoNextTab();
+                            }
+                        });
                     });
                 }
 
@@ -450,7 +506,7 @@
                         FB.login(function(response) {
                             testAPI();
                         }, {
-                            scope: 'public_profile,email,user_birthday,user_location',
+                            scope: 'public_profile,email,user_birthday,user_location, user_education_history, user_hometown, user_website, user_work_history',
                             return_scopes: true
                         });
                     }
@@ -492,11 +548,9 @@
                 };
 
                 // Load the SDK asynchronously
-                (function(d, s, id) {
+                (function(d, s, id){
                     var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)){
-                        return;
-                    }
+                    if (d.getElementById(id)) {return;}
                     js = d.createElement(s); js.id = id;
                     js.src = "//connect.facebook.net/en_US/sdk.js";
                     fjs.parentNode.insertBefore(js, fjs);
