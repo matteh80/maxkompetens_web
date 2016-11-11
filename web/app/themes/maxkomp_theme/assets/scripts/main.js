@@ -370,8 +370,16 @@
                                 // Make sure the form is submitted to the destination defined
                                 // in the "action" attribute of the form when valid
                                 submitHandler: function(form) {
+                                    data = {
+                                        "email": $('#email').val(),
+                                        "password": $('#password').val(),
+                                    };
 
-                                }
+                                    RemoteApi.register_user(data).done(function(data, textStatus, xhrObject){
+                                        if(textStatus === 'success')
+                                            gotoNextTab();
+                                    });
+                            }
                             });
                             break;
                     }
@@ -392,7 +400,7 @@
                 });
 
                 $('#next_btn').on('click', function() {
-                    RemoteApi.getCsrfToken();
+                    formValidation();
                 });
                 $('#register_btn').on('click', function(){
                     return false;

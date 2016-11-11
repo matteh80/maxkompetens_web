@@ -8,7 +8,7 @@
 <?php get_template_part('templates/content', 'page'); ?>
 
 <section id="registrering">
-    <div class="container card">
+    <div class="container">
 
         <div class="row flex-items-xs-center flex-items-xs-middle social m-b-3">
             <a href="#"><i class="fa fa-facebook-official btn-facebook"></i></a>

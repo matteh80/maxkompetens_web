@@ -1,32 +1,11 @@
 var RemoteApi = (function($) {
-    var apiUrl = "http://46.101.250.188:8000/api/";
-    var client = new $.RestClient('http://46.101.250.188:8000/api/');
+    var apiUrl = "http://46.101.250.188/api/";
+    var client = new $.RestClient('http://46.101.250.188/api/');
 
-    var getCsrfToken = function() {
-        $.ajax({
-            url: apiUrl+'',
-            method: "GET",
-            crossDomain: true,
-            headers: {
-                "X-Requested-With": "XMLHttpRequest",
-                "Content-Type": "application/atom+xml",
-                "DataServiceVersion": "2.0",
-                "X-CSRF-Token":"Fetch"
-            },
-            success:function(response){
-                var header_xcsrf_token = response.headers['x-csrf-token'];
-            },
-            error: function(errorThrown){
-                console.log(errorThrown);
-            }
-        });
-    };
 
-    var register_user = function(email, password) {
+    var register_user = function(data) {
         client.add('register');
-        client.register.create({username:email, password:password}).done(function(data, textStatus, xhrObject){
-            alert('I have data: ' + data);
-        });
+        return client.register.create(data);
     };
 
     var get_profile = function() {
@@ -58,7 +37,6 @@ var RemoteApi = (function($) {
     return {
         register_user: register_user,
         get_profile: get_profile,
-        get_languages: get_languages,
-        getCsrfToken: getCsrfToken
+        get_languages: get_languages
     };
 })(jQuery);
