@@ -198,6 +198,11 @@ section {
 }
 section#registrering {
   background-color: white;
+  background-image: url("../../dist/images/marble.jpg");
+
+  > .container {
+
+  }
 
   .social {
     font-size: 3rem;

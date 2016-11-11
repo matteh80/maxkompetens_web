@@ -8,9 +8,10 @@
 <?php get_template_part('templates/content', 'page'); ?>
 
 <section id="registrering">
-    <div class="container">
+    <div class="container card">
+
         <div class="row flex-items-xs-center flex-items-xs-middle social m-b-3">
-            <a href="#"><i class="fa fa-facebook-official"></i></a>
+            <a href="#"><i class="fa fa-facebook-official btn-facebook"></i></a>
             <a href="#" class="m-x-1"><i class="fa fa-linkedin-square"></i></a>
             <a href="#"><i class="fa fa-google-plus-official"></i></a>
         </div>
@@ -53,13 +54,13 @@
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Förnamn">
+                                <input type="text" class="form-control" id="firstname" placeholder="Förnamn">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                                <input type="text" class="form-control" id="exampleInputPassword1"
+                                <input type="text" class="form-control" id="lastname"
                                        placeholder="Efternamn">
                             </div>
                         </div>

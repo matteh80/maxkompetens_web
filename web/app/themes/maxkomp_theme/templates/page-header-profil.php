@@ -8,7 +8,7 @@
 $post_id = get_page_by_path('Profil')->ID;
 $meta = get_post_meta($post_id, 'maxkomp_profile_group_sliders', true);
 ?>
-<section id="slider">
+<section id="slider" style="background-image: url('<?= $meta[0]['bg'];?>');">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <?php
@@ -33,7 +33,7 @@ $meta = get_post_meta($post_id, 'maxkomp_profile_group_sliders', true);
                     $active = "";
                 }
             ?>
-            <div class="carousel-item <?= $active; ?>" style="background-image: url('<?= $slider['bg'];?>');">
+            <div class="carousel-item <?= $active; ?>">
                 <div class="container text-xs-center">
                     <div class="row flex-items-xs-middle flex-items-xs-center full-height">
                         <h2 class="display-1"><?= $slider['slider_title'];?></h2>

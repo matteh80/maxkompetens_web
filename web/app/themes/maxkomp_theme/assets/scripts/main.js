@@ -20,7 +20,7 @@
             init: function () {
                 // JavaScript to be fired on all pages
 
-                if($('#resume-wrapper').length) {
+                                if($('#resume-wrapper').length) {
                     var test = $('.current_page_item').offset().left - $('#resume-wrapper').offset().left + ($('.current_page_item').outerWidth() / 2) -16;
                     $('.arrow').css("left", test);
                 }
@@ -314,6 +314,7 @@
         },
         'registering': {
             init: function () {
+
                 var active_page = $('.active').attr("id");
                 $('body').addClass(active_page);
 
@@ -340,6 +341,7 @@
                     // console.log(next_tab+" Active: "+active_tab);
                     $('.nav-item a[href="#'+next_tab+'"]').tab('show');
                     $('body').removeClass(active_page).addClass(next_tab);
+                    console.log(JSON.parse(sessionStorage.getItem('user')));
                 };
 
                 var formValidation = function() {
@@ -368,7 +370,7 @@
                                 // Make sure the form is submitted to the destination defined
                                 // in the "action" attribute of the form when valid
                                 submitHandler: function(form) {
-                                    gotoNextTab();
+
                                 }
                             });
                             break;
@@ -390,16 +392,111 @@
                 });
 
                 $('#next_btn').on('click', function() {
-                    // formValidation();
-                    gotoNextTab();
+                    RemoteApi.getCsrfToken();
                 });
                 $('#register_btn').on('click', function(){
-                    // RemoteApi.register_user("test1@test.net", "testtest");
-                    RemoteApi.get_profile();
                     return false;
                 });
 
                 $('li').tooltip();
+
+                // Here we run a very simple test of the Graph API after login is
+                // successful.  See statusChangeCallback() for when this call is made.
+
+                // This function is called when someone finishes with the Login
+                // Button.  See the onlogin handler attached to it in the sample
+                // code below.
+
+                function testAPI() {
+                    var fields = {fields: 'email, first_name, last_name, user_birthday'};
+                    console.log('Welcome!  Fetching your information.... ');
+                    FB.api('/me', fields, function(response) {
+                        console.log(response);
+                        console.log('Successful login for: ' + response.name);
+
+                        sessionStorage.setItem('user', JSON.stringify(response));
+                    });
+                }
+
+                // This is called with the results from from FB.getLoginStatus().
+                function statusChangeCallback(response) {
+                    console.log('statusChangeCallback');
+                    console.log(response);
+                    // The response object is returned with a status field that lets the
+                    // app know the current login status of the person.
+                    // Full docs on the response object can be found in the documentation
+                    // for FB.getLoginStatus().
+                    if (response.status === 'connected') {
+                        // Logged into your app and Facebook.
+                        testAPI();
+                    } else if (response.status === 'not_authorized') {
+                        // The person is logged into Facebook, but not your app.
+                        FB.login(function(response) {
+                            testAPI();
+                        });
+
+                    } else {
+                        // The person is not logged into Facebook, so we're not sure if
+                        // they are logged into this app or not.
+                        FB.login(function(response) {
+                            testAPI();
+                        }, {
+                            scope: 'public_profile,email,user_birthday,user_location',
+                            return_scopes: true
+                        });
+                    }
+                }
+
+                function checkLoginState() {
+                    FB.getLoginStatus(function(response) {
+                        statusChangeCallback(response);
+                    });
+                }
+
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId      : '328788464164283',
+                        cookie     : true,  // enable cookies to allow the server to access
+                                            // the session
+                        xfbml      : true,  // parse social plugins on this page
+                        version    : 'v2.8' // use graph api version 2.8
+                    });
+
+                    // Now that we've initialized the JavaScript SDK, we call
+                    // FB.getLoginStatus().  This function gets the state of the
+                    // person visiting this page and can return one of three states to
+                    // the callback you provide.  They can be:
+                    //
+                    // 1. Logged into your app ('connected')
+                    // 2. Logged into Facebook, but not your app ('not_authorized')
+                    // 3. Not logged into Facebook and can't tell if they are logged into
+                    //    your app or not.
+                    //
+                    // These three cases are handled in the callback function.
+
+                    FB.getLoginStatus(function(response) {
+                        if(response.status === 'connected') {
+                            FB.logout();
+                        }
+                    });
+
+                };
+
+                // Load the SDK asynchronously
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)){
+                        return;
+                    }
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+
+
+                $('.btn-facebook').on('click', function() {
+                    checkLoginState();
+                });
             }
         }
 
@@ -439,3 +536,25 @@
     $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
+
+var User = (function() {
+    var firstName;
+    var lastName;
+    var email;
+    var profile_picture;
+    var location;
+    var birth;
+    var gender;
+    var id;
+
+    return {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        profile_picture: profile_picture,
+        location: location,
+        birth: birth,
+        gender: gender,
+        id: id,
+    };
+})();

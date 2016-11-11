@@ -31,6 +31,6 @@
     }
   },
   "config": {
-    "devUrl": "http://maxkompetens.dev"
+    "devUrl": "http://dev.maxkompetens.se"
   }
 }
