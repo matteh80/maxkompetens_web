@@ -267,8 +267,8 @@
                     easing: 'bounce',
                     duration: 1400,
                     color: '#13d6ab',
-                    trailColor: '#fff',
-                    trailWidth: 1,
+                    trailColor: '#cdcdcd',
+                    trailWidth: 10,
                     svgStyle: null
                 };
                 var options_personality = {
@@ -280,10 +280,10 @@
                     trailWidth: 1,
                     svgStyle: {width: '100%', height: '100%'}
                 };
-                var bar1 = new ProgressBar.SemiCircle('#progress', options);
-                var bar2 = new ProgressBar.SemiCircle('#progress2', options);
-                var bar3 = new ProgressBar.SemiCircle('#progress3', options);
-                var bar4 = new ProgressBar.SemiCircle('#progress4', options);
+                var bar1 = new ProgressBar.Circle('#progress', options);
+                var bar2 = new ProgressBar.Circle('#progress2', options);
+                var bar3 = new ProgressBar.Circle('#progress3', options);
+                var bar4 = new ProgressBar.Circle('#progress4', options);
 
                 // var bar11 = new ProgressBar.Circle('#progress11', options);
                 // var bar12 = new ProgressBar.Circle('#progress12', options);
@@ -474,7 +474,7 @@
                         data = {
                             "email": response.email,
                             "password": 'testtest'
-                        }
+                        };
                         RemoteApi.register_user(data).done(function(data, textStatus, xhrObject){
                             if(textStatus === 'success') {
                                 gotoNextTab();

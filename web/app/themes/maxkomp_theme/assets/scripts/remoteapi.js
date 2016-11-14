@@ -40,7 +40,7 @@ var RemoteApi = (function($) {
 
     var getAjaxRequest = function(endpoint) {
         if(method === 'GET') {
-            headers = {"Authorization": 'Token ' + sessionStorage.getItem('token')}
+            headers = {"Authorization": 'Token ' + sessionStorage.getItem('token')};
         }
         return $.ajax({
             url: apiUrl+endpoint+"/",
@@ -73,7 +73,7 @@ var RemoteApi = (function($) {
 
     var get_token = function(data) {
         return postAjaxRequest('token', data);
-    }
+    };
 
 
     var get_profile = function() {

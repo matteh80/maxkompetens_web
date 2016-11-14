@@ -55,7 +55,7 @@
   font-weight: 100;
   section {
     padding-bottom: 1rem;
-    padding-top: 3rem;
+    padding-top: 1.5rem;
     position: relative;
 
     &:first-of-type {
@@ -208,7 +208,7 @@
       margin-right: -15px;
       padding:3rem 2rem;
 
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
 
       > .row {
         flex-direction: column;
@@ -231,8 +231,10 @@
         margin:0;
       }
     }
-
-    #work, #education {
+    $work-color: $brand-primary;
+    $edu-color: $brand-secondary;
+    $trivas-color: $blue;
+    #work, #education, #trivas {
 
       .asd {
         .year {
@@ -279,7 +281,7 @@
           height:$bullet-size;
           background-color: $gray-dark;
           border-radius: 50%;
-          top:1rem;
+          top:.7rem;
           margin-top: -($bullet-size/2);
           margin-left: auto;
           margin-right: auto;
@@ -298,6 +300,33 @@
       }
     }
 
+    #work {
+      h5, .bullet {
+        background-color: $work-color !important;
+      }
+      h5:after {
+        border-color: transparent transparent transparent $work-color !important;
+      }
+    }
+
+    #education {
+      h5, .bullet {
+        background-color: $edu-color !important;
+      }
+      h5:after {
+        border-color: transparent transparent transparent $edu-color !important;
+      }
+    }
+
+    #trivas {
+      h5, .bullet {
+        background-color: $trivas-color !important;
+      }
+      h5:after {
+        border-color: transparent transparent transparent $trivas-color !important;
+      }
+    }
+
     #personal {
       .personal-stats {
         > div {
@@ -310,6 +339,15 @@
             top:-70px;
           }
         }
+
+      }
+    }
+
+    #kompetens {
+      h5 {
+        margin-top: -57%;
+      }
+      .komp_progress {
 
       }
     }

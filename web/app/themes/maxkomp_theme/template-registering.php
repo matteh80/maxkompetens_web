@@ -21,6 +21,11 @@
                         <form class="" id="register_form_page_0">
                             <div class="form-group">
                                 <div class="input-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-post" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-post" required>
                                 </div>
