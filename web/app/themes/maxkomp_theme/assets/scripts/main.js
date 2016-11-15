@@ -508,7 +508,7 @@
                     "last_name": "Wolgers",
                 };
                 RemoteApi.update_profile(persondata, "d4e98ce630af4fd6ff3cc2cbb5887762babff691").done(function(data, textStatus, xhrObject){
-                    console.log('update_profile');
+                    console.log(data);
                     if(textStatus === 'success') {
                         // gotoNextTab();
                     }

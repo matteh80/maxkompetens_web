@@ -38,14 +38,14 @@ var RemoteApi = (function($) {
     };
 
     var getAjaxRequest = function(endpoint, token) {
+        console.log(token);
         return $.ajax({
             url: apiUrl+endpoint+"/",
             method: "GET",
-            async: true,
-            xhrFields: { withCredentials: true },
-            headers: { "Authorization": 'Token d4e98ce630af4fd6ff3cc2cbb5887762babff692' },
+            // xhrFields: { withCredentials: true },
+            headers: { "Authorization": 'Token '+token },
             beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Token d4e98ce630af4fd6ff3cc2cbb5887762babff692" );
+                xhr.setRequestHeader("Authorization", "Token "+token );
             },
             success:function(response){
 
@@ -71,8 +71,8 @@ var RemoteApi = (function($) {
     };
 
     var update_profile = function(data, token) {
-        // return postAjaxRequest('me', data, token);
-        return getAjaxRequest('me', token);
+        return postAjaxRequest('me', data, token);
+        // return getAjaxRequest('me', token);
     };
 
     var get_languages = function() {
