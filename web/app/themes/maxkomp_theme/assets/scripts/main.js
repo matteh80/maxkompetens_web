@@ -338,7 +338,7 @@
                         pdf.save("WAP-card");
                     });
                     return false;
-                })
+                });
 
             }
         },
