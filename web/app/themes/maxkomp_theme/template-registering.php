@@ -37,7 +37,7 @@
                                     <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Bekräfta lösenord" minlength="8" pattern=".{8,}" required>
                                 </div>
                             </div>
-                            <button type="submit" id="next_btn" class="btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                            <button type="button" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
                         </form>
                     </div>
 
@@ -49,31 +49,31 @@
                             <h4 class="will-animate" data-class="fadeInUp">Personuppgifter</h4>
                             <div class="form-group will-animate" data-class="fadeInUp">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+<!--                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>-->
                                     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Förnamn" required>
                                 </div>
                             </div>
                             <div class="form-group will-animate" data-class="fadeInUp">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+<!--                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>-->
                                     <input type="text" class="form-control" id="lastname" name="lastname"
                                            placeholder="Efternamn" required>
                                 </div>
                             </div>
                             <div class="form-group will-animate" data-class="fadeInUp">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-phone"></i></div>
+<!--                                    <div class="input-group-addon"><i class="fa fa-phone"></i></div>-->
                                     <input type="tel" class="form-control" id="phone" name="phone"
                                            placeholder="Telefon" required>
                                 </div>
                             </div>
                             <div class="form-group will-animate" data-class="fadeInUp">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-globe"></i></div>
+<!--                                    <div class="input-group-addon"><i class="fa fa-globe"></i></div>-->
                                     <input type="text" class="form-control" id="location" name="location" placeholder="Plats" required>
                                 </div>
                             </div>
-                            <button type="submit" id="next_btn" class="btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                            <button type="button" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
                         </form>
                     </div>
 
@@ -84,24 +84,24 @@
                         <h4 class="will-animate" data-class="fadeInUp">Anställning 1</h4>
                         <div class="form-group will-animate" data-class="fadeInUp"">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-building"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-building"></i></div>-->
                                 <input type="text" class="form-control" id="exampleInputAmount" placeholder="Företag">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-user"></i></div>-->
                                 <input type="text" class="form-control" id="exampleInputAmount"
                                        placeholder="Befattning">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>-->
                                 <input type="date" class="form-control" id="exampleInputAmount"
                                        placeholder="Startdatum">
                                 <i class="fa fa-arrow-right m-x-1"></i>
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>-->
                                 <input type="date" class="form-control" id="exampleInputAmount"
                                        placeholder="Slutdatum">
                             </div>
@@ -115,24 +115,24 @@
                         <h4 class="will-animate" data-class="fadeInUp">Anställning 2</h4>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-building"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-building"></i></div>-->
                                 <input type="text" class="form-control" id="exampleInputAmount" placeholder="Företag">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-user"></i></div>-->
                                 <input type="text" class="form-control" id="exampleInputAmount"
                                        placeholder="Befattning">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>-->
                                 <input type="date" class="form-control" id="exampleInputAmount"
                                        placeholder="Startdatum">
                                 <i class="fa fa-arrow-right m-x-1"></i>
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+<!--                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>-->
                                 <input type="date" class="form-control" id="exampleInputAmount"
                                        placeholder="Slutdatum">
                             </div>

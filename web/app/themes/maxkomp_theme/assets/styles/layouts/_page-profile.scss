@@ -55,7 +55,7 @@
   font-weight: 100;
   section {
     padding-bottom: 1rem;
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
     position: relative;
 
     &:first-of-type {
@@ -210,8 +210,25 @@
 
       margin-bottom: 1rem;
 
+      .asdasdasd {
+        color: $gray-dark;
+        position: absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        z-index: 3;
+        padding-bottom: .5rem;
+        padding-left: 15px;
+        
+        span {
+          font-family: Futura;
+          font-size: 0.8rem;
+          color: $gray-dark;
+        }
+      }
+
       > .row {
-        flex-direction: column;
+        //flex-direction: column;
       }
 
       .profile-header-overlay {
@@ -230,6 +247,8 @@
         padding: 0;
         margin:0;
       }
+
+
     }
     $work-color: $brand-primary;
     $edu-color: $brand-secondary;

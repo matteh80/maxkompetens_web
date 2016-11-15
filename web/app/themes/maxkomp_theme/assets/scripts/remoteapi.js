@@ -3,20 +3,15 @@ var RemoteApi = (function($) {
     var client = new $.RestClient('http://46.101.250.188/api/');
 
     var postAjaxRequest = function(endpoint, data, token) {
+        console.log("data");
+        console.log(data);
         if(token) {
             return $.ajax({
                 url: apiUrl+endpoint+"/",
                 method: "POST",
-                contentType: "application/json",
-                dataType: 'json',
                 data: JSON.stringify(data),
-                headers: {"Authorization": 'Token ' + sessionStorage.getItem('token')},
-                beforeSend: function(xhr) {
-                    if (sessionStorage.getItem('token')) {
-                        xhr.setRequestHeader('Authorization',
-                            'Token ' + sessionStorage.getItem('token'));
-                    }
-                },
+                contentType: "application/json",
+                headers: {"Authorization": 'Token ' + token},
                 success:function(response){
                     console.log(response);
                 },
@@ -42,22 +37,15 @@ var RemoteApi = (function($) {
 
     };
 
-    var getAjaxRequest = function(endpoint) {
-        if(method === 'GET') {
-            headers = {"Authorization": 'Token ' + sessionStorage.getItem('token')};
-        }
+    var getAjaxRequest = function(endpoint, token) {
         return $.ajax({
             url: apiUrl+endpoint+"/",
             method: "GET",
-            contentType: "application/json",
-            dataType: 'json',
-            data: JSON.stringify(data),
-            headers: headers,
+            async: true,
+            xhrFields: { withCredentials: true },
+            headers: { "Authorization": 'Token d4e98ce630af4fd6ff3cc2cbb5887762babff692' },
             beforeSend: function(xhr) {
-                if (sessionStorage.getItem('token')) {
-                    xhr.setRequestHeader('Authorization',
-                        'Token ' + sessionStorage.getItem('token'));
-                }
+                xhr.setRequestHeader("Authorization", "Token d4e98ce630af4fd6ff3cc2cbb5887762babff692" );
             },
             success:function(response){
 
@@ -82,8 +70,9 @@ var RemoteApi = (function($) {
 
     };
 
-    var update_profile = function(data) {
-        return postAjaxRequest('me', data, token);
+    var update_profile = function(data, token) {
+        // return postAjaxRequest('me', data, token);
+        return getAjaxRequest('me', token);
     };
 
     var get_languages = function() {

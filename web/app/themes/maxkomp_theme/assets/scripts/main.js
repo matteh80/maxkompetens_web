@@ -330,7 +330,7 @@
 
 
                 $('.download-wap').on('click', function(e) {
-
+                    /* jshint ignore:start */
                     var pdf = new jsPDF('p','pt','a4');
 
                     pdf.addHTML(document.getElementById('wap'),function() {
@@ -338,14 +338,16 @@
                         pdf.save("WAP-card");
                     });
                     return false;
+                    /* jshint ignore:end */
                 });
 
             }
         },
         'registering': {
             init: function () {
-
+                var fb_login = false;
                 var active_page = $('.active').attr("id");
+
                 $('body').addClass(active_page);
 
                 $( ".slider" ).slider({
@@ -379,19 +381,27 @@
 
                     switch(active_page) {
                         case "page1":
-                            var fbuser = JSON.parse(sessionStorage.getItem('fbuser'));
+                            if(fb_login) {
+                                user = JSON.parse(sessionStorage.getItem('fbuser'));
+                            }else{
+                                user = JSON.parse(sessionStorage.getItem('user'));
+                            }
+
                             tokendata = {
-                                "username": JSON.parse(sessionStorage.getItem('fbuser')).email,
-                                "password": "testtest",
+                                "username": user.email,
+                                "password": user.password,
                             };
                             RemoteApi.get_token(tokendata).done(function(data, textStatus, xhrObject){
                                 if(textStatus === 'success') {
                                     sessionStorage.setItem('token', JSON.stringify(data));
                                 }
                             });
-                            $('#firstname').val(fbuser.first_name);
-                            $('#lastname').val(fbuser.last_name);
-                            $('#location').val(fbuser.hometown.name);
+                            if(fb_login) {
+                                $('#firstname').val(fbuser.first_name);
+                                $('#lastname').val(fbuser.last_name);
+                                $('#location').val(fbuser.hometown.name);
+                            };
+
                             break;
                     }
                 };
@@ -401,72 +411,108 @@
                     switch(active_page) {
                         case "page0":
                             console.log("validation page 0");
-                            $('#register_form_page_0').validate({
-                                errorPlacement: function(error, element) {
-                                    error.appendTo( element.parent() );
-                                },
-                                rules: {
-                                    cpassword: {
-                                        equalTo: "#password"
-                                    }
-                                },
-                                // Specify validation error messages
-                                messages: {
-                                    password: {
-                                        required: "Ange ditt lösenord"
-                                    },
-                                    cpassword: {
-                                        equalTo: "Lösenordet matchar inte"
-                                    },
-                                    email: "Please enter a valid email address"
-                                },
-                                // Make sure the form is submitted to the destination defined
-                                // in the "action" attribute of the form when valid
-                                submitHandler: function(form) {
-                                    registerdata = {
-                                        "email": $('#email').val(),
-                                        "password": $('#password').val(),
-                                    };
+                            // $('#register_form_page_0').validate({
+                            //     errorPlacement: function(error, element) {
+                            //         error.appendTo( element.parent() );
+                            //     },
+                            //     rules: {
+                            //         cpassword: {
+                            //             equalTo: "#password"
+                            //         }
+                            //     },
+                            //     // Specify validation error messages
+                            //     messages: {
+                            //         password: {
+                            //             required: "Ange ditt lösenord"
+                            //         },
+                            //         cpassword: {
+                            //             equalTo: "Lösenordet matchar inte"
+                            //         },
+                            //         email: "Please enter a valid email address"
+                            //     },
+                            //     // Make sure the form is submitted to the destination defined
+                            //     // in the "action" attribute of the form when valid
+                            //     submitHandler: function(form) {
+                            //         registerdata = {
+                            //             "email": $('#email').val(),
+                            //             "password": $('#password').val(),
+                            //         };
+                            //
+                            //         RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
+                            //             if(textStatus === 'success') {
+                            //                 sessionStorage.setItem('user', registerdata);
+                            //                 gotoNextTab();
+                            //             }
+                            //         });
+                            //     }
+                            // });
 
-                                    RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
-                                        if(textStatus === 'success') {
-                                            sessionStorage.setItem('user', registerdata);
-                                            gotoNextTab();
-                                        }
-                                    });
-                            }
+
+
+                            //REMOVE WHEN VALIDATE
+                            registerdata = {
+                                "email": $('#email').val(),
+                                "password": $('#password').val(),
+                            };
+                            RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
+                                if(textStatus === 'success') {
+                                    sessionStorage.setItem('user', JSON.stringify(registerdata));
+                                    gotoNextTab();
+                                }
                             });
                             break;
 
                         case "page1":
                             console.log("validation page 1");
-                            $('#register_form_page_1').validate({
-                                errorPlacement: function(error, element) {
-                                    error.appendTo( element.parent() );
-                                },
-                                // Specify validation error messages
-                                messages: {
+                            // $('#register_form_page_1').validate({
+                            //     errorPlacement: function(error, element) {
+                            //         error.appendTo( element.parent() );
+                            //     },
+                            //     // Specify validation error messages
+                            //     messages: {
+                            //
+                            //     },
+                            //     // Make sure the form is submitted to the destination defined
+                            //     // in the "action" attribute of the form when valid
+                            //     submitHandler: function(form) {
+                            //         data = {
+                            //             "first_name": $('#firstname').val(),
+                            //             "last_name": $('#lastname').val(),
+                            //         };
+                            //
+                            //         RemoteApi.update_profile(data, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+                            //             console.log('update_profile');
+                            //             if(textStatus === 'success') {
+                            //                 gotoNextTab();
+                            //             }
+                            //         });
+                            //     }
+                            // });
 
-                                },
-                                // Make sure the form is submitted to the destination defined
-                                // in the "action" attribute of the form when valid
-                                submitHandler: function(form) {
-                                    data = {
-                                        "first_name": $('#firstname').val(),
-                                        "last_name": $('#lastname').val(),
-                                    };
-
-                                    RemoteApi.update_profile(data, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
-                                        console.log('update_profile');
-                                        if(textStatus === 'success') {
-                                            gotoNextTab();
-                                        }
-                                    });
+                            persondata = {
+                                "first_name": $('#firstname').val(),
+                                "last_name": $('#lastname').val(),
+                            };
+                            RemoteApi.update_profile(persondata, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+                                console.log('update_profile');
+                                if(textStatus === 'success') {
+                                    gotoNextTab();
                                 }
                             });
                             break;
                     }
                 };
+
+                persondata = {
+                    "first_name": "Beppe",
+                    "last_name": "Wolgers",
+                };
+                RemoteApi.update_profile(persondata, "d4e98ce630af4fd6ff3cc2cbb5887762babff691").done(function(data, textStatus, xhrObject){
+                    console.log('update_profile');
+                    if(textStatus === 'success') {
+                        // gotoNextTab();
+                    }
+                });
 
                 $('input').on('focus change', function() {
                     console.log('change');
@@ -482,7 +528,7 @@
                     }
                 });
 
-                $('#next_btn').on('click', function() {
+                $('.next_btn').on('click', function() {
                     formValidation();
                 });
                 $('#register_btn').on('click', function(){
@@ -502,6 +548,7 @@
                     var fields = {fields: 'email, name, first_name, last_name, birthday, education, gender, hometown, languages, location, website, work'};
                     console.log('Welcome!  Fetching your information.... ');
                     FB.api('/me', fields, function(response) {
+                        fb_login = true;
                         console.log(response);
                         console.log('Successful login for: ' + response.name);
 

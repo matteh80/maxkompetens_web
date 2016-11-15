@@ -169,42 +169,61 @@
 
 
 
-    <section id="contact" class="editable">
-        <div class="row flex-items-xs-center text-xs-center m-b-1">
-            <!--            <i class="section-icon fa fa-magnet m-b-1"></i>-->
-            <div class="section-hl">
-                <h4 class="text-uppercase text-xs-center">Kontakt</h4>
-            </div>
-        </div>
-        <div class="row contact-list">
-            <div class="col-xs-12">
-                <i class="fa fa-envelope"></i>
-                <span>anna@andersson.se</span>
-            </div>
-            <div class="col-xs-12">
-                <i class="fa fa-phone"></i>
-                <span>+46 (0)70-123 45 67</span>
-            </div>
-            <div class="col-xs-12">
-                <i class="fa fa-globe"></i>
-                <span>www.annaandersson.se</span>
-            </div>
-            <div class="col-xs-12">
-                <i class="fa fa-map-marker"></i>
-                <span>Fina gatan 12</span><br>
-                <span style="padding-left: 36px">123 45 FINSTAD</span>
-            </div>
-        </div>
-    </section>
+
+
+<!--    <section id="contact" class="editable">-->
+<!--        <div class="row flex-items-xs-center text-xs-center m-b-1">-->
+<!--            <div class="section-hl">-->
+<!--                <h4 class="text-uppercase text-xs-center">Kontakt</h4>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row contact-list">-->
+<!--            <div class="col-xs-12">-->
+<!--                <i class="fa fa-envelope"></i>-->
+<!--                <span>anna@andersson.se</span>-->
+<!--            </div>-->
+<!--            <div class="col-xs-12">-->
+<!--                <i class="fa fa-phone"></i>-->
+<!--                <span>+46 (0)70-123 45 67</span>-->
+<!--            </div>-->
+<!--            <div class="col-xs-12">-->
+<!--                <i class="fa fa-globe"></i>-->
+<!--                <span>www.annaandersson.se</span>-->
+<!--            </div>-->
+<!--            <div class="col-xs-12">-->
+<!--                <i class="fa fa-map-marker"></i>-->
+<!--                <span>Fina gatan 12</span><br>-->
+<!--                <span style="padding-left: 36px">123 45 FINSTAD</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
 </div>
 
 <div class="col-md-8 right-column">
     <section id="profile-header">
-        <div class="row text-xs-center">
+        <div class="row column text-xs-center">
             <div class="profile-header-overlay"></div>
             <h3 class="display-2 text-xs-left m-b-0 name">Anna Andersson</h3>
             <h3 class="text-uppercase text-xs-left work">Grafiker</h3>
+        </div>
+        <div class="row flex-items-xs-center asdasdasd" style="color: #333333;">
+            <div class="col-xs">
+                <i class="fa fa-envelope"></i>
+                <span>anna@andersson.se</span>
+            </div>
+            <div class="col-xs">
+                <i class="fa fa-phone"></i>
+                <span>070-1234567</span>
+            </div>
+            <div class="col-xs">
+                <i class="fa fa-globe"></i>
+                <span>annaandersson.se</span>
+            </div>
+            <div class="col-xs-4">
+                <i class="fa fa-map-marker"></i>
+                <span>Fina gatan 12, 123 45 FINSTAD</span>
+            </div>
         </div>
     </section>
 
@@ -263,7 +282,7 @@
                 <h4 class="text-uppercase">Mina främsta kompetensområden</h4>
             </div>
         </div>
-        <div class="stats row text-xs-center">
+        <div class="stats row text-xs-center m-t-2">
             <div class="col-xs-4">
 <!--                <div class="komp_progress" id="progress"></div>-->
                 <div class="komp_progress" id="komp_progress1" data-value="0.9" data-thickness="20" data-size="150"
@@ -349,6 +368,8 @@
             </div>
         </div>
     </section>
+
+    <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin-left:auto; margin-right: auto;" class="img-fluid wap-logo m-t-3"/>
 
 </div>
 
