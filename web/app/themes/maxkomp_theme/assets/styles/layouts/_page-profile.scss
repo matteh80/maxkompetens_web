@@ -131,19 +131,18 @@
     }
 
     .profile-pic {
-      width:160px;
-      height:160px;
-      background-color: white;
-      border-radius: 50%;
       overflow: hidden;
+      border-radius: 80px;
+      width: 160px;
+      height: 160px;
       border: 2px solid white;
 
+
       .picture {
-        background-image: url("https://s-media-cache-ak0.pinimg.com/736x/7d/a9/71/7da97143cd84b9e69a167f5e702f29a5.jpg");
-        background-position: top center;
-        background-size: cover;
-        width:100%;
-        height:100%;
+        //border: 2px solid white;
+        //border-radius: 80px;
+        //width: 160px;
+        //height: 160px;
       }
       .fa {
         font-size: 120px;
@@ -189,6 +188,7 @@
   }
   
   .right-column {
+    background-color: white;
     .section-hl {
       h4 {
         background-color: white;
@@ -280,7 +280,7 @@
           width:$bullet-size;
           height:$bullet-size;
           background-color: $gray-dark;
-          border-radius: 50%;
+          border-radius: $bullet-size/2;
           top:.7rem;
           margin-top: -($bullet-size/2);
           margin-left: auto;

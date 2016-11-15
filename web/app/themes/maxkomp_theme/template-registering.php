@@ -21,24 +21,19 @@
                         <form class="" id="register_form_page_0">
                             <div class="form-group">
                                 <div class="input-group">
+<!--                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>-->
                                     <input type="email" class="form-control" id="email" name="email" placeholder="E-post" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-post" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+<!--                                    <div class="input-group-addon"><i class="fa fa-lock"></i></div>-->
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Lösenord (minst 8 tecken)" minlength="8" pattern=".{8,}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+<!--                                    <div class="input-group-addon"><i class="fa fa-lock"></i></div>-->
                                     <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Bekräfta lösenord" minlength="8" pattern=".{8,}" required>
                                 </div>
                             </div>

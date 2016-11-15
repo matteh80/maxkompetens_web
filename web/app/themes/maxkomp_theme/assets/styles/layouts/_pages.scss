@@ -197,7 +197,7 @@ section {
   display: flex ;
 }
 section#registrering {
-  background-color: $gray-lighter;
+  background-color: #fff;
 
 
   > .container {
@@ -216,13 +216,6 @@ section#registrering {
     .fa-google-plus-official {
       color: $google_plus_color;
     }
-  }
-
-  input {
-    background-color: #fff;
-    border:none;
-    box-shadow: 0 0 0 transparent;
-    padding:1rem;
   }
 
   .left, .right {

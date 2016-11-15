@@ -17,7 +17,10 @@
     "jquery-validation": "^1.15.1",
     "jquery-validation-bootstrap-tooltip": "^0.10.2",
     "js-cookie": "^2.1.3",
-    "hover": "Hover#^2.1.0"
+    "hover": "Hover#^2.1.0",
+    "jspdf": "^1.3.2",
+    "html2canvas": "^0.4.1",
+    "jquery-circle-progress": "^1.2.0"
   },
   "overrides": {
     "font-awesome": {

@@ -27,7 +27,7 @@
 
     <div class="container wrapper m-t-2" id="resume-wrapper">
         <div class="arrow"></div>
-        <div class="row flex-items-xs-center">
+        <div class="row flex-items-xs-center" id="wap">
             <?php
             if(is_page('profil')) {
                 get_template_part('templates/profile', 'resume');
@@ -36,5 +36,7 @@
             }
             ?>
         </div>
+
+        <h4><a href="#" class="download-wap">Download</a></h4>
     </div>
 </section>

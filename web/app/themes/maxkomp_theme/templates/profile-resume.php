@@ -1,10 +1,10 @@
 <div class="col-md-4 left-column">
     <section class="info">
-        <div class="row column flex-items-xs-center">
-            <div class="profile-pic text-xs-center">
-                <div class="picture"></div>
-            </div>
-            <span class="text-xs-center">Aktivt sökande</span>
+        <div class="row flex-items-xs-center">
+            <canvas id="myCanvas" width="160" height="160" data-src="<?= \Roots\Sage\Assets\asset_path('images/face.png');?>"></canvas>
+<!--            <div class="profile-pic text-xs-center">-->
+<!--                <img src="--><?//= \Roots\Sage\Assets\asset_path('images/face.png');?><!--" class="picture img-fluid" crossOrigin="Anonymous" />-->
+<!--            </div>-->
         </div>
 
 <!--        <div class="row column text-xs-center m-y-2">-->
@@ -263,28 +263,27 @@
                 <h4 class="text-uppercase">Mina främsta kompetensområden</h4>
             </div>
         </div>
-        <ul class="col-xs-12" style="margin-left: 2rem;">
-            <li class="col-xs">Photoshop</li>
-            <li class="col-xs">Illustrator</li>
-            <li class="col-xs">InDesign</li>
-        </ul>
         <div class="stats row text-xs-center">
             <div class="col-xs-4">
-                <div class="komp_progress" id="progress"></div>
+<!--                <div class="komp_progress" id="progress"></div>-->
+                <div class="komp_progress" id="komp_progress1" data-value="0.9" data-thickness="20" data-size="150"
+                    data-fill="{&quot;color&quot;: &quot;rgba(0, 0, 0, .3)&quot;,&quot;color&quot;: &quot;#ff0000&quot;}"></div>
                 <h5>Photoshop</h5>
             </div>
             <div class="col-xs-4">
-                <div class="komp_progress" id="progress2"></div>
+                <div class="komp_progress" id="komp_progress1" data-value="0.6" data-thickness="20" data-size="150"
+                     data-fill="{&quot;color&quot;: &quot;rgba(0, 0, 0, .3)&quot;,&quot;color&quot;: &quot;#ff0000&quot;}"></div>
                 <h5>Illustrator</h5>
             </div>
             <div class="col-xs-4">
-                <div class="komp_progress" id="progress3"></div>
+                <div class="komp_progress" id="komp_progress1" data-value="0.8" data-thickness="20" data-size="150"
+                     data-fill="{&quot;color&quot;: &quot;rgba(0, 0, 0, .3)&quot;,&quot;color&quot;: &quot;#ff0000&quot;}"></div>
                 <h5>InDesign</h5>
             </div>
-            <div class="col-xs-3 hidden-xs-up">
-                <div class="komp_progress" id="progress4"></div>
-                <h5>HTML/CSS</h5>
-            </div>
+<!--            <div class="col-xs-3 hidden-xs-up">-->
+<!--                <div class="komp_progress" id="progress4"></div>-->
+<!--                <h5>HTML/CSS</h5>-->
+<!--            </div>-->
         </div>
     </section>
 
@@ -296,24 +295,11 @@
             </div>
         </div>
         <div class="row asd">
-            <div class="col-xs-1 bullet-wrapper">
-                <div class="bullet"></div>
-            </div>
             <div class="col-xs">
                 <h6>Trevliga kollegor </h6>
             </div>
-        </div>
-        <div class="row asd">
-            <div class="col-xs-1 bullet-wrapper">
-                <div class="bullet"></div>
-            </div>
             <div class="col-xs">
                 <h6>Friskvårdsbidrag </h6>
-            </div>
-        </div>
-        <div class="row asd">
-            <div class="col-xs-1 bullet-wrapper">
-                <div class="bullet"></div>
             </div>
             <div class="col-xs">
                 <h6>Jag vill helst inte ha mer än 40 minuter till jobbet </h6>

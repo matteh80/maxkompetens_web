@@ -236,8 +236,29 @@
         'profil': {
             init: function () {
 
+                function getDataUri(url, callback) {
+                    var image = new Image();
+
+                    image.onload = function () {
+                        var canvas = document.createElement('canvas');
+                        canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
+                        canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+
+                        canvas.getContext('2d').drawImage(this, 0, 0);
+
+                        // Get raw image data
+                        // callback(canvas.toDataURL('image/png').replace(/^data:image\/(png|jpg);base64,/, ''));
+
+                        // ... or get as Data URI
+                        callback(canvas.toDataURL('image/png'));
+                    };
+
+                    image.src = url;
+                }
+
+
                 $(window).on('scroll resize', function() {
-                    $('#resume-wrapper').css("height", ($('#resume-wrapper').width() * 1.4142));
+                    $('#resume-wrapper').css("height", ($('#resume-wrapper').outerWidth() * 1.4142857));
                 });
 
                 jQuery.fn.progressCount = function(){
@@ -262,54 +283,63 @@
                    $(this).children('.c100').progressCount();
                 });
 
-                var options = {
-                    strokeWidth: 10,
-                    easing: 'bounce',
-                    duration: 1400,
-                    color: '#13d6ab',
-                    trailColor: '#cdcdcd',
-                    trailWidth: 10,
-                    svgStyle: null
-                };
-                var options_personality = {
-                    strokeWidth: 4,
-                    easing: 'bounce',
-                    duration: 1400,
-                    color: '#ff4100',
-                    trailColor: '#373a3c',
-                    trailWidth: 1,
-                    svgStyle: {width: '100%', height: '100%'}
-                };
-                var bar1 = new ProgressBar.Circle('#progress', options);
-                var bar2 = new ProgressBar.Circle('#progress2', options);
-                var bar3 = new ProgressBar.Circle('#progress3', options);
-                var bar4 = new ProgressBar.Circle('#progress4', options);
 
-                // var bar11 = new ProgressBar.Circle('#progress11', options);
-                // var bar12 = new ProgressBar.Circle('#progress12', options);
-                // var bar13 = new ProgressBar.Circle('#progress13', options);
-                // var bar14 = new ProgressBar.Circle('#progress14', options);
 
-                var bar11 = new ProgressBar.Line('#person-bar1', options_personality);
-                var bar12 = new ProgressBar.Line('#person-bar2', options_personality);
-                var bar13 = new ProgressBar.Line('#person-bar3', options_personality);
-                var bar14 = new ProgressBar.Line('#person-bar4', options_personality);
-                var bar15 = new ProgressBar.Line('#person-bar5', options_personality);
-
-                $('#progress').one('inview', function(event, isInView) {
+                $('.komp_progress').one('inview', function(event, isInView) {
                     if (isInView) {
-                        bar1.animate(1);
-                        bar2.animate(0.6);
-                        bar3.animate(0.8);
-                        bar4.animate(0.4);
-
-                        bar11.animate(1);
-                        bar12.animate(0.6);
-                        bar13.animate(0.8);
-                        bar14.animate(0.4);
-                        bar15.animate(1);
+                        $(this).circleProgress();
                     }
                 });
+
+
+
+                var imgSrc = $('#myCanvas').attr('data-src');
+                console.log("data-src:"+ imgSrc);
+
+                getDataUri(imgSrc, function(dataUri) {
+                    // Do whatever you'd like with the Data URI!
+                    var canvas = document.getElementById('myCanvas');
+                    var context = canvas.getContext('2d');
+                    var x = canvas.width / 2;
+                    var y = canvas.height / 2;
+                    var radius = 75;
+                    var offset = 50;
+
+                    var img = new Image();
+                    img.src = dataUri;
+                    img.onload = function() {
+                        context.save();
+                        context.beginPath();
+                        context.arc(x, y, radius, 0, 2 * Math.PI, false);
+                        context.clip();
+                        context.drawImage(img, 5, 5, 150, 150);
+                        context.imageSmoothingEnabled = true;
+                        context.translate(0.5, 0.5);
+                    };
+
+                    context.restore();
+                    context.beginPath();
+                    context.arc(x, y, radius, 0, 2 * Math.PI, false);
+                    context.lineWidth = 5;
+                    context.strokeStyle = 'white';
+                    context.stroke();
+                    context.imageSmoothingEnabled = true;
+                    context.translate(0.5, 0.5);
+                });
+
+
+
+                $('.download-wap').on('click', function(e) {
+
+                    var pdf = new jsPDF('p','pt','a4');
+
+                    pdf.addHTML(document.getElementById('wap'),function() {
+                        // pdf.output('datauri');
+                        pdf.save("WAP-card");
+                    });
+                    return false;
+                })
+
             }
         },
         'registering': {
@@ -334,6 +364,9 @@
                     }
                 });
                 $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
+
+
+
 
                 var gotoNextTab = function() {
                     $('.active').addClass('done');
@@ -367,6 +400,7 @@
                     console.log('Active page: '+active_page);
                     switch(active_page) {
                         case "page0":
+                            console.log("validation page 0");
                             $('#register_form_page_0').validate({
                                 errorPlacement: function(error, element) {
                                     error.appendTo( element.parent() );
@@ -405,6 +439,7 @@
                             break;
 
                         case "page1":
+                            console.log("validation page 1");
                             $('#register_form_page_1').validate({
                                 errorPlacement: function(error, element) {
                                     error.appendTo( element.parent() );

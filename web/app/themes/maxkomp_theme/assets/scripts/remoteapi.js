@@ -6,8 +6,10 @@ var RemoteApi = (function($) {
         if(token) {
             return $.ajax({
                 url: apiUrl+endpoint+"/",
-                contentType: "application/json",
                 method: "POST",
+                contentType: "application/json",
+                dataType: 'json',
+                data: JSON.stringify(data),
                 headers: {"Authorization": 'Token ' + sessionStorage.getItem('token')},
                 beforeSend: function(xhr) {
                     if (sessionStorage.getItem('token')) {
@@ -16,22 +18,24 @@ var RemoteApi = (function($) {
                     }
                 },
                 success:function(response){
-
+                    console.log(response);
                 },
                 error: function(errorThrown){
-
+                    console.log(errorThrown);
                 }
             });
         }else{
             return $.ajax({
                 url: apiUrl+endpoint+"/",
                 method: "POST",
-                data: data,
+                contentType: "application/json",
+                dataType: 'json',
+                data: JSON.stringify(data),
                 success:function(response){
-
+                    console.log(response);
                 },
                 error: function(errorThrown){
-
+                    console.log(errorThrown);
                 }
             });
         }
@@ -44,12 +48,10 @@ var RemoteApi = (function($) {
         }
         return $.ajax({
             url: apiUrl+endpoint+"/",
-            contentType: "application/json",
             method: "GET",
-            processData: false,
-            async: true,
-            cache: false,
+            contentType: "application/json",
             dataType: 'json',
+            data: JSON.stringify(data),
             headers: headers,
             beforeSend: function(xhr) {
                 if (sessionStorage.getItem('token')) {
