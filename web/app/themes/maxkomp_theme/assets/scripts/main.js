@@ -400,7 +400,7 @@
                                 $('#firstname').val(fbuser.first_name);
                                 $('#lastname').val(fbuser.last_name);
                                 $('#location').val(fbuser.hometown.name);
-                            };
+                            }
 
                             break;
                     }
