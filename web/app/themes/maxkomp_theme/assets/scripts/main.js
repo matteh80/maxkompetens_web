@@ -175,6 +175,7 @@
 
             },
             finalize: function () {
+
                 $( function() {
                     $.widget( "custom.catcomplete", $.ui.autocomplete, {
                         _create: function() {
@@ -198,24 +199,24 @@
                             });
                         }
                     });
-                    var data = [
-                        { label: "Administratör", category: "Administration", plural: "administratörer" },
-                        { label: "Arkivering", category: "Administration", plural: "arkivarier" },
-                        { label: "Assistent", category: "Administration", plural: "assistenter" },
-                        { label: "Dataregistrering", category: "Administration", plural: "dataregistrerare" },
-                        { label: "Fastighetsförvaltning", category: "Administration", plural: "fastighetsförvaltare" },
-                        { label: "IT-konsult", category: "Data/IT", plural: "IT-konsulter" },
-                        { label: "IT-säkerhet", category: "Data/IT", plural: "IT-säkerhetskonsulter" },
-                        { label: "Systemanalys", category: "Data/IT", plural: "systemanalytiker" },
-                        { label: "Systemarkitektur", category: "Data/IT", plural: "systemarkitekter" },
-                        { label: "Systemutveckling", category: "Data/IT", plural: "systemutvecklare" },
-                        { label: "Fastighetskötsel/HVAC", category: "Drift/Underhåll", plural: "fastighetsskötare" }
+                    var workdata = [];
+                    RemoteApi.get_occupations().done(function(data, textStatus, xhrObject){
+                        console.log(data);
+                        // data = $.parseJSON(data);
+                        // data.sort();
 
-                    ];
+                        $.each(data, function(i, categoryitem) {
+                            console.log(categoryitem.name);
+                            $.each(categoryitem.occupations, function(x, item) {
+                                console.log(item.name);
+                                workdata.push({label: item.name, category: categoryitem.name});
+                            });
+                        });
+                    });
 
                     $( "#kompetenser" ).catcomplete({
                         delay: 0,
-                        source: data,
+                        source: workdata,
                         select: function( event, ui ) {
                             console.log( "Selected: " + ui.item.value + " aka " + ui.item.category );
                             $('html, body').animate({
@@ -334,8 +335,8 @@
                     var pdf = new jsPDF('p','pt','a4');
 
                     pdf.addHTML(document.getElementById('wap'),function() {
-                        // pdf.output('datauri');
-                        pdf.save("WAP-card");
+                        pdf.output('datauri');
+                        // pdf.save("WAP-card");
                     });
                     return false;
                     /* jshint ignore:end */
@@ -367,6 +368,64 @@
                 });
                 $( "#amount" ).val( "$" + $( "#slider" ).slider( "value" ) );
 
+                var setUpJobList = function() {
+                    $(function () {
+                        $.widget("custom.catcomplete", $.ui.autocomplete, {
+                            _create: function () {
+                                this._super();
+                                this.widget().menu("option", "items", "> :not(.ui-autocomplete-category)");
+                            },
+                            _renderMenu: function (ul, items) {
+                                var that = this,
+                                    currentCategory = "";
+                                $.each(items, function (index, item) {
+                                    var li;
+                                    if (item.category !== currentCategory) {
+                                        ul.append("<li class='ui-autocomplete-category'>" + item.category + "</li>");
+                                        currentCategory = item.category;
+                                    }
+                                    li = that._renderItemData(ul, item);
+                                    if (item.category) {
+                                        li.attr("aria-label", item.category + " : " + item.label);
+                                    }
+
+                                });
+                            }
+                        });
+                        var workdata = [];
+                        RemoteApi.get_occupations().done(function (data, textStatus, xhrObject) {
+                            console.log(data);
+                            // data = $.parseJSON(data);
+
+                            $.each(data, function (i, categoryitem) {
+                                console.log(categoryitem.name);
+                                $.each(categoryitem.occupations, function (x, item) {
+                                    console.log(item.name);
+                                    workdata.push({label: item.name, category: categoryitem.name});
+                                });
+                            });
+                        });
+
+
+                        $("#occupation").catcomplete({
+                            delay: 0,
+                            source: workdata,
+                            select: function (event, ui) {
+                                console.log("Selected: " + ui.item.value + " aka " + ui.item.category);
+                                $('#occupation').text(ui.item);
+                            }
+                        });
+                        $("#occupation2").catcomplete({
+                            delay: 0,
+                            source: workdata,
+                            select: function (event, ui) {
+                                console.log("Selected: " + ui.item.value + " aka " + ui.item.category);
+                                $('#occupation2').text(ui.item);
+                            }
+                        });
+                    });
+                };
+
 
 
 
@@ -384,24 +443,18 @@
                             if(fb_login) {
                                 user = JSON.parse(sessionStorage.getItem('fbuser'));
                             }else{
-                                user = JSON.parse(sessionStorage.getItem('user'));
+                                // user = JSON.parse(sessionStorage.getItem('user'));
                             }
 
-                            tokendata = {
-                                "username": user.email,
-                                "password": user.password,
-                            };
-                            RemoteApi.get_token(tokendata).done(function(data, textStatus, xhrObject){
-                                if(textStatus === 'success') {
-                                    sessionStorage.setItem('token', JSON.stringify(data));
-                                }
-                            });
                             if(fb_login) {
                                 $('#firstname').val(fbuser.first_name);
                                 $('#lastname').val(fbuser.last_name);
                                 $('#location').val(fbuser.hometown.name);
                             }
 
+                            break;
+                        case "page2":
+                            setUpJobList();
                             break;
                     }
                 };
@@ -411,104 +464,158 @@
                     switch(active_page) {
                         case "page0":
                             console.log("validation page 0");
-                            // $('#register_form_page_0').validate({
-                            //     errorPlacement: function(error, element) {
-                            //         error.appendTo( element.parent() );
-                            //     },
-                            //     rules: {
-                            //         cpassword: {
-                            //             equalTo: "#password"
-                            //         }
-                            //     },
-                            //     // Specify validation error messages
-                            //     messages: {
-                            //         password: {
-                            //             required: "Ange ditt lösenord"
-                            //         },
-                            //         cpassword: {
-                            //             equalTo: "Lösenordet matchar inte"
-                            //         },
-                            //         email: "Please enter a valid email address"
-                            //     },
-                            //     // Make sure the form is submitted to the destination defined
-                            //     // in the "action" attribute of the form when valid
-                            //     submitHandler: function(form) {
-                            //         registerdata = {
-                            //             "email": $('#email').val(),
-                            //             "password": $('#password').val(),
-                            //         };
-                            //
-                            //         RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
-                            //             if(textStatus === 'success') {
-                            //                 sessionStorage.setItem('user', registerdata);
-                            //                 gotoNextTab();
-                            //             }
-                            //         });
-                            //     }
-                            // });
+                            $('#register_form_page_0').validate({
+                                errorPlacement: function(error, element) {
+                                    error.appendTo( element.parent() );
+                                },
+                                rules: {
+                                    cpassword: {
+                                        equalTo: "#password"
+                                    }
+                                },
+                                // Specify validation error messages
+                                messages: {
+                                    password: {
+                                        required: "Ange ett lösenord"
+                                    },
+                                    cpassword: {
+                                        equalTo: "Lösenorden matchar inte"
+                                    },
+                                    email: "Var vänlig skriv en giltig epost-adress",
+                                    agree: {
+                                        required: "Du måste godkänna användarvillkoren"
+                                    },
+                                },
+                                // Make sure the form is submitted to the destination defined
+                                // in the "action" attribute of the form when valid
+                                submitHandler: function(form) {
+                                    registerdata = {
+                                        "email": $('#email').val(),
+                                        "password": $('#password').val(),
+                                    };
 
-
-
-                            //REMOVE WHEN VALIDATE
-                            registerdata = {
-                                "email": $('#email').val(),
-                                "password": $('#password').val(),
-                            };
-                            RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
-                                if(textStatus === 'success') {
-                                    sessionStorage.setItem('user', JSON.stringify(registerdata));
-                                    gotoNextTab();
+                                    RemoteApi.register_user(registerdata).done(function(data, textStatus, xhrObject){
+                                        if(textStatus === 'success') {
+                                            sessionStorage.setItem('user', registerdata);
+                                            sessionStorage.setItem('token', JSON.stringify(data));
+                                            gotoNextTab();
+                                        }
+                                    });
                                 }
                             });
                             break;
 
                         case "page1":
                             console.log("validation page 1");
-                            // $('#register_form_page_1').validate({
-                            //     errorPlacement: function(error, element) {
-                            //         error.appendTo( element.parent() );
-                            //     },
-                            //     // Specify validation error messages
-                            //     messages: {
-                            //
-                            //     },
-                            //     // Make sure the form is submitted to the destination defined
-                            //     // in the "action" attribute of the form when valid
-                            //     submitHandler: function(form) {
-                            //         data = {
-                            //             "first_name": $('#firstname').val(),
-                            //             "last_name": $('#lastname').val(),
-                            //         };
-                            //
-                            //         RemoteApi.update_profile(data, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
-                            //             console.log('update_profile');
-                            //             if(textStatus === 'success') {
-                            //                 gotoNextTab();
-                            //             }
-                            //         });
-                            //     }
-                            // });
+                            $('#register_form_page_1').validate({
+                                errorPlacement: function(error, element) {
+                                    error.appendTo( element.parent() );
+                                },
+                                // Specify validation error messages
+                                messages: {
 
-                            persondata = {
-                                "first_name": $('#firstname').val(),
-                                "last_name": $('#lastname').val(),
-                            };
+                                },
+                                // Make sure the form is submitted to the destination defined
+                                // in the "action" attribute of the form when valid
+                                submitHandler: function(form) {
+                                    data = {
+                                        "first_name": $('#firstname').val(),
+                                        "last_name": $('#lastname').val(),
+                                        "address": $('#adress').val(),
+                                        "care_of": $("#co_adress").val(),
+                                        "zip_code": $("#zipcode").val(),
+                                        "city": $("#city").val(),
+                                        "mobile_phone_number": $("#phone").val(),
+                                        "actively_searching": $('#actively_searching').val()
+                                    };
 
-                            var token = JSON.parse(sessionStorage.getItem('token'));
-                            console.log(token);
-                            RemoteApi.update_profile(persondata, token).done(function(data, textStatus, xhrObject){
-                                console.log('update_profile');
-                                if(textStatus === 'success') {
-                                    gotoNextTab();
+                                    RemoteApi.update_profile(data, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+                                        console.log('update_profile');
+                                        if(textStatus === 'success') {
+                                            gotoNextTab();
+                                        }
+                                    });
                                 }
                             });
+
+                            break;
+
+                        case 'page2':
+
+                            if($('#no-jobs').is(':checked')) {
+                                gotoNextTab();
+                            }else{
+                                console.log("validation page 2");
+                                $('#register_form_page_2').validate({
+                                    errorPlacement: function(error, element) {
+                                        error.appendTo( element.parent() );
+                                    },
+                                    // Specify validation error messages
+                                    messages: {
+
+                                    },
+                                    submitHandler: function(form) {
+                                        data = {
+                                            "employer": $('#employer').val(),
+                                            "occupation": $('#occupation').val(),
+                                            "start_date": $('#start_date').val(),
+                                            "end_date": $('#end_date').val(),
+                                            "current": $('#current').val(),
+                                            "description": $('#description').val(),
+                                        };
+
+                                        RemoteApi.add_employment(data, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+                                            if($('#employer2').val()) {
+                                                data2 = {
+                                                    "employer": $('#employer2').val(),
+                                                    "occupation": $('#occupation2').val(),
+                                                    "start_date": $('#start_date2').val(),
+                                                    "end_date": $('#end_date2').val(),
+                                                    "description": $('#description2').val(),
+                                                };
+                                                console.log(data2);
+                                                RemoteApi.add_employment(data2, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+                                                    if(textStatus === 'success') {
+                                                        gotoNextTab();
+                                                    }
+                                                });
+                                            }
+                                        });
+
+
+
+                                    }
+                                });
+                            }
                             break;
                     }
                 };
 
+                setUpJobList();
+
                 $('input').on('focus change', function() {
                     console.log('change');
                    $('.active').addClass('started');
+                });
+
+                $('#no-jobs').change(function() {
+                    console.log("changed check");
+                    if($(this).is(":checked")) {
+                        $('input').not('#no-jobs').each(function(index, element) {
+                            $(this).prop('disabled', true);
+                        });
+                        $('textarea').each(function(index, element) {
+                            $(this).prop('disabled', true);
+                        });
+                    }else{
+                        $('input').each(function(index, element) {
+                            $(this).prop('disabled', false);
+                        });
+                        $('textarea').each(function(index, element) {
+                            $(this).prop('disabled', false);
+                        });
+                    }
+
                 });
 
 

@@ -44,6 +44,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.ui-autocomplete {
+  max-height: 50vh;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+  height: 50vh;
+}
+
 
 // COLORS
 .text-orange {
@@ -303,13 +316,5 @@ form {
     background-color: $gray-dark !important;
     border: 1px solid $gray-dark !important;
   }
-}
-
-// Forms
-input {
-  background-color: $gray-lighter;
-  border:none;
-  box-shadow: 0 0 0 transparent;
-  padding:1rem;
 }
 

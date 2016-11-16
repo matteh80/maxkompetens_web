@@ -70,10 +70,10 @@
       line-height: 4rem;
       width:4rem;
       height:4rem;
+      border-radius: 2rem;
       background-color: $light-blue;
-      padding: 1rem;
       color: #fff;
-      margin:0 auto;
+      text-align: center;
     }
 
     &.editable:hover:after {
@@ -92,7 +92,7 @@
 
   .section-hl {
     position: relative;
-    width:100%;
+    //width:100%;
     &:before {
       content: '';
       position: absolute;
@@ -186,7 +186,7 @@
       }
     }
   }
-  
+
   .right-column {
     background-color: white;
     .section-hl {
@@ -195,7 +195,7 @@
       }
     }
     .section-icon {
-      background-color: $gray-dark;
+      background-color: $brand-secondary;
       //color: #fff;
     }
 
@@ -209,23 +209,6 @@
       padding:3rem 2rem;
 
       margin-bottom: 1rem;
-
-      .asdasdasd {
-        color: $gray-dark;
-        position: absolute;
-        bottom:0;
-        left:0;
-        width:100%;
-        z-index: 3;
-        padding-bottom: .5rem;
-        padding-left: 15px;
-        
-        span {
-          font-family: Futura;
-          font-size: 0.8rem;
-          color: $gray-dark;
-        }
-      }
 
       > .row {
         //flex-direction: column;
@@ -247,7 +230,29 @@
         padding: 0;
         margin:0;
       }
+      
+      .contact-info {
+        color: $gray-dark;
+        position: relative;
+        z-index: 3;
 
+        .fa {
+          $fa-size: 30px;
+          width:$fa-size;
+          height:$fa-size;
+          line-height:$fa-size;
+          background-color: $brand-primary;
+          border-radius: $fa-size/2;
+          color: #fff;
+          text-align: center;
+          font-size: 1rem;
+        }
+
+        span {
+          font-family: futura-pt;
+          font-size: 1.2rem;
+        }
+      }
 
     }
     $work-color: $brand-primary;

@@ -5,6 +5,7 @@ var RemoteApi = (function($) {
     var postAjaxRequest = function(endpoint, data, token) {
         if(token) {
             var tokenString = "Token "+token.token;
+            console.log(tokenString);
             return $.ajax({
                 url: apiUrl+endpoint+"/",
                 method: "POST",
@@ -40,22 +41,36 @@ var RemoteApi = (function($) {
     };
 
     var getAjaxRequest = function(endpoint, token) {
-        var tokenString = "Token "+token.token;
-        return $.ajax({
-            url: apiUrl+endpoint+"/",
-            method: "GET",
-            // xhrFields: { withCredentials: true },
-            headers: { "Authorization": tokenString },
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", tokenString );
-            },
-            success:function(response){
+        if(token) {
+            var tokenString = "Token "+token.token;
+            return $.ajax({
+                url: apiUrl+endpoint+"/",
+                method: "GET",
+                // xhrFields: { withCredentials: true },
+                headers: { "Authorization": tokenString },
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", tokenString );
+                },
+                success:function(response){
 
-            },
-            error: function(errorThrown){
+                },
+                error: function(errorThrown){
 
-            }
-        });
+                }
+            });
+        }else{
+            return $.ajax({
+                url: apiUrl+endpoint+"/",
+                method: "GET",
+                success:function(response){
+
+                },
+                error: function(errorThrown){
+
+                }
+            });
+        }
+
     };
 
 
@@ -74,7 +89,10 @@ var RemoteApi = (function($) {
 
     var update_profile = function(data, token) {
         return postAjaxRequest('me', data, token);
-        // return getAjaxRequest('me', token);
+    };
+
+    var add_employment = function (data, token) {
+        return postAjaxRequest('me/employment', data, token);
     };
 
     var get_languages = function() {
@@ -84,12 +102,18 @@ var RemoteApi = (function($) {
         });
     };
 
+    var get_occupations = function() {
+        return getAjaxRequest("occupation");
+    };
+
     return {
         register_user: register_user,
         get_token: get_token,
         get_profile: get_profile,
         update_profile: update_profile,
-        get_languages: get_languages
+        get_languages: get_languages,
+        add_employment: add_employment,
+        get_occupations: get_occupations
     };
 })(jQuery);
 

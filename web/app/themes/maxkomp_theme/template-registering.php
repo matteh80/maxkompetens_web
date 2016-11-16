@@ -16,7 +16,7 @@
             <a href="#"><i class="fa fa-google-plus-official"></i></a>
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">
-            <div class="tab-content col-xs-12 col-sm-10 col-md-6">
+            <div class="tab-content col-xs-12 col-lg-9">
                     <div class="tab-pane fade in active" id="page0" role="tabpanel">
                         <form class="" id="register_form_page_0">
                             <div class="form-group">
@@ -34,7 +34,11 @@
                                     <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Bekräfta lösenord" minlength="8" pattern=".{8,}" required>
                                 </div>
                             </div>
-                            <button type="button" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                            <div class="form-check">
+                                <input type="checkbox" id="agree" name="agree" required />
+                                <label class="form-check-label" for="agree"><span></span>Jag godkänner användarvillkoren och bla bla bla</label>
+                            </div>
+                            <button type="submit" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
                         </form>
                     </div>
 
@@ -57,16 +61,32 @@
                             </div>
                             <div class="form-group will-animate" data-class="fadeInUp">
                                 <div class="input-group">
-                                    <input type="tel" class="form-control" id="phone" name="phone"
-                                           placeholder="Telefon" required>
+                                    <input type="text" class="form-control" id="adress" name="adress" placeholder="Adress" required>
                                 </div>
                             </div>
                             <div class="form-group will-animate" data-class="fadeInUp">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="location" name="location" placeholder="Plats" required>
+                                    <input type="text" class="form-control" id="co_adress" name="co_adress" placeholder="C/o">
                                 </div>
                             </div>
-                            <button type="button" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                            <div class="form-group will-animate row" data-class="fadeInUp">
+                                <div class="input-group col-xs-4">
+                                    <input type="number" class="form-control" id="zipcode" name="zipcode" placeholder="Postnummer">
+                                </div>
+                                <div class="input-group col-xs">
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="Stad">
+                                </div>
+                            </div>
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon" required>
+                                </div>
+                            </div>
+                            <div class="form-check will-animate" data-class="fadeInUp">
+                                <input type="checkbox" id="actively_searching" name="actively_searching" />
+                                <label class="form-check-label" for="actively_searching"><span></span>Jag söker jobb <u>aktivt</u></label>
+                            </div>
+                            <button type="submit" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
                         </form>
                     </div>
 
@@ -74,61 +94,79 @@
 <!--                    ANSTÄLLNINGAR-->
 
                     <div class="tab-pane fade" id="page2" role="tabpanel">
-                        <h4 class="will-animate" data-class="fadeInUp">Anställning 1</h4>
-                        <div class="form-group will-animate" data-class="fadeInUp"">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Företag">
+                        <form id="register_form_page_2" class="jobs-form">
+                            <h4 class="will-animate" data-class="fadeInUp">Anställning 1</h4>
+                            <div class="form-group will-animate" data-class="fadeInUp"">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="employer" name="employer" placeholder="Företag">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputAmount"
-                                       placeholder="Befattning">
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="occupation" name="occupation" placeholder="Yrkeskategori">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <input type="date" class="form-control" id="exampleInputAmount"
-                                       placeholder="Startdatum">
-                                <i class="fa fa-arrow-right m-x-1"></i>
-                                <input type="date" class="form-control" id="exampleInputAmount"
-                                       placeholder="Slutdatum">
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="befattning" name="befattning" placeholder="Befattning">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Arbetsuppgifter"></textarea>
+                            <div class="form-group will-animate container" data-class="fadeInUp">
+                                <div class="input-group row flex-items-xs-middle">
+                                    <input type="date" class="form-control col-sm-5 col-md-4" id="start_date" name="start_date" placeholder="Startdatum">
+                                    <i class="fa fa-arrow-right m-x-1"></i>
+                                    <input type="date" class="form-control col-sm-5 col-md-4" id="end_date" name="end_date" placeholder="Slutdatum">
+                                </div>
                             </div>
-                        </div>
+                            <div class="form-check will-animate" data-class="fadeInUp">
+                                <div class="col-xs">
+                                    <input type="checkbox" id="current" name="current" />
+                                    <label class="form-check-label col-xs" for="current"><span></span>Nuvarande anställning</label>
+                                </div>
+                            </div>
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <textarea class="form-control" id="description" name="description" rows="3" placeholder="Arbetsuppgifter"></textarea>
+                                </div>
+                            </div>
 
-                        <h4 class="will-animate" data-class="fadeInUp">Anställning 2</h4>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Företag">
+
+                            <h4 class="will-animate" data-class="fadeInUp">Anställning 2</h4>
+                            <div class="form-group will-animate" data-class="fadeInUp"">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="employer2" name="employer2" placeholder="Företag">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputAmount"
-                                       placeholder="Befattning">
+
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="occupation2" name="occupation2" placeholder="Yrkeskategori">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <input type="date" class="form-control" id="exampleInputAmount"
-                                       placeholder="Startdatum">
-                                <i class="fa fa-arrow-right m-x-1"></i>
-                                <input type="date" class="form-control" id="exampleInputAmount"
-                                       placeholder="Slutdatum">
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="befattning2" name="befattning2" placeholder="Befattning">
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Arbetsuppgifter"></textarea>
+                            <div class="form-group will-animate container" data-class="fadeInUp">
+                                <div class="input-group row flex-items-xs-middle">
+                                    <input type="date" class="form-control col-sm-4" id="start_date2" name="start_date2" placeholder="Startdatum">
+                                    <i class="fa fa-arrow-right m-x-1"></i>
+                                    <input type="date" class="form-control col-sm-4" id="end_date2" name="end_date2" placeholder="Slutdatum">
+                                </div>
                             </div>
-                        </div>
+                            <div class="form-group will-animate" data-class="fadeInUp">
+                                <div class="input-group">
+                                    <textarea class="form-control" id="description2" name="description2" rows="3" placeholder="Arbetsuppgifter"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-check will-animate" data-class="fadeInUp">
+                                <input type="checkbox" id="no-jobs" name="no-jobs" />
+                                <label class="form-check-label" for="no-jobs"><span></span>Jag har ingen tidigare arbetslivserfarenhet</label>
+                            </div>
+                            <button type="submit" id="next_btn" class="next_btn btn btn-primary col-xs-12 m-y-3">Fortsätt</button>
+                        </form>
                     </div>
-
 
 
 <!--                    UTBILDNINGAR-->
@@ -136,26 +174,20 @@
                         <h4 class="will-animate" data-class="fadeInUp">Utbildning 1</h4>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-graduation-cap"></i></div>
                                 <input type="text" class="form-control" id="exampleInputAmount" placeholder="Skola">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-book"></i></div>
                                 <input type="text" class="form-control" id="exampleInputAmount"
                                        placeholder="Utbildning">
                             </div>
                         </div>
-                        <div class="form-group will-animate" data-class="fadeInUp">
-                            <div class="input-group">
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input type="date" class="form-control" id="exampleInputAmount"
-                                       placeholder="Startdatum">
+                        <div class="form-group will-animate container" data-class="fadeInUp">
+                            <div class="input-group row flex-items-xs-middle">
+                                <input type="date" class="form-control col-sm-4" id="start_date" name="start_date" placeholder="Startdatum">
                                 <i class="fa fa-arrow-right m-x-1"></i>
-                                <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input type="date" class="form-control" id="exampleInputAmount"
-                                       placeholder="Slutdatum">
+                                <input type="date" class="form-control col-sm-4" id="end_date" name="end_date" placeholder="Slutdatum">
                             </div>
                         </div>
                         <div class="form-group will-animate" data-class="fadeInUp">

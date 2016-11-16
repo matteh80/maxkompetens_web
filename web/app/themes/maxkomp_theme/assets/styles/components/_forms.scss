@@ -13,3 +13,58 @@
   @extend .btn;
   @extend .btn-secondary;
 }
+
+// Forms
+.form-check-label {
+  padding-left: 0;
+}
+input, textarea {
+  background-color: $gray-lighter !important;
+  border:none !important;
+  box-shadow: 0 0 0 transparent !important;
+  padding:1rem !important;
+
+  &:disabled {
+    opacity: 0.5 !important;
+  }
+}
+
+input[type="checkbox"] {
+  //display:none;
+  visibility: hidden;
+  width: 0px;
+  position: absolute;
+  left: 15px;
+}
+input[type="checkbox"] + label span {
+  position: relative;
+  display:inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin:-1px 4px 0 0;
+  vertical-align:middle;
+  //background:url(check_radio_sheet.png) left top no-repeat;
+  background-color: $gray-lighter;
+  cursor:pointer;
+  transition: transform 500ms, background-color 250ms ease 250ms;
+}
+input[type="checkbox"]:checked + label span {
+  //background:url(check_radio_sheet.png) -19px top no-repeat;
+  background-color: $brand-primary;
+  transform: rotateY(360deg);
+  &:after {
+    text-align: center;
+    content: '\f00c';
+    font-family: FontAwesome;
+    color: #fff;
+    margin: 0 auto;
+    display: block;
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+}
+
+input[type="checkbox"]:disabled + label span {
+  opacity:0.5;
+}
