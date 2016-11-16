@@ -493,7 +493,10 @@
                                 "first_name": $('#firstname').val(),
                                 "last_name": $('#lastname').val(),
                             };
-                            RemoteApi.update_profile(persondata, JSON.parse(sessionStorage.getItem('token'))).done(function(data, textStatus, xhrObject){
+
+                            var token = JSON.parse(sessionStorage.getItem('token'));
+                            console.log(token);
+                            RemoteApi.update_profile(persondata, token).done(function(data, textStatus, xhrObject){
                                 console.log('update_profile');
                                 if(textStatus === 'success') {
                                     gotoNextTab();
@@ -502,17 +505,6 @@
                             break;
                     }
                 };
-
-                persondata = {
-                    "first_name": "Beppe",
-                    "last_name": "Wolgers",
-                };
-                RemoteApi.update_profile(persondata, "d4e98ce630af4fd6ff3cc2cbb5887762babff691").done(function(data, textStatus, xhrObject){
-                    console.log(data);
-                    if(textStatus === 'success') {
-                        // gotoNextTab();
-                    }
-                });
 
                 $('input').on('focus change', function() {
                     console.log('change');

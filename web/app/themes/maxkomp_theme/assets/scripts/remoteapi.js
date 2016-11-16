@@ -3,15 +3,17 @@ var RemoteApi = (function($) {
     var client = new $.RestClient('http://46.101.250.188/api/');
 
     var postAjaxRequest = function(endpoint, data, token) {
-        console.log("data");
-        console.log(data);
         if(token) {
+            var tokenString = "Token "+token.token;
             return $.ajax({
                 url: apiUrl+endpoint+"/",
                 method: "POST",
                 data: JSON.stringify(data),
                 contentType: "application/json",
-                headers: {"Authorization": 'Token ' + token},
+                headers: {"Authorization": tokenString},
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", tokenString );
+                },
                 success:function(response){
                     console.log(response);
                 },
@@ -38,14 +40,14 @@ var RemoteApi = (function($) {
     };
 
     var getAjaxRequest = function(endpoint, token) {
-        console.log(token);
+        var tokenString = "Token "+token.token;
         return $.ajax({
             url: apiUrl+endpoint+"/",
             method: "GET",
             // xhrFields: { withCredentials: true },
-            headers: { "Authorization": 'Token '+token },
+            headers: { "Authorization": tokenString },
             beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Token "+token );
+                xhr.setRequestHeader("Authorization", tokenString );
             },
             success:function(response){
 
