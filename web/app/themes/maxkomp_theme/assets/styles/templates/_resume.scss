@@ -1,0 +1,53 @@
+$col-padding-top: 5%;
+#left-column, #right-column {
+  //padding-top: $col-padding-top;
+}
+
+#left-column {
+  background-color: $brand-blue;
+  //@include gradient-y-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f);
+  color: #fff;
+  min-height: 100%;
+}
+#right-column {
+  background-color: whitesmoke;
+  //@include gradient-x-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f);
+  min-height: 100%;
+}
+#resume_footer {
+  position: absolute;
+  bottom:0;
+  width:100%;
+  background-color: $brand-secondary;
+}
+
+.profile-pic {
+  position: relative;
+  width:100%;
+
+  .img-fluid {
+    width:100%;
+  }
+}
+
+#info {
+  .first_name, .last_name {
+    //font-size: 40px;
+    line-height : .85;
+  }
+}
+
+#contact-info {
+  line-height: 1.35;
+  .fa {
+    $contact-fa-size: 40px;
+    width:$contact-fa-size;
+    height:$contact-fa-size;
+    line-height: $contact-fa-size;
+    font-size: $contact-fa-size/2;
+    text-align: center;
+    background-color: lighten($brand-blue, 10%);
+    color: #fff;
+    margin-bottom: 5%;
+  }
+}

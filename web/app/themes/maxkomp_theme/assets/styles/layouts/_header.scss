@@ -33,9 +33,9 @@
   position: fixed;
   top: 0;
   width:$navbar-width-xs;
+  right:-($navbar-width-xs)+60;
 
   height: 100%;
-  right: 0;
   z-index: 998;
   transform: translateZ(0);
   will-change: transform;

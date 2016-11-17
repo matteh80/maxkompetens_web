@@ -235,4 +235,18 @@ section#registrering {
       float: right;
     }
   }
+  
+  .top-icon {
+    margin:0 auto 3rem;
+    display: block;
+    font-size: 4rem;
+    width:8rem;
+    height:8rem;
+    line-height: 8rem;
+    background: $brand-primary;
+    color: #fff;
+    text-align: center;
+    border-radius: 4rem;
+  }
+  
 }

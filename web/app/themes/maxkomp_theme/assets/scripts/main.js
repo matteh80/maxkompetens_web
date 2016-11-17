@@ -20,10 +20,28 @@
             init: function () {
                 // JavaScript to be fired on all pages
 
-                                if($('#resume-wrapper').length) {
+                if($('#resume-wrapper').length) {
                     var test = $('.current_page_item').offset().left - $('#resume-wrapper').offset().left + ($('.current_page_item').outerWidth() / 2) -16;
                     $('.arrow').css("left", test);
                 }
+
+                $('input:not(:checkbox), textarea, select').each(function(e,i) {
+                    $(this).parent().append('<span>'+$(this).attr("placeholder")+'</span>');
+                });
+                $('input').on('focus change', function() {
+                    console.log('change');
+                    $('.active').addClass('started');
+                    var input = $(this);
+                    if (input.val().length) {
+                        input.addClass('populated');
+                    } else {
+                        input.removeClass('populated');
+                    }
+                });
+
+                setTimeout(function() {
+                    $('#fname').trigger('focus');
+                }, 500);
 
 
                 // $(window).on("scroll resize", function() {
@@ -292,55 +310,127 @@
                     }
                 });
 
-
-
-                var imgSrc = $('#myCanvas').attr('data-src');
-                console.log("data-src:"+ imgSrc);
-
-                getDataUri(imgSrc, function(dataUri) {
-                    // Do whatever you'd like with the Data URI!
-                    var canvas = document.getElementById('myCanvas');
-                    var context = canvas.getContext('2d');
-                    var x = canvas.width / 2;
-                    var y = canvas.height / 2;
-                    var radius = 75;
-                    var offset = 50;
-
-                    var img = new Image();
-                    img.src = dataUri;
-                    img.onload = function() {
-                        context.save();
-                        context.beginPath();
-                        context.arc(x, y, radius, 0, 2 * Math.PI, false);
-                        context.clip();
-                        context.drawImage(img, 5, 5, 150, 150);
-                        context.imageSmoothingEnabled = true;
-                        context.translate(0.5, 0.5);
-                    };
-
-                    context.restore();
-                    context.beginPath();
-                    context.arc(x, y, radius, 0, 2 * Math.PI, false);
-                    context.lineWidth = 5;
-                    context.strokeStyle = 'white';
-                    context.stroke();
-                    context.imageSmoothingEnabled = true;
-                    context.translate(0.5, 0.5);
-                });
-
-
-
-                $('.download-wap').on('click', function(e) {
+                function setUpFlowType() {
                     /* jshint ignore:start */
-                    var pdf = new jsPDF('p','pt','a4');
-
-                    pdf.addHTML(document.getElementById('wap'),function() {
-                        pdf.output('datauri');
-                        // pdf.save("WAP-card");
+                    $('#resume-wrapper').flowtype({
+                        fontRatio   : 65
+                    }),
+                    $('.section-title').flowtype({
+                        fontRatio   : 8
+                    }),
+                    $('#info').flowtype({
+                        fontRatio   : 6
                     });
-                    return false;
                     /* jshint ignore:end */
+                }
+                setUpFlowType();
+
+                $(window).on('load resize', function() {
+                    $('.resp-icon').each(function(el, index) {
+                        var hw = $(this).siblings().css("font-size").replace(/[^-\d\.]/g, '') * 3.2;
+                        console.log(hw);
+                        $(this).css({
+                            width: hw,
+                            height: hw,
+                            "font-size": hw / 2+"px",
+                            "line-height": hw+"px"
+                        });
+                    });
                 });
+
+
+                // var imgSrc = $('#myCanvas').attr('data-src');
+                // console.log("data-src:"+ imgSrc);
+                //
+                // getDataUri(imgSrc, function(dataUri) {
+                //     // Do whatever you'd like with the Data URI!
+                //     var canvas = document.getElementById('myCanvas');
+                //     var context = canvas.getContext('2d');
+                //     var x = canvas.width / 2;
+                //     var y = canvas.height / 2;
+                //     var radius = 75;
+                //     var offset = 50;
+                //
+                //     var img = new Image();
+                //     img.src = dataUri;
+                //     img.onload = function() {
+                //         context.save();
+                //         context.beginPath();
+                //         context.arc(x, y, radius, 0, 2 * Math.PI, false);
+                //         context.clip();
+                //         context.drawImage(img, 5, 5, 150, 150);
+                //         context.imageSmoothingEnabled = true;
+                //         context.translate(0.5, 0.5);
+                //     };
+                //
+                //     context.restore();
+                //     context.beginPath();
+                //     context.arc(x, y, radius, 0, 2 * Math.PI, false);
+                //     context.lineWidth = 5;
+                //     context.strokeStyle = 'white';
+                //     context.stroke();
+                //     context.imageSmoothingEnabled = true;
+                //     context.translate(0.5, 0.5);
+                // });
+
+                /* jshint ignore:start */
+
+                $('.download-wap').on('click',function(){
+
+                    var content = $('#wap'),
+                        cache_width = content.width(),
+                        a4  =[ 595.28,  841.89];  // for a4 size paper width and height
+
+                    $('body').scrollTop(0);
+
+                    function hiddenClone(element){
+                        // Create clone of element
+                        var clone = element.cloneNode(true);
+
+                        // Position element relatively within the
+                        // body but still out of the viewport
+                        var style = clone.style;
+                        style.position = 'relative';
+                        style.top = window.innerHeight + 'px';
+                        style.left = 15 +'px';
+
+                        // Append clone to body and return the clone
+                        document.body.appendChild(clone);
+                        return clone;
+                    }
+
+
+
+                    function getCanvas(){
+                        content.width((a4[0]*1.33333)).css('max-width','none');
+                        setUpFlowType();
+
+                        var offScreen = document.querySelector('#wap');
+
+                        var clone = hiddenClone(offScreen);
+
+                        html2canvas(clone,{
+                            imageTimeout:2000,
+                            removeContainer:true,
+                            onrendered: function(canvas) {
+                                var
+                                    img = canvas.toDataURL("image/png"),
+                                    doc = new jsPDF({
+                                        unit:'px',
+                                        format:'a4'
+                                    });
+                                doc.addImage(img, 'JPEG', 0, 0);
+                                doc.save("umpire-incident-report.pdf");
+                                content.width(cache_width);
+                                clone.remove();
+                            }
+                        });
+                    }
+
+                    getCanvas();
+                });
+
+                /* jshint ignore:end */
 
             }
         },
@@ -558,6 +648,7 @@
                                         data = {
                                             "employer": $('#employer').val(),
                                             "occupation": $('#occupation').val(),
+                                            "title": $('#title').val(),
                                             "start_date": $('#start_date').val(),
                                             "end_date": $('#end_date').val(),
                                             "current": $('#current').val(),
@@ -569,6 +660,7 @@
                                                 data2 = {
                                                     "employer": $('#employer2').val(),
                                                     "occupation": $('#occupation2').val(),
+                                                    "title": $('#title2').val(),
                                                     "start_date": $('#start_date2').val(),
                                                     "end_date": $('#end_date2').val(),
                                                     "description": $('#description2').val(),
@@ -590,13 +682,6 @@
                             break;
                     }
                 };
-
-                setUpJobList();
-
-                $('input').on('focus change', function() {
-                    console.log('change');
-                   $('.active').addClass('started');
-                });
 
                 $('#no-jobs').change(function() {
                     console.log("changed check");

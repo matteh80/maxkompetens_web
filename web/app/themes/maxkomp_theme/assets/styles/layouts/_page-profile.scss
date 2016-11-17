@@ -10,7 +10,7 @@
       color: #ccc;
       
       &.current_page_item {
-        color: $blue;
+        color: $brand-blue;
       }
       &:hover {
         text-decoration: none;
@@ -18,7 +18,7 @@
       }
 
       .progress-wrapper {
-        @include progress-bar(80px, 8px, $blue, #fff, $gray-lighter);
+        @include progress-bar(80px, 8px, $brand-blue, #fff, $gray-lighter);
 
         .p_overlay {
           line-height: 75px;
@@ -51,6 +51,7 @@
 
 #resume-wrapper {
   font-size: 0.8rem;
+  font-size: 1vw;
   line-height: 0.95rem;
   font-weight: 100;
   section {
@@ -114,6 +115,70 @@
       display: inline-block;
     }
   }
+
+  #profile-header {
+    background-image: url("http://il9.picdn.net/shutterstock/videos/9250487/thumb/1.jpg");
+    background-size: cover;
+    color: $gray-dark;
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding:1.5rem 2rem;
+
+    > .row {
+      //flex-direction: column;
+    }
+
+    .profile-header-overlay {
+      position: absolute;
+      z-index: 1;
+      top:0;
+      left: 0;
+      width:100%;
+      height:100%;
+      background-color: rgba(255,255,255,0.8);
+    }
+
+    .name, .work {
+      position: relative;
+      z-index: 2;
+      padding: 0;
+      margin:0;
+    }
+
+    .profile-picture {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-info {
+      color: $gray-dark;
+      position: relative;
+      top:1rem;
+      z-index: 3;
+      font-size: 1.1vw;
+
+      .fa {
+        $fa-size: 2.2vw;
+        width:$fa-size;
+        height:$fa-size;
+        line-height:$fa-size;
+        background-color: $brand-primary;
+        border-radius: $fa-size/2;
+        color: #fff;
+        text-align: center;
+        font-size: 1.3vw;
+      }
+
+      span {
+        //font-family: futura-pt;
+        //font-size: 1.2rem;
+        word-wrap: break-word;
+      }
+    }
+
+  }
+
   .left-column {
     background-color: $gray-dark;
     color: #fff;
@@ -199,65 +264,10 @@
       //color: #fff;
     }
 
-    #profile-header {
-      background-image: url("http://il9.picdn.net/shutterstock/videos/9250487/thumb/1.jpg");
-      background-size: cover;
-      color: $gray-dark;
-      position: relative;
-      margin-left: -15px;
-      margin-right: -15px;
-      padding:3rem 2rem;
 
-      margin-bottom: 1rem;
-
-      > .row {
-        //flex-direction: column;
-      }
-
-      .profile-header-overlay {
-        position: absolute;
-        z-index: 1;
-        top:0;
-        left: 0;
-        width:100%;
-        height:100%;
-        background-color: rgba(255,255,255,0.8);
-      }
-
-      .name, .work {
-        position: relative;
-        z-index: 2;
-        padding: 0;
-        margin:0;
-      }
-      
-      .contact-info {
-        color: $gray-dark;
-        position: relative;
-        z-index: 3;
-
-        .fa {
-          $fa-size: 30px;
-          width:$fa-size;
-          height:$fa-size;
-          line-height:$fa-size;
-          background-color: $brand-primary;
-          border-radius: $fa-size/2;
-          color: #fff;
-          text-align: center;
-          font-size: 1rem;
-        }
-
-        span {
-          font-family: futura-pt;
-          font-size: 1.2rem;
-        }
-      }
-
-    }
     $work-color: $brand-primary;
     $edu-color: $brand-secondary;
-    $trivas-color: $blue;
+    $trivas-color: $brand-blue;
     #work, #education, #trivas {
 
       .asd {
