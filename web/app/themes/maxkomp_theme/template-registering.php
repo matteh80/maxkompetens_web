@@ -17,7 +17,7 @@
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">
             <div class="tab-content col-xs-12 col-lg-9">
-                    <div class="tab-pane fade" id="page0" role="tabpanel">
+                    <div class="tab-pane fade in active" id="page0" role="tabpanel">
                         <form class="" id="register_form_page_0">
                             <div class="form-group">
                                 <div class="input-group">
@@ -291,7 +291,7 @@
 
 
 <!--                    FRÅGOR-->
-                    <div class="tab-pane fade in active" id="page5" role="tabpanel">
+                    <div class="tab-pane fade" id="page5" role="tabpanel">
                         <h4 class="will-animate" data-class="fadeInUp">Vad är ditt drömjobb?</h4>
                         <div class="form-group will-animate" data-class="fadeInUp">
                             <div class="input-group">
