@@ -15,6 +15,7 @@ function cmb2_get_post_title_array( ) {
         $title = maxkomp_get_option( 'front_title' );
     }
     $array = explode(" ", $title);
+    array_push($array, "Inget ord", "Hela meningen");
     return $array;
 }
 

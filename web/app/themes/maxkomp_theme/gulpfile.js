@@ -19,6 +19,7 @@ var runSequence  = require('run-sequence');
 var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
+var globule      = require('globule');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
@@ -221,6 +222,14 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 });
 
+// ### Videos
+gulp.task('videos', function() {
+  var videos = globule.find(path.source + "videos/*");
+  return gulp.src(videos)
+    .pipe(gulp.dest(path.dist + 'videos'))
+    .pipe(browserSync.stream());
+});
+
 // ### JSHint
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
@@ -264,6 +273,7 @@ gulp.task('watch', function() {
 gulp.task('build', function(callback) {
   runSequence('styles',
               'scripts',
+              'videos',
               ['fonts', 'images'],
               callback);
 });

@@ -38,7 +38,18 @@ function modifyTitleWithOrangeWord($title, $pos) {
         return $post->post_title;
     }else{
         $array = explode(" ", $title);
-        $word = $array[$pos];
+        $titleLength = count($array);
+//        debug_to_console($titleLength." ".$pos);
+        if($pos < $titleLength) {
+            $word = $array[$pos];
+        }else{
+            if($pos == $titleLength) {
+                $word = 'NOWORD';
+            }else{
+                $word = $title;
+            }
+        }
+//        debug_to_console($word);
         if (strpos($title, $word) !== false) {
             return str_replace($word, '<span class="text-orange spantext">'.$word.'</span>', $title);
         }else{
@@ -52,4 +63,12 @@ function getRelativeUploadPath($string) {
     $findme   = '/app';
     $pos = strpos($string, $findme);
     return substr($string, $pos);
+}
+
+function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
 }

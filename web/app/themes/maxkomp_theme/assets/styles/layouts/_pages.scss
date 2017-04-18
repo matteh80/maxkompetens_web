@@ -21,6 +21,10 @@ section {
     position: relative;
     z-index: 1;
   }
+
+  &.no-padding {
+    padding: 0;
+  }
 }
 
 .jumbo {
@@ -127,6 +131,58 @@ section {
       //width:120%;
       //height:120%;
       //transform: rotate(3deg);
+    }
+
+    #middle {
+      height: 1px;
+      width: 1px;
+      position: absolute;
+      top: 50%;
+    }
+
+    #wrapper {
+      width: 100%;
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.expanded {
+        display: none;
+      }
+
+      video {
+        position: absolute;
+        z-index: 1;
+      }
+
+      #play-btn {
+        z-index: 2;
+        font-size: 50px;
+        color: #fff;
+        transition: all 300ms ease-in-out;
+        text-shadow: 0 0 15px rgba(0,0,0,.1);
+
+        &:hover {
+          font-size: 60px;
+          color: lighten(#32d67f, 15%);
+        }
+      }
+    }
+
+    #youtubeWrapper {
+      display: none;
+
+      &.expanded {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: -7px;
+      }
+
+      #videoplayer {
+        transition: height 300ms ease;
+      }
     }
 
     .row {

@@ -185,12 +185,30 @@ function maxkomp_register_page_metabox() {
 //			'type' => 'address',
 //	) );
 
-	$cmb_page->add_field( array(
-		'name' => esc_html__( 'Header text', 'cmb2' ),
-//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'text',
-		'type' => 'textarea',
-	) );
+//	$cmb_page->add_field( array(
+//		'name' => esc_html__( 'Header text', 'cmb2' ),
+////		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+//		'id'   => $prefix . 'text',
+//		'type' => 'textarea',
+//	) );
+
+    $cmb_page->add_field( array(
+        'name'    => 'Header text',
+        'id'      => $prefix . 'headertext',
+        'type'    => 'wysiwyg',
+        'options' => array(
+            'wpautop' => false, // use wpautop?
+            'media_buttons' => false, // show insert/upload button(s)
+            'textarea_rows' => get_option('default_post_edit_rows', 10), // rows="..."
+            'tabindex' => '',
+            'editor_css' => '', // intended for extra styles for both visual and HTML editors buttons, needs to include the `<style>` tags, can use "scoped".
+            'editor_class' => '', // add extra class(es) to the editor textarea
+            'teeny' => false, // output the minimal editor config used in Press This
+            'dfw' => false, // replace the default fullscreen with DFW (needs specific css)
+            'tinymce' => true, // load TinyMCE, can be used to pass settings directly to TinyMCE using an array()
+            'quicktags' => true // load Quicktags, can be used to pass settings directly to Quicktags using an array()
+        ),
+    ) );
 
 	$cmb_page->add_field( array(
 		'name'    => esc_html__( 'Text Color', 'cmb2' ),

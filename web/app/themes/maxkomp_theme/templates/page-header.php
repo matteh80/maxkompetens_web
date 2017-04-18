@@ -7,21 +7,22 @@
 <?php
 $title = \Roots\Sage\Extras\modifyTitleWithOrangeWord(get_post_meta($post->ID, 'maxkomp_page_title', true), get_post_meta($post->ID, 'maxkomp_page_textorange_select', true));
 $text = get_post_meta($post->ID, 'maxkomp_page_text', true);
+$headertext = get_post_meta($post->ID, 'maxkomp_page_headertext', true);
 $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
-$buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', false);
+$buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
 ?>
 
 <section class="jumbo" style="background-image: url('<?= the_post_thumbnail_url(); ?>');">
-    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
+    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%;">
                     <?php if(is_front_page()) : ?>
                         <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto;" class="img-fluid"/>
                     <?php else: ?>
-                    <h1 class="display-1"><?= $title; ?></h1>
+                    <h1 class="display-1 text-uppercase"><?= $title; ?></h1>
                     <div class="col-lg-10 offset-lg-1 m-b-3">
-                        <span class="lead will-animate" data-class="zoomIn" data-delay="250"><?= $text; ?></span>
+                        <div class="lead will-animate" data-class="zoomIn" data-delay="250"><?= $headertext; ?></div>
                     </div>
                     <?php endif; ?>
                     <div class="row buttons flex-items-xs-center">

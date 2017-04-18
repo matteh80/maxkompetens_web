@@ -9,14 +9,20 @@
   <?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
-<section class="video">
-  <div class="bg"></div>
-  <div class="container">
-    <div class="row flex-items-xs-center flex-items-xs-middle">
-      <h1 class="display-3 will-animate" data-class="fadeInUp">Så här funkar det</h1>
-      <img src="<?= \Roots\Sage\Assets\asset_path('images/camera.png'); ?>" class="will-animate" data-class="fadeInUp" data-delay="250""/>
+<section class="video no-padding">
+    <div id="middle"></div>
+    <div id="wrapper">
+        <video id="loopvideo" width="auto" height="100%" autoPlay loop muted>
+            <source src=<?= \Roots\Sage\Assets\asset_path('videos/wap-kandidat-rendercomp.mp4'); ?> type="video/mp4"/>
+            Your browser do not support this file
+        </video>
+        <i class="fa fa-play-circle" id="play-btn" aria-hidden="true"></i>
     </div>
-  </div>
+    <div id="youtubeWrapper" data-offset="500">
+<!--        <iframe id="videoplayer" width="560" height="315" src="https://www.youtube.com/embed/Qdghiqt_AuA" frameborder="0" allowfullscreen></iframe>-->
+        <div id="videoplayer"></div>
+    </div>
+    <div id="player"></div>
 </section>
 
 <?php get_template_part('templates/section', 'stats'); ?>
