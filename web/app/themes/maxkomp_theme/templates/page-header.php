@@ -8,11 +8,11 @@
 $title = \Roots\Sage\Extras\modifyTitleWithOrangeWord(get_post_meta($post->ID, 'maxkomp_page_title', true), get_post_meta($post->ID, 'maxkomp_page_textorange_select', true));
 $text = get_post_meta($post->ID, 'maxkomp_page_text', true);
 $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
-$buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
+$buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', false);
 ?>
 
 <section class="jumbo" style="background-image: url('<?= the_post_thumbnail_url(); ?>');">
-    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
+    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
         <div class="container text-xs-center ">
             <div class="row flex-items-xs-middle flex-items-xs-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%;">

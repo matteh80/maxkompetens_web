@@ -13,5 +13,10 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,400i,700,700i,900,900i" rel="stylesheet">
   <script src="https://use.typekit.net/azl5bfx.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
+  <script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key:   86fnbibk2t9g4m
+//    onLoad:    [ONLOAD]
+    authorize: false
+    lang:      sv_SE
+  </script>
 </head>

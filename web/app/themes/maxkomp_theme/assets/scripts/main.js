@@ -822,9 +822,28 @@
                     fjs.parentNode.insertBefore(js, fjs);
                 }(document, 'script', 'facebook-jssdk'));
 
-
-                $('.btn-facebook').on('click', function() {
+                $('#fb_login').on('click', function() {
                     checkLoginState();
+                });
+
+                function getProfileData() {
+                    IN.API.Profile("me").fields("id,firstName,lastName,email-address,picture-urls::(original),public-profile-url,location:(name)").result(function (me) {
+                        var profile = me.values[0];
+                        var id = profile.id;
+                        var firstName = profile.firstName;
+                        var lastName = profile.lastName;
+                        var emailAddress = profile.emailAddress;
+                        var pictureUrl = profile.pictureUrls.values[0];
+                        var profileUrl = profile.publicProfileUrl;
+                        var country = profile.location.name;
+                        console.log(profile);
+                    });
+                }
+
+                $('#li_login').on('click', function() {
+                    console.log("Linkedin");
+                    IN.UI.Authorize().params({"scope":["r_basicprofile", "r_emailaddress"]}).place();
+                    IN.Event.on(IN, 'auth', getProfileData);
                 });
             }
         }

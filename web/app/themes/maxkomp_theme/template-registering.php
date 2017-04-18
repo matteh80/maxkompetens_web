@@ -11,8 +11,8 @@
     <div class="container">
 
         <div class="row flex-items-xs-center flex-items-xs-middle social m-b-3">
-            <a href="#"><i class="fa fa-facebook-official btn-facebook"></i></a>
-            <a href="#" class="m-x-1"><i class="fa fa-linkedin-square"></i></a>
+            <a href="#"><i class="fa fa-facebook-official" id="fb_login"></i></a>
+            <a href="#" class="m-x-1"><i class="fa fa-linkedin-square" id="li_login"></i></a>
             <a href="#"><i class="fa fa-google-plus-official"></i></a>
         </div>
         <div class="row flex-items-xs-center flex-items-xs-middle">

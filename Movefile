@@ -48,7 +48,7 @@ staging:
       languages: "app/languages"
 
   ssh:
-      host: "138.68.142.253"
+      host: "stage.maxkompetens.se"
       user: "root"
 
   # ssh:
