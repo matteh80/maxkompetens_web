@@ -22,6 +22,7 @@ $sage_includes = [
     'lib/cpt/cpt-customers.php', // Custom Post Type Customers
     'lib/theme-options-cmb.php',
     'lib/profile_menu_walker.php',
+    'lib/Custom_Menu_Walker.php',
     'lib/API/api.php',
     'lib/API/remote-api.php',
     'lib/Models/candidate.php'

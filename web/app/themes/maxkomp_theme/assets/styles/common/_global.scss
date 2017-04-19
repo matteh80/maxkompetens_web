@@ -142,7 +142,7 @@ blockquote {
   position: relative;
   z-index: 2;
   @include media-breakpoint-up(md) {
-    padding-right: $visible-navbar-width-md-up;
+    //padding-right: $visible-navbar-width-md-up;
   }
 }
 

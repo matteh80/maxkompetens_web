@@ -259,12 +259,47 @@
           player.stopVideo();
         }
 
+
+
+        function setHeightWidth() {
+          $('#videoplayer').width($('#youtubeWrapper').width());
+          $('#videoplayer').height($('#wrapper').width() / (1920 / 1080));
+        }
+
+        function extendMovie() {
+          console.log('EXTEND');
+          $('#wrapper').addClass("expanded");
+          $('#youtubeWrapper').addClass("expanded");
+          setHeightWidth();
+          movieExtended = true;
+          player.playVideo();
+          $('html,body').animate({scrollTop: $('#youtubeWrapper').offset().top}, 'slow');
+
+          $(window).on("resize", function () {
+            setHeightWidth();
+          });
+        }
+
+        function contractMovie() {
+          console.log('CONTRACT');
+          movieExtended = false;
+          $('#videoplayer').height(350);
+          $('#youtubeWrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+            function (e) {
+              console.log('REMOVE CLASSES');
+              $('#wrapper').removeClass("expanded");
+              $('#youtubeWrapper').removeClass("expanded");
+              $('#youtubeWrapper').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+              player.pauseVideo();
+            });
+        }
+
         function onPlayerReady(event) {
           player.setPlaybackQuality('hd720');
           player.playVideo();
 
           $('#middle').on('inview', function (event, isInView) {
-            console.log(event)
+            console.log(event);
             if (!isInView && movieExtended) {
               contractMovie();
             }
@@ -272,54 +307,20 @@
         }
 
         function onPlayerStateChange(event) {
-          console.log(event)
+          console.log(event);
 
-          if (event.data == 1 && !movieExtended) {
-            console.log('PAUSE')
-            player.pauseVideo()
+          if (event.data === 1 && !movieExtended) {
+            console.log('PAUSE');
+            player.pauseVideo();
             player.setPlaybackQuality('hd720');
           }
         }
 
-        function setHeightWidth() {
-          $('#videoplayer').width($('#youtubeWrapper').width())
-          $('#videoplayer').height($('#wrapper').width() / (1920 / 1080))
-        }
-
-        function extendMovie() {
-          console.log('EXTEND')
-          $('#wrapper').addClass("expanded");
-          $('#youtubeWrapper').addClass("expanded");
-          setHeightWidth();
-          movieExtended = true
-          player.playVideo()
-          $('html,body').animate({scrollTop: $('#youtubeWrapper').offset().top}, 'slow');
-
-          $(window).on("resize", function () {
-            setHeightWidth();
-          })
-        }
-
-        function contractMovie() {
-          console.log('CONTRACT')
-          movieExtended = false
-          $('#videoplayer').height(350)
-          $('#youtubeWrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
-            function (e) {
-              console.log('REMOVE CLASSES')
-              $('#wrapper').removeClass("expanded")
-              $('#youtubeWrapper').removeClass("expanded")
-              $('#youtubeWrapper').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
-              player.pauseVideo();
-            });
-
-        }
-
         $('#play-btn').click(function () {
           extendMovie();
-        })
+        });
 
-        if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
+        if (typeof(YT) === 'undefined' || typeof(YT.Player) === 'undefined') {
           window.onYouTubeIframeAPIReady = function() {
             player = new YT.Player('videoplayer', {
               height: '390',

@@ -1,4 +1,4 @@
-// NAVIGATION
+
 .overlay {
   background-color: rgba(0,0,0,0.7);
   position: absolute;
@@ -15,201 +15,33 @@
   }
 }
 
-#toggle {
-  position: fixed;
-  z-index: 999;
-  height:30px;
-  right:($visible-navbar-width-md-up - $barwidth) / 2;
-}
-
-#toggle-close {
-  display: block;
-  @include media-breakpoint-up(sm) {
-    display: none;
-  }
-}
-
 .nav-primary {
-  position: fixed;
-  top: 0;
-  width:$navbar-width-xs;
-  right:-($navbar-width-xs)+60;
-
-  height: 100%;
-  z-index: 998;
-  transform: translateZ(0);
-  will-change: transform;
-  transition: transform 800ms ease-in;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  perspective: 100px;
-
-  @include media-breakpoint-up(sm) {
-    width:$navbar-width-sm;
-    right:-($navbar-width-sm);
-  }
-
-  @include media-breakpoint-up(md) {
-    width:$navbar-width-md-up;
-    transform: translate(10px, 0);
-  }
-
-  .visible-area {
-    background-color: $navbar-color;
-    width:$visible-navbar-width-md-up;
-    height:100%;
-    position: absolute;
-    left:0;
-    top:0;
-    box-shadow: 0 0 2px rgba(0,0,0,0.75);
-    transform: matrix(1,0,0,1,0,0);
-    transform-origin: right center;
-    backface-visibility: hidden;
-    transform-origin: right center;
-    transition: transform 500ms, box-shadow 250ms;
-
-    &:hover {
-      box-shadow: 0 0 0px rgba(0,0,0,0.1);
-    }
-  }
-
-  .navbar-toggle {
-    position: absolute;
-    z-index: 999;
-    height:30px;
-    right:($visible-navbar-width-md-up - $barwidth) / 2;
-  }
-
-  
-  .nav_background {
-    //background: url("../../dist/images/nav_background.png") #fff;
-    background-color: #fff;
-    background-size: cover;
-    width:100%;
-    height:100%;
-    //opacity:0;
-    position: absolute;
-    z-index: 1;
-    margin-left: 60px;
-    background-color: #fff;
-  }
-
-  &.open {
-    //width:30%;
-    transform: translate(-($navbar-width-md-up - $visible-navbar-width-md-up), 0);
-    .nav_background {
-      //opacity: 0.5;
-    }
-    .visible-area {
-      transform: matrix3d(0, 0, 1, 0, 0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 0, 1);
-      transition: transform 1000ms, box-shadow 1000ms;
-      box-shadow: 0 0 2px rgba(0,0,0,0.1);
-    }
-  }
-
+  width:100%;
 
   #menu-container {
-    position: relative;
-    z-index: 2;
-    margin: 10rem $visible-navbar-width-md-up 10rem ($visible-navbar-width-md-up*2);
 
-
-    ul {
-      padding:0;
-      li {
-        font-family: "Flama-Basic";
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        //text-align: center;
-        padding:0;
-        list-style-type: none;
-        //visibility: hidden;
+    #main-menu {
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+      
+      .menu-item {
+        display: block;
 
         a {
-          color: $brand-primary;
-
-          &:hover {
-            text-decoration: none;
-          }
+          line-height: 70px;
+          padding:0 10px;
         }
-      }
 
-      &.submenu {
-
-      }
-    }
-  }
-  
-  #menu-footer {
-    padding:1rem;
-    background: #fff;
-    position: relative;
-    z-index: 1;
-    margin: 0rem $visible-navbar-width-md-up 5rem ($visible-navbar-width-md-up*2);
-
-    a {
-      text-align: center;
-      margin:0 0.2rem;
-      .fa {
-        width:40px;
-        height:40px;
-        line-height: 40px;
-        font-size: 1.5rem;
-        border-radius: 50%;
-        background-color: rgba(0,0,0,.6);
-        color: #fff;
-        transition: all 300ms ease-in-out ;
-
-        &.fa-facebook {background-color: $facebook_color;}
-        &.fa-instagram {background-color: $instagram_color;}
-        &.fa-linkedin {background-color: $linkedin_color;}
-        &.fa-twitter {background-color: $twitter_color;}
-      }
-      &:hover {
-        .fa {
-          border-radius: 3px;
+        .sub-menu {
+          position: absolute;
+          left:0;
+          width:100%;
+          display: flex;
+          background: white;
+          z-index: 3;
         }
       }
     }
   }
-}
-
-.banner {
-  position: absolute;
-  z-index: 996;
-  top:15px;
-  left:20px;
-
-  .brand {
-    overflow: hidden;
-    height:$banner-height-xs;
-
-    @include media-breakpoint-up(sm) {
-      height:$banner-height-sm;
-    }
-    @include media-breakpoint-up(md) {
-      height:$banner-height-md-up;
-    }
-
-
-    img {
-      //height:60px;
-      //width: auto;
-      max-height: 100%;
-      max-width: 100%;
-    }
-  }
-}
-
-.scrolldown {
-  font-size: 6rem;
-  color: white;
-  border-radius: 50%;
-  opacity:0.2;
-  background-color: rgba(0,0,0,0.6);
-  width:100px;
-  height:100px;
-  line-height: 100px;
 }
