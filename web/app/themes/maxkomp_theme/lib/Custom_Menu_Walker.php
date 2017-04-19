@@ -3,7 +3,7 @@ class Custom_Menu_Walker extends Walker_Nav_Menu {
 
     function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class='sub-menu-wrap'><ul class='sub-menu container'>\n";
+        $output .= "\n$indent<div class='sub-menu-wrap'><div class='container'><ul class='sub-menu'>\n";
     }
 
     // Displays start of an element. E.g '<li> Item Name'
@@ -36,7 +36,7 @@ class Custom_Menu_Walker extends Walker_Nav_Menu {
 
     function end_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul></div>\n";
+        $output .= "$indent</ul></div></div>\n";
     }
 }
 ?>

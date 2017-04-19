@@ -9,7 +9,17 @@
 <header class="banner">
     <div class="container">
         <div class="row">
-            <nav class="nav-primary">
+            <a class="brand pull-lg-left" href="<?= esc_url(home_url('/')); ?>">
+                <?php
+                $logoselection = get_post_meta($post->ID, 'maxkomp_page_logo_selection', true);
+                if($logoselection == "") : ?>
+                    <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_primary')); ?>" class="img-fluid logo"/>
+                <?php else: ?>
+                    <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_'.$logoselection)); ?>" class="img-fluid logo"/>
+                <?php endif; ?>
+
+            </a>
+                <nav class="nav-primary pull-lg-right">
                 <div class="navbar-toggle hidden-md-up" aria-label="Toggle navigation">
                     <span class="bar1"></span>
                     <span class="bar2"></span>
