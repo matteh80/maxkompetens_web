@@ -22,6 +22,7 @@ $hover-menu-color: #ededed;
   width: 100%;
   z-index: 3;
   transition: background 300ms;
+  perspective: 1800px;
 
   &.scrolled {
     background: white;
@@ -52,6 +53,7 @@ $hover-menu-color: #ededed;
           margin-right: 24px;
           transition: background 300ms;
 
+
           &:hover {
             //box-shadow: inset 0 -3px 0 $hover-menu-color;
             background: $hover-menu-color;
@@ -76,7 +78,9 @@ $hover-menu-color: #ededed;
               .sub-menu-wrap {
                 opacity: 1;
                 visibility: visible;
-                height:70px;
+                //height:70px;
+                transform: rotateX(0deg);
+                background: $hover-menu-color;
               }
             }
           }
@@ -94,7 +98,7 @@ $hover-menu-color: #ededed;
           }
 
           .sub-menu-wrap {
-            background: $hover-menu-color;
+            background: darken($hover-menu-color,25%);
             width: 100%;
             padding: 0 !important;
             clear: both;
@@ -104,8 +108,12 @@ $hover-menu-color: #ededed;
             left: 0;
             z-index: 3;
             transition: all 300ms;
-            height:0;
+            //height:0;
+
             overflow: hidden;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+            transform-style: preserve-3d;
           }
 
           .sub-menu {
