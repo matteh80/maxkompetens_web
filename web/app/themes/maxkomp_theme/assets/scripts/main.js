@@ -51,6 +51,7 @@
 
         $(window).on('scroll resize load', function () {
           var scrolled = $(this).scrollTop();
+          // scrolled > 100 ? $('.banner').addClass('scrolled') : $('.banner').removeClass('scrolled');
 
           // $('section').filter(function() {
           //     return scrolled >= $(this).offset().top;
@@ -72,7 +73,7 @@
           jumboPos = (scrolled / elHeight);
 
           $('.jumbo').css({
-            "background-position-y": -jumboPos * 100 + "%",
+            "background-position-y": jumboPos * 100 + "%",
             "background-position-x": "50%"
           });
 

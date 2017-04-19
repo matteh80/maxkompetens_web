@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <nav class="nav-primary">
-                <div class="navbar-toggle hidden-sm-up" aria-label="Toggle navigation">
+                <div class="navbar-toggle hidden-md-up" aria-label="Toggle navigation">
                     <span class="bar1"></span>
                     <span class="bar2"></span>
                     <span class="bar3"></span>
@@ -23,6 +23,7 @@
                         'menu_class' => 'nav',
                         'menu_id' => 'main-menu',
                         'container_id' => 'menu-container',
+                        'container_class' => 'container',
                         'walker' => new Custom_Menu_Walker(),
                     ]);
                 endif;
