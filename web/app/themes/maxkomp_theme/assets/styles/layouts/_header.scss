@@ -36,13 +36,16 @@ $hover-menu-color: #f0f0f0;
   }
 
   .brand {
-    margin: 0 auto;
-    height: 50px;
+    margin: 5px auto;
+    height: 60px;
     padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
 
     @include media-breakpoint-up(lg) {
-      height: 70px;
-      padding: 10px;
+      height: 60px;
+      padding: 5px;
     }
 
     .logo {
@@ -73,6 +76,10 @@ $hover-menu-color: #f0f0f0;
 
           &:hover {
             background: $hover-menu-color;
+
+            a, span {
+              color: $brand-secondary;
+            }
           }
 
           &.current-menu-item {
@@ -81,7 +88,7 @@ $hover-menu-color: #f0f0f0;
 
           &.menu-item-has-children {
 
-            span {
+            > a, > span {
 
               &:after {
                 content: "\f107";
@@ -132,6 +139,13 @@ $hover-menu-color: #f0f0f0;
 
           .sub-menu {
             float: right;
+
+            .menu-item {
+
+              a, span {
+                color: #000;
+              }
+            }
           }
         }
       }

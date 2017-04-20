@@ -6,7 +6,7 @@ use Roots\Sage\Models\Candidate\Candidate;
 
 class RemoteApi extends API\API  {
     protected $User;
-    protected $origin = 'http://46.101.250.188:8000/api/';
+    protected $origin = 'http://api.wapcard.se/api/';
 
     public function __construct($request, $origin) {
         parent::__construct($request);

@@ -1,6 +1,6 @@
 var RemoteApi = (function($) {
-    var apiUrl = "http://46.101.250.188/api/";
-    var client = new $.RestClient('http://46.101.250.188/api/');
+    var apiUrl = "https://api.wapcard.se/api/v1/";
+    var client = new $.RestClient('https://api.wapcard.se/api/v1');
 
     var postAjaxRequest = function(endpoint, data, token) {
         if(token) {
@@ -102,8 +102,8 @@ var RemoteApi = (function($) {
         });
     };
 
-    var get_occupations = function() {
-        return getAjaxRequest("occupation");
+    var get_occupations = function(token) {
+        return getAjaxRequest("occupations", token);
     };
 
     return {

@@ -11,52 +11,16 @@
 
 <section class="search-results">
     <div class="container">
-        <div class="row flex-items-xs-center flex-items-xs-middle">
-            <h3 class="display-4 will-animate" data-class="fadeIn" data-delay="500">Just nu har vi <span class="text-orange">43 </span><span id="category"></span></h3>
+        <div class="row align-items-center justify-content-center text-center">
+            <h3 class="display-4 will-animate" data-class="fadeIn" data-delay="500">Just nu har vi <span class="text-orange">43 </span>kandidater som matchar <span class="text-orange" id="category"></span></h3>
+            <small>Ring <a href="tel:08-120 753 00">08-120 753 00</a> eller maila <a href="mailto:sverige@maxkompetens.se">sverige@maxkompetens.se</a>, så hjälper vi
+                dig att hitta den bästa kandidaten för just din verksamhet!</small>
+
+            <p>Kandidaterna har redan kvalificerat sig genom vår unika wap-process och har såväl kompetens som engagemang - centrala faktorer för en framgångsrik rekrytering. 
+            </p>
         </div>
-        <div class="row cards flex-items-xs-center flex-items-xs-middle m-t-3">
-            <div class="col-md-4">
-                <div class="candidate-card">
-                    <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
-                        <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
-                    </div>
-                    <div class="row text-xs-center name">
-                        <h4 class="text-orange m-b-0">Anna</h4>
-                        <span>Digital Designer</span>
-                    </div>
-                    <div class="row button">
-                        <button class="btn btn-primary m-t-3">Skicka intresseförfrågan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="candidate-card">
-                    <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
-                        <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
-                    </div>
-                    <div class="row text-xs-center name">
-                        <h4 class="text-orange m-b-0">Anna</h4>
-                        <span>Digital Designer</span>
-                    </div>
-                    <div class="row button">
-                        <button class="btn btn-primary m-t-3">Skicka intresseförfrågan</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="candidate-card">
-                    <div class="row flex-items-xs-center flex-items-xs-middle m-b-2">
-                        <img src="<?= \Roots\Sage\Assets\asset_path('images/blurred_female.png'); ?>" class="img-fluid img-circle" />
-                    </div>
-                    <div class="row text-xs-center name">
-                        <h4 class="text-orange m-b-0">Anna</h4>
-                        <span>Digital Designer</span>
-                    </div>
-                    <div class="row button">
-                        <button class="btn btn-primary m-t-3">Skicka intresseförfrågan</button>
-                    </div>
-                </div>
-            </div>
+        <div class="row align-items-center justify-content-center m-t-3">
+            <p>Vi väljer ut lämpliga kandidater och skickar er deras wap card, personlighetstest och wap film.</p>
         </div>
     </div>
 </section>
@@ -64,5 +28,7 @@
 <?php get_template_part('templates/section', 'process'); ?>
 
 <?php get_template_part('templates/section', 'kompetenssakrade'); ?>
+
+<?php get_template_part('templates/section', 'stats'); ?>
 
 <?php get_template_part('templates/section', 'companies'); ?>
