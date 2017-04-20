@@ -22,7 +22,7 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                     <?php else: ?>
                     <h1 class="display-1 text-uppercase text-xs-center"><?= $title; ?></h1>
                     <div class="col-lg-10 offset-lg-1 m-b-3">
-                        <div class="lead will-animate" data-class="zoomIn" data-delay="250"><?= $headertext; ?></div>
+                        <div class="lead will-animate" data-class="fadeInUp" data-delay="250"><?= $headertext; ?></div>
                     </div>
                     <?php endif; ?>
                     <div class="row buttons align-items-center justify-content-center">
