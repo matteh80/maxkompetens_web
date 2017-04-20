@@ -130,13 +130,13 @@
       },
       finalize: function () {
         // JavaScript to be fired on all pages, after page specific JS is fired
+
         function showMenu() {
           $('.navbar-toggle').removeClass('collapsed');
-          $('.nav-primary').addClass("open");
+          $('.nav-mobile').addClass("open");
           // $('.overlay').css("opacity", "1");
           $('.overlay').fadeIn('fast');
           $('body').css("overflow", "hidden");
-          $('#toggle').hide();
 
 
           // $.each($(".menu-item"), function(i, el){
@@ -148,9 +148,8 @@
         }
 
         function hideMenu() {
-          $('.menu-item').removeClass("animated");
           $('.navbar-toggle').addClass('collapsed');
-          $('.nav-primary').removeClass("open");
+          $('.nav-mobile').removeClass("open");
           // $('.overlay').css("opacity", "0");
           $('.overlay').fadeOut('fast');
           $('body').css("overflow", "auto");
@@ -165,12 +164,16 @@
           }
         });
 
-        $('.nav-primary').mouseleave(function () {
+        $('.overlay').click(function () {
           hideMenu();
         });
 
-        $('.overlay').click(function () {
-          hideMenu();
+        $('.menu-item-has-children').click(function () {
+          if($(this).hasClass('collapsed')) {
+            $(this).removeClass('collapsed');
+          }else{
+            $(this).addClass('collapsed');
+          }
         });
 
 
@@ -245,6 +248,99 @@
             }
           });
         });
+      }
+    },
+    'soker_du_personal': {
+      init: function () {
+
+      },
+      finalize: function () {
+        var player;
+        var done = false;
+        var movieExtended = false;
+
+        function stopVideo() {
+          player.stopVideo();
+        }
+
+
+
+        function setHeightWidth() {
+          $('#videoplayer').width($('#youtubeWrapper').width());
+          $('#videoplayer').height($('#wrapper').width() / (1920 / 1080));
+        }
+
+        function extendMovie() {
+          console.log('EXTEND');
+          $('#wrapper').addClass("expanded");
+          $('#youtubeWrapper').addClass("expanded");
+          setHeightWidth();
+          movieExtended = true;
+          player.playVideo();
+          $('html,body').animate({scrollTop: $('#youtubeWrapper').offset().top}, 'slow');
+
+          $(window).on("resize", function () {
+            setHeightWidth();
+          });
+        }
+
+        function contractMovie() {
+          console.log('CONTRACT');
+          movieExtended = false;
+          $('#videoplayer').height(350);
+          $('#youtubeWrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+            function (e) {
+              console.log('REMOVE CLASSES');
+              $('#wrapper').removeClass("expanded");
+              $('#youtubeWrapper').removeClass("expanded");
+              $('#youtubeWrapper').off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+              player.pauseVideo();
+            });
+        }
+
+        function onPlayerReady(event) {
+          player.setPlaybackQuality('hd720');
+          player.playVideo();
+
+          $('#middle').on('inview', function (event, isInView) {
+            console.log(event);
+            if (!isInView && movieExtended) {
+              contractMovie();
+            }
+          });
+        }
+
+        function onPlayerStateChange(event) {
+          console.log(event);
+
+          if (event.data === 1 && !movieExtended) {
+            console.log('PAUSE');
+            player.pauseVideo();
+            player.setPlaybackQuality('hd720');
+          }
+        }
+
+        $('#play-btn').click(function () {
+          extendMovie();
+        });
+
+        if (typeof(YT) === 'undefined' || typeof(YT.Player) === 'undefined') {
+          window.onYouTubeIframeAPIReady = function() {
+            player = new YT.Player('videoplayer', {
+              height: '390',
+              width: '640',
+              videoId: 'e3cIL-g38OQ',
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          };
+
+          $.getScript('//www.youtube.com/iframe_api');
+        } else {
+
+        }
       }
     },
     'soker_du_jobb': {

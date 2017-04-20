@@ -48,6 +48,8 @@ section {
 
     > .container {
       min-height:100vh;
+      @include gradient-x-four-colors($start-color: rgba(255,255,255,0), $mid-color1: rgba(255,255,255,0.5), $color-stop1: 15%, $mid-color2: rgba(255,255,255,0.5), $color-stop2: 85%, $end-color: rgba(255,255,255,0));
+
       > .row {
         min-height: 100vh;
         flex-direction: column;

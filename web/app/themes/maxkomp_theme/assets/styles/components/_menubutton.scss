@@ -14,6 +14,10 @@
   padding: 0px;
   border-radius: 0px;
   border: none;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 999;
 }
 .navbar-toggle span {
   height: 1px;
@@ -22,36 +26,38 @@
   background-color: $brand-primary;
   display: block;
 }
-//.navbar-toggle span.bar1 {
-//  -ms-transform: rotate(45deg);
-//  -webkit-transform: rotate(45deg);
-//  -moz-transform: rotate(45deg);
-//  -o-transform: rotate(45deg);
-//  transform: rotate(45deg);
-//  -ms-transform-origin: 1px 3px;
-//  -webkit-transform-origin: 1px 3px;
-//  -moz-transform-origin: 1px 3px;
-//  -o-transform-origin: 1px 3px;
-//  transform-origin: 1px 3px;
-//  width: 32px;
-//}
-//.navbar-toggle span.bar2 {
-//  -ms-transform: rotate(-360deg) scale(0);
-//  -webkit-transform: rotate(-360deg) scale(0);
-//  -moz-transform: rotate(-360deg) scale(0);
-//  -o-transform: rotate(-360deg) scale(0);
-//  transform: rotate(-360deg) scale(0);
-//}
-//
-//.navbar-toggle span.bar3 {
-//  -ms-transform: rotate(-45deg);
-//  -webkit-transform: rotate(-45deg);
-//  transform: rotate(-45deg);
-//  -ms-transform-origin:9px 2px;
-//  -webkit-transform-origin: 9px 2px;
-//  transform-origin: 9px 2px;
-//  width: 32px;
-//}
+
+.navbar-toggle span.bar1 {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -ms-transform-origin: 1px 3px;
+  -webkit-transform-origin: 1px 3px;
+  -moz-transform-origin: 1px 3px;
+  -o-transform-origin: 1px 3px;
+  transform-origin: 1px 3px;
+  width: 32px;
+}
+.navbar-toggle span.bar2 {
+  -ms-transform: rotate(-360deg) scale(0);
+  -webkit-transform: rotate(-360deg) scale(0);
+  -moz-transform: rotate(-360deg) scale(0);
+  -o-transform: rotate(-360deg) scale(0);
+  transform: rotate(-360deg) scale(0);
+}
+
+.navbar-toggle span.bar3 {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -ms-transform-origin:9px 2px;
+  -webkit-transform-origin: 9px 2px;
+  transform-origin: 9px 2px;
+  width: 32px;
+}
+
 .navbar-toggle.collapsed span.bar1,
 .navbar-toggle.collapsed span.bar2,
 .navbar-toggle.collapsed span.bar3,
@@ -64,5 +70,5 @@
 
 .navbar-toggle {
   //float: right;
-  margin: 10px auto;
+  //margin: 10px auto;
 }

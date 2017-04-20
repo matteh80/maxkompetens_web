@@ -200,6 +200,11 @@ blockquote {
   font-family: "FontAwesome";
 }
 
+@mixin gradient-x-four-colors($start-color: #00b3ee, $mid-color1: #7a43b6, $color-stop1: 25%, $mid-color2: #7a43b6, $color-stop2: 75%, $end-color: #c3325f) {
+  background-image: linear-gradient(to right, $start-color, $mid-color1 $color-stop1, $mid-color2 $color-stop2, $end-color);
+  background-repeat: no-repeat;
+}
+
 @mixin progress-bar($radius, $barwidth, $barColor, $overlayColor, $backColor) {
   .progress-radial {
     float: left;
@@ -255,66 +260,6 @@ form {
         border-radius: 0;
       }
     }
-  }
-}
-
-// Page bullets
-.page0 .subpage-indicators {
-  display: none;
-}
-
-.subpage-indicators {
-  padding-left: 0;
-  text-align: center;
-  list-style: none;
-  border-bottom: none;
-
-  li:first-of-type {
-    display: none;
-  }
-
-  li a{
-    display: inline-block !important;
-    width: $carousel-indicator-size !important;
-    height: $carousel-indicator-size !important;
-    margin: 1px;
-    text-indent: -999px;
-    padding:0 !important;
-    cursor: default;
-    // IE9 hack for event handling
-    //
-    // Internet Explorer 9 does not properly handle clicks on elements with a `background-color` of `transparent`,
-    // so we use `rgba(0,0,0,0)` instead since it's a non-buggy equivalent.
-    // See https://developer.mozilla.org/en-US/docs/Web/Events/click#Internet_Explorer
-    background-color: rgba(0,0,0,0) !important; // IE9
-    border: 1px solid lighten($gray-dark,55%) !important;
-    border-radius: $carousel-indicator-size !important;
-  }
-
-  .started {
-    cursor: pointer !important;
-    border: 1px solid $brand-secondary !important;
-    background-color: $brand-secondary !important;
-  }
-
-  .done {
-    cursor: pointer !important;
-    border: 1px solid $brand-primary !important;
-    background-color: $brand-primary !important;
-    &:hover {
-      box-shadow: 0 0 0 2px $brand-primary !important;
-    }
-  }
-
-
-
-  .active {
-    cursor: pointer !important;
-    width: $carousel-indicator-active-size !important;
-    height: $carousel-indicator-active-size !important;
-    margin: 0 !important;
-    background-color: $gray-dark !important;
-    border: 1px solid $gray-dark !important;
   }
 }
 

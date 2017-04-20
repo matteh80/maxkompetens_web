@@ -15,17 +15,17 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
 <section class="jumbo" style="background-image: url('<?= the_post_thumbnail_url(); ?>');">
     <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
         <div class="container text-xs-center ">
-            <div class="row flex-items-xs-middle flex-items-xs-center full-height">
-                <div style="color:<?=  $textcolor; ?>; width: 100%;">
+            <div class="row align-items-center justify-content-center full-height">
+                <div style="color:<?=  $textcolor; ?>; width: 100%; text-align: center">
                     <?php if(is_front_page()) : ?>
-                        <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto;" class="img-fluid"/>
+                        <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto; display: block;" class="img-fluid align-self-center"/>
                     <?php else: ?>
-                    <h1 class="display-1 text-uppercase"><?= $title; ?></h1>
+                    <h1 class="display-1 text-uppercase text-xs-center"><?= $title; ?></h1>
                     <div class="col-lg-10 offset-lg-1 m-b-3">
                         <div class="lead will-animate" data-class="zoomIn" data-delay="250"><?= $headertext; ?></div>
                     </div>
                     <?php endif; ?>
-                    <div class="row buttons flex-items-xs-center">
+                    <div class="row buttons align-items-center justify-content-center">
                         <?php
                         if($buttons_meta != "") :
                             $delay = 500;

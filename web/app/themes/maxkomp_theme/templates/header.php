@@ -3,10 +3,48 @@
 <!--    <span class="bar2"></span>-->
 <!--    <span class="bar3"></span>-->
 <!--</div>-->
+<div class="nav-mobile-wrapper">
+    <nav class="nav-mobile hidden-lg-up">
+        <div class="nav-overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 align-self-start">
+                    <div class="row">
+                        <?php
+                        if (has_nav_menu('primary_navigation')) :
+                            wp_nav_menu([
+                                'theme_location' => 'primary_navigation',
+                                'menu_class' => 'nav',
+                                'menu_id' => 'main-menu',
+                                'container_id' => 'menu-container',
+                                'container_class' => 'container',
+                                'walker' => new Custom_Menu_Walker(),
+                            ]);
+                        endif;
+                        ?>
+                    </div>
+                </div>
 
+                <div class="nav-footer col-12 align-self-end">
+                    <div class="row align-items-center justify-content-center social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
 
+<div class="navbar-toggle hidden-lg-up pull-xs-left" aria-label="Toggle navigation">
+    <span class="bar1"></span>
+    <span class="bar2"></span>
+    <span class="bar3"></span>
+</div>
 
 <header class="banner">
+
     <div class="container">
         <div class="row">
             <a class="brand pull-lg-left" href="<?= esc_url(home_url('/')); ?>">
@@ -19,13 +57,7 @@
                 <?php endif; ?>
 
             </a>
-                <nav class="nav-primary pull-lg-right">
-                <div class="navbar-toggle hidden-md-up" aria-label="Toggle navigation">
-                    <span class="bar1"></span>
-                    <span class="bar2"></span>
-                    <span class="bar3"></span>
-                </div>
-
+            <nav class="nav-primary pull-lg-right hidden-md-down">
                 <?php
                 if (has_nav_menu('primary_navigation')) :
                     wp_nav_menu([

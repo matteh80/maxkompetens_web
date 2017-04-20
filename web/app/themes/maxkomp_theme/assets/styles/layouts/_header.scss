@@ -1,14 +1,14 @@
 $menu-color: $brand-primary;
-$hover-menu-color: #ededed;
+$hover-menu-color: #f0f0f0;
 
 .overlay {
-  background-color: rgba(0,0,0,0.7);
-  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
   z-index: 997;
   left: 0;
-  top:0;
+  top: 0;
   width: 100%;
-  height:100%;
+  height: 100%;
   //transition: opacity 250ms;
   display: none;
 
@@ -16,6 +16,7 @@ $hover-menu-color: #ededed;
     opacity: 1;
   }
 }
+
 .banner {
   background: white;
   position: fixed;
@@ -23,23 +24,38 @@ $hover-menu-color: #ededed;
   z-index: 3;
   transition: background 300ms;
   perspective: 1800px;
+  border-bottom: 1px solid gray;
+  @include media-breakpoint-up(lg) {
+    border: none;
+  }
 
   &.scrolled {
     background: white;
   }
 
   .brand {
-    height:70px;
-    position: absolute;
-    padding:10px;
+    margin: 0 auto;
+    height: 50px;
+    padding: 5px;
+
+    @include media-breakpoint-up(lg) {
+      height: 70px;
+      padding: 10px;
+    }
 
     .logo {
       max-height: 100%;
     }
-  }
 
+    @include media-breakpoint-up(lg) {
+      position: absolute;
+    }
+
+  }
+  // DESKTOP
   .nav-primary {
-    width:100%;
+    width: 100%;
+    font-family: futura-pt, sans-serif;
 
     #menu-container {
 
@@ -53,9 +69,7 @@ $hover-menu-color: #ededed;
           margin-right: 24px;
           transition: background 300ms;
 
-
           &:hover {
-            //box-shadow: inset 0 -3px 0 $hover-menu-color;
             background: $hover-menu-color;
           }
 
@@ -76,10 +90,9 @@ $hover-menu-color: #ededed;
 
             &:hover {
               .sub-menu-wrap {
-                opacity: 1;
                 visibility: visible;
                 //height:70px;
-                transform: rotateX(0deg);
+                transform: rotateY(0deg);
                 background: $hover-menu-color;
               }
             }
@@ -88,7 +101,7 @@ $hover-menu-color: #ededed;
           a, span {
             display: block;
             line-height: 70px;
-            padding:0 10px;
+            padding: 0 10px;
             color: #000;
             text-transform: uppercase;
 
@@ -98,20 +111,19 @@ $hover-menu-color: #ededed;
           }
 
           .sub-menu-wrap {
-            background: darken($hover-menu-color,25%);
+            background: darken($hover-menu-color, 25%);
             width: 100%;
             padding: 0 !important;
             clear: both;
             display: block;
-            visibility: hidden;
             position: absolute;
             left: 0;
             z-index: 3;
             transition: all 300ms;
-            //height:0;
-
             overflow: hidden;
-            transform: rotateX(-90deg);
+
+            visibility: hidden;
+            transform: rotateY(-89deg);
             transform-origin: top;
             transform-style: preserve-3d;
           }
@@ -119,6 +131,187 @@ $hover-menu-color: #ededed;
           .sub-menu {
             float: right;
           }
+        }
+      }
+    }
+  }
+}
+
+
+$mobile-menu-width: 280px;
+// Mobile
+
+.nav-mobile-wrapper {
+  perspective: 1800px;
+  position: fixed;
+  z-index: 998;
+}
+.nav-mobile {
+  position: absolute;
+  height: 100vh;
+  width: $mobile-menu-width;
+  font-family: futura-pt, sans-serif;
+  z-index: 998;
+  color: #fff;
+  font-size: 18px;
+  background: $brand-primary;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 300ms ease;
+
+  .nav-overlay {
+    position: absolute;
+    z-index: 2;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+    transition: all 300ms ease;
+    visibility: visible;
+  }
+
+  &.open {
+    transform: rotateY(0deg);
+
+    .nav-overlay {
+      background: rgba(0,0,0,0);
+      visibility: hidden;
+    }
+  }
+
+  > .container {
+    height: 100%;
+
+    > .row {
+      height: 100%;
+    }
+  }
+
+  #menu-container {
+    padding: 50px 0;
+
+    #main-menu {
+      flex-direction: column;
+      font-weight: 500;
+      text-align: center;
+
+      .menu-item {
+        display: inline-block;
+        //position: relative;
+        margin-right: 24px;
+        transition: background 300ms;
+
+        &:hover {
+          background: $hover-menu-color;
+        }
+
+        &.current-menu-item {
+          box-shadow: inset 0 -5px 0 $menu-color;
+        }
+
+        &.menu-item-has-children {
+
+          span {
+            &:after {
+              content: "\f107";
+              font-family: FontAwesome;
+              margin-left: 5px;
+            }
+          }
+
+          &.collapsed {
+            .sub-menu-wrap {
+              visibility: visible;
+              height: auto;
+              background: $hover-menu-color;
+            }
+          }
+        }
+
+        a, span {
+          display: block;
+          padding: 0 10px;
+          color: #fff;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        .sub-menu-wrap {
+          height: 0;
+          overflow: hidden;
+        }
+
+        .sub-menu {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .nav-footer {
+    position: relative;
+    width: 100%;
+    color: #333333;
+    background: #fff;
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 20px;
+      z-index: 1;
+      position: absolute;
+      top: -11px;
+      left: 0;
+      background-image: url("../../dist/images/wave_vit_up.png");
+      background-repeat: repeat-x;
+    }
+
+    .social-icons {
+      margin:30px 0;
+      a {
+        text-align: center;
+        margin: 0 0.2rem;
+        .fa {
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 1.5rem;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 0, .6);
+          color: #fff;
+          transition: all 300ms ease-in-out;
+
+          &.fa-facebook {
+            background-color: $facebook_color;
+          }
+          &.fa-instagram {
+            background-color: $instagram_color;
+          }
+          &.fa-linkedin {
+            background-color: $linkedin_color;
+          }
+          &.fa-twitter {
+            background-color: $twitter_color;
+          }
+        }
+        &:hover {
+          .fa {
+            border-radius: 3px;
+            .sub-menu {
+              position: absolute;
+              left: 0;
+              width: 100%;
+              display: flex;
+              background: white;
+              z-index: 3;
+            }
+          }
+
         }
       }
     }

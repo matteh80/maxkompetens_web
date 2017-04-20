@@ -22,7 +22,6 @@
 <!--        <iframe id="videoplayer" width="560" height="315" src="https://www.youtube.com/embed/Qdghiqt_AuA" frameborder="0" allowfullscreen></iframe>-->
         <div id="videoplayer"></div>
     </div>
-    <div id="player"></div>
 </section>
 
 <?php get_template_part('templates/section', 'stats'); ?>
