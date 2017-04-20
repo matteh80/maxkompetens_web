@@ -92,7 +92,7 @@ $hover-menu-color: #f0f0f0;
               .sub-menu-wrap {
                 visibility: visible;
                 //height:70px;
-                transform: rotateY(0deg);
+                transform: rotateX(0deg);
                 background: $hover-menu-color;
               }
             }
@@ -123,7 +123,7 @@ $hover-menu-color: #f0f0f0;
             overflow: hidden;
 
             visibility: hidden;
-            transform: rotateY(-89deg);
+            transform: rotateX(-89deg);
             transform-origin: top;
             transform-style: preserve-3d;
           }
