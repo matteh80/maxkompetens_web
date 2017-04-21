@@ -16,7 +16,7 @@
     "js-cookie": "^2.1.3",
     "hover": "Hover#^2.1.0",
     "jquery-circle-progress": "^1.2.0",
-    "jpillora/jquery.rest": "jquery.rest#^1.0.2"
+    "jquery.rest": "jquery.rest#^1.0.2"
   },
   "overrides": {
     "font-awesome": {
