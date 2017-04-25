@@ -2,9 +2,9 @@
 
 .no-idea {
   //background: url("../../dist/images/bckjoin_light.jpg");
-  background-color: white;
+  background-color: $brand-blue;
   min-height: 300px;
-  color: $gray-light;
+  color: white;
 
   blockquote {
     margin:0;
@@ -27,5 +27,5 @@
 }
 
 .companies {
-  background-color: $gray-lighter;
+  background-color: white;
 }

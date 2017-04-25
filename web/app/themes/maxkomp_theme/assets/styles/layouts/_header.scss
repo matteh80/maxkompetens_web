@@ -19,8 +19,9 @@ $hover-menu-color: #f0f0f0;
 
 .banner {
   background: white;
-  @include gradient-x($start-color: #ff5115, $end-color: #ff22d1, $start-percent: 30%, $end-percent: 100%);
-  @include gradient-x-three-colors($start-color: #ff5115, $mid-color: #f83501, $color-stop: 40%, $end-color: #ff22d1);
+  @include gradient-x($start-color: #ff5115, $end-color: #ff22d1, $start-percent: 0%, $end-percent: 100%);
+
+  //@include gradient-x-three-colors($start-color: #ff5115, $mid-color: #f83501, $color-stop: 40%, $end-color: #ff22d1);
   position: fixed;
   width: 100%;
   z-index: 4;

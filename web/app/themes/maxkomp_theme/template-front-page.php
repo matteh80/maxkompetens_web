@@ -9,22 +9,22 @@
     <?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
-<section class="no-idea">
-<div class="container">
-    <div class="row p-y-2">
-        <div class="col-sm will-animate" data-class="flipInY" data-delay="250">
-            <h4>Söker du jobb?</h4>
-            <h3>Vilket är ditt drömjobb?</h3>
-            Vi hjälper dig dit. Skapa din kompletta digitala jobbprofil i Wap. Wap erbjuder allt du behöver för ditt jobbsökande, utan kostnad. 
-        </div>
-        <div class="col-sm will-animate" data-class="flipInY" data-delay="450"">
-            <h4>Söker du personal?</h4>
-            <h3>Vilken kompetens söker du?</h3>
-            Vi går ett steg längre och adderar personlighetstester, videos, drömjobb och drivkrafter till kompetens och erfarenheter. Genom att känna kandidaternas meriter på djupet ger vi dig rätt person på rätt plats.
-        </div>
+<section class="no-idea cloud cloud-r-b">
+    <div class="container">
+        <div class="row p-y-2">
+            <div class="col-sm-6 will-animate text-center" data-class="flipInY" data-delay="250">
+                <img src=<?= \Roots\Sage\Assets\asset_path('images/ic_bemanning.png'); ?> class="img-fluid" />
+                <h3>Vilket är ditt drömjobb? Vi hjälper dig dit.</h3>
+                Skapa din kompletta digitala jobbprofil i Wap. Wap erbjuder allt du behöver för ditt jobbsökande, utan kostnad. 
+            </div>
+            <div class="col-sm-6 will-animate text-center" data-class="flipInY" data-delay="450"">
+                <img src=<?= \Roots\Sage\Assets\asset_path('images/ic_personal.png'); ?> class="img-fluid" />
+                <h3>Vilken kompetens söker du?</h3>
+                Vi går ett steg längre och adderar personlighetstester, videos, drömjobb och drivkrafter till kompetens och erfarenheter. Genom att känna kandidaternas meriter på djupet ger vi dig rätt person på rätt plats.
+            </div>
 
+        </div>
     </div>
-</div>
 </section>
 
 

@@ -20,6 +20,8 @@ $sage_includes = [
     'lib/cmb-extras.php', // Extra functions for CMB
     'lib/cmb-plugins/adress-field-type.php',
     'lib/cpt/cpt-customers.php', // Custom Post Type Customers
+//    'lib/cpt/cpt-medarbetare.php', // Custom Post Tytpe Medarbetare
+    'lib/cpt/cpt-offices.php', // Custom Post Tytpe Medarbetare
     'lib/theme-options-cmb.php',
     'lib/profile_menu_walker.php',
     'lib/Custom_Menu_Walker.php',

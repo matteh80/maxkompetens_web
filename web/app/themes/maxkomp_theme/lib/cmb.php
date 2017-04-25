@@ -270,9 +270,109 @@ function maxkomp_register_customers_metabox() {
 	) );
 }
 
+add_action( 'cmb2_admin_init', 'maxkomp_register_medarbetare_metabox' );
+
+function maxkomp_register_medarbetare_metabox() {
+    $prefix = 'maxkomp_medarbetare_';
+
+    /**
+     * Sample metabox to demonstrate each field type included
+     */
+    $cmb_medarbetare = new_cmb2_box( array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__( '&nbsp;', 'cmb2' ),
+        'object_types'  => array( 'medarbetare', ), // Post type
+        // 'show_on_cb' => 'maxkomp_show_if_front_page', // function should return a bool value
+        // 'context'    => 'normal',
+        // 'priority'   => 'high',
+        // 'show_names' => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // true to keep the metabox closed by default
+        // 'classes'    => 'extra-class', // Extra cmb2-wrap classes
+        // 'classes_cb' => 'maxkomp_add_some_classes', // Add classes through a callback.
+    ) );
+
+    $cmb_medarbetare->add_field( array(
+        'name' => esc_html__( 'Works as', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'works_as',
+        'type' => 'text',
+    ) );
+
+    $cmb_medarbetare->add_field( array(
+        'name' => esc_html__( 'Email', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'email',
+        'type' => 'text_email',
+    ) );
+
+    $cmb_medarbetare->add_field( array(
+        'name' => esc_html__( 'Phone', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'phone',
+        'type' => 'text',
+    ) );
+
+    $cmb_medarbetare->add_field( array(
+        'name'             => esc_html__( 'Kontor', 'cmb2' ),
+//        'desc'             => esc_html__( 'Select the page to link to', 'cmb2' ),
+        'id'               => $prefix . 'office',
+        'type'             => 'select',
+        'show_option_none' => false,
+        'options'          => \Roots\Sage\CMBExtras\cmb2_get_post_options(array('post_type' => 'office', 'numberposts' => -1, 'order_by' => 'title')),
+    ) );
+}
+
+add_action( 'cmb2_admin_init', 'maxkomp_register_offices_metabox' );
+/**
+ * Hook in and add a page metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+ */
+function maxkomp_register_offices_metabox() {
+    $prefix = 'maxkomp_office_';
+
+    /**
+     * Sample metabox to demonstrate each field type included
+     */
+    $cmb_office = new_cmb2_box( array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__( '&nbsp;', 'cmb2' ),
+        'object_types'  => array( 'office', ), // Post type
+        // 'show_on_cb' => 'maxkomp_show_if_front_page', // function should return a bool value
+        // 'context'    => 'normal',
+        // 'priority'   => 'high',
+        // 'show_names' => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // true to keep the metabox closed by default
+        // 'classes'    => 'extra-class', // Extra cmb2-wrap classes
+        // 'classes_cb' => 'maxkomp_add_some_classes', // Add classes through a callback.
+    ) );
+
+    $cmb_office->add_field( array(
+        'name' => esc_html__( 'Email', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'email',
+        'type' => 'text_email',
+    ) );
+
+    $cmb_office->add_field( array(
+        'name' => esc_html__( 'Phone', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'phone',
+        'type' => 'text',
+    ) );
+
+    $cmb_office->add_field( array(
+        'name' => esc_html__( 'Adress', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'address',
+        'type' => 'address',
+    ) );
+}
+
 
 
 add_action( 'cmb2_admin_init', 'maxkomp_register_repeatable_group_field_metabox' );
+
 /**
  * Hook in and add a metabox to demonstrate repeatable grouped fields
  */

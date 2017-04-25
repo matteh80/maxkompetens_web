@@ -151,7 +151,7 @@ blockquote {
   position: relative;
   width: 100%;
   height: 40px;
-  background: #eee;
+  //background: #eee;
   overflow: hidden;
 }
 
@@ -261,5 +261,38 @@ form {
       }
     }
   }
+}
+
+// Cloud
+
+.cloud {
+  position: relative;
+
+  &.cloud-l-b:after {
+    background-image: url(../../dist/images/cloud_l_b.png);
+    background-position-x: 0%;
+  }
+  &.cloud-r-b:after {
+    background-image: url(../../dist/images/cloud_r_b.png);
+    background-position-x: 100%;
+  }
+  &.cloud-l-t:after {
+    background-image: url(../../dist/images/cloud_l_t.png);
+    background-position-x: 0%;
+  }
+  &.cloud-r-t:after {
+    background-image: url(../../dist/images/cloud_r_t.png);
+    background-position-x: 100%;
+  }
+
+  &:after {
+    content:'';
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:100%;
+    height:100px;
+  }
+
 }
 

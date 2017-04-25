@@ -59,6 +59,23 @@ function modifyTitleWithOrangeWord($title, $pos) {
 
 }
 
+function wpb_change_title_text( $title ){
+    $screen = get_current_screen();
+
+    switch ($screen->post_type) {
+        case 'medarbetare':
+            $title = 'Förnamn Efternamn';
+            break;
+        case 'office':
+            $title = 'Stad (ex. Stockholm)';
+            break;
+    }
+
+    return $title;
+}
+
+add_filter( 'enter_title_here', __NAMESPACE__ . '\\wpb_change_title_text' );
+
 function getRelativeUploadPath($string) {
     $findme   = '/app';
     $pos = strpos($string, $findme);

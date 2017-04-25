@@ -33,18 +33,19 @@ $address = wp_parse_args( $address, array(
 'address-1' => '',
 'address-2' => '',
 'city'      => '',
-'state'     => '',
+//'state'     => '',
 'zip'       => '',
-'country'   => '',
+//'country'   => '',
 ) );
 $output = '<div class="cmb2-address">';
     $output .= '<p><strongAddress:</strong> ' . esc_html( $address['address-1'] ) . '</p>';
     if ( $address['address-2'] ) {
     $output .= '<p>' . esc_html( $address['address-2'] ) . '</p>';
     }
-    $output .= '<p><strong>City:</strong> ' . esc_html( $address['city'] ) . '</p>';
-    $output .= '<p><strong>State:</strong> ' . esc_html( $address['state'] ) . '</p>';
     $output .= '<p><strong>Zip:</strong> ' . esc_html( $address['zip'] ) . '</p>';
+    $output .= '<p><strong>City:</strong> ' . esc_html( $address['city'] ) . '</p>';
+//    $output .= '<p><strong>State:</strong> ' . esc_html( $address['state'] ) . '</p>';
+
     $output = '</div><!-- .cmb2-address -->';
 return apply_filters( 'jt_cmb2_get_address_field', $output );
 }
@@ -70,19 +71,19 @@ $value = wp_parse_args( $value, array(
 'address-1' => '',
 'address-2' => '',
 'city'      => '',
-'state'     => '',
+//'state'     => '',
 'zip'       => '',
-'country'   => '',
+//'country'   => '',
 ) );
-if ( ! $field->args( 'do_country' ) ) {
-// can override via the field options param
-$select_text = esc_html( $field_type_object->_text( 'address_select_state_text', 'Select a State' ) );
-$state_list = array( ''=>$select_text,'AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District Of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming' );
-$state_options = '';
-foreach ( $state_list as $abrev => $state ) {
-$state_options .= '<option value="'. $abrev .'" '. selected( $value['state'], $abrev, false ) .'>'. $state .'</option>';
-}
-}
+//if ( ! $field->args( 'do_country' ) ) {
+//// can override via the field options param
+//$select_text = esc_html( $field_type_object->_text( 'address_select_state_text', 'Select a State' ) );
+//$state_list = array( ''=>$select_text,'AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District Of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming' );
+//$state_options = '';
+//foreach ( $state_list as $abrev => $state ) {
+//$state_options .= '<option value="'. $abrev .'" '. selected( $value['state'], $abrev, false ) .'>'. $state .'</option>';
+//}
+//}
 ?>
 <div><p><label for="<?php echo $field_type_object->_id( '_address_1' ); ?>"><?php echo esc_html( $field_type_object->_text( 'address_address_1_text', 'Address 1' ) ); ?></label></p>
     <?php echo $field_type_object->input( array(
@@ -101,33 +102,6 @@ $state_options .= '<option value="'. $abrev .'" '. selected( $value['state'], $a
     ) ); ?>
 </div>
 <div style="overflow: hidden;">
-    <div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_city' ); ?>'"><?php echo esc_html( $field_type_object->_text( 'address_city_text', 'City' ) ); ?></label></p>
-        <?php echo $field_type_object->input( array(
-            'class' => 'cmb_text_small',
-            'name'  => $field_type_object->_name( '[city]' ),
-            'id'    => $field_type_object->_id( '_city' ),
-            'value' => $value['city'],
-            'desc'  => '',
-        ) ); ?>
-    </div>
-    <div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_state' ); ?>'"><?php echo esc_html( $field_type_object->_text( 'address_state_text', 'State' ) ); ?></label></p>
-        <?php if ( $field->args( 'do_country' ) ) : ?>
-            <?php echo $field_type_object->input( array(
-                'class' => 'cmb_text_small',
-                'name'  => $field_type_object->_name( '[state]' ),
-                'id'    => $field_type_object->_id( '_state' ),
-                'value' => $value['state'],
-                'desc'  => '',
-            ) ); ?>
-        <?php else: ?>
-            <?php echo $field_type_object->select( array(
-                'name'    => $field_type_object->_name( '[state]' ),
-                'id'      => $field_type_object->_id( '_state' ),
-                'options' => $state_options,
-                'desc'    => '',
-            ) ); ?>
-        <?php endif; ?>
-    </div>
     <div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_zip' ); ?>'"><?php echo esc_html( $field_type_object->_text( 'address_zip_text', 'Zip' ) ); ?></label></p>
         <?php echo $field_type_object->input( array(
             'class' => 'cmb_text_small',
@@ -138,6 +112,34 @@ $state_options .= '<option value="'. $abrev .'" '. selected( $value['state'], $a
             'desc'  => '',
         ) ); ?>
     </div>
+    <div class="alignleft"><p><label for="<?php echo $field_type_object->_id( '_city' ); ?>'"><?php echo esc_html( $field_type_object->_text( 'address_city_text', 'City' ) ); ?></label></p>
+        <?php echo $field_type_object->input( array(
+            'class' => 'cmb_text_small',
+            'name'  => $field_type_object->_name( '[city]' ),
+            'id'    => $field_type_object->_id( '_city' ),
+            'value' => $value['city'],
+            'desc'  => '',
+        ) ); ?>
+    </div>
+<!--    <div class="alignleft"><p><label for="--><?php //echo $field_type_object->_id( '_state' ); ?><!--'">--><?php //echo esc_html( $field_type_object->_text( 'address_state_text', 'State' ) ); ?><!--</label></p>-->
+<!--        --><?php //if ( $field->args( 'do_country' ) ) : ?>
+<!--            --><?php //echo $field_type_object->input( array(
+//                'class' => 'cmb_text_small',
+//                'name'  => $field_type_object->_name( '[state]' ),
+//                'id'    => $field_type_object->_id( '_state' ),
+//                'value' => $value['state'],
+//                'desc'  => '',
+//            ) ); ?>
+<!--        --><?php //else: ?>
+<!--            --><?php //echo $field_type_object->select( array(
+//                'name'    => $field_type_object->_name( '[state]' ),
+//                'id'      => $field_type_object->_id( '_state' ),
+//                'options' => $state_options,
+//                'desc'    => '',
+//            ) ); ?>
+<!--        --><?php //endif; ?>
+<!--    </div>-->
+
 </div>
 <?php if ( $field->args( 'do_country' ) ) : ?>
     <div class="clear"><p><label for="<?php echo $field_type_object->_id( '_country' ); ?>'"><?php echo esc_html( $field_type_object->_text( 'address_country_text', 'Country' ) ); ?></label></p>
