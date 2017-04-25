@@ -11,20 +11,33 @@
 
 <section class="no-idea cloud cloud-r-b">
     <div class="container">
-        <div class="row p-y-2">
-            <div class="col-sm-6 will-animate text-center" data-class="flipInY" data-delay="250">
-                <img src=<?= \Roots\Sage\Assets\asset_path('images/ic_bemanning.png'); ?> class="img-fluid" />
+        <div class="row">
+            <div class="col-md-6 will-animate text-center" data-class="flipInY" data-delay="250">
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_jobb.png'); ?>" class="img-fluid col-xs-10 col-lg-10" />
                 <h3>Vilket är ditt drömjobb? Vi hjälper dig dit.</h3>
-                Skapa din kompletta digitala jobbprofil i Wap. Wap erbjuder allt du behöver för ditt jobbsökande, utan kostnad. 
+                <p>Skapa din kompletta digitala jobbprofil i Wap. Wap erbjuder allt du behöver för ditt jobbsökande, utan kostnad.</p>
+                <div class="col-xs-12 col-sm-6 offset-md-3">
+                    <div class="fancy-button">
+                        <div class="left-frills frills"></div>
+                        <div class="button">Söker du personal?</div>
+                        <div class="right-frills frills"></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 will-animate text-center" data-class="flipInY" data-delay="450"">
-                <img src=<?= \Roots\Sage\Assets\asset_path('images/ic_personal.png'); ?> class="img-fluid" />
+            <div class="col-md-6 will-animate text-center" data-class="flipInY" data-delay="450"">
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_personal.png'); ?>" class="img-fluid col-xs-10 col-lg-10" />
                 <h3>Vilken kompetens söker du?</h3>
-                Vi går ett steg längre och adderar personlighetstester, videos, drömjobb och drivkrafter till kompetens och erfarenheter. Genom att känna kandidaternas meriter på djupet ger vi dig rätt person på rätt plats.
+                <p>Vi går ett steg längre och adderar personlighetstester, videos, drömjobb och drivkrafter till kompetens och erfarenheter.
+                    Genom att känna kandidaternas meriter på djupet ger vi dig rätt person på rätt plats.</p>
+                <div class="col-xs-12 col-sm-6 offset-md-3">
+                    <div class="fancy-button">
+                        <div class="left-frills frills"></div>
+                        <a href="/soker-du-personal" class="button">Söker du jobb?</a>
+                        <div class="right-frills frills"></div>
+                    </div>
+                </div>
             </div>
-
         </div>
-    </div>
 </section>
 
 

@@ -19,6 +19,12 @@
     'common': {
       init: function () {
         // JavaScript to be fired on all pages
+        $(".fancy-button").mousedown(function(){
+          $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
+            $(this).removeClass('active');
+          })
+          $(this).addClass("active");
+        });
 
         $('input:not(:checkbox), textarea, select').not('#kompetenser').each(function (e, i) {
           $(this).parent().append('<span>' + $(this).attr("placeholder") + '</span>');

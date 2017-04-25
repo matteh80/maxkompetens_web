@@ -13,11 +13,11 @@
     }
   }
 
-  .col-sm {
+  .col-md-6 {
     padding:2rem;
 
     &:first-of-type {
-      border-right:1px solid $gray-light;
+      border-right:1px solid #fff;
     }
 
     &:last-of-type {

@@ -39,7 +39,12 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                                     }
                                     ?>
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                        <a href="<?= $link ?>" class="btn btn-primary text-uppercase will-animate hvr-float-shadow" data-class="flipInX" data-delay="<?= $delay;?>"><?= $button['title']; ?></a>
+                                        <div class="fancy-button">
+                                            <div class="left-frills frills"></div>
+                                            <a href="<?= $link ?>" class="button large will-animate" data-class="flipInX" data-delay="<?= $delay;?>"><?= $button['title']; ?></a>
+                                            <div class="right-frills frills"></div>
+                                        </div>
+<!--                                        <a href="--><?//= $link ?><!--" class="btn btn-primary text-uppercase will-animate hvr-float-shadow" data-class="flipInX" data-delay="--><?//= $delay;?><!--">--><?//= $button['title']; ?><!--</a>-->
                                     </div>
                                     <?php
                                     $delay = $delay + ($index + 50);
