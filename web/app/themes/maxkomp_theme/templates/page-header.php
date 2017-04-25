@@ -39,9 +39,9 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                                     }
                                     ?>
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
-                                        <div class="fancy-button">
+                                        <div class="fancy-button large btn-green">
                                             <div class="left-frills frills"></div>
-                                            <a href="<?= $link ?>" class="button large will-animate" data-class="flipInX" data-delay="<?= $delay;?>"><?= $button['title']; ?></a>
+                                            <a href="<?= $link ?>" class="button large btn-green will-animate" data-class="flipInX" data-delay="<?= $delay;?>"><?= $button['title']; ?></a>
                                             <div class="right-frills frills"></div>
                                         </div>
 <!--                                        <a href="--><?//= $link ?><!--" class="btn btn-primary text-uppercase will-animate hvr-float-shadow" data-class="flipInX" data-delay="--><?//= $delay;?><!--">--><?//= $button['title']; ?><!--</a>-->

@@ -39,7 +39,7 @@
 
 
 
-$button-width:200px;
+$button-width:600px;
 $button-height:45px;
 $button-color:lighten($brand-secondary,5%);
 $button-font-size: 1.9em;
@@ -68,14 +68,9 @@ $timing-function:ease-out;
   text-align:center;
   text-transform:uppercase;
   user-select:none;
-  width:$button-width;
+  //width:$button-width;
+  width:100%;
   text-decoration: none;
-
-  &.large {
-    height:$button-height * 1.5;
-    line-height:$button-height * 1.5;
-    font-size: 1.3rem;
-  }
 
   &:hover, &:active {
     background:lighten($button-color,4%);
@@ -92,6 +87,25 @@ $timing-function:ease-out;
   position:relative;
   display: flex;
   justify-content: center;
+
+  &.btn-green {
+    .button {
+      background: $brand-primary;
+
+      &:hover {
+        background:lighten($brand-primary,4%);
+      }
+    }
+    .frills, .frills:after, .frills:before {
+      background: $brand-primary !important;
+    }
+  }
+
+  &.large .button {
+    height:$button-height * 1.5;
+    line-height:$button-height * 1.5;
+    font-size: 1.1rem;
+  }
 }
 .frills, .frills:after, .frills:before {
   position:absolute;
@@ -110,7 +124,8 @@ $timing-function:ease-out;
   top:$frill-vert-space;
 }
 .left-frills {
-  right:$button-width + $frill-horizontal-offset;
+  //right:$button-width + $frill-horizontal-offset;
+  left:-40px;
   top:($button-height/2)-($frill-height/2);
   .active & {
     animation: move-left $speed $timing-function, width-to-zero $speed $timing-function;
@@ -133,7 +148,8 @@ $timing-function:ease-out;
 
 }
 .right-frills {
-  left:$button-width + $frill-horizontal-offset;
+  //left:$button-width + $frill-horizontal-offset;
+  right:-40px;
   top:($button-height/2)-($frill-height/2);
   .active & {
     animation: move-right $speed $timing-function, width-to-zero $speed $timing-function;
