@@ -148,28 +148,47 @@ blockquote {
 }
 
 //Logoslider
-#slideouter {
-  position: relative;
-  width: 100%;
-  height: 40px;
-  //background: #eee;
-  overflow: hidden;
-}
 
-#slideshow {
-  position: absolute;
-  overflow: hidden;
-  padding: 0;
-  transition: transform 0.35s ease-out;
+.companies {
+  background-color: white;
+  padding-left: 0;
+  padding-right: 0;
 
-  > img {
-    position: relative;
-    padding:0 1rem;
-    display: block;
-    float: left;
-    width:150px;
+  >.container-fluid {
+    #slideouter {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      //background: #eee;
+      overflow: hidden;
+    }
+
+    #slideshow {
+      position: absolute;
+      width:110%;
+      height:100%;
+      overflow: hidden;
+      padding: 0;
+      transition: transform 0.35s ease-out;
+      display: flex;
+      flex-direction: row;
+      backface-visibility: hidden;
+      transform: translateZ(0) scale(1.0, 1.0);
+
+      > img {
+        position: relative;
+        padding:0 1rem;
+        display: block;
+        float: left;
+        width:auto;
+        height:100%;
+        backface-visibility: hidden;
+        transform: translateZ(0) scale(1.0, 1.0);
+      }
+    }
   }
 }
+
 
 // Type
 .fa {

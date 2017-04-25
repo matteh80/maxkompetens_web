@@ -72,7 +72,7 @@ $timing-function:ease-out;
   width:100%;
   text-decoration: none;
 
-  &:hover, &:active {
+  &:hover, &:active, &:focus {
     background:lighten($button-color,4%);
     text-decoration: none;
     color: #fff;
@@ -83,7 +83,7 @@ $timing-function:ease-out;
 }
 
 .fancy-button {
-  margin:auto;
+  margin: 2rem auto;
   position:relative;
   display: flex;
   justify-content: center;
@@ -92,7 +92,7 @@ $timing-function:ease-out;
     .button {
       background: $brand-primary;
 
-      &:hover {
+      &:hover, &:active, &:focus {
         background:lighten($brand-primary,4%);
       }
     }
