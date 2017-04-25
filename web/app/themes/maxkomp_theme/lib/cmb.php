@@ -425,6 +425,13 @@ function maxkomp_register_repeatable_group_field_metabox() {
 		'options'          => \Roots\Sage\CMBExtras\cmb2_get_post_options(array('post_type' => 'page', 'numberposts' => -1, 'order_by' => 'title')),
 	) );
 
+    $cmb_page_group->add_group_field( $group_field_id, array(
+        'name'       => esc_html__( 'External link', 'cmb2' ),
+        'id'         => 'ext_link',
+        'type'       => 'text',
+        // 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+    ) );
+
 	$prefix = 'maxkomp_profile_group_';
 	/**
 	 * Repeatable Field Groups for Profile

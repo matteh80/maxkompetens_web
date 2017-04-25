@@ -32,10 +32,12 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                             $index = 0;
                             foreach ($buttons_meta as $button):
                                 if(array_key_exists('title', $button)) {
-                                    if(!array_key_exists('button_link', $button)) {
+                                    if(!array_key_exists('button_link', $button) && !array_key_exists('ext_link', $button)) {
                                         $link = "#";
-                                    }else{
+                                    }else if(array_key_exists('button_link', $button)){
                                         $link = get_permalink($button['button_link']);
+                                    }else if(array_key_exists('ext_link', $button)) {
+                                        $link = $button['ext_link'];
                                     }
                                     ?>
                                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
