@@ -1,4 +1,4 @@
-<footer class="content-info">
+<footer class="content-info cloud cloud-l-b">
   <section class="top-footer">
     <div class="container">
       <div class="row">

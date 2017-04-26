@@ -17,7 +17,7 @@ var LogoSlider = (function($) {
             speed: 2000,
             actions: true,
             width: '100%',
-            height: 40
+            height: 70
         };
 
         //EXTEND THE SETTINGS SO USER MAY CUSTOMIZE

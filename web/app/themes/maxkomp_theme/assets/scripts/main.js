@@ -242,14 +242,25 @@
             source: workdata,
             select: function (event, ui) {
               console.log("Selected: " + ui.item.value + " aka " + ui.item.category);
+              $('.search-results').css({
+                "max-height": "1000px",
+                "padding": "6rem"
+              });
+              $('#category').text(ui.item.value.toLowerCase());
               $('html, body').animate({
-                scrollTop: $(".search-results").offset().top - $(".search-results").height()
+                scrollTop: $(".jumbo").height()
               }, 500, function () {
-                $('.search-results').css({
-                  "max-height": "1000px",
-                  "padding": "6rem"
+                target = Math.floor(Math.random() * 35) + 20;
+                jQuery({countNum: jQuery('.numCandidates').text()}).animate({countNum: target}, {
+                  duration: 2000,
+                  easing: 'linear',
+                  step: function () {
+                    jQuery('.numCandidates').text(Math.ceil(this.countNum)+" ");
+                  },
+                  complete: function () {
+                    jQuery('.numCandidates').text(Math.ceil(this.countNum)+" ");
+                  }
                 });
-                $('#category').text(ui.item.value.toLowerCase());
               });
             }
           });

@@ -63,7 +63,6 @@ ul.ui-autocomplete {
 
 .process {
   min-height: 200px;
-  background-color: $dark-blue;
   color: #fff;
 
   //&:before {
@@ -91,12 +90,14 @@ ul.ui-autocomplete {
     justify-content: center;
 
     &:after {
-      content: 'Möte';
-      position: absolute;
-      margin-left: 100px;
+      content: 'Kravprofil';
+      margin-bottom: 30px;
+
       @include media-breakpoint-up(sm) {
         margin-left: 0px;
         margin-top: 56px;
+        margin-bottom: 0px;
+        position: absolute;
       }
       @include media-breakpoint-up(md) {
         margin-top: 66px;
@@ -107,13 +108,19 @@ ul.ui-autocomplete {
     }
 
     &:nth-of-type(3):after {
-      content: 'Krav';
+      content: 'Annonsering';
     }
     &:nth-of-type(5):after {
-      content: 'Annons';
+      content: 'Telefonintervju';
     }
     &:nth-of-type(7):after {
-      content: 'Sök';
+      content: 'Personlig intervju';
+    }
+    &:nth-of-type(9):after {
+      content: 'Referenstagning';
+    }
+    &:nth-of-type(11):after {
+      content: 'Kontraktskrivning';
     }
 
     .fa {
@@ -123,6 +130,9 @@ ul.ui-autocomplete {
       line-height: 110px;
       border: 6px solid white;
       border-radius: 50%;
+      background: darken($brand-blue, 10%);
+      @include gradient-y($start-color: $brand-blue, $end-color: darken($brand-blue, 10%), $start-percent: 0%, $end-percent: 100%);
+
       @include media-breakpoint-up(sm) {
         font-size: 2.3rem;
         width: 80px;

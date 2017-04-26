@@ -64,7 +64,7 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                                 <h2 class="display-4 m-t-3 will-animate" data-class="fadeIn" data-delay="620">Vilken kompetens söker du?</h2>
                                 <div class="row align-items-center justify-content-center">
                                     <div class="col-md-10 will-animate" data-class="flipInY" data-delay="650">
-                                        <input class="search-candidates" id="kompetenser" type="text">
+                                        <input class="search-candidates text-center" id="kompetenser" type="text">
                                     </div>
                                 </div>
                             </div>
