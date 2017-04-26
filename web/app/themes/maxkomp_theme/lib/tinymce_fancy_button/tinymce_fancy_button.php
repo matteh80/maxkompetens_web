@@ -10,13 +10,11 @@ function fancy_button_func( $atts ) {
     $offset = (12 - $a['size']) / 2;
 
     $html = '
-                <div class="col-12 col-sm-'.$a['size'].'">
                     <div class="fancy-button btn-'.$a['color'].'">
                         <div class="left-frills frills"></div>
                         <a href="'.$a['url'].'" class="button">'.$a['text'].'</a>
                         <div class="right-frills frills"></div>
                     </div>
-                </div>
           
            
             ';

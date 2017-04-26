@@ -30,11 +30,10 @@
               },
               {type: 'textbox', name: 'url', label: 'Link'},
               {type: 'textbox', name: 'text', label: 'Text'},
-              {type: 'textbox', name: 'size', label: 'Columns (1-12)'},
             ],
             onsubmit: function(e) {
               // Insert content when the window form is submitted
-              ed.insertContent('[fancy_button color="'+e.data.color+'" url="/'+e.data.url+'" text="'+e.data.text+'" size="'+e.data.size+'"]');
+              ed.insertContent('[fancy_button color="'+e.data.color+'" url="/'+e.data.url+'" text="'+e.data.text+'"]');
             }
           });
         }

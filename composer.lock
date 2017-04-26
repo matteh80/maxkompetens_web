@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cba648a973f5b1c55f3779387594d2f9",
-    "content-hash": "9fcdc867fc28c9b6469385cbb3cbb6a0",
+    "hash": "45e1a638d52727662e86f2f0363bc92b",
+    "content-hash": "2b42aa19102c47e25fbb6fc4d720bb20",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.25",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
+                "reference": "7a80a104e3da0a4dc0ce9a88fe09968b1b34aafb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/7a80a104e3da0a4dc0ce9a88fe09968b1b34aafb",
+                "reference": "7a80a104e3da0a4dc0ce9a88fe09968b1b34aafb",
                 "shasum": ""
             },
             "require": {
@@ -60,32 +60,43 @@
             "keywords": [
                 "Craft",
                 "Dolibarr",
+                "Eliasis",
                 "Hurad",
                 "ImageCMS",
+                "Kanboard",
                 "MODX Evo",
                 "Mautic",
+                "Maya",
                 "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
                 "aimeos",
                 "annotatecms",
+                "attogram",
                 "bitrix",
                 "cakephp",
                 "chef",
+                "cockpit",
                 "codeigniter",
                 "concrete5",
                 "croogo",
                 "dokuwiki",
                 "drupal",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
+                "itop",
                 "joomla",
                 "kohana",
                 "laravel",
+                "lavalite",
                 "lithium",
                 "magento",
                 "mako",
@@ -96,16 +107,19 @@
                 "piwik",
                 "ppi",
                 "puppet",
+                "reindex",
                 "roundcube",
                 "shopware",
                 "silverstripe",
+                "sydes",
                 "symfony",
                 "typo3",
                 "wordpress",
+                "yawik",
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13 19:46:30"
+            "time": "2017-04-24 15:53:06"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -232,6 +246,20 @@
             "time": "2015-06-11 15:15:30"
         },
         {
+            "name": "mwdelaney/bootstrap-4-shortcodes",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MWDelaney/bootstrap-4-shortcodes.git",
+                "reference": "master"
+            },
+            "require": {
+                "composer/installers": "*"
+            },
+            "type": "wordpress-muplugin",
+            "time": "2017-01-03 22:11:05"
+        },
+        {
             "name": "oscarotero/env",
             "version": "v1.0.2",
             "source": {
@@ -332,16 +360,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "reference": "7ac2c1cef304f5bd5a8d40750fbcbdd49333b9e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/7ac2c1cef304f5bd5a8d40750fbcbdd49333b9e5",
+                "reference": "7ac2c1cef304f5bd5a8d40750fbcbdd49333b9e5",
                 "shasum": ""
             },
             "require": {
@@ -378,7 +406,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01 10:05:43"
+            "time": "2017-02-03 22:05:04"
         },
         {
             "name": "wpackagist-plugin/img-fluid",
@@ -424,16 +452,16 @@
     "packages-dev": [
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.8.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d"
+                "reference": "f4e70f6196e5ab1c165ebc9fc32eaf37a5b46f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
-                "reference": "d7cf0d894e8aa4c73712ee4a331cc1eaa37cdc7d",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f4e70f6196e5ab1c165ebc9fc32eaf37a5b46f17",
+                "reference": "f4e70f6196e5ab1c165ebc9fc32eaf37a5b46f17",
                 "shasum": ""
             },
             "require": {
@@ -498,7 +526,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-03-01 22:17:45"
+            "time": "2017-04-20 05:40:05"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
@@ -542,7 +570,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
