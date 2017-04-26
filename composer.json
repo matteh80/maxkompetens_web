@@ -39,7 +39,8 @@
     "johnpbloch/wordpress": "4.7.4",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
-    "wpackagist-plugin/tinymce-advanced":"^4.4.1"
+    "wpackagist-plugin/tinymce-advanced":"^4.4.1",
+    "wpackagist-plugin/img-fluid":"^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
@@ -48,7 +49,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/tinymce-advanced"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/tinymce-advanced", "wpackagist-plugin/img-fluid"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },

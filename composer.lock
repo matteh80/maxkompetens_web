@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a8bf801152ba74acd2d9a9775ec75985",
-    "content-hash": "73d059dfb62a6eef873a5edb0dd381dd",
+    "hash": "cba648a973f5b1c55f3779387594d2f9",
+    "content-hash": "9fcdc867fc28c9b6469385cbb3cbb6a0",
     "packages": [
         {
             "name": "composer/installers",
@@ -379,6 +379,26 @@
                 "environment"
             ],
             "time": "2016-09-01 10:05:43"
+        },
+        {
+            "name": "wpackagist-plugin/img-fluid",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/img-fluid/",
+                "reference": "tags/1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/img-fluid.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/img-fluid/"
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",

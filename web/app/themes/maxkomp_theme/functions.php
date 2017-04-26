@@ -27,7 +27,8 @@ $sage_includes = [
     'lib/Custom_Menu_Walker.php',
     'lib/API/api.php',
     'lib/API/remote-api.php',
-    'lib/Models/candidate.php'
+    'lib/Models/candidate.php',
+    'lib/tinymce_fancy_button/tinymce_fancy_button.php'
 ];
 
 foreach ($sage_includes as $file) {

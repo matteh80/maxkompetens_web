@@ -13,7 +13,7 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
 ?>
 
 <section class="jumbo" style="background-image: url('<?= the_post_thumbnail_url(); ?>');">
-    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small';} ?>">
+    <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small cloud cloud-l-b';} ?>">
         <div class="container text-xs-center ">
             <div class="row align-items-center justify-content-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%; text-align: center">
