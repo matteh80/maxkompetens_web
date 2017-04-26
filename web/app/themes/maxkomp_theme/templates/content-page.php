@@ -3,11 +3,11 @@ if(get_the_content() != ""):
 ?>
 <section class="content-page">
     <div class="container">
-<!--        <div class="row">-->
-<!--            <div class="col-xs">-->
+        <div class="row">
+            <div class="col-12">
                 <?php the_content(); ?>
-<!--            </div>-->
-<!--        </div>-->
+            </div>
+        </div>
     </div>
 </section>
 

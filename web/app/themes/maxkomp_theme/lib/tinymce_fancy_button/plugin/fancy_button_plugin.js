@@ -23,17 +23,18 @@
                 name   : 'color',
                 label  : 'Color',
                 values : [
-                  { text: 'Orange', value: 'bg-orange' },
-                  { text: 'Green', value: 'bg-green' }
+                  { text: 'Orange', value: 'orange' },
+                  { text: 'Green', value: 'green' }
                 ],
                 value : 'bg-orange' // Sets the default
               },
               {type: 'textbox', name: 'url', label: 'Link'},
-              {type: 'textbox', name: 'text', label: 'Text'}
+              {type: 'textbox', name: 'text', label: 'Text'},
+              {type: 'textbox', name: 'size', label: 'Columns (1-12)'},
             ],
             onsubmit: function(e) {
               // Insert content when the window form is submitted
-              ed.insertContent('[fancy_button color="green" url="/investerare" text="Bemanning"]');
+              ed.insertContent('[fancy_button color="'+e.data.color+'" url="/'+e.data.url+'" text="'+e.data.text+'" size="'+e.data.size+'"]');
             }
           });
         }
