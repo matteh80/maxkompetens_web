@@ -49,7 +49,7 @@ staging:
 
   ssh:
       host: "stage.maxkompetens.se"
-      user: "root"
+      user: "web"
 
   # ssh:
   #   host: "host"
