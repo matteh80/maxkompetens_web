@@ -60,16 +60,20 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // COLORS
-.text-orange {
+.text-orange, .fg-orange {
   color: $brand-secondary;
 }
 
-.text-white {
+.text-white, .fg-white {
   color: #fff;
 }
 
 .bg-orange {
   background-color: $brand-secondary;
+}
+
+.bg-blue{
+  background-color: $brand-blue;
 }
 
 .bg-white {
@@ -265,19 +269,27 @@ form {
 
   &.cloud-l-b:after {
     background-image: url(../../dist/images/cloud_l_b.png);
-    background-position-x: 0%;
+    background-position: left bottom;
+    left:0;
+    bottom:0;
   }
   &.cloud-r-b:after {
     background-image: url(../../dist/images/cloud_r_b.png);
-    background-position-x: 100%;
+    background-position: right bottom;
+    right:0;
+    bottom:0;
   }
   &.cloud-l-t:after {
     background-image: url(../../dist/images/cloud_l_t.png);
-    background-position-x: 0%;
+    background-position: left top;
+    left:0;
+    top:0;
   }
   &.cloud-r-t:after {
     background-image: url(../../dist/images/cloud_r_t.png);
-    background-position-x: 100%;
+    background-position: right top;
+    right:0;
+    top:0;
   }
 
   &:after {
@@ -287,6 +299,10 @@ form {
     background-repeat: no-repeat;
     width:100%;
     height:100px;
+  }
+
+  &.cloud-large:after {
+    height: 160px;
   }
 
 }

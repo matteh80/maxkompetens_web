@@ -1,11 +1,13 @@
 <?php
 if(get_the_content() != ""):
 ?>
-<section>
+<section class="content-page">
     <div class="container">
-        <div class="row">
-            <?php the_content(); ?>
-        </div>
+<!--        <div class="row">-->
+<!--            <div class="col-xs">-->
+                <?php the_content(); ?>
+<!--            </div>-->
+<!--        </div>-->
     </div>
 </section>
 

@@ -249,63 +249,31 @@ section {
   }
 }
 
-#registrering .social {
-  display: none;
+section.wap {
+  &:after {
+    z-index:3;
+  }
+
+  .will-animate {
+    position: relative;
+    z-index: 1;
+  }
 }
-.page0 #registrering .social {
-  display: flex ;
+section#wap-info {
+  position: relative !important;
+  z-index: 10 !important;
+
+  > .container-fluid {
+
+    > .row {
+
+      > div {
+        border-bottom: 5px solid $brand-blue;
+      }
+    }
+  }
 }
-section#registrering {
-  background-color: #fff;
 
-
-  > .container {
-
-  }
-
-  .social {
-    font-size: 3rem;
-    
-    .fa-facebook-official {
-      color: $facebook_color;
-    }
-    .fa-linkedin-square {
-      color: $linkedin_color;
-    }
-    .fa-google-plus-official {
-      color: $google_plus_color;
-    }
-  }
-
-  .left, .right {
-    transition: font-size 250ms ease;
-  }
-
-  .slider {
-    width:100%;
-
-    .ui-slider-handle {
-      background: dodgerblue;
-    }
-  }
-  
-  .slider-values small{
-    &:last-of-type {
-      float: right;
-    }
-  }
-  
-  .top-icon {
-    margin:0 auto 3rem;
-    display: block;
-    font-size: 4rem;
-    width:8rem;
-    height:8rem;
-    line-height: 8rem;
-    background: $brand-primary;
-    color: #fff;
-    text-align: center;
-    border-radius: 4rem;
-  }
-  
+section.content-page {
+  background: #fff;
 }

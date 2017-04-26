@@ -83,7 +83,7 @@ $timing-function:ease-out;
 }
 
 .fancy-button {
-  margin: 2rem auto;
+  margin: .6rem auto;
   position:relative;
   display: flex;
   justify-content: center;
@@ -94,6 +94,9 @@ $timing-function:ease-out;
 
       &:hover, &:active, &:focus {
         background:lighten($brand-primary,4%);
+      }
+      &:active {
+        box-shadow:inset 0px 2px 8px -1px darken($brand-primary,6%);
       }
     }
     .frills, .frills:after, .frills:before {

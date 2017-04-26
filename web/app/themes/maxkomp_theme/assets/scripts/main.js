@@ -55,35 +55,35 @@
         //     });
         // });
 
-        $(window).on('scroll resize load', function () {
-          var scrolled = $(this).scrollTop();
-          // scrolled > 100 ? $('.banner').addClass('scrolled') : $('.banner').removeClass('scrolled');
-
-          // $('section').filter(function() {
-          //     return scrolled >= $(this).offset().top;
-          // }).addClass('fixed').next().css({
-          //     "margin-top" : $(this).outerHeight()
-          // });
-
-          // $('section').each(function(index, element) {
-          //     if(scrolled >= $(element).offset().top && !$(element).hasClass("fixed")) {
-          //         $(element).next().css("top", $(element).height());
-          //         $(element).addClass("fixed").css("top", 0);
-          //
-          //     }
-          // });
-
-          elHeight = $('.jumbo').outerHeight();
-          offset = $('.jumbo').offsetTop;
-
-          jumboPos = (scrolled / elHeight);
-
-          $('.jumbo').css({
-            "background-position-y": jumboPos * 100 + "%",
-            "background-position-x": "50%"
-          });
-
-        });
+        // $(window).on('scroll resize load', function () {
+        //   var scrolled = $(this).scrollTop();
+        //   // scrolled > 100 ? $('.banner').addClass('scrolled') : $('.banner').removeClass('scrolled');
+        //
+        //   // $('section').filter(function() {
+        //   //     return scrolled >= $(this).offset().top;
+        //   // }).addClass('fixed').next().css({
+        //   //     "margin-top" : $(this).outerHeight()
+        //   // });
+        //
+        //   // $('section').each(function(index, element) {
+        //   //     if(scrolled >= $(element).offset().top && !$(element).hasClass("fixed")) {
+        //   //         $(element).next().css("top", $(element).height());
+        //   //         $(element).addClass("fixed").css("top", 0);
+        //   //
+        //   //     }
+        //   // });
+        //
+        //   elHeight = $('.jumbo').outerHeight();
+        //   offset = $('.jumbo').offsetTop;
+        //
+        //   jumboPos = (scrolled / elHeight);
+        //
+        //   $('.jumbo').css({
+        //     "background-position-y": jumboPos * 100 + "%",
+        //     "background-position-x": "50%"
+        //   });
+        //
+        // });
 
         $.fn.extend({
           animateCss: function (animationName, delay) {
