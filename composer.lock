@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45e1a638d52727662e86f2f0363bc92b",
-    "content-hash": "2b42aa19102c47e25fbb6fc4d720bb20",
+    "hash": "019be0fd4b51faab447e86ee07e28ed7",
+    "content-hash": "291ac28252d5e9f178336c77d0aaf918",
     "packages": [
         {
             "name": "composer/installers",
@@ -256,7 +256,7 @@
             "require": {
                 "composer/installers": "*"
             },
-            "type": "wordpress-muplugin",
+            "type": "wordpress-plugin",
             "time": "2017-01-03 22:11:05"
         },
         {

@@ -36,7 +36,7 @@
       "package": {
         "name": "mwdelaney/bootstrap-4-shortcodes",
         "version": "master",
-        "type": "wordpress-muplugin",
+        "type": "wordpress-plugin",
         "source": {
           "type": "git",
           "url": "https://github.com/MWDelaney/bootstrap-4-shortcodes.git",
