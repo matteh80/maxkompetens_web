@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "45e1a638d52727662e86f2f0363bc92b",
-    "content-hash": "2b42aa19102c47e25fbb6fc4d720bb20",
+    "hash": "2f05e37a19414a9ee2d0e13cfaf40b7f",
+    "content-hash": "e876c17c8dc59ea1534552f2f9439b00",
     "packages": [
         {
             "name": "composer/installers",
@@ -244,20 +244,6 @@
                 "wordpress"
             ],
             "time": "2015-06-11 15:15:30"
-        },
-        {
-            "name": "mwdelaney/bootstrap-4-shortcodes",
-            "version": "master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/MWDelaney/bootstrap-4-shortcodes.git",
-                "reference": "master"
-            },
-            "require": {
-                "composer/installers": "*"
-            },
-            "type": "wordpress-muplugin",
-            "time": "2017-01-03 22:11:05"
         },
         {
             "name": "oscarotero/env",
