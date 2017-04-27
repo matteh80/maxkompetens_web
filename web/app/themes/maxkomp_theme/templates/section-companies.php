@@ -14,6 +14,7 @@
                         }
                         closedir($dir);
                     }
+                    shuffle($images);
                     foreach($images as $image) : ?>
                         <img src="<?= \Roots\Sage\Assets\asset_path('images/logos/'.$image); ?>" class="slideimage">
                     <?php endforeach; ?>

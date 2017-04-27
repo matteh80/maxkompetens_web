@@ -1,9 +1,9 @@
 <?php
-class Custom_Menu_Walker extends Walker_Nav_Menu {
+class Mobile_Menu_Walker extends Walker_Nav_Menu {
 
     function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class='sub-menu-wrap'><ul class='sub-menu row'>\n";
+        $output .= "<div class='sub-menu-wrap'>\n$indent<ul class='sub-menu'>\n";
     }
 
     // Displays start of an element. E.g '<li> Item Name'
@@ -15,12 +15,7 @@ class Custom_Menu_Walker extends Walker_Nav_Menu {
         $description = $item->description;
         $permalink = $item->url;
 
-        if($depth > 0) {
-            // Child
-            $output .= "<li class='col-3 " .  implode(" ", $item->classes) . "'>";
-        }else{
-            $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
-        }
+        $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
 
 
 //        print_r($args);

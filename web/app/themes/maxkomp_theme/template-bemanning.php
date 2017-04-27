@@ -38,7 +38,7 @@
     </div>
 </section>
 
-<?php get_template_part('templates/section', 'process'); ?>
+<?php //get_template_part('templates/section', 'process'); ?>
 
 <?php get_template_part('templates/section', 'referencecases'); ?>
 

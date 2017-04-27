@@ -19,7 +19,7 @@
                                 'container_id' => 'menu-container',
                                 'container_class' => 'container',
                                 'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>',
-                                'walker' => new Custom_Menu_Walker(),
+                                'walker' => new Mobile_Menu_Walker(),
                             ]);
                         endif;
                         ?>
@@ -27,6 +27,7 @@
                 </div>
 
                 <div class="nav-footer col-12 align-self-end">
+                    <div class="row cloud cloud-l-b"></div>
                     <div class="row align-items-center justify-content-center social-icons">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
@@ -38,7 +39,7 @@
     </nav>
 </div>
 
-<div class="navbar-toggle hidden-lg-up pull-xs-left" aria-label="Toggle navigation">
+<div class="navbar-toggle hidden-lg-up pull-xs-left collapsed" aria-label="Toggle navigation">
     <span class="bar1"></span>
     <span class="bar2"></span>
     <span class="bar3"></span>

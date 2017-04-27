@@ -1,5 +1,7 @@
 $menu-color: $brand-primary;
+$mobile-menu-color: $brand-blue;
 $parent-menu-color: white;
+$current-item-color: white;
 $hover-menu-color: #f0f0f0;
 
 .overlay {
@@ -28,10 +30,6 @@ $hover-menu-color: #f0f0f0;
   z-index: 4;
   transition: background 300ms;
   perspective: 1800px;
-  border-bottom: 1px solid gray;
-  @include media-breakpoint-up(lg) {
-    border: none;
-  }
 
   &.scrolled {
     background: white;
@@ -74,10 +72,12 @@ $hover-menu-color: #f0f0f0;
           display: inline-block;
           //position: relative;
           margin-right: 24px;
-          transition: background 300ms;
+          box-shadow: inset 0 0 0 $hover-menu-color;
+          transition: all 300ms;
 
           &:hover {
-            background: $hover-menu-color;
+            //background: $hover-menu-color;
+            box-shadow: inset 0 -75px 0 $hover-menu-color;
 
             a, span {
               color: $brand-secondary;
@@ -85,7 +85,15 @@ $hover-menu-color: #f0f0f0;
           }
 
           &.current-menu-item {
-            box-shadow: inset 0 -5px 0 $menu-color;
+            box-shadow: inset 0 -8px 0 $current-item-color;
+            &:hover {
+              //background: $hover-menu-color;
+              box-shadow: inset 0 -75px 0 $hover-menu-color;
+
+              a, span {
+                color: $brand-secondary;
+              }
+            }
           }
 
           &.current-menu-parent {
@@ -150,19 +158,23 @@ $hover-menu-color: #f0f0f0;
           .sub-menu {
             float: right;
             padding:0;
-            
+            margin-left:0;
+            margin-right:0;
             width:100%;
 
             .menu-item {
               margin-right: 0;
+              box-shadow: none;
 
 
               a, span {
                 color: #000;
+                line-height: 60px;
               }
 
               &:hover {
                 background: rgba(0,0,0,0.2);
+                box-shadow: none;
               }
 
               &.current-menu-item {
@@ -198,7 +210,7 @@ $mobile-menu-width: 280px;
   z-index: 998;
   color: #fff;
   font-size: 18px;
-  background: $brand-primary;
+  background: $mobile-menu-color;
   transform: rotateY(-90deg);
   transform-origin: left;
   transform-style: preserve-3d;
@@ -239,29 +251,48 @@ $mobile-menu-width: 280px;
     #main-menu {
       flex-direction: column;
       font-weight: 500;
-      text-align: center;
 
       .menu-item {
         display: inline-block;
         //position: relative;
         margin-right: 24px;
         transition: background 300ms;
+        float: left;
 
-        &:hover {
-          background: $hover-menu-color;
+        &:focus {
+
         }
 
         &.current-menu-item {
-          box-shadow: inset 0 -5px 0 $menu-color;
+          > a, > span {
+            box-shadow: inset 5px 0 0 #fff;
+          }
         }
 
         &.menu-item-has-children {
+          position: relative;
 
-          span {
+          > a, > span {
+            position: relative;
+          }
+
+          .expandArrow {
+            position: absolute;
+            top:4px;
+            right:4px;
+
             &:after {
               content: "\f107";
               font-family: FontAwesome;
-              margin-left: 5px;
+              //margin-left: 5px;
+              position: absolute;
+              background: #fff;
+              color: $mobile-menu-color;
+              line-height: 20px;
+              width: 20px;
+              border-radius: 50%;
+              text-align: center;
+              //top: 4px;
             }
           }
 
@@ -269,7 +300,6 @@ $mobile-menu-width: 280px;
             .sub-menu-wrap {
               visibility: visible;
               height: auto;
-              background: $hover-menu-color;
             }
           }
         }
@@ -279,6 +309,7 @@ $mobile-menu-width: 280px;
           padding: 0 10px;
           color: #fff;
           text-transform: uppercase;
+          font-weight: 100;
 
           &:hover {
             text-decoration: none;
@@ -291,7 +322,15 @@ $mobile-menu-width: 280px;
         }
 
         .sub-menu {
-          padding-left: 0;
+          padding-left: 20px;
+
+          .menu-item {
+            margin-right: 0;
+
+            a, span {
+              font-size: 1rem;
+            }
+          }
         }
       }
     }
@@ -303,20 +342,9 @@ $mobile-menu-width: 280px;
     color: #333333;
     background: #fff;
 
-    &:after {
-      content: '';
-      width: 100%;
-      height: 20px;
-      z-index: 1;
-      position: absolute;
-      top: -11px;
-      left: 0;
-      background-image: url("../../dist/images/wave_vit_up.png");
-      background-repeat: repeat-x;
-    }
-
     .social-icons {
-      margin:30px 0;
+      margin: 0px 0 20px;
+
       a {
         text-align: center;
         margin: 0 0.2rem;

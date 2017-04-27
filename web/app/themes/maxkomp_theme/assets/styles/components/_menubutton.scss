@@ -15,15 +15,16 @@
   border-radius: 0px;
   border: none;
   position: fixed;
-  right: 10px;
+  left: 20px;
   top: 10px;
   z-index: 999;
+  transition: top 400ms ease;
 }
 .navbar-toggle span {
   height: 1px;
   margin: 7px 0;
   width: $barwidth;
-  background-color: $brand-primary;
+  background-color: white; // Close
   display: block;
 }
 
@@ -58,6 +59,10 @@
   width: 32px;
 }
 
+.navbar-toggle.collapsed {
+  top:18px;
+}
+
 .navbar-toggle.collapsed span.bar1,
 .navbar-toggle.collapsed span.bar2,
 .navbar-toggle.collapsed span.bar3,
@@ -66,6 +71,7 @@
   -webkit-transform: none;
   transform: none;
   width: $barwidth;
+  background-color: white; // Open
 }
 
 .navbar-toggle {
