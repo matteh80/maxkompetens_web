@@ -17,7 +17,7 @@ class Custom_Menu_Walker extends Walker_Nav_Menu {
 
         if($depth > 0) {
             // Child
-            $output .= "<li class='col-3 " .  implode(" ", $item->classes) . "'>";
+            $output .= "<li class='col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-3 " .  implode(" ", $item->classes) . "'>";
         }else{
             $output .= "<li class='" .  implode(" ", $item->classes) . "'>";
         }
