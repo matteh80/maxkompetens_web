@@ -19,6 +19,7 @@
     'common': {
       init: function () {
         // JavaScript to be fired on all pages
+
         $(".fancy-button").mousedown(function(){
           $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
             $(this).removeClass('active');
@@ -239,7 +240,7 @@
                 workdata.push({label: item.name, category: categoryitem.name});
               });
             });
-            console.log(workdata)
+            console.log(workdata);
           }).error(function(message) {
             var treeData;
 
