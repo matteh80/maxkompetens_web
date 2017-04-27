@@ -301,3 +301,14 @@ section#contact {
     top:-50px;
   }
 }
+
+section.referencecases {
+
+  .referencecase-item {
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.1,1.1);
+    }
+  }
+}

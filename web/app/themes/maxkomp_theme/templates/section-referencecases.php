@@ -11,6 +11,26 @@
                 <p>Vi har många nöjda kunder och de flesta anlitar oss löpande. Vi är ett tryggt, proffsigt och
                     kvalitetssäkert val och vi ger det lilla extra. Här är några av de företag som väljer oss för sin rekrytering.</p>
             </div>
+        </div>
+        <div class="row justify-content-center align-items-center mt-5">
+            <?php
+            $args = array( 'post_type' => 'referencecase', 'posts_per_page' => 3 );
+            $loop = new WP_Query( $args );
+            $x = 1;
+            while ( $loop->have_posts() ) : $loop->the_post();
+
+                echo '<a href="'.get_the_permalink().'" class="referencecase-item col will-animate" data-class="flipInX" data-delay="'.(250*$x).'">';
+                echo '<div class="mx-auto">';
+                echo '<img src="'.get_the_post_thumbnail_url().'" class="img-fluid" />';
+                echo '</div>';
+                echo '</a>';
+
+                $x++;
+            endwhile;
+            ?>
+        </div>
+
+        <div class="row justify-content-center mt-5">
             <div class="col-12 col-sm-3">
                 <div class="fancy-button">
                     <div class="left-frills frills"></div>

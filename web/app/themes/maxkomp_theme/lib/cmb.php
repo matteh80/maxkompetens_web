@@ -224,20 +224,21 @@ function maxkomp_register_page_metabox() {
 	) );
 }
 
-add_action( 'cmb2_admin_init', 'maxkomp_register_customers_metabox' );
+// TODO: Might not need cmb for reference cases?
+add_action( 'cmb2_admin_init', 'maxkomp_register_referencecases_metabox' );
 /**
  * Hook in and add a page metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
-function maxkomp_register_customers_metabox() {
-	$prefix = 'maxkomp_customer_';
+function maxkomp_register_referencecases_metabox() {
+	$prefix = 'maxkomp_referencecase_';
 
 	/**
 	 * Sample metabox to demonstrate each field type included
 	 */
-	$cmb_customer = new_cmb2_box( array(
+	$cmb_referencecase = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => esc_html__( '&nbsp;', 'cmb2' ),
-		'object_types'  => array( 'customer', ), // Post type
+		'object_types'  => array( 'referencecase', ), // Post type
 		// 'show_on_cb' => 'maxkomp_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
@@ -248,25 +249,13 @@ function maxkomp_register_customers_metabox() {
 		// 'classes_cb' => 'maxkomp_add_some_classes', // Add classes through a callback.
 	) );
 
-	$cmb_customer->add_field( array(
-		'name' => esc_html__( 'Info', 'cmb2' ),
-//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'textarea',
-		'type' => 'textarea',
-	) );
 
-	$cmb_customer->add_field( array(
-		'name' => esc_html__( 'Test Image', 'cmb2' ),
-		'desc' => esc_html__( 'Upload an image or enter a URL.', 'cmb2' ),
-		'id'   => $prefix . 'image',
-		'type' => 'file',
-	) );
 
-	$cmb_customer->add_field( array(
-		'name' => esc_html__( 'Reference Case', 'cmb2' ),
-		'desc' => esc_html__( 'Check if this is a reference case', 'cmb2' ),
-		'id'   => $prefix . 'reference_case',
-		'type' => 'checkbox',
+	$cmb_referencecase->add_field( array(
+        'name'       => esc_html__( 'Befattnings-id', 'cmb2' ),
+        'desc'       => esc_html__( 'aea55703-49d8-4e6c-a7ac-035ac6b08814', 'cmb2' ),
+        'id'         => $prefix . 'occupation',
+        'type'       => 'text',
 	) );
 }
 
