@@ -22,6 +22,7 @@ $sage_includes = [
     'lib/cpt/cpt-referencecase.php', // Custom Post Type Customers
 //    'lib/cpt/cpt-medarbetare.php', // Custom Post Tytpe Medarbetare
     'lib/cpt/cpt-offices.php', // Custom Post Tytpe Medarbetare
+    'lib/cpt/cpt-services.php', // Custom Post Tytpe Medarbetare
     'lib/theme-options-cmb.php',
     'lib/profile_menu_walker.php',
     'lib/Custom_Menu_Walker.php',

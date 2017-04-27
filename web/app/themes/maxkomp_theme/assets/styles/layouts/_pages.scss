@@ -312,3 +312,32 @@ section.referencecases {
     }
   }
 }
+
+section#services {
+  
+  .service-content {
+    overflow: hidden;
+    transition: all 800ms ease;
+    position: relative;
+
+    .services-button {
+      background: $brand-secondary;
+      transition: background 300ms;
+    }
+    
+    p {
+      position: absolute;
+      top:0;
+    }
+    .content-wrapper {
+      position: absolute;
+      top:0;
+    }
+
+    &.collapsed {
+      .services-button {
+        background: $brand-primary
+      }
+    }
+  }
+}

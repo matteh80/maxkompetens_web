@@ -89,3 +89,9 @@ function debug_to_console( $data ) {
 
     echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
 }
+
+function new_excerpt_more($more) {
+    global $post;
+    return '...';
+}
+add_filter('excerpt_more',  __NAMESPACE__ . '\\new_excerpt_more');

@@ -30,11 +30,11 @@
             ?>
         </div>
 
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-2">
             <div class="col-12 col-sm-3">
                 <div class="fancy-button">
                     <div class="left-frills frills"></div>
-                    <a href="/soker-du-jobb" class="button">våra referenscase</a>
+                    <a href="/referenscase" class="button">våra referenscase</a>
                     <div class="right-frills frills"></div>
                 </div>
             </div>

@@ -41,7 +41,8 @@
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/tinymce-advanced":"^4.4.1",
     "wpackagist-plugin/img-fluid":"^1.0",
-    "wpackagist-plugin/tawkto-live-chat": "0.2.5"
+    "wpackagist-plugin/tawkto-live-chat": "0.2.5",
+    "wpackagist-plugin/simple-custom-post-order": "^2.3.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
@@ -51,7 +52,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/tinymce-advanced", "wpackagist-plugin/img-fluid", "wpackagist-plugin/tawkto-live-chat"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/tinymce-advanced", "wpackagist-plugin/img-fluid", "wpackagist-plugin/tawkto-live-chat", "wpackagist-plugin/simple-custom-post-order"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },

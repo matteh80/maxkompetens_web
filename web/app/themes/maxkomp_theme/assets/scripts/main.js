@@ -216,6 +216,67 @@
         });
       }
     },
+    //Vilka är vi
+    'vilka_ar_vi': {
+      init: function () {
+
+
+        function setHeights() {
+          $('.service-content').each(function(i,e) {
+            $(this).attr("data-height", $(this).children('div').outerHeight());
+            $(this).attr("data-minimize", $(this).children('p').outerHeight());
+            $(this).css("height", $(this).children('p').outerHeight());
+            $(this).children('div').css('visibility', 'hidden');
+          });
+        }
+
+        setHeights();
+
+        $(window).on("resize", function() {
+           setHeights();
+        });
+
+        $('.services-button').click(function(e) {
+          e.preventDefault();
+          var id = $(this).attr('id');
+          var $content = $('#content'+id);
+          var $contentWrapper = $content.children('div');
+          var $excerpt = $content.children('p');
+          var $button = $(this);
+
+          if($content.hasClass('collapsed')) {
+
+            $excerpt.css('visibility', 'hidden');
+            $contentWrapper.css('visibility', 'visible');
+            $content.css({
+              'height': $content.attr('data-height')
+            });
+            $content.removeClass('collapsed');
+            $button.children('span').text('Minimera');
+            $button.parent().removeClass('btn-green').addClass('btn-orange');
+            $content.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+
+          }else{
+            $content.css({
+              'height': $content.attr('data-minimize')
+            });
+            $content.one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',
+              function (e) {
+                $contentWrapper.css('visibility', 'hidden');
+                $excerpt.css('visibility', 'visible');
+                $content.addClass('collapsed');
+                $button.children('span').text('Läs mer');
+                $button.parent().removeClass('btn-orange').addClass('btn-green');
+                $content.off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
+              }
+            );
+          }
+        });
+      },
+      finalize: function () {
+
+      }
+    },
     // Bemanning
     'bemanning': {
       init: function () {

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "216ab97d0aec8eef1f8fc73144334eeb",
-    "content-hash": "45fdbf48c82188117f054cdcf4526f7b",
+    "hash": "0e94d44ac656f30afd84c8ff9f8703ce",
+    "content-hash": "9a7e2a1f2e0b7f2437867a084972b27a",
     "packages": [
         {
             "name": "composer/installers",
@@ -413,6 +413,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/img-fluid/"
+        },
+        {
+            "name": "wpackagist-plugin/simple-custom-post-order",
+            "version": "2.3.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/simple-custom-post-order/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/simple-custom-post-order.zip?timestamp=1489777411",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/simple-custom-post-order/"
         },
         {
             "name": "wpackagist-plugin/tawkto-live-chat",
