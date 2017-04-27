@@ -1,4 +1,4 @@
-<section id="contact" class="bg-blue cloud cloud-large cloud-l-b">
+<section id="contact" class="bg-blue cloud cloud-l-b">
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-12 text-center fg-white">

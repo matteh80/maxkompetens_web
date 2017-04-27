@@ -109,8 +109,27 @@
           }
         });
 
+        var crash = 0;
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
         $('.paper-plane').click(function() {
-          $(this).animateCss("jello", 0);
+
+          crash++;
+          console.log(crash);
+          if(crash > 4) {
+            $(this).animateCss("bounceOutDown", 0);
+            $(this).one(animationEnd, function() {
+              crash = 0;
+              $(this).hide();
+              setTimeout(function() {
+                $(this).animateCss("slideInRight", 0);
+                $(this).show('300');
+              },2000);
+
+            });
+
+          }else{
+            $(this).animateCss("jello", 0);
+          }
         });
 
         //COUNT UP
