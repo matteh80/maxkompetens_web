@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f05e37a19414a9ee2d0e13cfaf40b7f",
-    "content-hash": "e876c17c8dc59ea1534552f2f9439b00",
+    "hash": "216ab97d0aec8eef1f8fc73144334eeb",
+    "content-hash": "45fdbf48c82188117f054cdcf4526f7b",
     "packages": [
         {
             "name": "composer/installers",
@@ -415,6 +415,26 @@
             "homepage": "https://wordpress.org/plugins/img-fluid/"
         },
         {
+            "name": "wpackagist-plugin/tawkto-live-chat",
+            "version": "0.2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/tawkto-live-chat/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/tawkto-live-chat.zip?timestamp=1487404441",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/tawkto-live-chat/"
+        },
+        {
             "name": "wpackagist-plugin/tinymce-advanced",
             "version": "4.5.6",
             "source": {
@@ -442,12 +462,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "f4e70f6196e5ab1c165ebc9fc32eaf37a5b46f17"
+                "reference": "1336d8b26816de87cfb88aa3e71a5e855f4b4bf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/f4e70f6196e5ab1c165ebc9fc32eaf37a5b46f17",
-                "reference": "f4e70f6196e5ab1c165ebc9fc32eaf37a5b46f17",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/1336d8b26816de87cfb88aa3e71a5e855f4b4bf8",
+                "reference": "1336d8b26816de87cfb88aa3e71a5e855f4b4bf8",
                 "shasum": ""
             },
             "require": {
@@ -512,7 +532,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-04-20 05:40:05"
+            "time": "2017-04-27 00:31:25"
         },
         {
             "name": "wpackagist-plugin/regenerate-thumbnails",
