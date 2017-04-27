@@ -18,6 +18,7 @@
                                 'menu_id' => 'main-menu',
                                 'container_id' => 'menu-container',
                                 'container_class' => 'container',
+                                'items_wrap' => '<div id="%1$s" class="%2$s">%3$s</div>',
                                 'walker' => new Custom_Menu_Walker(),
                             ]);
                         endif;

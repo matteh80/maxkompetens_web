@@ -1,4 +1,5 @@
 $menu-color: $brand-primary;
+$parent-menu-color: white;
 $hover-menu-color: #f0f0f0;
 
 .overlay {
@@ -87,6 +88,10 @@ $hover-menu-color: #f0f0f0;
             box-shadow: inset 0 -5px 0 $menu-color;
           }
 
+          &.current-menu-parent {
+            box-shadow: inset 0 -5px 0 $parent-menu-color;
+          }
+
           &.menu-item-has-children {
 
             > a, > span {
@@ -138,13 +143,35 @@ $hover-menu-color: #f0f0f0;
             transform-style: preserve-3d;
           }
 
+          >.container {
+            padding:0;
+          }
+
           .sub-menu {
             float: right;
+            padding:0;
+            
+            width:100%;
 
             .menu-item {
+              margin-right: 0;
+
 
               a, span {
                 color: #000;
+              }
+
+              &:hover {
+                background: rgba(0,0,0,0.2);
+              }
+
+              &.current-menu-item {
+                background: $menu-color;
+                box-shadow: none;
+
+                a {
+                  color: #fff;
+                }
               }
             }
           }
