@@ -280,3 +280,24 @@ section#wap-info {
 section.content-page {
   background: #fff;
 }
+
+section#contact {
+  position: relative;
+
+  .contact-side {
+    background: #fff;
+    border-radius: 8px;
+
+  }
+
+  .paper-plane {
+    width:100px;
+
+    @include media-breakpoint-up(lg) {
+      width:200px;
+    }
+    position: absolute;
+    right:40px;
+    top:-50px;
+  }
+}

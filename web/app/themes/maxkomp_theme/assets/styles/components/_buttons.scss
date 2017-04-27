@@ -104,6 +104,23 @@ $timing-function:ease-out;
     }
   }
 
+  &.btn-white {
+    .button {
+      background: white;
+      color: #000;
+
+      &:hover, &:active, &:focus {
+        background:#eee;
+      }
+      &:active {
+        box-shadow:inset 0px 2px 8px -1px #ddd;
+      }
+    }
+    .frills, .frills:after, .frills:before {
+      background: white !important;
+    }
+  }
+
   &.large .button {
     height:$button-height * 1.5;
     line-height:$button-height * 1.5;

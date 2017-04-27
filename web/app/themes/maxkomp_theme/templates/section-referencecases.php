@@ -1,7 +1,7 @@
 <section class="referencecases bg-white">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-10 col-sm-5">
+            <div class="col-10 col-sm-3">
                 <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_referenscase.png'); ?>" class="img-fluid" />
             </div>
         </div>

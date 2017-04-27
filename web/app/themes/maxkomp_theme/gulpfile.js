@@ -199,6 +199,14 @@ gulp.task('scripts', ['jshint'], function() {
     .pipe(writeToManifest('scripts'));
 });
 
+// ### JSON
+gulp.task('json', function() {
+  var json = globule.find(path.source + "scripts/*.json");
+  return gulp.src(json)
+    .pipe(gulp.dest(path.dist + 'scripts'))
+    .pipe(browserSync.stream());
+});
+
 // ### Fonts
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
 // structure. See: https://github.com/armed/gulp-flatten
@@ -273,6 +281,7 @@ gulp.task('watch', function() {
 gulp.task('build', function(callback) {
   runSequence('styles',
               'scripts',
+              'json',
               'videos',
               ['fonts', 'images'],
               callback);

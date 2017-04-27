@@ -28,6 +28,9 @@
     },
     "remoteapi.js": {
       "files": ["scripts/remoteapi.js"]
+    },
+    "jobb.json": {
+      "files": ["scripts/jobb.json"]
     }
   },
   "config": {

@@ -110,6 +110,7 @@ function assets() {
         wp_enqueue_script( 'sage/js', Assets\asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
         wp_enqueue_script( 'logoslider.js', Assets\asset_path( 'scripts/logoslider.js' ), [ 'jquery' ], null, true );
         wp_enqueue_script( 'remoteapi.js', Assets\asset_path( 'scripts/remoteapi.js' ), [ 'jquery' ], null, true );
+//        wp_enqueue_script( 'hoverdir.js', Assets\asset_path( 'scripts/jquery.hoverdir.min.js' ), [ 'jquery' ], null, true );
     }
 }
 

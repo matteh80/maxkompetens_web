@@ -108,6 +108,10 @@
           }
         });
 
+        $('.paper-plane').click(function() {
+          $(this).animateCss("jello", 0);
+        });
+
         //COUNT UP
 
         jQuery.fn.countUp = function () {
@@ -235,6 +239,40 @@
                 workdata.push({label: item.name, category: categoryitem.name});
               });
             });
+            console.log(workdata)
+          }).error(function(message) {
+            var treeData;
+
+            var retrieveURL = function(filename) {
+              var scripts = document.getElementsByTagName('script');
+              if (scripts && scripts.length > 0) {
+                for (var i in scripts) {
+                  if (scripts[i].src && scripts[i].src.match(new RegExp(filename+'\\.js$'))) {
+                    return scripts[i].src.replace(new RegExp('(.*)'+filename+'\\.js$'), '$1');
+                  }
+                }
+              }
+            };
+
+            function reqListener(e) {
+              var mArray = JSON.parse(this.responseText);
+              console.log(mArray);
+              $.each(mArray, function (i, categoryitem) {
+                // console.log(categoryitem.name);
+                $.each(categoryitem, function (x, item) {
+                  // console.log(item.name);
+                  workdata.push({label: item, category: categoryitem[i]});
+                });
+              });
+              console.log(workdata);
+            }
+
+            var oReq = new XMLHttpRequest();
+            oReq.onload = reqListener;
+            oReq.open("get", retrieveURL('main')+"jobb.json", true);
+            oReq.send();
+
+
           });
 
           $("#kompetenser").catcomplete({
