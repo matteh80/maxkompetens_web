@@ -146,16 +146,16 @@ function maxkomp_register_page_metabox() {
 		// 'classes_cb' => 'maxkomp_add_some_classes', // Add classes through a callback.
 	) );
 
-    $cmb_page->add_field( array(
-        'name'             => esc_html__( 'Logo Selection', 'cmb2' ),
-        'id'               => $prefix . 'logo_selection',
-        'type'             => 'radio_inline',
-        'default'          => 'primary',
-        'options'          => array(
-            'primary' => esc_html__( 'Primary', 'cmb2' ),
-            'secondary'   => esc_html__( 'Secondary', 'cmb2' ),
-        ),
-    ) );
+//    $cmb_page->add_field( array(
+//        'name'             => esc_html__( 'Logo Selection', 'cmb2' ),
+//        'id'               => $prefix . 'logo_selection',
+//        'type'             => 'radio_inline',
+//        'default'          => 'primary',
+//        'options'          => array(
+//            'primary' => esc_html__( 'Primary', 'cmb2' ),
+//            'secondary'   => esc_html__( 'Secondary', 'cmb2' ),
+//        ),
+//    ) );
 
 	$cmb_page->add_field( array(
 		'name'       => esc_html__( 'Title Text', 'cmb2' ),
