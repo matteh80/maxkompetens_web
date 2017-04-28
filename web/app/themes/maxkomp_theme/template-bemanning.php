@@ -17,8 +17,7 @@
                 <p>Ring <a href="tel:08-120 753 00">08-120 753 00</a> eller maila <a href="mailto:sverige@maxkompetens.se">sverige@maxkompetens.se</a>, så hjälper vi
                     dig att hitta den bästa kandidaten för just din verksamhet!</p>
 
-                <p>Kandidaterna har redan kvalificerat sig genom vår unika wap-process och har såväl kompetens som engagemang - centrala faktorer för en framgångsrik rekrytering. 
-                </p>
+                <p>Kandidaterna har redan kvalificerat sig genom vår unika wap-process och har såväl kompetens som engagemang - centrala faktorer för en framgångsrik rekrytering.</p>
             </div>
         </div>
         <div class="row">
