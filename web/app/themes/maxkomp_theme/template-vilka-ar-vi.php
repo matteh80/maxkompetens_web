@@ -38,7 +38,7 @@
                 <div id="<?= 'content'.get_the_ID()?>" class="row justify-content-center service-content collapsed">
                     <?php the_excerpt('...'); ?>
                     <div class="content-wrapper">
-                        <?= get_the_content();?>
+                        <?php the_content();?>
                     </div>
                 </div>
                 <div class="row justify-content-center mt-2">

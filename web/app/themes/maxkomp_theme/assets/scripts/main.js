@@ -277,6 +277,44 @@
 
       }
     },
+    // Kontakt
+    'kontakt': {
+      init: function () {
+
+        var $officeitems = $('.office-item');
+
+        $officeitems.each(function(index, Element) {
+          var $textbox = $(Element).find('.textbox');
+          var mMap = $(Element).find('.map')[0];
+          var myOptions = {
+            'zoom': 12,
+            'mapTypeId': google.maps.MapTypeId.ROADMAP
+          };
+          var map;
+          var geocoder;
+          var marker;
+          var infowindow;
+          var address = $textbox.find('.address1').text() + ', ' + $textbox.find('.city').text() + ', ' + $textbox.find('.zip').text() + ', ' + $textbox.find('.country').text();
+
+          geocoder = new google.maps.Geocoder();
+          geocoder.geocode({'address': address}, function(results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+              myOptions.center = results[0].geometry.location;
+              map = new google.maps.Map(mMap, myOptions);
+              marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location,
+              });
+            } else {
+              alert('The address could not be found for the following reason: ' + status);
+            }
+          });
+        });
+      },
+      finalize: function () {
+
+      }
+    },
     // Bemanning
     'bemanning': {
       init: function () {
