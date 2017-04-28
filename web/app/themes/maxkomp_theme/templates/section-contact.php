@@ -1,8 +1,19 @@
+<?php
+    global $post;
+
+    $page = $post->post_name;
+?>
+
 <section id="contact" class="bg-blue cloud cloud-l-b">
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-12 text-center fg-white">
-                <h2 class="text-uppercase mb-5">Vill du veta mer?</h2>
+                <?php if($page === 'bemanning') {
+                    echo '<h2 class="text-uppercase mb-5">Vill du veta mer?</h2>';
+                } else {
+                    echo '<h2 class="text-uppercase mb-5">Kontakta oss direkt</h2>';
+                }
+                ?>
             </div>
         </div>
         <div class="row">
@@ -10,20 +21,27 @@
                 <form>
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Företag" required>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Företag" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kontaktperson" required>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kontaktperson" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-post" required>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-post" required />
                         </div>
                     </div>
 
+                    <?php if($page === 'kontakt') : ?>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <textarea class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Meddelande" required></textarea>
+                            </div>
+                        </div>
+                    <?php endif;?>
                 </form>
             </div>
             <div class="col-12 col-lg-4">

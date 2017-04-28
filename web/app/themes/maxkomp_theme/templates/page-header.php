@@ -20,7 +20,13 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                     <?php if(is_front_page()) : ?>
                         <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto; display: block;" class="img-fluid align-self-center"/>
                     <?php else: ?>
-                    <h1 class="display-1 text-uppercase text-xs-center"><?= $title; ?></h1>
+                        <?php
+                        $headerclass = '';
+                        if(!has_post_thumbnail()) {
+                            $headerclass = 'fg-white';
+                        }
+                        ?>
+                    <h1 class="display-1 text-uppercase text-xs-center <?= $headerclass; ?>"><?= $title; ?></h1>
                     <div class="col-lg-10 offset-lg-1 m-b-3">
                         <div class="lead will-animate" data-class="fadeInUp" data-delay="250"><?= $headertext; ?></div>
                     </div>

@@ -14,15 +14,18 @@
     <?php get_template_part('templates/content', 'page'); ?>
 <?php endwhile; ?>
 
-<section class="wap bg-blue cloud cloud-l-b">
-    <div class="container will-animate"
-         data-class="fadeInUp"
-         data-delay="500">
-        <div class="row justify-content-center">
-            <h2 class="fg-white">Kontor</h2>
-        </div>
-    </div>
-</section>
+<!--<section class="wap bg-blue cloud cloud-l-b">-->
+<!--    <div class="container will-animate"-->
+<!--         data-class="fadeInUp"-->
+<!--         data-delay="500">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <h2 class="fg-white">Kontor</h2>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+<?php get_template_part('templates/section', 'contact'); ?>
+
 <section id="offices" class="bg-white">
     <div class="container">
         <div class="row">

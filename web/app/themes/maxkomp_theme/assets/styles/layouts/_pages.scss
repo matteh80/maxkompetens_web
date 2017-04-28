@@ -28,7 +28,7 @@ section {
 }
 
 .jumbo {
-  background: url("../../dist/images/astronaut.jpg") #fff;
+  background: $brand-blue;
   background-size: cover;
   background-attachment: fixed;
   color: $gray-dark;
@@ -59,6 +59,7 @@ section {
 
         h1 {
           margin-bottom: 2rem;
+          margin-top:2rem;
         }
 
         .buttons {
@@ -371,6 +372,8 @@ section#offices {
         right: 0;
         bottom: 0;
         position: absolute;
+        opacity:0;
+        transition: opacity 300ms;
       }
 
       #map {
@@ -382,12 +385,8 @@ section#offices {
 
 
     &:hover {
-      .text-wrapper {
-        opacity:0;
-      }
-
-      img {
-        opacity:0;
+      .map-wrapper {
+        opacity:1;
       }
     }
   }

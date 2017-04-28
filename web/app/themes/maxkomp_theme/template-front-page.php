@@ -16,7 +16,7 @@
             <div class="col-md-6 will-animate text-center" data-class="flipInY" data-delay="250">
                 <div class="row h-100 justify-content-center">
                     <div class="col-12 align-self-start">
-                        <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_jobb.png'); ?>" class="col-10 img-fluid"/>
+                        <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_jobb.png'); ?>" class="col-10 col-lg-7 img-fluid"/>
 
                         <h3>Vilket är ditt drömjobb? Vi hjälper dig dit.</h3>
                         <p>Skapa din kompletta digitala jobbprofil i Wap. Wap erbjuder allt du behöver för ditt jobbsökande,
@@ -36,7 +36,7 @@
             <div class="col-md-6 will-animate text-center" data-class="flipInY" data-delay="250">
                 <div class="row h-100 justify-content-center">
                     <div class="col-12 align-self-start">
-                        <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_personal.png'); ?>" class="col-10 img-fluid"/>
+                        <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_personal.png'); ?>" class="col-10 col-lg-7 img-fluid"/>
                         <h3>Vilken kompetens söker du?</h3>
                         <p>Vi går ett steg längre och adderar personlighetstester, videos, drömjobb och drivkrafter till
                             kompetens och erfarenheter.

@@ -23,6 +23,7 @@ $sage_includes = [
 //    'lib/cpt/cpt-medarbetare.php', // Custom Post Tytpe Medarbetare
     'lib/cpt/cpt-offices.php', // Custom Post Tytpe Medarbetare
     'lib/cpt/cpt-services.php', // Custom Post Tytpe Medarbetare
+    'lib/cpt/cpt-corporation.php',
     'lib/theme-options-cmb.php',
     'lib/profile_menu_walker.php',
     'lib/Custom_Menu_Walker.php',
