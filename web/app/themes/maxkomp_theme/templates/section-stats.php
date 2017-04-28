@@ -1,4 +1,4 @@
-<section class="stats bg-blue waves waves-t waves-b">
+<section class="stats bg-pink waves waves-t waves-b">
     <div class="container">
         <div class="row align-items-center">
             <?php

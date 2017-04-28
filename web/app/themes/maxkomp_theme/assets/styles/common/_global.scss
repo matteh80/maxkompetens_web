@@ -115,7 +115,11 @@ h4 {
 }
 
 .text-green, .fg-green {
-  color: $brand-primary;
+   color: $brand-primary;
+ }
+
+.text-pink, .fg-pink {
+  color: $brand-pink;
 }
 .bg-orange {
   background-color: $brand-secondary;
@@ -131,6 +135,10 @@ h4 {
 
 .bg-green {
   background-color: $brand-primary;
+}
+
+.bg-pink {
+  background-color: $brand-pink;
 }
 
 
@@ -373,9 +381,9 @@ form {
       height: 11px;
       z-index: 1;
       position: absolute;
-      bottom: 0;
+      bottom: -11px;
       left: 0;
-      background-image: url("../../dist/images/wave_vit_up.png");
+      background-image: url("../../dist/images/wave_pink.png");
       background-repeat: repeat-x;
     }
   }
@@ -387,9 +395,9 @@ form {
       height: 20px;
       z-index: 1;
       position: absolute;
-      top: 0;
+      top: -11px;
       left: 0;
-      background-image: url("../../dist/images/wave_vit.png");
+      background-image: url(../../dist/images/wave_pink_up.png);
       background-repeat: repeat-x;
     }
   }

@@ -58,6 +58,42 @@
     </div>
 </section>
 
+<section id="corporations" class="bg-blue fg-white cloud cloud-l-t">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h3>Bolag i koncernen</h3>
+        </div>
+        <?php
+        $args = array( 'post_type' => 'corporation', 'posts_per_page' => -1 );
+        $loop = new WP_Query( $args );
+
+        while ( $loop->have_posts() ) : $loop->the_post();  ?>
+
+            <div class="col-12 mb-5 service-item">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <img src="<?= get_the_post_thumbnail_url();?>" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <h3 class="text-uppercase"><?= get_the_title();?></h3>
+                </div>
+                <div id="<?= 'content'.get_the_ID()?>" class="row justify-content-center service-content collapsed">
+                    <?php the_excerpt('...'); ?>
+                    <div class="content-wrapper">
+                        <?php the_content();?>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+        endwhile;
+        ?>
+    </div>
+</section>
+
 <?php get_template_part('templates/section', 'stats'); ?>
 
 <?php get_template_part('templates/section', 'companies'); ?>
+
+

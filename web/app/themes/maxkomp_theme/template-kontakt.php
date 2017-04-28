@@ -24,8 +24,6 @@
 <!--    </div>-->
 <!--</section>-->
 
-<?php get_template_part('templates/section', 'contact'); ?>
-
 <section id="offices" class="bg-white">
     <div class="container">
         <div class="row">
@@ -42,7 +40,7 @@
 
                 <div class="col-12 col-md-4 mb-5 office-item">
                     <div class="img-wrapper">
-                        <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
+                        <?php the_post_thumbnail('large', array('class' => 'img-fluid office-img')); ?>
 
                         <div class="map-wrapper">
                             <div id="map" class="map"></div>
@@ -82,6 +80,7 @@
     </div>
 </section>
 
-<?php get_template_part('templates/section', 'stats'); ?>
+<?php get_template_part('templates/section', 'contact'); ?>
+
 
 <?php get_template_part('templates/section', 'companies'); ?>

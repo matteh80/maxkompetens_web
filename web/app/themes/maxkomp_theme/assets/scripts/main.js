@@ -287,7 +287,7 @@
           var $textbox = $(Element).find('.textbox');
           var mMap = $(Element).find('.map')[0];
           var myOptions = {
-            'zoom': 12,
+            'zoom': 14,
             'mapTypeId': google.maps.MapTypeId.ROADMAP
           };
           var map;

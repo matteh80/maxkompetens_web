@@ -197,7 +197,8 @@ section {
   }
 
   &.stats {
-    color: #fff;
+    color: #ffffff;
+    padding: 3rem 1rem;
 
     .value {
       position: relative;
@@ -352,6 +353,11 @@ section#offices {
     
     .img-wrapper {
       position: relative;
+      overflow: hidden;
+
+      > .office-img {
+        transition: transform 300ms;
+      }
 
       .text-wrapper {
         top: 0;
@@ -359,6 +365,7 @@ section#offices {
         right: 0;
         bottom: 0;
         position: absolute;
+        z-index: 2;
 
         >.caption {
           //text-shadow: 0 0 5px rgba(0,0,0,0.5);
@@ -373,6 +380,7 @@ section#offices {
         bottom: 0;
         position: absolute;
         opacity:0;
+        z-index: 3;
         transition: opacity 300ms;
       }
 
@@ -387,6 +395,10 @@ section#offices {
     &:hover {
       .map-wrapper {
         opacity:1;
+      }
+
+      .office-img {
+        transform: scale(1.5,1.5);
       }
     }
   }
