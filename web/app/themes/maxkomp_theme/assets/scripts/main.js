@@ -21,6 +21,22 @@
         // JavaScript to be fired on all pages
         $('.content-page').css("min-height", $(window).height() - $('.jumbo').height());
 
+        // $('a').click(function(e) {
+        //   if($(this).attr('href')) {
+        //
+        //   }
+        // })
+
+        $('a[href^="#"]').click(function(e) {
+          var anchor_id = $(this).attr("href");
+          if(anchor_id.length > 1) {
+            e.preventDefault();
+            var anchor_id = $(this).attr("href");
+            var tag = $(anchor_id);
+            $('html,body').animate({scrollTop: tag.offset().top},'slow');
+          }
+        });
+
         $(".fancy-button").mousedown(function(){
           $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
             $(this).removeClass('active');
