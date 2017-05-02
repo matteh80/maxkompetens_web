@@ -19,7 +19,7 @@
             $x = 1;
             while ( $loop->have_posts() ) : $loop->the_post();
 
-                echo '<a href="'.get_the_permalink().'" class="referencecase-item col will-animate" data-class="flipInX" data-delay="'.(250*$x).'">';
+                echo '<a href="'.get_the_permalink().'" class="referencecase-item col-4 will-animate" data-class="flipInX" data-delay="'.(250*$x).'">';
                 echo '<div class="mx-auto">';
                 echo '<img src="'.get_the_post_thumbnail_url().'" class="img-fluid" />';
                 echo '</div>';

@@ -13,7 +13,11 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
 ?>
 
 <section class="jumbo" style="background-image: url('<?= the_post_thumbnail_url(); ?>');">
+    <?php if(is_page()) : ?>
     <div class="jumbotron jumbotron-fluid <?php if(!array_key_exists('title', $buttons_meta[0]) && !is_page('bemanning')) {echo 'jumbo-small cloud cloud-l-b';} ?>">
+    <?php else: ?>
+    <div class="jumbotron jumbotron-fluid jumbo-small cloud cloud-l-b">
+    <?php endif;?>
         <div class="container text-xs-center ">
             <div class="row align-items-center justify-content-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%; text-align: center">
@@ -22,12 +26,19 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                     <?php else: ?>
                         <?php
                         $headerclass = '';
-                        if(!has_post_thumbnail()) {
+                        if(!has_post_thumbnail() || is_singular('referencecase')) {
                             $headerclass = 'fg-white';
                         }
+
+                        if(is_singular('referencecase')) {
+                            $title = "Referenscase: ".$title;
+                        }
                         ?>
-                    <h1 class="display-1 text-uppercase text-xs-center <?= $headerclass; ?>"><?= $title; ?></h1>
-                    <div class="col-lg-10 offset-lg-1 m-b-3">
+                        <div class="col">
+                            <h1 class="display-1 text-uppercase text-xs-center <?= $headerclass; ?>"><?= $title; ?></h1>
+                        </div>
+
+                    <div class="col m-b-3">
                         <div class="lead will-animate" data-class="fadeInUp" data-delay="250"><?= $headertext; ?></div>
                     </div>
                     <?php endif; ?>

@@ -19,6 +19,7 @@
     'common': {
       init: function () {
         // JavaScript to be fired on all pages
+        $('.content-page').css("min-height", $(window).height() - $('.jumbo').height())
 
         $(".fancy-button").mousedown(function(){
           $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
@@ -306,7 +307,7 @@
                 position: results[0].geometry.location,
               });
             } else {
-              alert('The address could not be found for the following reason: ' + status);
+              // alert('The address could not be found for the following reason: ' + status);
             }
           });
         });
