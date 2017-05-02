@@ -29,9 +29,9 @@
 
         $('a[href^="#"]').click(function(e) {
           var anchor_id = $(this).attr("href");
+
           if(anchor_id.length > 1) {
             e.preventDefault();
-            var anchor_id = $(this).attr("href");
             var tag = $(anchor_id);
             $('html,body').animate({scrollTop: tag.offset().top},'slow');
           }
