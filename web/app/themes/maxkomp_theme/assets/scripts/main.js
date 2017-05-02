@@ -19,7 +19,7 @@
     'common': {
       init: function () {
         // JavaScript to be fired on all pages
-        $('.content-page').css("min-height", $(window).height() - $('.jumbo').height())
+        $('.content-page').css("min-height", $(window).height() - $('.jumbo').height());
 
         $(".fancy-button").mousedown(function(){
           $(this).bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(){
