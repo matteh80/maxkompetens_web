@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0e94d44ac656f30afd84c8ff9f8703ce",
-    "content-hash": "9a7e2a1f2e0b7f2437867a084972b27a",
+    "hash": "32865520fdf2e483643f6e1d03d6014d",
+    "content-hash": "04e437914466cdd925f1ed0d9bfab63e",
     "packages": [
         {
             "name": "composer/installers",
@@ -415,6 +415,26 @@
             "homepage": "https://wordpress.org/plugins/img-fluid/"
         },
         {
+            "name": "wpackagist-plugin/rest-api",
+            "version": "2.0-beta15",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/rest-api/",
+                "reference": "tags/2.0-beta15"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/rest-api.2.0-beta15.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/rest-api/"
+        },
+        {
             "name": "wpackagist-plugin/simple-custom-post-order",
             "version": "2.3.2",
             "source": {
@@ -494,7 +514,7 @@
                 "ext-simplexml": "*",
                 "ext-tokenizer": "*",
                 "ext-xmlwriter": "*",
-                "php": ">=5.1.2"
+                "php": ">=5.4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"

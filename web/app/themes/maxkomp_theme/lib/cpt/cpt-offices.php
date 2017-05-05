@@ -31,6 +31,8 @@ function custom_post_offices() {
             'has_archive' => false, /* you can rename the slug here */
             'capability_type' => 'post',
             'hierarchical' => false,
+            'show_in_rest'       => true,
+
             /* the next one is important, it tells what's enabled in the post editor */
             'supports' => array( 'title', 'thumbnail')
         ) /* end of options */
