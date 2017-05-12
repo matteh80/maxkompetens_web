@@ -32,6 +32,7 @@
 
           if(anchor_id.length > 1) {
             e.preventDefault();
+
             var tag = $(anchor_id);
             $('html,body').animate({scrollTop: tag.offset().top},'slow');
           }

@@ -121,8 +121,7 @@ function maxkomp_before_row_if_2( $field_args, $field ) {
 //}
 
 
-
-add_action( 'cmb2_admin_init', 'maxkomp_register_page_metabox' );
+add_action( 'cmb2_init', 'maxkomp_register_page_metabox' );
 /**
  * Hook in and add a page metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
@@ -137,6 +136,7 @@ function maxkomp_register_page_metabox() {
 		'title'         => esc_html__( 'Test Metabox', 'cmb2' ),
 		'object_types'  => array( 'page', ), // Post type
 		 'show_on_cb' => 'maxkomp_hide_if_profil', // function should return a bool value
+        'show_in_rest' => true
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
 		// 'show_names' => true, // Show field names on the left
@@ -312,7 +312,7 @@ function maxkomp_register_medarbetare_metabox() {
     ) );
 }
 
-add_action( 'cmb2_admin_init', 'maxkomp_register_offices_metabox' );
+add_action( 'cmb2_init', 'maxkomp_register_offices_metabox' );
 /**
  * Hook in and add a page metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
  */
@@ -326,6 +326,7 @@ function maxkomp_register_offices_metabox() {
         'id'            => $prefix . 'metabox',
         'title'         => esc_html__( '&nbsp;', 'cmb2' ),
         'object_types'  => array( 'office', ), // Post type
+        'show_in_rest' => WP_REST_Server::READABLE,
         // 'show_on_cb' => 'maxkomp_show_if_front_page', // function should return a bool value
         // 'context'    => 'normal',
         // 'priority'   => 'high',

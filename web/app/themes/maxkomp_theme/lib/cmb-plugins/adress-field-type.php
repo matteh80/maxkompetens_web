@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: CMB2 Custom Field Type - Address
-* Description: Makes available an 'address' CMB2 Custom Field Type. Based on https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types#example-4-multiple-inputs-one-field-lets-create-an-address-field
+* Description: Makes available an 'address' CMB2 Custom Field Type. Based on https://github.com/WebDevStudios/CMB2/wiki/Adding-your-own-field-types#example-4-multiple-inputs-one-field-lets-create-an-address_field
 * Author: jtsternberg
 * Author URI: http://dsgnwrks.pro
 * Version: 0.1.0
@@ -30,17 +30,17 @@ $post_id = $post_id ? $post_id : get_the_ID();
 $address = get_post_meta( $post_id, $metakey, 1 );
 // Set default values for each address key
 $address = wp_parse_args( $address, array(
-'address-1' => '',
-'address-2' => '',
+'address_1' => '',
+'address_2' => '',
 'city'      => '',
 //'state'     => '',
 'zip'       => '',
 //'country'   => '',
 ) );
 $output = '<div class="cmb2-address">';
-    $output .= '<p><strongAddress:</strong> ' . esc_html( $address['address-1'] ) . '</p>';
-    if ( $address['address-2'] ) {
-    $output .= '<p>' . esc_html( $address['address-2'] ) . '</p>';
+    $output .= '<p><strongAddress:</strong> ' . esc_html( $address['address_1'] ) . '</p>';
+    if ( $address['address_2'] ) {
+    $output .= '<p>' . esc_html( $address['address_2'] ) . '</p>';
     }
     $output .= '<p><strong>Zip:</strong> ' . esc_html( $address['zip'] ) . '</p>';
     $output .= '<p><strong>City:</strong> ' . esc_html( $address['city'] ) . '</p>';
@@ -68,8 +68,8 @@ return apply_filters( 'jt_cmb2_get_address_field', $output );
 function jt_cmb2_render_address_field_callback( $field, $value, $object_id, $object_type, $field_type_object ) {
 // make sure we specify each part of the value we need.
 $value = wp_parse_args( $value, array(
-'address-1' => '',
-'address-2' => '',
+'address_1' => '',
+'address_2' => '',
 'city'      => '',
 //'state'     => '',
 'zip'       => '',
@@ -87,17 +87,17 @@ $value = wp_parse_args( $value, array(
 ?>
 <div><p><label for="<?php echo $field_type_object->_id( '_address_1' ); ?>"><?php echo esc_html( $field_type_object->_text( 'address_address_1_text', 'Address 1' ) ); ?></label></p>
     <?php echo $field_type_object->input( array(
-        'name'  => $field_type_object->_name( '[address-1]' ),
+        'name'  => $field_type_object->_name( '[address_1]' ),
         'id'    => $field_type_object->_id( '_address_1' ),
-        'value' => $value['address-1'],
+        'value' => $value['address_1'],
         'desc'  => '',
     ) ); ?>
 </div>
 <div><p><label for="<?php echo $field_type_object->_id( '_address_2' ); ?>'"><?php echo esc_html( $field_type_object->_text( 'address_address_2_text', 'Address 2' ) ); ?></label></p>
     <?php echo $field_type_object->input( array(
-        'name'  => $field_type_object->_name( '[address-2]' ),
+        'name'  => $field_type_object->_name( '[address_2]' ),
         'id'    => $field_type_object->_id( '_address_2' ),
-        'value' => $value['address-2'],
+        'value' => $value['address_2'],
         'desc'  => '',
     ) ); ?>
 </div>
@@ -165,7 +165,7 @@ function cmb2_split_address_values( $override_value, $value, $object_id, $field_
         // Don't do the override
         return $override_value;
     }
-    $address_keys = array( 'address-1', 'address-2', 'city', 'state', 'zip' );
+    $address_keys = array( 'address_1', 'address_2', 'city', 'state', 'zip' );
     foreach ( $address_keys as $key ) {
         if ( ! empty( $value[ $key ] ) ) {
             update_post_meta( $object_id, $field_args['id'] . 'addr_'. $key, $value[ $key ] );
