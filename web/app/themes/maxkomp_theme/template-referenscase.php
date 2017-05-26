@@ -11,22 +11,23 @@
 
 <section id="services" class="bg-white">
     <div class="container">
-        <?php
-        $args = array( 'post_type' => 'referencecase', 'posts_per_page' => -1 );
-        $loop = new WP_Query( $args );
+        <div class="row">
+            <?php
+            $args = array( 'post_type' => 'referencecase', 'posts_per_page' => -1 );
+            $loop = new WP_Query( $args );
 
-        while ( $loop->have_posts() ) : $loop->the_post();  ?>
+            while ( $loop->have_posts() ) : $loop->the_post();  ?>
 
-            <div class="col-12 mb-5 service-item">
-                <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 mb-5 reference-item">
                     <a href="<?= get_the_permalink(); ?>" class="col-3">
                         <img src="<?= get_the_post_thumbnail_url();?>" class="img-fluid" />
                     </a>
                 </div>
-            </div>
-        <?php
-        endwhile;
-        ?>
+                <?php
+            endwhile;
+            ?>
+        </div>
+
     </div>
 </section>
 

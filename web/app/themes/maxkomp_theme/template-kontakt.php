@@ -58,7 +58,7 @@
                         <address>
                             <h5><strong class="title">Maxkompetens <?= get_the_title(); ?></strong></h5>
                             <span itemprop="streetAddress" class="address1"><?= $address['address_1'];?></span><br>
-                            <?php if($address['address-2']): ?>
+                            <?php if($address['address_2']): ?>
                             <span itemprop="streetAddress" class="address2"><?= $address['address_2'];?></span><br>
                             <?php endif;?>
                             <span itemprop="postalCode" class="zip"><?= $address['zip'];?></span> <span itemprop="addressRegion" class="city"><?= $address['city'];?></span><br>

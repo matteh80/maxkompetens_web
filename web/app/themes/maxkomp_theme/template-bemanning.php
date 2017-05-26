@@ -22,13 +22,13 @@
         </div>
         <div class="row">
             <div class="col">
-                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_card.png'); ?>" class="img-fluid" />
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_card.png'); ?>" class="img-fluid px-5" />
             </div>
             <div class="col">
-                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_personlighetstest.png'); ?>" class="img-fluid" />
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_personlighetstest.png'); ?>" class="img-fluid px-5" />
             </div>
             <div class="col">
-                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_film.png'); ?>" class="img-fluid" />
+                <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_film.png'); ?>" class="img-fluid px-5" />
             </div>
         </div>
         <div class="row align-items-center justify-content-center m-t-3">

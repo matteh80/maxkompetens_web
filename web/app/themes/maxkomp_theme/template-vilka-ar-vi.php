@@ -63,7 +63,7 @@
         <div class="row justify-content-center">
             <h3>Bolag i koncernen</h3>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <?php
             $args = array( 'post_type' => 'corporation', 'posts_per_page' => -1 );
             $loop = new WP_Query( $args );

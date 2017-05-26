@@ -40,6 +40,8 @@
 
 <?php get_template_part('templates/content', 'page'); ?>
 
+<?php get_template_part('templates/section', 'wapprocess'); ?>
+
 <?php //get_template_part('templates/section', 'kompetenssakrade'); ?>
 
 <?php get_template_part('templates/section', 'stats'); ?>
