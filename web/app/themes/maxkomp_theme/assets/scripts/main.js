@@ -360,6 +360,8 @@
             // do stuff if form is valid
             $this.html($this.attr('data-loading-text')).prop('disabled', true);
 
+            var message = $('#message').val();
+
             $.ajax({
               type: 'POST',
               url: 'https://mandrillapp.com/api/1.0/messages/send.json',
@@ -367,16 +369,20 @@
                 'key': 'HqeQyBuKFGBqhUUyUTssWw',
                 'message': {
                   'from_email': 'noreply@maxkompetens.se',
+                  "from_name": $('#name').val(),
                   'to': [
                     {
                       'email': 'mathias.hedstrom@maxkompetens.se',
                       'name': 'RECIPIENT NAME (OPTIONAL)',
                       'type': 'to'
-                    }
+                    },
                   ],
+                  "headers": {
+                    "Reply-To": $('#email').val()
+                  },
                   'autotext': 'true',
-                  'subject': 'YOUR SUBJECT HERE!',
-                  'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+                  'subject': 'Nytt mail från maxkompetens.se',
+                  'html': message
                 }
               }
             }).done(function(response) {
