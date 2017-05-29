@@ -1,3 +1,4 @@
+<?php define( 'ROOTS_URL', get_theme_root_uri() . '/' . get_template() ); ?>
 <?php
 /**
  * Sage includes
@@ -31,7 +32,7 @@ $sage_includes = [
     'lib/API/api.php',
     'lib/API/remote-api.php',
     'lib/Models/candidate.php',
-    'lib/tinymce_fancy_button/tinymce_fancy_button.php'
+    'lib/tinymce_fancy_button/tinymce_fancy_button.php',
 ];
 
 foreach ($sage_includes as $file) {
@@ -42,3 +43,5 @@ foreach ($sage_includes as $file) {
     require_once $filepath;
 }
 unset($file, $filepath);
+
+

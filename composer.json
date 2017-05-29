@@ -53,7 +53,12 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "wpackagist-plugin/tinymce-advanced", "wpackagist-plugin/img-fluid", "wpackagist-plugin/tawkto-live-chat", "wpackagist-plugin/simple-custom-post-order", "wpackagist-plugin/rest-api"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin",
+        "wpackagist-plugin/tinymce-advanced",
+        "wpackagist-plugin/img-fluid",
+        "wpackagist-plugin/tawkto-live-chat",
+        "wpackagist-plugin/simple-custom-post-order",
+        "wpackagist-plugin/rest-api"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },

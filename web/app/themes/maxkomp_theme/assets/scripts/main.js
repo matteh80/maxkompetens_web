@@ -330,7 +330,37 @@
         });
       },
       finalize: function () {
+        $("#contact_form").validate();
+        $('#send_mail').click(function(e) {
 
+          if($("#contact_form").valid()){   // test for validity
+            // do stuff if form is valid
+            $.ajax({
+              type: 'POST',
+              url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+              data: {
+                'key': 'HqeQyBuKFGBqhUUyUTssWw',
+                'message': {
+                  'from_email': $("#contact_form #name").val(),
+                  'to': [
+                    {
+                      'email': 'mathias.hedstrom@maxkompetens.se',
+                      'type': 'to'
+                    }
+                  ],
+                  'autotext': 'true',
+                  'subject': 'Nytt mail från maxkompetens.se',
+                  'html': $("#contact_form #message").val()
+                }
+              }
+            }).done(function(response) {
+              console.log(response); // if you're into that sorta thing
+            });
+          } else {
+            // do stuff if form is not valid
+            alert('Not valid');
+          }
+        });
       }
     },
     // Bemanning

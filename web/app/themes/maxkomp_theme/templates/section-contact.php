@@ -1,4 +1,37 @@
 <?php
+
+use Sendinblue\Mailin;
+use Roots\Sage;
+
+//if(isset($_POST['submit'])){
+////    $to = "mathias.hedstrom@maxkompetens.se"; // this is your Email address
+////    $from = $_POST['email']; // this is the sender's Email address
+////    $first_name = $_POST['name'];
+////    $subject = "Form submission";
+////    $subject2 = "Copy of your form submission";
+////    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+////    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+////
+////    $headers = "From:" . $from;
+////    $headers2 = "From:" . $to;
+////    wp_mail($to,$subject,$message,$headers);
+//////    wp_mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+////    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+////    // You can also use header('Location: thank_you.php'); to redirect to another page.
+//
+//    Sage\Extras\debug_to_console('hejhej');
+//    return;
+//
+//    $mailin = new Mailin("https://api.sendinblue.com/v2.0","OA00cUC5RZL3mzH8");
+//    $data = array( "to" => array("mathias.hedstrom@maxkompetens.se"=>"to whom!"),
+//        "from" => array("admin@maxkompetens.se", "from email!"),
+//        "subject" => "My subject",
+//        "html" => "This is the <h1>HTML</h1>"
+//    );
+//
+//    var_dump($mailin->send_email($data));
+//}
+
     global $post;
 
     $page = $post->post_name;
@@ -13,11 +46,11 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-7">
-                <form>
+                <form id="contact_form" name="contact_form">
                     <?php if ($page !== 'bemanning') :?>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Namn" />
+                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Namn *" required />
                             </div>
                         </div>
                     <?php endif; ?>
@@ -35,13 +68,22 @@
                     <?php endif; ?>
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-post" required />
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="E-post *" required />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
-                            <textarea class="form-control" rows="4" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Meddelande" required></textarea>
+                            <textarea class="form-control" rows="4" id="message" name="message" aria-describedby="emailHelp" placeholder="Meddelande *" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-3 align-self-end">
+                            <div class="fancy-button btn-white">
+                                <div class="left-frills frills"></div>
+                                <div class="button" id="send_mail">Skicka</div>
+                                <div class="right-frills frills"></div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -69,14 +111,6 @@
                 <img src="<?= \Roots\Sage\Assets\asset_path('images/paper_plane.png'); ?>" class="img-fluid" />
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-sm-3 align-self-end">
-                <div class="fancy-button btn-white">
-                    <div class="left-frills frills"></div>
-                    <div class="button">Skicka</div>
-                    <div class="right-frills frills"></div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
