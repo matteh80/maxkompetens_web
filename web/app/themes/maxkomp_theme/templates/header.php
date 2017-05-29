@@ -29,9 +29,15 @@
                 <div class="nav-footer col-12 align-self-end">
                     <div class="row cloud cloud-l-b"></div>
                     <div class="row align-items-center justify-content-center social-icons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/Maxkompetens/">
+                            <i class="fa fa-facebook"aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company-beta/76091/">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/maxkompetens_se">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>

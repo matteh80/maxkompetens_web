@@ -46,23 +46,29 @@ use Roots\Sage;
         </div>
         <div class="row">
             <div class="col-12 col-lg-7">
+                <div class="alert alert-success" id="email_sent" role="alert" style="display: none">
+                    Ditt meddelande har skickats och vi återkommer så snart som möjligt.
+                </div>
+                <div class="alert alert-danger" id="email_error" role="alert" style="display: none">
+                    Något gick fel, försök igen eller kontakta ett kontor via kontaktuppgifterna till höger.
+                </div>
                 <form id="contact_form" name="contact_form">
                     <?php if ($page !== 'bemanning') :?>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Namn *" required />
+                                <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Namn *" required />
                             </div>
                         </div>
                     <?php endif; ?>
                     <?php if ($page === 'bemanning') :?>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Företag" />
+                                <input type="text" class="form-control" id="foretag" name="foretag" aria-describedby="foretagHelp" placeholder="Företag *" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Kontaktperson" />
+                                <input type="text" class="form-control" id="kontaktperson" name="kontaktperson" aria-describedby="kontaktpersonHelp" placeholder="Kontaktperson *" required />
                             </div>
                         </div>
                     <?php endif; ?>
@@ -74,14 +80,15 @@ use Roots\Sage;
 
                     <div class="form-group">
                         <div class="input-group">
-                            <textarea class="form-control" rows="4" id="message" name="message" aria-describedby="emailHelp" placeholder="Meddelande *" required></textarea>
+                            <textarea class="form-control" rows="4" id="message" name="message" aria-describedby="messageHelp" placeholder="Meddelande *" required></textarea>
                         </div>
                     </div>
+                    <div id="recaptchaWrapper"></div>
                     <div class="row">
                         <div class="col-12 col-sm-3 align-self-end">
                             <div class="fancy-button btn-white">
                                 <div class="left-frills frills"></div>
-                                <div class="button" id="send_mail">Skicka</div>
+                                <button class="button" id="send_mail" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Skickar...">Skicka</button>
                                 <div class="right-frills frills"></div>
                             </div>
                         </div>
@@ -90,7 +97,7 @@ use Roots\Sage;
             </div>
             <div class="col-12 col-lg-5">
                 <div class="col-12 contact-side py-4 px-4">
-                    <h5 style="font-weight: 100 !important;">Ring oss på <a href="tel:081234567">08-123 45 67</a></h5>
+                    <h5 style="font-weight: 100 !important;">Ring oss på <a href="tel:081234567">08-120 753 00</a></h5>
                     <h5 style="font-weight: 100 !important;">Maila oss på <a href="mailto:sverige@maxkompetens.se">sverige@maxkompetens.se</a></h5>
                     <div class="row">
                         <?php
@@ -110,7 +117,19 @@ use Roots\Sage;
             <div class="paper-plane will-animate hidden-sm-down" data-class="fadeInRightBig" data-delay="1000">
                 <img src="<?= \Roots\Sage\Assets\asset_path('images/paper_plane.png'); ?>" class="img-fluid" />
             </div>
-        </div>
 
+<!--            <script type="text/javascript">-->
+<!--              var onloadCallback = function() {-->
+<!--                grecaptcha.render('recaptchaWrapper', {-->
+<!--                  'sitekey' : '6LegSyMUAAAAAJkYiHc4SlPBTOQ-FLq34R5eABeb',-->
+<!--                  'callback' : correctCaptcha-->
+<!--                });-->
+<!--              };-->
+<!--            </script>-->
+<!---->
+<!--            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"-->
+<!--                    async defer>-->
+<!--            </script>-->
+        </div>
     </div>
 </section>

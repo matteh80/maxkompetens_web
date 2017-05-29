@@ -369,7 +369,9 @@ $mobile-menu-width: 280px;
     background: #fff;
 
     .social-icons {
-      margin: 0px 0 20px;
+      margin: 0 0 20px;
+      position: relative;
+      z-index: 2;
 
       a {
         text-align: center;

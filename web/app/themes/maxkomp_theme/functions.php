@@ -29,6 +29,7 @@ $sage_includes = [
     'lib/profile_menu_walker.php',
     'lib/Custom_Menu_Walker.php',
     'lib/Mobile_Menu_Walker.php',
+    'lib/Footer_Menu_Walker.php',
     'lib/API/api.php',
     'lib/API/remote-api.php',
     'lib/Models/candidate.php',

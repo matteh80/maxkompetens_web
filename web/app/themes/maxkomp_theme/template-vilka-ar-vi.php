@@ -28,7 +28,7 @@
 
             <div class="col-12 mb-5 service-item">
                 <div class="row justify-content-center">
-                    <div class="col-3">
+                    <div class="col-8 col-sm-6 col-md-3">
                         <img src="<?= get_the_post_thumbnail_url();?>" class="img-fluid" />
                     </div>
                 </div>

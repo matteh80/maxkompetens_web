@@ -17,7 +17,9 @@
     padding:2rem;
 
     &:first-of-type {
-      border-right:1px solid #fff;
+      @include media-breakpoint-up(md) {
+        border-right:1px solid #fff;
+      }
     }
 
     &:last-of-type {
@@ -25,3 +27,8 @@
     }
   }
 }
+
+//.row.buttons {
+//  margin-left:15px;
+//  margin-right: 15px;
+//}

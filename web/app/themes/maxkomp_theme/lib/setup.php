@@ -31,7 +31,7 @@ function setup() {
 	] );
 
     register_nav_menus( [
-        'profile_navigation' => __( 'Profile Navigation', 'sage' )
+        'footer_navigation' => __( 'Footer Navigation', 'sage' )
     ] );
 
 	// Enable post thumbnails

@@ -294,7 +294,9 @@ section#contact {
   .contact-side {
     background: #fff;
     border-radius: 8px;
-
+    @include media-breakpoint-down(md) {
+      margin-top:20px;
+    }
   }
 
   .paper-plane {

@@ -52,6 +52,19 @@
 
       }
     }
+
+    &.error {
+      border:1px solid red !important;
+    }
+  }
+
+  label.error {
+    position: absolute;
+    z-index: 9;
+    font-size: 14px;
+    color: red;
+    right: 5px;
+    top: 2px;
   }
 
   span {

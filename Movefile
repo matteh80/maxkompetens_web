@@ -51,7 +51,7 @@ staging:
       host: "stage.maxkompetens.se"
       user: "web"
 
-staging:
+production:
   vhost: "localhost"
   wordpress_path: "/srv/www/maxkompetens.se/current/web" # use an absolute path here
 

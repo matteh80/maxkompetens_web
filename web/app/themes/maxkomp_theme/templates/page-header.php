@@ -43,7 +43,7 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                         <div class="lead will-animate" data-class="fadeInUp" data-delay="250"><?= $headertext; ?></div>
                     </div>
                     <?php endif; ?>
-                    <div class="row buttons align-items-center justify-content-center">
+                    <div class="row buttons align-items-center justify-content-center mx-3">
                         <?php
                         if($buttons_meta != "") :
                             $delay = 500;

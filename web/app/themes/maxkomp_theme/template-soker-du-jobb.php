@@ -38,11 +38,11 @@
 </section>
 <section id="wap-info" class="bg-white">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center align-items-center">
 
             <div class="col-12 col-lg-6">
 
-                    <div class="col-12 col-sm-6 offset-sm-3 text-center">
+                    <div class="col-8 col-sm-6 mx-auto text-center">
                         <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_card.png'); ?>" class="img-fluid" />
                     </div>
                     <div class="col-12 text-center">
@@ -54,7 +54,7 @@
 
             <div class="col-12 col-lg-6">
 
-                    <div class="col-12 col-sm-6 offset-sm-3 text-center">
+                    <div class="col-8 col-sm-6 mx-auto text-center">
                         <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_film.png'); ?>" class="img-fluid" />
                     </div>
                     <div class="col-12 text-center">
@@ -66,7 +66,7 @@
 
             <div class="col-12 col-lg-6">
 
-                <div class="col-12 col-sm-6 offset-sm-3 text-center">
+                <div class="col-8 col-sm-6 mx-auto text-center">
                     <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_rekryterare.png'); ?>" class="img-fluid" />
                 </div>
                 <div class="col-12 text-center">
@@ -78,7 +78,7 @@
 
             <div class="col-12 col-lg-6">
 
-                <div class="col-12 col-sm-6 offset-sm-3 text-center">
+                <div class="col-8 col-sm-6 mx-auto text-center">
                     <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_cv.png'); ?>" class="img-fluid" />
                 </div>
                 <div class="col-12 text-center">
@@ -90,7 +90,7 @@
 
             <div class="col-12 col-lg-6">
 
-                <div class="col-12 col-sm-6 offset-sm-3 text-center">
+                <div class="col-8 col-sm-6 mx-auto text-center">
                     <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_personlighetstest.png'); ?>" class="img-fluid" />
                 </div>
                 <div class="col-12 text-center">
@@ -103,7 +103,7 @@
 
             <div class="col-12 col-lg-6">
 
-                <div class="col-12 col-sm-6 offset-sm-3 text-center">
+                <div class="col-8 col-sm-6 mx-auto text-center">
                     <img src="<?= \Roots\Sage\Assets\asset_path('images/ic_story.png'); ?>" class="img-fluid" />
                 </div>
                 <div class="col-12 text-center">

@@ -71,6 +71,12 @@ $timing-function:ease-out;
   //width:$button-width;
   width:100%;
   text-decoration: none;
+  border:none;
+
+  &:disabled {
+    background: #eee;
+    cursor: progress;
+  }
 
   &:hover, &:active, &:focus {
     background:lighten($button-color,4%);

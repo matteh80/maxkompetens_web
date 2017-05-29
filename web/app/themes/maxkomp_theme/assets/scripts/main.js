@@ -63,6 +63,10 @@
           $('#fname').trigger('focus');
         }, 500);
 
+        $(window).on('load scroll resize', function() {
+          $('.wrap').css('margin-bottom',$('.content-info').outerHeight());
+        });
+
 
         // $(window).on("scroll resize", function() {
         //     $('section').each(function(index, element) {
@@ -330,35 +334,66 @@
         });
       },
       finalize: function () {
-        $("#contact_form").validate();
+
+        $("#contact_form").validate({
+          messages: {
+            name: "Skriv in ditt namn",
+            email: {
+              required: "Vi behöver din epost för att kunna kontakta dig",
+              email: "Ange en giltig epost-adress"
+            },
+            foretag: "Skriv in vilket företag du företräder",
+            kontaktperson: "Detta fält krävs",
+            message: "Du måste skriva ett meddelande"
+          }
+        });
         $('#send_mail').click(function(e) {
+          // var response = grecaptcha.getResponse();
+          // console.log(response);
+          var $this = $(this);
+
+          // $.get('https://www.google.com/recaptcha/api/siteverify', {
+          //
+          // });
 
           if($("#contact_form").valid()){   // test for validity
             // do stuff if form is valid
+            $this.html($this.attr('data-loading-text')).prop('disabled', true);
+
             $.ajax({
               type: 'POST',
               url: 'https://mandrillapp.com/api/1.0/messages/send.json',
               data: {
                 'key': 'HqeQyBuKFGBqhUUyUTssWw',
                 'message': {
-                  'from_email': $("#contact_form #name").val(),
+                  'from_email': 'noreply@maxkompetens.se',
                   'to': [
                     {
                       'email': 'mathias.hedstrom@maxkompetens.se',
+                      'name': 'RECIPIENT NAME (OPTIONAL)',
                       'type': 'to'
                     }
                   ],
                   'autotext': 'true',
-                  'subject': 'Nytt mail från maxkompetens.se',
-                  'html': $("#contact_form #message").val()
+                  'subject': 'YOUR SUBJECT HERE!',
+                  'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
                 }
               }
             }).done(function(response) {
-              console.log(response); // if you're into that sorta thing
+              console.log(response[0].status); // if you're into that sorta thing
+              if(response[0].status === 'rejected') {
+                $('#email_error').slideDown();
+              }else{
+                $('#email_sent').slideDown();
+                $('#contact_form input, #contact_form textarea').each(function(index, element) {
+                  $(this).val('');
+                });
+              }
+              $this.html('Skicka').prop('disabled', false);
             });
           } else {
             // do stuff if form is not valid
-            alert('Not valid');
+
           }
         });
       }
@@ -366,7 +401,61 @@
     // Bemanning
     'bemanning': {
       init: function () {
+        $("#contact_form").validate({
+          messages: {
+            name: "Skriv in ditt namn",
+            email: {
+              required: "Vi behöver din epost för att kunna kontakta dig",
+              email: "Ange en giltig epost-adress"
+            },
+            foretag: "Skriv in vilket företag du företräder",
+            kontaktperson: "Detta fält krävs",
+            message: "Du måste skriva ett meddelande"
+          }
+        });
+        $('#send_mail').click(function(e) {
+          var $this = $(this);
 
+          if($("#contact_form").valid()){   // test for validity
+            // do stuff if form is valid
+            $this.html($this.attr('data-loading-text')).prop('disabled', true);
+
+            $.ajax({
+              type: 'POST',
+              url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+              data: {
+                'key': 'HqeQyBuKFGBqhUUyUTssWw',
+                'message': {
+                  'from_email': 'noreply@maxkompetens.se',
+                  'to': [
+                    {
+                      'email': 'mathias.hedstrom@maxkompetens.se',
+                      'name': 'RECIPIENT NAME (OPTIONAL)',
+                      'type': 'to'
+                    }
+                  ],
+                  'autotext': 'true',
+                  'subject': 'YOUR SUBJECT HERE!',
+                  'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+                }
+              }
+            }).done(function(response) {
+              console.log(response[0].status); // if you're into that sorta thing
+              if(response[0].status === 'rejected') {
+                $('#email_error').slideDown();
+              }else{
+                $('#email_sent').slideDown();
+                $('#contact_form input, #contact_form textarea').each(function(index, element) {
+                  $(this).val('');
+                });
+              }
+              $this.html('Skicka').prop('disabled', false);
+            });
+          } else {
+            // do stuff if form is not valid
+
+          }
+        });
       },
       finalize: function () {
 
