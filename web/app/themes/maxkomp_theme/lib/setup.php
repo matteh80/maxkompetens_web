@@ -127,9 +127,9 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100 );
 
 function admin_assets() {
     wp_enqueue_script( 'cmb2_scripts.js', Assets\asset_path( 'scripts/cmb2_scripts.js' ), [ 'jquery' ], null, true );
-    wp_enqueue_script('admin-scripts.js', Assets\asset_path('scripts/admin-scripts.js'), ['jquery'], null, true);
-    wp_localize_script( 'admin-scripts.js', 'ajaxurl', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' )
-    ));
+//    wp_enqueue_script('admin-scripts.js', Assets\asset_path('scripts/admin-scripts.js'), ['jquery'], null, true);
+//    wp_localize_script( 'admin-scripts.js', 'ajaxurl', array(
+//        'ajaxurl' => admin_url( 'admin-ajax.php' )
+//    ));
 }
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\\admin_assets', 100);
