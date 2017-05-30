@@ -55,12 +55,15 @@
                 <p><?= nl2br(preg_replace('/((http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?)/', '<a href="\1">\1</a>', preg_replace($regex, $replace, $item->description))); ?></p>
 
             </div>
-            <div class="col-12 col-sm-3 align-self-end">
-                <div class="fancy-button btn-green">
-                    <div class="left-frills frills"></div>
-                    <button class="button" id="apply_for_job">Ansök</button>
-                    <div class="right-frills frills"></div>
-                </div>
+<!--            <div class="col-12 col-sm-3 align-self-end">-->
+<!--                <div class="fancy-button btn-green">-->
+<!--                    <div class="left-frills frills"></div>-->
+<!--                    <button class="button" id="apply_for_job">Ansök</button>-->
+<!--                    <div class="right-frills frills"></div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-12">
+                <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=<?= $key; ?>" width="100%" height="775" scrolling="no" frameborder="0"></iframe>
             </div>
         </div>
 
