@@ -31,6 +31,9 @@
     },
     "jobb.json": {
       "files": ["scripts/jobb.json"]
+    },
+    "admin-scripts.js": {
+      "files": ["scripts/admin-scripts.js"]
     }
   },
   "config": {

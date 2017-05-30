@@ -120,6 +120,36 @@ function maxkomp_before_row_if_2( $field_args, $field ) {
 //
 //}
 
+add_action( 'cmb2_admin_init', 'maxkomp_register_jobs_metabox' );
+
+function maxkomp_register_jobs_metabox() {
+    $prefix = 'maxkomp_jobs_';
+
+    /**
+     * Sample metabox to demonstrate each field type included
+     */
+    $cmb_job = new_cmb2_box( array(
+        'id'            => $prefix . 'metabox',
+        'title'         => esc_html__( '&nbsp;', 'cmb2' ),
+        'object_types'  => array( 'job', ), // Post type
+        // 'show_on_cb' => 'maxkomp_show_if_front_page', // function should return a bool value
+        // 'context'    => 'normal',
+        // 'priority'   => 'high',
+        // 'show_names' => true, // Show field names on the left
+        // 'cmb_styles' => false, // false to disable the CMB stylesheet
+        // 'closed'     => true, // true to keep the metabox closed by default
+        // 'classes'    => 'extra-class', // Extra cmb2-wrap classes
+        // 'classes_cb' => 'maxkomp_add_some_classes', // Add classes through a callback.
+    ) );
+
+    $cmb_job->add_field( array(
+        'name' => esc_html__( 'Intelliplan ID', 'cmb2' ),
+//		'desc' => esc_html__( 'field description (optional)', 'cmb2' ),
+        'id'   => $prefix . 'ip_id',
+        'type' => 'text',
+    ) );
+}
+
 
 add_action( 'cmb2_init', 'maxkomp_register_page_metabox' );
 /**

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9552c15e5f7e26c5e196d614c78e47c2",
-    "content-hash": "7465689db3820ebf596b5c325a392626",
+    "hash": "1eea8c8c618b8cbd2321ae90c40ba6f3",
+    "content-hash": "2414a95913e45324fe7ad84250554ad7",
     "packages": [
         {
             "name": "composer/installers",
@@ -413,6 +413,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/img-fluid/"
+        },
+        {
+            "name": "wpackagist-plugin/redirection",
+            "version": "2.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/redirection/",
+                "reference": "tags/2.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
             "name": "wpackagist-plugin/rest-api",

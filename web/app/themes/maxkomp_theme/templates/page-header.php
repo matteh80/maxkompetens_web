@@ -34,9 +34,13 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                         if(is_singular('referencecase')) {
                             $title = "Referenscase: ".$title;
                         }
+
+                        if(is_page('jobs')) {
+                            $title = '...';
+                        }
                         ?>
                         <div class="col">
-                            <h1 class="display-1 text-uppercase text-xs-center <?= $headerclass; ?>"><?= $title; ?></h1>
+                            <h1 class="page-title display-1 text-uppercase text-xs-center <?= $headerclass; ?>"><?= $title; ?></h1>
                         </div>
 
                     <div class="col m-b-3">

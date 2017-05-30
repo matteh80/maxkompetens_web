@@ -34,6 +34,9 @@ $sage_includes = [
     'lib/API/remote-api.php',
     'lib/Models/candidate.php',
     'lib/tinymce_fancy_button/tinymce_fancy_button.php',
+//    'lib/jobs.php',
+//    'lib/cpt/cpt-jobs.php',
+//    'lib/admin-jobs.php'
 ];
 
 foreach ($sage_includes as $file) {
