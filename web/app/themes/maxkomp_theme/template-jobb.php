@@ -55,7 +55,7 @@
 <!--                <p>--><?//= nl2br(preg_replace('/((http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?)/', '<a href="\1">\1</a>', preg_replace($regex, $replace, $item->description))); ?><!--</p>-->
                 <p><?= $item->description; ?></p>
             </div>
-            <div class="col-12 col-sm-3 align-self-end hidden-xs-up">
+            <div class="col-12 col-sm-3 align-self-end">
                 <div class="fancy-button btn-green">
                     <div class="left-frills frills"></div>
                     <a href="https://wapcard.se/job/<?= $key; ?>" class="button" id="apply_for_job">Ansök </a>
