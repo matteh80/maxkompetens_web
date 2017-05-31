@@ -56,7 +56,7 @@ $frill-width: 38px;
 $speed:0.38s;
 $timing-function:ease-out;
 
-.button {
+.button, a.button {
   background:$button-color;
   border-radius:5px;
   color:white;

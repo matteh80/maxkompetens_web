@@ -762,21 +762,7 @@
     },
     'jobs': {
       init: function () {
-        // $.ajax({
-        //   url: ajaxurl.ajaxurl,
-        //   data: {
-        //     action: 'import_jobs'
-        //   },
-        //   beforeSend: function() {
-        //     $('#refresh_staff').attr("disabled", true);
-        //     $('#staff-spinner').css("visibility", "visible");
-        //   },
-        //   success: function( result ) {
-        //     //alert( result );
-        //     $('#refresh_staff').attr("disabled", false);
-        //     $('#staff-spinner').css("visibility", "hidden");
-        //   }
-        // });
+
       },
       finalize: function () {
 
