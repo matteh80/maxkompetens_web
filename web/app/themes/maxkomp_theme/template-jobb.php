@@ -55,13 +55,20 @@
 <!--                <p>--><?//= nl2br(preg_replace('/((http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?)/', '<a href="\1">\1</a>', preg_replace($regex, $replace, $item->description))); ?><!--</p>-->
                 <p><?= $item->description; ?></p>
             </div>
-            <div class="col-12 col-sm-3 align-self-end hidden-xs-up">
+            <div class="col-12 col-sm-3 align-self-end">
                 <div class="fancy-button btn-green">
                     <div class="left-frills frills"></div>
-                    <a href="https://wapcard.se/job/<?= $key; ?>" class="button" id="apply_for_job">Ansök </a>
+                    <a href="https://wapcard.se/job/<?= $key; ?>" class="button" id="apply_for_job" target="_blank">Ansök med wap card </a>
                     <div class="right-frills frills"></div>
                 </div>
             </div>
+            <div class="col-12">
+                <p>Inom kort kommer du enbart kunna söka jobb från Maxkompetens via wap card, vi rekommenderar därför att du redan nu skapar ett wap-card för att ansöka denna tjänst.
+                Vill du kan du fortfarande ansöka om tjänsten via formuläret här nedanför.
+                </p>
+                <p><a href="https://wapcard.se" target="_blank">Läs mer om wap card</a></p>
+            </div>
+
             <div class="col-12">
                 <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=<?= $key; ?>" width="100%" height="775" scrolling="no" frameborder="0"></iframe>
             </div>
