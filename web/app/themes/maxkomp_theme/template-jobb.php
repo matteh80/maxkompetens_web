@@ -44,9 +44,6 @@
 //                    echo 'cached';
                     echo '<script>jQuery(".page-title").text()</script>';
                     echo "<script>jQuery(\".page-title\").text('" . $item->title  . "')</script>";
-                    echo "<script>jQuery(\"meta[property='og:url']\").attr(\"content\", location.href)</script>";
-                    echo "<script>jQuery(\"meta[property='og:title']\").attr(\"content\", $item->title)</script>";
-                    echo "<script>jQuery(\"meta[property='og:content']\").attr(\"content\", $item->description)</script>";
                 }
 
 //                echo $item->intelliplan->attributes();

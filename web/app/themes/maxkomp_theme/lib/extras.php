@@ -122,3 +122,29 @@ function XML2JSON($xml) {
 }
 
 add_filter('XML2JSON',  __NAMESPACE__ . '\\XML2JSON');
+
+function fb_opengraph() {
+    global $post;
+
+    if(is_page('jobs') || is_single()) {
+        if($excerpt = $post->post_excerpt) {
+            $excerpt = strip_tags($post->post_excerpt);
+            $excerpt = str_replace("", "'", $excerpt);
+        } else {
+            $excerpt = get_bloginfo('description');
+        }
+        ?>
+
+        <meta property="og:title" content="<?php echo the_title(); ?>"/>
+        <meta property="og:description" content="<?php echo $excerpt; ?>"/>
+        <meta property="og:type" content="article"/>
+        <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+        <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
+
+        <?php
+    } else {
+        return;
+    }
+}
+add_action('wp_head',  __NAMESPACE__ . '\\fb_opengraph', 5);
+
