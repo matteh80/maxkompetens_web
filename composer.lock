@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1eea8c8c618b8cbd2321ae90c40ba6f3",
-    "content-hash": "2414a95913e45324fe7ad84250554ad7",
+    "hash": "0ca9cee94bc2f1d9db68cd96432ab4f8",
+    "content-hash": "6429d44d69b231056dc059fb7c8686ea",
     "packages": [
         {
             "name": "composer/installers",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "7a80a104e3da0a4dc0ce9a88fe09968b1b34aafb"
+                "reference": "ae73c5dfec9279bd4c35a49a49fcb6568aa8aba4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/7a80a104e3da0a4dc0ce9a88fe09968b1b34aafb",
-                "reference": "7a80a104e3da0a4dc0ce9a88fe09968b1b34aafb",
+                "url": "https://api.github.com/repos/composer/installers/zipball/ae73c5dfec9279bd4c35a49a49fcb6568aa8aba4",
+                "reference": "ae73c5dfec9279bd4c35a49a49fcb6568aa8aba4",
                 "shasum": ""
             },
             "require": {
@@ -119,7 +119,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-04-24 15:53:06"
+            "time": "2017-06-07 10:23:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -416,15 +416,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.6",
+            "version": "2.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.6"
+                "reference": "tags/2.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -496,15 +496,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.5.6",
+            "version": "4.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.5.6"
+                "reference": "tags/4.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.5.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.6.3.zip",
                 "reference": null,
                 "shasum": null
             },

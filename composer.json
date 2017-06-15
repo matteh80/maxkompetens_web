@@ -60,7 +60,8 @@
         "wpackagist-plugin/tawkto-live-chat",
         "wpackagist-plugin/simple-custom-post-order",
         "wpackagist-plugin/rest-api",
-        "wpackagist-plugin/redirection"],
+        "wpackagist-plugin/redirection",
+        "wpackagist-plugin/og"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },

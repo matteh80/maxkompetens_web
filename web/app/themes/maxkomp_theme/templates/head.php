@@ -4,6 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?= \Roots\Sage\Assets\asset_path('images/favicon.png'); ?>" type="image/png" />
   <?php wp_head(); ?>
+    <meta property="og:description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
 <!--  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">-->
 <!--  <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">-->
 <!--  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&amp;subset=latin-ext" rel="stylesheet">-->
