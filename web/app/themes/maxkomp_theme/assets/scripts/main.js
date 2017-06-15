@@ -765,13 +765,7 @@
 
       },
       finalize: function () {
-        var url = location.href;
-        var title = $(".page-title").text();
-        var description = $('.description').text();
 
-        $("meta[property='og:url']").attr("content", url);
-        $("meta[property='og:title']").attr("content", title);
-        $("meta[property='og:description']").attr("content", description);
       }
     },
   };

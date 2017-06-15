@@ -126,19 +126,37 @@ add_filter('XML2JSON',  __NAMESPACE__ . '\\XML2JSON');
 function fb_opengraph() {
     global $post;
 
-    if(is_page('jobs') || is_single()) {
+    if (isset($_GET['jaid'])) {
+        $key = $_GET['jaid'];
+    }
+
+    $context  = stream_context_create(array('http' => array('header' => 'Accept: application/xml')));
+    $map_url = "https://cv-maxkompetens.app.intelliplan.eu/JobAdGlobePages/Feed.aspx?pid=AA31EA47-FDA6-42F3-BD9F-E42186E5A960&version=2&JobAdId=".$key;
+    $xml = file_get_contents($map_url, false, $context);
+    $xml = simplexml_load_string($xml);
+    $arr = (array) $xml -> xpath('channel');
+    $item = $arr[0]->item;
+
+    $item = json_encode($item);
+    $item = json_decode($item);
+
+
+
+    if(is_page('jobs')) {
         if($excerpt = $post->post_excerpt) {
             $excerpt = strip_tags($post->post_excerpt);
             $excerpt = str_replace("", "'", $excerpt);
         } else {
             $excerpt = get_bloginfo('description');
         }
+        $title = $item->title;
+        $description = strip_tags($item->description);
         ?>
 
-        <meta property="og:title" content="<?php echo the_title(); ?>"/>
-        <meta property="og:description" content="<?php echo $excerpt; ?>"/>
-        <meta property="og:type" content="article"/>
-        <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
+        <meta property="og:title" content="<?php echo $title; ?>"/>
+        <meta property="og:description" content="<?php echo $description; ?>"/>
+<!--        <meta property="og:type" content="article"/>-->
+        <meta property="og:url" content="<?php echo the_permalink() . '?jaid='.$key; ?>"/>
         <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
 
         <?php
@@ -147,4 +165,3 @@ function fb_opengraph() {
     }
 }
 add_action('wp_head',  __NAMESPACE__ . '\\fb_opengraph', 5);
-
