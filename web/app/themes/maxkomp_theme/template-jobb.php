@@ -21,7 +21,7 @@
                     $key = $_GET['jaid'];
                 }
 
-//                        delete_transient($key);
+                delete_transient($key);
 
                 if ( false === ( $item = get_transient( $key ) ) ) {
 //                    echo 'not cached';
