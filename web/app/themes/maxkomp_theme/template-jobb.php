@@ -35,10 +35,14 @@
                     $item = json_encode($item);
                     $item = json_decode($item);
 
-                    // And we unconditionally update the cache with an expiration of 1 day
-                    set_transient($key, $item, (12 * HOUR_IN_SECONDS) );
-                    echo '<script>jQuery(".page-title").text()</script>';
-                    echo "<script>jQuery(\".page-title\").text('" . $item->title  . "')</script>";
+                    if(!empty($item->title)) {
+                        // And we unconditionally update the cache with an expiration of 1 day
+                        set_transient($key, $item, (12 * HOUR_IN_SECONDS) );
+                        echo '<script>jQuery(".page-title").text()</script>';
+                        echo "<script>jQuery(\".page-title\").text('" . $item->title  . "')</script>";
+                    }else{
+                        echo "<script>jQuery(\".page-title\").text('Annonsen finns inte')</script>";
+                    }
 
                 } else {
 //                    echo 'cached';
@@ -53,8 +57,17 @@
 
                 ?>
 <!--                <p>--><?//= nl2br(preg_replace('/((http|ftp|https):\/\/[\w-]+(\.[\w-]+)+([\w.,@?^=%&amp;:\/~+#-]*[\w@?^=%&amp;\/~+#-])?)/', '<a href="\1">\1</a>', preg_replace($regex, $replace, $item->description))); ?><!--</p>-->
-                <p class="description"><?= $item->description; ?></p>
+                <p class="description">
+                    <?php
+                    if(!empty($item->title)) {
+                        echo $item->description;
+                    }else{
+                        echo 'Vi kunde inte hitta någon annons med det här id-numret.';
+                    }
+
+                    ?></p>
             </div>
+            <?php if(!empty($item->title)): ?>
             <div class="col-12 col-sm-3 align-self-end">
                 <div class="fancy-button btn-green">
                     <div class="left-frills frills"></div>
@@ -72,7 +85,9 @@
             <div class="col-12">
                 <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=<?= $key; ?>" width="100%" height="775" scrolling="no" frameborder="0"></iframe>
             </div>
+            <?php endif; ?>
         </div>
+
 
     </div>
 </section>
