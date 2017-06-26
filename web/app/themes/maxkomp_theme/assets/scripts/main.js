@@ -238,6 +238,40 @@
         });
       }
     },
+    'pressmeddelanden': {
+      init: function () {
+        $('.collapse').on('show.bs.collapse', function () {
+          var $this = $(this)
+          var mId = $this.siblings().attr('data-target');
+
+          $.get($(this).siblings().attr('data-url'))
+
+          $.ajax({
+            url: $(this).siblings().attr('data-url'),
+            dataType: 'text'
+          }).done(function( result ) {
+            xml = $.parseXML(result);
+            console.log(xml)
+            $xml = $( xml );
+            $(mId).html($xml.find('HtmlBody').text());
+            var pdfUrl = $xml.find('File').find('Url').text();
+            var pdfName = $xml.find('File').find('Title').text();
+            console.log(pdfUrl);
+            $(mId).append('<a href="' + pdfUrl + '" class="downloadPdf"><i class="fa fa-file-pdf-o"></i> ' + pdfName + '</a>');
+          });
+
+          $('.downloadPdf').click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log(e)
+          })
+
+        });
+      },
+      finalize: function () {
+
+      }
+    },
     //Vilka är vi
     'vilka_ar_vi': {
       init: function () {

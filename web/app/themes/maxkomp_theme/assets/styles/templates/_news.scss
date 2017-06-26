@@ -1,0 +1,50 @@
+.news-item {
+  padding:10px;
+  display: block;
+  transition: all 200ms;
+
+  &:nth-of-type(odd) {
+    background: rgb(245,245,245);
+  }
+  
+  &:hover {
+    //background: #cdcdcd;
+    cursor: pointer;
+    box-shadow: inset 5px 0 0 $brand-primary;
+  }
+  .datetime {
+    background: $dark-blue;
+    color: #FFF;
+    padding:2px 5px;
+  }
+  .IsRegulatory {
+    background: $brand-danger;
+    color: #fff;
+    padding:2px 5px;
+    margin-left: 5px;
+  }
+  .title {
+    margin-top: 5px;
+  }
+
+  a {
+    color: #333;
+  }
+
+  .fa-spinner {
+    font-size: 60px;
+  }
+
+  .clickArea {
+    .fa-chevron-down {
+      transform: rotate(0deg);
+      transition: transform 200ms;
+    }
+
+    &.collapsed {
+      .fa-chevron-down {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

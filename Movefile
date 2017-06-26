@@ -1,30 +1,33 @@
+global:
+  sql_adapter: "default"
+
 local:
   vhost: "http://vhost.local"
-  wordpress_path: "/srv/www/maxkompetens.se/current/web" # use an absolute path here
+  wordpress_path: "/srv/www/maxkompetens.dev/current" # use an absolute path here
 
   database:
-    name: "maxkompetens_se_development"
+    name: "maxkompetens_dev_development"
     user: "root"
     password: ")BLw62;2M@%JU/S6"
     host: "127.0.0.1"
 
   paths: # you can customize wordpress internal paths
-    wp_content: "app"
-    uploads: "app/uploads"
-    plugins: "app/plugins"
-    themes: "app/themes"
-    languages: "app/languages"
-    themes: "app/themes"
+    wp_content: "web/app"
+    uploads: "web/app/uploads"
+    plugins: "web/app/plugins"
+    mu_plugins: "web/app/mu-plugins"
+    themes: "web/app/themes"
+    languages: "web/app/languages"
 
 staging:
   vhost: "localhost"
-  wordpress_path: "/srv/www/maxkompetens.se/current/web" # use an absolute path here
+  wordpress_path: "/srv/www/stagewww.maxkompetens.se/current" # use an absolute path here
 
   database:
-    name: "maxkompetens_se_staging"
+    name: "stagewww_maxkompetens_se_staging"
     user: "root"
     password: ")BLw62;2M@%JU/S6"
-    host: "127.0.0.1"
+    # host: "host"
     # port: "3308" # Use just in case you have exotic server config
     # mysqldump_options: "--max_allowed_packet=1G" # Only available if using SSH
 
@@ -38,58 +41,19 @@ staging:
     - "Gemfile*"
     - "Movefile"
     - "wp-config.php"
-    - "wp-content/*.sql"
+    - "wp-content/*.sql.gz"
 
   paths: # you can customize wordpress internal paths
-      wp_content: "app"
-      uploads: "app/uploads"
-      plugins: "app/plugins"
-      themes: "app/themes"
-      languages: "app/languages"
+    wp_content: "web/app"
+    uploads: "web/app/uploads"
+    plugins: "web/app/plugins"
+    mu_plugins: "web/app/mu-plugins"
+    themes: "web/app/themes"
+    languages: "web/app/languages"
 
   ssh:
-      host: "stage.maxkompetens.se"
-      user: "web"
-
-production:
-  vhost: "localhost"
-  wordpress_path: "/srv/www/maxkompetens.se/current/web" # use an absolute path here
-
-  database:
-    name: "maxkompetens_se_production"
+    host: "139.59.201.176"
     user: "root"
-    password: ")BLw62;2M@%JU/S6"
-    host: "127.0.0.1"
-    # port: "3308" # Use just in case you have exotic server config
-    # mysqldump_options: "--max_allowed_packet=1G" # Only available if using SSH
-
-  exclude:
-    - ".git/"
-    - ".gitignore"
-    - ".sass-cache/"
-    - "node_modules/"
-    - "bin/"
-    - "tmp/*"
-    - "Gemfile*"
-    - "Movefile"
-    - "wp-config.php"
-    - "wp-content/*.sql"
-
-  paths: # you can customize wordpress internal paths
-      wp_content: "app"
-      uploads: "app/uploads"
-      plugins: "app/plugins"
-      themes: "app/themes"
-      languages: "app/languages"
-
-  ssh:
-      host: "139.59.201.176"
-      user: "web"
-
-
-  # ssh:
-  #   host: "host"
-  #   user: "user"
   #   password: "password" # password is optional, will use public keys if available.
   #   port: 22 # Port is optional
   #   rsync_options: "--verbose" # Additional rsync options, optional
@@ -98,12 +62,46 @@ production:
   #     user: "user"
   #     password: "password" # password is optional, will use public keys if available.
 
-  # ftp:
-  #   user: "user"
-  #   password: "password"
-  #   host: "host"
-  #   passive: true
-  #   scheme: "ftps" # default "ftp"
+production:
+  vhost: "localhost"
+  wordpress_path: "/srv/www/maxkompetens.se/current" # use an absolute path here
 
-# staging: # multiple environments can be specified
-#   [...]
+  database:
+    name: "maxkompetens_se_production"
+    user: "root"
+    password: ")BLw62;2M@%JU/S6"
+    # host: "host"
+    # port: "3308" # Use just in case you have exotic server config
+    # mysqldump_options: "--max_allowed_packet=1G" # Only available if using SSH
+
+  exclude:
+    - ".git/"
+    - ".gitignore"
+    - ".sass-cache/"
+    - "node_modules/"
+    - "bin/"
+    - "tmp/*"
+    - "Gemfile*"
+    - "Movefile"
+    - "wp-config.php"
+    - "wp-content/*.sql.gz"
+
+  paths: # you can customize wordpress internal paths
+    wp_content: "web/app"
+    uploads: "web/app/uploads"
+    plugins: "web/app/plugins"
+    mu_plugins: "web/app/mu-plugins"
+    themes: "web/app/themes"
+    languages: "web/app/languages"
+
+  ssh:
+    host: "139.59.201.176"
+    user: "root"
+  #   password: "password" # password is optional, will use public keys if available.
+  #   port: 22 # Port is optional
+  #   rsync_options: "--verbose" # Additional rsync options, optional
+  #   gateway: # Gateway is optional
+  #     host: "host"
+  #     user: "user"
+  #     password: "password" # password is optional, will use public keys if available.
+
