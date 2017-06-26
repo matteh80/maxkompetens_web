@@ -24,7 +24,7 @@ staging:
     name: "maxkompetens_se_staging"
     user: "root"
     password: ")BLw62;2M@%JU/S6"
-    host: "127.0.01"
+    host: "127.0.0.1"
     # port: "3308" # Use just in case you have exotic server config
     # mysqldump_options: "--max_allowed_packet=1G" # Only available if using SSH
 
@@ -59,7 +59,7 @@ production:
     name: "maxkompetens_se_production"
     user: "root"
     password: ")BLw62;2M@%JU/S6"
-    host: "127.0.01"
+    host: "127.0.0.1"
     # port: "3308" # Use just in case you have exotic server config
     # mysqldump_options: "--max_allowed_packet=1G" # Only available if using SSH
 

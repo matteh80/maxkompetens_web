@@ -71,7 +71,7 @@
             <div class="col-12 col-sm-3 align-self-end">
                 <div class="fancy-button btn-green">
                     <div class="left-frills frills"></div>
-                    <a href="https://wapcard.se/job/<?= $key; ?>" class="button" id="apply_for_job" target="_blank">Ansök med wap card </a>
+                    <a href="https://app.wapcard.se/job/<?= $key; ?>" class="button" id="apply_for_job" target="_blank">Ansök med wap card </a>
                     <div class="right-frills frills"></div>
                 </div>
             </div>
