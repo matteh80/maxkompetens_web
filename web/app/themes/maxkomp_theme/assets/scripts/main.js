@@ -241,17 +241,17 @@
     'pressmeddelanden': {
       init: function () {
         $('.collapse').on('show.bs.collapse', function () {
-          var $this = $(this)
+          var $this = $(this);
           var mId = $this.siblings().attr('data-target');
 
-          $.get($(this).siblings().attr('data-url'))
+          $.get($(this).siblings().attr('data-url'));
 
           $.ajax({
             url: $(this).siblings().attr('data-url'),
             dataType: 'text'
           }).done(function( result ) {
             xml = $.parseXML(result);
-            console.log(xml)
+            console.log(xml);
             $xml = $( xml );
             $(mId).html($xml.find('HtmlBody').text());
             var pdfUrl = $xml.find('File').find('Url').text();
@@ -263,8 +263,8 @@
           $('.downloadPdf').click(function (e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log(e)
-          })
+            console.log(e);
+          });
 
         });
       },

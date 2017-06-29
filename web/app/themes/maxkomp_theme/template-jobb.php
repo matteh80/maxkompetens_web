@@ -76,14 +76,13 @@
                 </div>
             </div>
             <div class="col-12">
-                <p>Inom kort kommer du enbart kunna söka jobb från Maxkompetens via wap card, vi rekommenderar därför att du redan nu skapar ett wap-card för att ansöka denna tjänst.
-                Vill du kan du fortfarande ansöka om tjänsten via formuläret här nedanför.
-                </p>
+                <span>Maxkompetens använder sig av wap card för ansökningar till utannonserade tjänster.
+                </span>
                 <p><a href="https://wapcard.se" target="_blank">Läs mer om wap card</a></p>
             </div>
 
             <div class="col-12">
-                <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=<?= $key; ?>" width="100%" height="775" scrolling="no" frameborder="0"></iframe>
+<!--                <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=--><?//= $key; ?><!--" width="100%" height="775" scrolling="no" frameborder="0"></iframe>-->
             </div>
             <?php endif; ?>
         </div>
