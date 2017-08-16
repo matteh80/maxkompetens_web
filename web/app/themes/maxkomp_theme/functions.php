@@ -21,6 +21,7 @@ $sage_includes = [
     'lib/cmb-extras.php', // Extra functions for CMB
     'lib/cmb-plugins/adress-field-type.php',
     'lib/cpt/cpt-referencecase.php', // Custom Post Type Customers
+    'lib/cpt/cpt-agm.php',
 //    'lib/cpt/cpt-medarbetare.php', // Custom Post Tytpe Medarbetare
     'lib/cpt/cpt-offices.php', // Custom Post Tytpe Medarbetare
     'lib/cpt/cpt-services.php', // Custom Post Tytpe Medarbetare
