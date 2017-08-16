@@ -7,8 +7,8 @@ local:
 
   database:
     name: "maxkompetens_dev_development"
-    user: "root"
-    password: ")BLw62;2M@%JU/S6"
+    user: "maxkompetens_dev"
+    password: "4caZ`a6V7SP@*U6k"
     host: "127.0.0.1"
 
   paths: # you can customize wordpress internal paths
