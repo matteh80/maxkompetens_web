@@ -1,4 +1,10 @@
-
+.home {
+  .jumbotron {
+    @include media-breakpoint-down(sm) {
+      background: rgba(255,255,255,0.6);
+    }
+  }
+}
 
 .no-idea {
   //background: url("../../dist/images/bckjoin_light.jpg");
