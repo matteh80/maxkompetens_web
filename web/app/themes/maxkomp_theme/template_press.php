@@ -21,7 +21,14 @@
                             <div class="clickArea collapsed" data-toggle="collapse" data-target="#<?= $release->attributes()->Id; ?>"
                                  aria-expanded="false" aria-controls="collapseExample" data-url="<?= $release->attributes()->DetailUrl; ?>">
                                 <div class="clearfix">
-                                    <small class="datetime pull-left"><?= substr(str_replace("T", " ", $utcDate), 0, -3); ?></small>
+                                    <?php
+                                    $UTC = new DateTimeZone("UTC");
+                                    $newTZ = new DateTimeZone("Europe/Stockholm");
+                                    $date = new DateTime( $utcDate, $UTC );
+                                    $date->setTimezone( $newTZ );
+//                                    echo $date->format('Y-m-d H:i');
+                                    ?>
+                                    <small class="datetime pull-left"><?= $date->format('Y-m-d H:i'); ?></small>
                                     <?php if($release->IsRegulatory == 'true') : ?>
                                         <small class="IsRegulatory pull-left">Regulatorisk</small>
                                     <?php endif;?>
