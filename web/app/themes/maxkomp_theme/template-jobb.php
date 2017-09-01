@@ -80,11 +80,11 @@
                 <?php
                 $wapJobs = ['5088', '5805', '5728', '6213', '6182'];
                 if (!in_array($key, $wapJobs)) : ?>
-                    <p>Inom kort kommer du enbart kunna söka jobb från Maxkompetens via, det nya och snabbare, wap - work and passion, vi rekommenderar därför att du redan nu använder dig av wap för att ansöka denna tjänsten! Har du inte redan ett konto hos wap skapar du ett nytt snabbt och enkelt.
+                    <p>Inom kort kommer du enbart kunna söka jobb från Maxkompetens via, det nya och snabbare, <strong>wap - work and passion</strong>, vi rekommenderar därför att du redan nu använder dig av wap för att ansöka denna tjänsten! Har du inte redan ett konto hos wap skapar du ett nytt snabbt och enkelt.
                     Vill du kan du fortfarande ansöka om tjänsten via gamla systemet här nedanför.
                     </p>
                 <?php else : ?>
-                    <span>Maxkompetens använder sig av, det nya och snabbare, wap - work and passion för ansökningar till utannonserade tjänster. Har du inte redan ett konto hos wap skapar du ett nytt snabbt och enkelt!</span>
+                    <span>Maxkompetens använder sig av, det nya och snabbare, <strong>wap - work and passion</strong> för ansökningar till utannonserade tjänster. Har du inte redan ett konto hos wap skapar du ett nytt snabbt och enkelt!</span>
                 <?php endif; ?>
                 <p><a href="https://wapcard.se" target="_blank">Läs mer om wap</a></p>
             </div>
