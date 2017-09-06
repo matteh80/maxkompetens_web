@@ -81,7 +81,7 @@
                 $wapJobs = ['5088', '5805', '5728', '6213', '6182', '4680', '6136'];
                 if (!in_array($key, $wapJobs)) : ?>
                     <p>Inom kort kommer du enbart kunna söka jobb från Maxkompetens via, det nya och snabbare, <strong>wap - work and passion</strong>, vi rekommenderar därför att du redan nu använder dig av wap för att ansöka denna tjänsten! Har du inte redan ett konto hos wap skapar du ett nytt snabbt och enkelt.
-                        Vill du kan du fortfarande ansöka om tjänsten via gamla systemet genom att klicka <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">här</a>.
+                        Vill du kan du fortfarande ansöka tjänsten via gamla systemet genom att klicka <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">här</a>.
                     </p>
                 <?php else : ?>
                     <span>Maxkompetens använder sig av, det nya och snabbare, <strong>wap - work and passion</strong> för ansökningar till utannonserade tjänster. Har du inte redan ett konto hos wap skapar du ett nytt snabbt och enkelt!</span>
