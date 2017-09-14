@@ -704,9 +704,9 @@
     'soker_du_jobb': {
       init: function () {
 
-        function resizeIframe(obj) {
-          obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-        }
+        // function resizeIframe(obj) {
+        //   obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        // }
 
         function getQueryString() {
 
@@ -724,8 +724,14 @@
         var jobadBaseUrl = "https://cv-maxkompetens.app.intelliplan.eu/JobAdPages/JobAdGroupList.aspx?groupby=CustOrderParentService&sortdir=ascending&class=nomasterpage&region=";
         var jobadUrl = jobadBaseUrl + region;
         var iframe = document.getElementById('jobiframe');
-        iframe.onload = resizeIframe(iframe);
+        // iframe.onload = resizeIframe(iframe);
         iframe.src = jobadUrl;
+
+        if (region) {
+          $('html, body').animate({
+            scrollTop: $(".jobslist").offset().top - 100
+          }, 1000);
+        }
       },
       finalize: function () {
         var player;

@@ -12,7 +12,7 @@
 <section class="regionSelect bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-3">
+            <div class="col-12 col-md-3 mb-5"">
                 <a href="?region=Stockholms+län">
                     <img src="https://unsplash.it/500/300" class="img-fluid" />
                 </a>
@@ -23,12 +23,32 @@
                 </a>
             </div>
             <div class="col-12 col-md-3">
-                <a href="?region=Stockholms län">
+                <a href="?region=Kronobergs+län">
                     <img src="https://unsplash.it/500/300" class="img-fluid" />
                 </a>
             </div>
             <div class="col-12 col-md-3">
-                <a href="?region=Stockholms län">
+                <a href="?region=Skånes+län">
+                    <img src="https://unsplash.it/500/300" class="img-fluid" />
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="?region=Hallands+län">
+                    <img src="https://unsplash.it/500/300" class="img-fluid" />
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="?region=Jönköpings+län">
+                    <img src="https://unsplash.it/500/300" class="img-fluid" />
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="?region=Kalmars+län">
+                    <img src="https://unsplash.it/500/300" class="img-fluid" />
+                </a>
+            </div>
+            <div class="col-12 col-md-3">
+                <a href="?region=Sverige">
                     <img src="https://unsplash.it/500/300" class="img-fluid" />
                 </a>
             </div>
@@ -40,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div id="listWrapper">
-                <iframe id="jobiframe" width="570" scrolling="no"></iframe>
+                <iframe id="jobiframe" width="570" height="1000" scrolling="no"></iframe>
             </div>
         </div>
     </div>
