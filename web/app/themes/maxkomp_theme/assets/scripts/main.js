@@ -724,7 +724,7 @@
         var jobadBaseUrl = "https://cv-maxkompetens.app.intelliplan.eu/JobAdPages/JobAdGroupList.aspx?groupby=CustOrderParentService&sortdir=ascending&class=nomasterpage&region=";
         var jobadUrl = jobadBaseUrl + region;
         var iframe = document.getElementById('jobiframe');
-        iframe.onload = resizeIframe(iframe)
+        iframe.onload = resizeIframe(iframe);
         iframe.src = jobadUrl;
       },
       finalize: function () {
