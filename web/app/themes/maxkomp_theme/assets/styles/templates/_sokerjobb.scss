@@ -2,10 +2,36 @@
   iframe {
     border:none;
   }
-
-
 }
 
 #listWrapper {
 
+}
+
+.regionSelect {
+  .region {
+    > div {
+      overflow: hidden;
+      position: relative;
+
+      img {
+        opacity:.5;
+        transition: all 250ms;
+      }
+
+      &:hover {
+        img {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+    }
+    .text-wrapper {
+      position: absolute;
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+    }
+  }
 }

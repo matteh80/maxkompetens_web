@@ -731,6 +731,8 @@
           $('html, body').animate({
             scrollTop: $(".jobslist").offset().top - 100
           }, 1000);
+        } else {
+          $('.jobslist').hide();
         }
       },
       finalize: function () {
