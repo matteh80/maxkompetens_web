@@ -23,7 +23,9 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
             <div class="row align-items-center justify-content-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%; text-align: center">
                     <?php if(is_front_page()) : ?>
-                        <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto; display: block;" class="img-fluid align-self-center"/>
+                        <div class="col-6 col-md-4 mx-auto">
+                            <img src="<?= \Roots\Sage\Extras\getRelativeUploadPath(maxkomp_get_option('logo_wap')); ?>" style="margin: 0 auto; display: block;" class="img-fluid align-self-center"/>
+                        </div>
                     <?php else: ?>
                         <?php
                         $headerclass = '';
