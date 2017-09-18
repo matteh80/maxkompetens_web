@@ -35,7 +35,9 @@ section {
 .jumbo {
   background: $brand-blue;
   background-size: cover;
-  background-attachment: fixed;
+  @include media-breakpoint-up(md) {
+    background-attachment: fixed;
+  }
   color: $gray-dark;
   padding-top: 0;
   padding-bottom: 0;
