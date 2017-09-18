@@ -252,6 +252,21 @@ function maxkomp_register_page_metabox() {
 		// 	) ),
 		// ),
 	) );
+
+	$cmb_page->add_field( array(
+		'name'             => esc_html__( 'Position bakgrund', 'cmb2' ),
+		'desc'             => esc_html__( 'Vilken sida av bilden som är "pinned"', 'cmb2' ),
+		'id'               => $prefix . 'background_position',
+		'type'             => 'radio_inline',
+		'show_option_none' => 'No Selection',
+		'options'          => array(
+			'left' => esc_html__( 'Left', 'cmb2' ),
+			'semi_left' => esc_html__( '50% Left', 'cmb2' ),
+			'center'   => esc_html__( 'Center', 'cmb2' ),
+			'semi_right'     => esc_html__( '50% Right', 'cmb2' ),
+			'right'     => esc_html__( 'Right', 'cmb2' ),
+		),
+	) );
 }
 
 // TODO: Might not need cmb for reference cases?

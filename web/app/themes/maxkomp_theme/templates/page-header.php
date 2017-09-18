@@ -10,10 +10,31 @@ $text = get_post_meta($post->ID, 'maxkomp_page_text', true);
 $headertext = get_post_meta($post->ID, 'maxkomp_page_headertext', true);
 $textcolor = get_post_meta($post->ID, 'maxkomp_page_colorpicker', true);
 $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
+$bgpos_meta = get_post_meta($post->ID, 'maxkomp_page_background_position', true);
+$bgpos = 'center';
+switch($bgpos_meta) {
+    case 'left':
+        $bgpos = 'left';
+        break;
+
+	case 'center':
+		$bgpos = 'center';
+		break;
+
+	case 'right':
+		$bgpos = 'right';
+		break;
+
+    default:
+        $bgpos = 'center';
+}
 //array_key_exists('title', $buttons_meta[0]
 ?>
 
-<section class="jumbo" style="background-image: url('<?php if(!is_singular('referencecase')) { echo the_post_thumbnail_url(); } ?>');">
+<section
+        class="jumbo"
+        style="background-image: url('<?php if(!is_singular('referencecase')) { echo the_post_thumbnail_url(); } ?>'); background-position: <?= $bgpos; ?>"
+>
     <?php if(is_page()) : ?>
     <div class="jumbotron jumbotron-fluid <?php if(!has_post_thumbnail() && !is_page('bemanning')) {echo 'jumbo-small cloud cloud-l-b';} ?>">
     <?php else: ?>
