@@ -17,8 +17,16 @@ switch($bgpos_meta) {
         $bgpos = 'left';
         break;
 
+	case 'semi-left':
+		$bgpos = '25%';
+		break;
+
 	case 'center':
 		$bgpos = 'center';
+		break;
+
+	case 'semi-right':
+		$bgpos = '75%';
 		break;
 
 	case 'right':
