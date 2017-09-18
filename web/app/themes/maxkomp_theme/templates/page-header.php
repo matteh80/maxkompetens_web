@@ -58,9 +58,9 @@ $buttons_meta = get_post_meta($post->ID, 'maxkomp_buttons_group_buttons', true);
                                 if(array_key_exists('title', $button)) {
                                     if(!array_key_exists('button_link', $button) && !array_key_exists('ext_link', $button)) {
 	                                    $link = "#";
-                                    }else if(array_key_exists('ext_link', $button)) {
+                                    }else if(array_key_exists('ext_link', $button) && strlen($button['ext_link']) > 0) {
 	                                    $link = $button['ext_link'];
-                                    }else if(array_key_exists('button_link', $button)){
+                                    }else if(array_key_exists('button_link', $button) && strlen($button['button_link']) > 0){
                                         $link = get_permalink($button['button_link']);
                                     }
                                     ?>
