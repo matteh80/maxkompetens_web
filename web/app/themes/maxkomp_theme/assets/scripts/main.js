@@ -701,13 +701,8 @@
         }
       }
     },
-    'soker_du_jobb': {
+    'lediga_tjanster': {
       init: function () {
-
-        // function resizeIframe(obj) {
-        //   obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-        // }
-
         function getQueryString() {
 
           var result = {}, queryString = location.search.substring(1),
@@ -734,6 +729,18 @@
         } else {
           $('.jobslist').hide();
         }
+      },
+      finalize: function () {
+
+      },
+    },
+    'soker_du_jobb': {
+      init: function () {
+
+        // function resizeIframe(obj) {
+        //   obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        // }
+
       },
       finalize: function () {
         var player;
