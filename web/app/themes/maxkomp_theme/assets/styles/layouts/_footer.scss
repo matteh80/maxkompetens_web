@@ -69,6 +69,18 @@
   .sub-menu {
     flex-direction: column;
     list-style: disc;
+
+    > .menu-item {
+      max-height: 20px;
+    }
+  }
+
+  .menu-item {
+    box-sizing: content-box;
+
+    > a {
+      max-height: 20px;
+    }
   }
 
   a {
