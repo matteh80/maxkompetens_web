@@ -44,7 +44,8 @@
     "wpackagist-plugin/tawkto-live-chat": "0.2.5",
     "wpackagist-plugin/simple-custom-post-order": "^2.3.2",
     "wpackagist-plugin/rest-api": "^2.0-beta15",
-    "wpackagist-plugin/redirection": "^2.6"
+    "wpackagist-plugin/redirection": "^2.6",
+    "wpackagist-plugin/wordpress-seo": "^5.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
@@ -61,7 +62,8 @@
         "wpackagist-plugin/simple-custom-post-order",
         "wpackagist-plugin/rest-api",
         "wpackagist-plugin/redirection",
-        "wpackagist-plugin/og"],
+        "wpackagist-plugin/og",
+        "wpackagist-plugin/wordpress-seo"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
