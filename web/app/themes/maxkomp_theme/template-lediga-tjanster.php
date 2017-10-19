@@ -103,7 +103,7 @@
 		<div class="container">
 			<div class="row">
 				<div id="listWrapper">
-					<iframe id="jobiframe" width="570" height="1000" scrolling="no"></iframe>
+					<iframe id="jobiframe" width="670" height="1000" scrolling="yes"></iframe>
 				</div>
 			</div>
 		</div>
