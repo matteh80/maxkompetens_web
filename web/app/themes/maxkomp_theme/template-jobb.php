@@ -73,7 +73,7 @@
             </div>
 			<?php if ( ! empty( $item->title ) ): ?>
 				<?php
-				$wapJobs = [ '6531', '6532', '6561', '6562', '6451', '6566', '6568', '6527', '6544', '6563', '6627', '6622', '5468', '6555', '6525' ];
+				$wapJobs = [ '6531', '6532', '6561', '6562', '6451', '6566', '6568', '6527', '6544', '6563', '6627', '6622' ];
 				if ( ! in_array( $key, $wapJobs ) ) : ?>
                     <div class="col-12">
                         <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=<?= $key; ?>"
