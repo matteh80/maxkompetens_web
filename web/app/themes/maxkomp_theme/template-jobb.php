@@ -64,7 +64,7 @@
                 <p class="description">
                     <?php if ($key === '6663'): ?>
                     <video controls style="max-width: 100%">
-                        <source src="<?= \Roots\Sage\Assets\asset_path('videos/AteaUtkast4.mp4'); ?>">
+                        <source src="<?= \Roots\Sage\Assets\asset_path('videos/AteaUtkast4.mp4#t=0.9'); ?>">
                     </video>
                     <?php endif; ?>
 					<?php
