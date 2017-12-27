@@ -826,8 +826,6 @@
           };
 
           $.getScript('//www.youtube.com/iframe_api');
-        } else {
-
         }
       }
     },
@@ -836,7 +834,9 @@
 
       },
       finalize: function () {
-
+        var textToAutolink = $('.description').html();
+        var linkedText = Autolinker.link( textToAutolink);
+        $('.description').html(linkedText);
       }
     },
   };

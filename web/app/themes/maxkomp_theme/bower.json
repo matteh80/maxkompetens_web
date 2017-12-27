@@ -17,7 +17,8 @@
     "hover": "Hover#^2.1.0",
     "jquery-circle-progress": "^1.2.0",
     "jquery.rest": "jquery.rest#^1.0.2",
-    "jquery-validation": "^1.16.0"
+    "jquery-validation": "^1.16.0",
+    "Autolinker.js": "^1.6.0"
   },
   "overrides": {
     "font-awesome": {
