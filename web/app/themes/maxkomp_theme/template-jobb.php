@@ -108,7 +108,7 @@
                         <div class="collapse" id="collapseExample">
                             <iframe src="http://cv-maxkompetens.app.intelliplan.eu/JobAd/Apply?jaid=<?= $key; ?>"
                                     width="100%"
-                                    height="775" scrolling="no" frameborder="0"></iframe>
+                                    height="875" scrolling="yes" frameborder="0"></iframe>
                         </div>
                     </div>
 				<?php endif; ?>
