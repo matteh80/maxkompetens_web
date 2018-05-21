@@ -4,7 +4,7 @@ function custom_post_agm() {
     // creating (registering) the custom type
     register_post_type( 'agm', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
         // let's now add all the options for this post type
-        array( 'labels' => array(
+	        array( 'labels' => array(
             'name' => __( 'Bolagsstämma', 'sage' ), /* This is the Title of the Group */
             'singular_name' => __( 'Bolagsstämma', 'sage' ), /* This is the individual type */
             'all_items' => __( 'All Bolagsstämma', 'sage' ), /* the all items menu item */
