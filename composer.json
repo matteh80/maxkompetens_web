@@ -34,18 +34,17 @@
   ],
   "require": {
     "php": ">=5.6",
-    "composer/installers": "~1.0.12",
+    "composer/installers": "^1.4",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.8.1",
-    "oscarotero/env": "^1.0",
+    "johnpbloch/wordpress": "^4.9.2",
+    "oscarotero/env": "^1.1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "wpackagist-plugin/tinymce-advanced":"^4.4.1",
     "wpackagist-plugin/img-fluid":"^1.0",
-    "wpackagist-plugin/tawkto-live-chat": "0.2.5",
+    "wpackagist-plugin/tawkto-live-chat": "^0.3.4",
     "wpackagist-plugin/simple-custom-post-order": "^2.3.2",
-    "wpackagist-plugin/rest-api": "^2.0-beta15",
     "wpackagist-plugin/redirection": "^2.6",
-    "wpackagist-plugin/wordpress-seo": "^5.4"
+    "wpackagist-plugin/wordpress-seo": "^7.6.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
@@ -58,12 +57,9 @@
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin",
         "wpackagist-plugin/tinymce-advanced",
         "wpackagist-plugin/img-fluid",
-        "wpackagist-plugin/tawkto-live-chat",
         "wpackagist-plugin/simple-custom-post-order",
-        "wpackagist-plugin/rest-api",
         "wpackagist-plugin/redirection",
-        "wpackagist-plugin/og",
-        "wpackagist-plugin/wordpress-seo"],
+        "wpackagist-plugin/og"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
