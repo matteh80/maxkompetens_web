@@ -78,8 +78,8 @@ section {
     }
 
     &.jumbo-small {
-      height:400px;
-      min-height: 1px;
+      min-height:400px;
+      height: auto;
       padding-top:70px;
 
       > .container {
