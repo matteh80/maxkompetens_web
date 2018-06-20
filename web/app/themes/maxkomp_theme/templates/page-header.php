@@ -48,7 +48,7 @@ switch($bgpos_meta) {
     <?php else: ?>
     <div class="jumbotron jumbotron-fluid jumbo-small cloud cloud-l-b">
     <?php endif;?>
-        <div class="container text-xs-center ">
+        <div class="container text-xs-center d-flex justify-content-center align-items-center">
             <div class="row align-items-center justify-content-center full-height">
                 <div style="color:<?=  $textcolor; ?>; width: 100%; text-align: center">
                     <?php if(is_front_page()) : ?>
