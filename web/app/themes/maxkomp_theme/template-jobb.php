@@ -67,6 +67,11 @@
                         <source src="<?= \Roots\Sage\Assets\asset_path('videos/AteaUtkast4.mp4#t=0.9'); ?>">
                     </video>
                     <?php endif; ?>
+                    <?php if ($key === '7474'): ?>
+                        <div className="media-wrapper mb-5">
+                            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:6411821219804430336?compact=1" frameborder="0" allowfullscreen=""></iframe>
+                        </div>
+                    <?php endif; ?>
 					<?php
 					if ( ! empty( $item->title ) ) {
 						echo html_entity_decode( nl2br( $item->description ) );

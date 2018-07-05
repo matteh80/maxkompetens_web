@@ -405,3 +405,22 @@ form {
   }
 }
 
+.media-wrapper {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+
+  iframe {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
