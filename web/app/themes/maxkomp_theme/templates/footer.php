@@ -7,8 +7,11 @@
                         Vi startade vår verksamhet 2003 och har idag verksamhet på tio orter i Sverige.
                         Varje år tillsätter vi över 1200 jobb och har dagligen
                         ca 350-400 konsulter ute på uppdrag.</p>
-                    <p>Koncernbolaget Maxkompetens Sverige AB är noterat
-                        på Nasdaq First North under kortnamnet MAXK.</p>
+                    <p>Maxkompetens ingår i koncernbolaget MoxieTech Group AB, sedan 2015 noterat på Nasdaq First North. Koncernen har fyra fristående bolag/affärsområden som var och ett har en stark position på marknaden.
+                        Work and Passion AB är ett renodlat HR-Tech bolag som huvudsakligen erbjuder digitala tjänster för HR branschen.
+                        Maxkompetens Konsult AB är med kontor i 8 städer en av de största aktörerna i Sverige inom rekrytering och bemanning.
+                        Multiekonomerna J&M AB är en av de största aktörerna i Sverige inom Ekonomikonsultation, redovisning och lön.
+                        SkolPool Sverige AB som är marknadsledare i Sverige inom elevhälsa.</p>
                 </div>
                 <div class="col-12 col-md-4 hidden-sm-down">
                     <?php
