@@ -68,17 +68,21 @@
             $args = array( 'post_type' => 'corporation', 'posts_per_page' => -1 );
             $loop = new WP_Query( $args );
 
-            while ( $loop->have_posts() ) : $loop->the_post();  ?>
+            while ( $loop->have_posts() ) : $loop->the_post();
+                $corp_url = get_post_meta(get_the_ID(), 'maxkomp_corporation_corp_url', true);
+            ?>
 
-                <div class="col-12 col-lg-4 my-5 corporation-item">
+                <div class="col-12 col-md-6 col-lg-3 my-5 corporation-item">
                     <div class="col-12 align-self-start text-xs-center logo">
-                        <img src="<?= get_the_post_thumbnail_url();?>" class="img-fluid mx-auto" />
+                        <a href="<?php echo $corp_url; ?>">
+                            <img src="<?= get_the_post_thumbnail_url();?>" class="mx-auto mt-0" />
+                        </a>
                     </div>
                     <div class="col-12 align-self-end">
-                        <h3 class="text-uppercase text-lg-center"><?= get_the_title();?></h3>
-                        <div class="content-wrapper">
-                            <?php the_content();?>
-                        </div>
+                        <h5 class="text-uppercase text-lg-center"><?= get_the_title();?></h5>
+<!--                        <div class="content-wrapper">-->
+<!--                            --><?php //the_content();?>
+<!--                        </div>-->
                     </div>
                 </div>
 
