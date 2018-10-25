@@ -420,10 +420,14 @@ section#corporations {
 
     .logo {
       //height: 120px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.25);
 
       a {
-        max-height: 60px;
-        height: 60px;
+        max-height: 100px;
+        height: 100px;
+        padding: 10px;
         display: block;
 
         img {
