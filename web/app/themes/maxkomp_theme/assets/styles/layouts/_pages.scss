@@ -428,12 +428,14 @@ section#corporations {
         max-height: 100px;
         height: 100px;
         padding: 10px;
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         img {
           display: block;
-          height: 100%;
           width: auto;
+          max-height: 80px;
         }
       }
     }
