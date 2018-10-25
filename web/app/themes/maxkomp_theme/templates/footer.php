@@ -45,8 +45,10 @@
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                     </a>
                 </div>
-                <div class="col-md-3 mb-3">
+                <div class="col-xs mb-3">
                     <img src="<?= \Roots\Sage\Assets\asset_path('images/auktoriserat-bemanningsforetag.png'); ?>"
+                         class="img-fluid logo pull-right"/>
+                    <img src="<?= \Roots\Sage\Assets\asset_path('images/autk_rekr_foretag.png'); ?>"
                          class="img-fluid logo pull-right"/>
                 </div>
             </div>
