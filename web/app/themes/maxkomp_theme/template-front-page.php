@@ -26,7 +26,7 @@
                     <div class="col-12 col-sm-6 align-self-end">
                         <div class="fancy-button">
                             <div class="left-frills frills"></div>
-                            <a href="/soker-du-jobb" class="button">Söker du jobb?</a>
+                            <a href="http://jobb.maxkompetens.se/ads" class="button">Söker du jobb?</a>
                             <div class="right-frills frills"></div>
                         </div>
                     </div>
